@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BackgroundCheck password="Letmein6" userId="AAUTOTESTER3" account="171794AAA" xsi:schemaLocation="http://www.cpscreen.com/schemas CPBackgroundCheck.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.cpscreen.com/schemas">    <BackgroundSearchPackage>
+        <PackageInformation>
+            <PackageId>2112</PackageId>
+            <ClientReferences>
+                <ClientReference></ClientReference>
+                <ClientReference>ClientRefAlias</ClientReference>
+            </ClientReferences>
+            <AdditionalItems>
+                <AdditionalItem name="ReasonForTest">RANDOM</AdditionalItem>
+            </AdditionalItems>
+        </PackageInformation>
+        <PersonalData>
+            <PersonName type="subject">
+                <GivenName>T</GivenName>
+                <MiddleName>D.</MiddleName>
+                <FamilyName>ToxLocationAutoSa</FamilyName>
+            </PersonName>
+            <PostalAddress type="current" validFrom="2011-06-01">
+                <CountryCode>US</CountryCode>
+                <PostalCode>30005</PostalCode>
+                <Region>GA</Region>
+                <Municipality>ALPHARETTA</Municipality>
+                <DeliveryAddress>
+                    <AddressLine>100 MAIN STREET</AddressLine>
+                </DeliveryAddress>
+            </PostalAddress>
+            <ContactMethod>
+                <Telephone type="home">
+                    <Number>678-886-3227</Number>
+                </Telephone>
+                <InternetEmailAddress>tonia.hines@fadv.com</InternetEmailAddress>
+            </ContactMethod>
+            <DemographicDetail>
+                <GovernmentId issuingAuthority="SSN">356-01-8996</GovernmentId>
+                <DateOfBirth>1980-12-12</DateOfBirth>
+            </DemographicDetail>
+        </PersonalData>
+    </BackgroundSearchPackage>
+</BackgroundCheck>

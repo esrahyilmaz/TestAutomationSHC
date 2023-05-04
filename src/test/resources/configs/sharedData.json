@@ -1,0 +1,20 @@
+{
+  "Applicant": {
+    "address.zip": "30097",
+    "firstName": "Invite",
+    "lastName": "Automation",
+    "expires": "01/01/2022",
+    "address.city": "Duluth",
+    "phoneNumber": "404-229-1234",
+    "address.state": "GA",
+    "address.line1": "1000 main street",
+    "dateOfBirth": "01/01/2000",
+    "wellnessIdEncrypted": "u7ZZzQhC2r66io4nWVdQqyB7TGBaGtut+7v3dE7aHZA\u003d",
+    "id": "bec19e04-5295-47f2-b457-931fc1bddd92",
+    "wellnessId": "321811917"
+  },
+  "deviceType": "oralTox",
+  "lastName": "Auto46999",
+  "reasonForTest": "PRE",
+  "wellnessId": "473451108"
+}

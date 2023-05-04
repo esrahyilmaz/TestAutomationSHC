@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+  <S:Body>
+    <BackgroundCheck xmlns="http://www.cpscreen.com/schemas" userId="TestUser1" account="103613" password="Letmein1">
+      <BackgroundSearchPackage>
+        <PackageInformation>
+          <PackageId>1123</PackageId>
+          <Compensation intervalType="yearly" currency="USD">23000 </Compensation>
+          <CopyToApplicant>false</CopyToApplicant>
+          <ClientReferences>
+            <ClientReference></ClientReference>
+          </ClientReferences>
+          <AdditionalItems>
+            <AdditionalItem name="EmploymentStartDate">2021-09-23 14:30:00.0</AdditionalItem>
+            <AdditionalItem name="ACIC_DOC_ENABLED">Y</AdditionalItem>
+            <AdditionalItem name="DBS_RECIVE_AT_CURRENT_ADDRESS">Y</AdditionalItem>
+            <AdditionalItem name="DBS_RECIVE_CERTIFICATE">N</AdditionalItem>
+            <AdditionalItem name="DBS_HAS_PROFILE">N</AdditionalItem>
+          </AdditionalItems>
+          <Quotebacks>
+            <Quoteback name="ApplicantId">123</Quoteback>
+          </Quotebacks>
+          <OrderAccount>
+            <UserId>TestUser5</UserId>
+            <Account>130001AAB</Account>
+            <ContactMethod/>
+          </OrderAccount>
+          <PositionLocations>
+            <PositionLocation>
+              <CountryCode>US</CountryCode>
+              <Region>FL</Region>
+              <Municipality type="city">MIAMI</Municipality>
+            </PositionLocation>
+          </PositionLocations>
+        </PackageInformation>
+        <PersonalData>
+          <PersonName type="subject">
+            <GivenName>Bruce</GivenName>
+            <FamilyName>Wayne</FamilyName>
+          </PersonName>
+          <PostalAddress type="current" isPermanent="false" validFrom="1985-09-01">
+            <CountryCode>US</CountryCode>
+            <PostalCode>30518</PostalCode>
+            <Region>GA</Region>
+            <Municipality type="city">Buford</Municipality>
+            <DeliveryAddress>
+              <AddressLine>123 W Main St</AddressLine>
+            </DeliveryAddress>
+          </PostalAddress>
+          <ContactMethod>
+            <Telephone>
+              <Number>+1 684789034</Number>
+            </Telephone>
+            <Telephone/>
+            <InternetEmailAddress>sumitra.hebbar@fadv.com</InternetEmailAddress>
+          </ContactMethod>
+          <DemographicDetail>
+            <DateOfBirth>1980-07-17</DateOfBirth>
+            <GovernmentId issuingAuthority="PASSPORT" issuingCountry="AU" identityTypeCode="PASSPORT">5G19890</GovernmentId>
+            <GovernmentId issuingAuthority="SSN" issuingCountry="US" identityTypeCode="SSN">405798768</GovernmentId>
+          </DemographicDetail>
+          <EmploymentHistory>
+            <Employer type="prior" isDrivingPosition="No" sourceId="" faaSecurityCheckEnabled="">
+              <EmployerName>Green Pastures</EmployerName>
+              <EmployerLocation>Lords Hill</EmployerLocation>
+              <EmployerAddress>
+                <CountryCode>AU</CountryCode>
+                <PostalCode>2632</PostalCode>
+                <Region>NSW</Region>
+                <Municipality type="city">Lords Hill</Municipality>
+                <DeliveryAddress>
+                  <AddressLine>82 Davenport Street</AddressLine>
+                </DeliveryAddress>
+              </EmployerAddress>
+              <Compensation intervalType="yearly" currency="USD">23000 </Compensation>
+              <Title>Sr Lead</Title>
+              <DatesOfEmployment>
+                <StartDate>2006-02-01</StartDate>
+                <Position>Sr Lead</Position>
+                <Location>Texas</Location>
+              </DatesOfEmployment>
+              <ContactInfo>
+                <PersonName>nama</PersonName>
+                <ContactMethod>
+                  <Telephone type="work">
+                    <Number>+2 987987989</Number>
+                  </Telephone>
+                </ContactMethod>
+              </ContactInfo>
+              <ReasonForLeaving>Voluntary</ReasonForLeaving>
+              <PermissionToContact>true</PermissionToContact>
+              <PTCOverrideFlag>false</PTCOverrideFlag>
+              <Documents/>
+              <JobType>permanent</JobType>
+            </Employer>
+          </EmploymentHistory>
+
+          <EducationHistory>
+            <SchoolOrInstitution sourceId="">
+              <SchoolName>Top Notch School</SchoolName>
+              <SchoolLocation>Sandy Flat</SchoolLocation>
+              <LocationSummary>
+                <CountryCode>AU</CountryCode>
+                <PostalCode>2372</PostalCode>
+                <Region>NSW</Region>
+                <Municipality type="city">Sandy Flat</Municipality>
+                <DeliveryAddress/>
+              </LocationSummary>
+              <Degree degreeType="bachelors">
+                <DegreeDate>2000-04-01</DegreeDate>
+              </Degree>
+              <DatesOfAttendance>
+                <StartDate>1996-04-01</StartDate>
+                <EndDate>2000-04-01</EndDate>
+              </DatesOfAttendance>
+              <Documents/>
+            </SchoolOrInstitution>
+          </EducationHistory>
+          <Disclosures>
+            <Disclosure>
+              <Question>Are you, or a business in which you are/were substantially involved, currently the subject of any pending investigation or enforcement proceeding by a local, state or federal financial institution regulator, for expample, the Securities Exchange Commission, Federal Trade Commission, Office of the Comptroller of the currency, or Federal Deposite Insurance Corporation!!!</Question>
+              <Answer>0</Answer>
+            </Disclosure>
+            <Disclosure>
+              <Question>Have you ever been convicted of any crime involving dishonesty, breach of trust, fraud, theft, money laundering or illegal manufacture, sale, distribution of or trafficking in controlled substances??</Question>
+              <Answer>0</Answer>
+            </Disclosure>
+          </Disclosures>
+          <Licenses>
+            <License>
+              <LicenseNumber>111787499</LicenseNumber>
+              <LicenseName>MVR</LicenseName>
+              <CountryCode>CN</CountryCode>
+              <LicenseRegion>44</LicenseRegion>
+              <CandidateNameOnLicense>Tonia Hines</CandidateNameOnLicense>
+              <LicenseAuthorityAddress>
+                <PostalCode>30005</PostalCode>
+                <Region>44</Region>
+                <Municipality>Miami</Municipality>
+                <DeliveryAddress>
+                  <AddressLine>Camel St</AddressLine>
+                </DeliveryAddress>
+              </LicenseAuthorityAddress>
+            </License>
+            <License sourceId="">
+              <LicenseNumber>lic987987</LicenseNumber>
+              <LicenseName>lic</LicenseName>
+              <CountryCode>AG</CountryCode>
+              <LicenseDescription>aAndb license, Issuer: ant_barb agent</LicenseDescription>
+              <LicenseRegion>04</LicenseRegion>
+              <CandidateNameOnLicense>daintllic test1</CandidateNameOnLicense>
+              <LicensingAgency>ant_barb agent</LicensingAgency>
+              <LicenseAuthorityAddress/>
+              <Institute/>
+              <Documents/>
+            </License>
+            <License sourceId="">
+              <LicenseName>ins</LicenseName>
+              <CountryCode>US</CountryCode>
+              <LicenseDescription/>
+              <LicenseAuthorityAddress/>
+              <Institute/>
+            </License>
+          </Licenses>
+          <FAAVerifications>
+            <FAAVerification/>
+          </FAAVerifications>
+          <Documents>
+            <Document id="8828880" level="Subject">
+              <Type>143</Type>
+            </Document>
+            <Document id="8828866" level="Subject">
+              <Type>205</Type>
+            </Document>
+            <Document id="8828865" level="Subject">
+              <Type>2</Type>
+            </Document>
+          </Documents>
+        </PersonalData>
+        <Screenings type="add-ons">
+          <Screening type="REF">
+            <Reference>
+              <PersonName>MyReference</PersonName>
+              <Region>AZ</Region>
+              <YearsAcquainted>1</YearsAcquainted>
+              <ContactMethod>
+                <Telephone>
+                  <Number>8096543324</Number>
+                  <Extension>1</Extension>
+                </Telephone>
+                <Telephone>
+                  <Number>8068858465</Number>
+                  <Extension>12</Extension>
+                </Telephone>
+              </ContactMethod>
+            </Reference>
+          </Screening>
+          <Screening subtype="PRI-FM" type="PRI-FM">
+            <PublicRecord>
+              <PersonName type="subject">
+                <GivenName>Bat</GivenName>
+                <MiddleName></MiddleName>
+                <FamilyName>Man</FamilyName>
+                <Suffix></Suffix>
+              </PersonName>
+              <PostalAddress type="current">
+                <CountryCode>US</CountryCode>
+                <PostalCode>43342-9529</PostalCode>
+                <Region>NY</Region>
+                <Municipality type="city">Wells</Municipality>
+                <Municipality type="county">Hamilton</Municipality>
+                <DeliveryAddress>
+                  <AddressLine>123 Batcave Ln.</AddressLine>
+                </DeliveryAddress>
+              </PostalAddress>
+            </PublicRecord>
+          </Screening>
+          <Screening type="PRI-FAM" subtype="PRI-FAM" >
+            <PublicRecord>
+              <PersonName type="subject">
+                <GivenName>Bruce</GivenName>
+                <MiddleName>Ray</MiddleName>
+                <FamilyName>Wayne</FamilyName>
+              </PersonName>
+              <PostalAddress type="current">
+                <CountryCode>US</CountryCode>
+                <PostalCode>57703</PostalCode>
+                <Region>SD</Region>
+                <Municipality type="city">Rapid City</Municipality>
+                <Municipality type="county">Pennington</Municipality>
+                <DeliveryAddress>
+                  <AddressLine>325 Stellar Dr</AddressLine>
+                  <Unit></Unit>
+                </DeliveryAddress>
+              </PostalAddress>
+            </PublicRecord>
+          </Screening>
+          <Screening type="PRINCRF" subtype="NCRF" >
+            <PublicRecord>
+              <PersonName type="subject">
+                <GivenName>NatCrim</GivenName>
+                <FamilyName>C1</FamilyName>
+              </PersonName>
+              <PostalAddress type="current">
+                <CountryCode>US</CountryCode>
+                <PostalCode>57703</PostalCode>
+                <Region>SD</Region>
+                <Municipality type="city">Rapid City</Municipality>
+                <Municipality type="county">Forsyth</Municipality>
+                <DeliveryAddress>
+                  <AddressLine>325 Stellar Dr</AddressLine>
+                  <Unit></Unit>
+                </DeliveryAddress>
+              </PostalAddress>
+            </PublicRecord>
+          </Screening>
+          <Screening type="PRI-FIM" subtype="FIM">
+            <PublicRecord>
+              <PersonName type="subject">
+                <GivenName>felonyincludingmisd</GivenName>
+                <FamilyName>test</FamilyName>
+              </PersonName>
+              <PostalAddress type="current">
+                <PostalCode>37210</PostalCode>
+                <Region>TN</Region>
+                <Municipality type="city">Nashville</Municipality>
+                <Municipality type="county">Davidson</Municipality>
+                <DeliveryAddress>
+                  <AddressLine>700 2nd Ave S</AddressLine>
+                </DeliveryAddress>
+              </PostalAddress>
+            </PublicRecord>
+          </Screening>
+          <Screening type="PRI-FFM" subtype="FF&amp;M">
+            <PublicRecord>
+              <PersonName type="subject">
+                <GivenName>federalFelonyAndMisd</GivenName>
+                <FamilyName>test</FamilyName>
+              </PersonName>
+              <PostalAddress type="current">
+                <PostalCode>38351</PostalCode>
+                <Region>TN</Region>
+                <Municipality type="city">Lexington</Municipality>
+                <Municipality type="county">Henderson</Municipality>
+                <DeliveryAddress>
+                  <AddressLine>123 S Main Street</AddressLine>
+                </DeliveryAddress>
+              </PostalAddress>
+            </PublicRecord></Screening>
+          <Screening type="PRI-CR" subtype="GCIC">
+            <PublicRecord>
+              <PersonName type="subject">
+                <GivenName>StatewideC</GivenName>
+                <FamilyName>Kelley</FamilyName>
+              </PersonName>
+              <PostalAddress type="current">
+                <PostalCode>38351</PostalCode>
+                <Region>SE</Region>
+                <Municipality type="city">Jackson</Municipality>
+                <Municipality type="county">Chester</Municipality>
+                <DeliveryAddress>
+                  <AddressLine>123 jackson way</AddressLine>
+                </DeliveryAddress>
+              </PostalAddress>
+            </PublicRecord>
+          </Screening>
+          <Screening type="PRINCRP" subtype="PRINCRP" >
+            <PublicRecord>
+              <PersonName type="subject">
+                <GivenName>FANatCrimPlus</GivenName>
+                <FamilyName>C2</FamilyName>
+              </PersonName>
+              <PostalAddress type="current">
+                <CountryCode>US</CountryCode>
+                <PostalCode>30043</PostalCode>
+                <Region>GA</Region>
+                <Municipality type="city">Buford</Municipality>
+                <Municipality type="county">Gwinnett</Municipality>
+                <DeliveryAddress>
+                  <AddressLine>123 S Main St</AddressLine>
+                  <Unit></Unit>
+                </DeliveryAddress>
+              </PostalAddress>
+            </PublicRecord>
+          </Screening>
+          <Screening type="SSNV" subtype="SSNV" />
+          <Screening type="ED" subtype="">
+            <SchoolOrInstitution schoolType="highschool">
+              <SchoolName>BUTLER HIGH SCHOOL</SchoolName>
+              <LocationSummary>
+                <Municipality>AUGUSTA</Municipality>
+                <Region>GA</Region>
+                <CountryCode/> </LocationSummary>
+              <Degree degreeType="highschool"/>
+            </SchoolOrInstitution>
+            <SchoolOrInstitution schoolType="college">
+              <SchoolName>GEORGIA INSTITUTE OF TECHNOLOGY</SchoolName>
+              <LocationSummary>
+                <Municipality>ATLANTA</Municipality>
+                <Region>GA</Region><CountryCode> US</CountryCode>
+              </LocationSummary>
+              <Degree degreeType="bachelors"/>
+            </SchoolOrInstitution>myschool</Screening>
+        </Screenings>
+      </BackgroundSearchPackage>
+    </BackgroundCheck>
+  </S:Body>
+</S:Envelope>

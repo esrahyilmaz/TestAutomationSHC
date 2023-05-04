@@ -1,0 +1,31 @@
+{
+  "address": {
+    "city": "DULUTH",
+    "country": "US",
+    "line1": "1000 MAIN STREET",
+    "line2": "",
+    "state": "GA",
+    "zip": "30097-1234"
+  },
+  "employeeId": "1234567890",
+  "created": "2021-09-29T10:46:34.9523631-04:00",
+  "createdBy": "local",
+  "dateOfBirth": "1980-01-01",
+  "ssn": "",
+  "businessLine": "NAFC",
+  "emailAddress": "test@test.com",
+  "firstName": "Tom",
+  "hireLocation": {
+    "city": null,
+    "country": "US",
+    "state": null
+  },
+  "id": "946ee3a0-4ee6-4889-9edd-35742b8e3977",
+  "lastName": "Silva",
+  "Alias":"alias",
+  "orderPackageId": "2112",
+  "orderSource": "admin-ui",
+  "phoneNumber": "4043323422",
+  "reasonForTest": "RND",
+  "status": "new"
+}

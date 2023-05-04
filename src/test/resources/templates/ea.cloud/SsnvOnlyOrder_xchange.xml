@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+  <S:Body>
+    <BackgroundCheck xmlns="http://www.cpscreen.com/schemas" account="878991" userId="XML" password="Testing123">
+      <BackgroundSearchPackage>
+        <PackageInformation>
+          <PackageId>2116</PackageId>
+          <OrderAccount>
+            <UserId>XML</UserId>
+            <Account>878991</Account>
+            <ContactMethod/>
+            <Quotebacks>
+              <Quoteback name="ApplicantId">123</Quoteback>
+            </Quotebacks>
+          </OrderAccount>
+          <PositionLocations>
+            <PositionLocation>
+              <CountryCode>US</CountryCode>
+              <Region>VA</Region>
+              <Municipality type="city">GAINSVILLE</Municipality>
+            </PositionLocation>
+          </PositionLocations>
+
+        </PackageInformation>
+        <PersonalData>
+          <PersonName type="subject">
+            <GivenName>VELEZ</GivenName>
+            <MiddleName></MiddleName>
+            <FamilyName>ADAMS</FamilyName>
+          </PersonName>
+          <PostalAddress type="current" isPermanent="false" validFrom="1985-09-01">
+            <CountryCode>US</CountryCode>
+            <PostalCode>54402</PostalCode>
+            <Region>VA</Region>
+            <Municipality>GAINESVILLE</Municipality>
+            <DeliveryAddress>
+              <AddressLine>14137 HUNTERS RUN</AddressLine>
+            </DeliveryAddress>
+          </PostalAddress>
+          <ContactMethod>
+            <Telephone type="home">
+              <Number>+1 6783449864</Number>
+            </Telephone>
+            <InternetEmailAddress>test@fadv.com</InternetEmailAddress>
+          </ContactMethod>
+          <DemographicDetail>
+            <GovernmentId issuingAuthority="SSN">666240486</GovernmentId>
+            <DateOfBirth>1972-07-29</DateOfBirth>
+          </DemographicDetail>
+        </PersonalData>
+        <Screenings type="add-ons">
+        </Screenings>
+      </BackgroundSearchPackage>
+    </BackgroundCheck>
+  </S:Body>
+</S:Envelope>

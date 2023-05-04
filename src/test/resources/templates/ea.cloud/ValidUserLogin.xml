@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+  <S:Body>
+    <BackgroundCheck xmlns="http://www.cpscreen.com/schemas" userId="TestUser1" account="103613" password="Letmein1">
+      <BackgroundSearchPackage>
+        <PackageInformation>
+          <PackageId>123</PackageId>
+          <Compensation intervalType="yearly" currency="USD">23000 </Compensation>
+          <CopyToApplicant>false</CopyToApplicant>
+          <ClientReferences>
+            <ClientReference></ClientReference>
+          </ClientReferences>
+          <AdditionalItems>
+            <AdditionalItem name="EmploymentStartDate">2021-09-23 14:30:00.0</AdditionalItem>
+            <AdditionalItem name="ACIC_DOC_ENABLED">Y</AdditionalItem>
+            <AdditionalItem name="DBS_RECIVE_AT_CURRENT_ADDRESS">Y</AdditionalItem>
+            <AdditionalItem name="DBS_RECIVE_CERTIFICATE">N</AdditionalItem>
+            <AdditionalItem name="DBS_HAS_PROFILE">N</AdditionalItem>
+          </AdditionalItems>
+          <Quotebacks>
+            <Quoteback name="ApplicantId">D3SZBXB5KT</Quoteback>
+          </Quotebacks>
+          <OrderAccount>
+            <UserId>TestUser5</UserId>
+            <Account>130001AAB</Account>
+            <ContactMethod/>
+          </OrderAccount>
+          <PositionLocations>
+            <PositionLocation>
+              <CountryCode>US</CountryCode>
+              <Region>FL</Region>
+              <Municipality type="city">MIAMI</Municipality>
+            </PositionLocation>
+          </PositionLocations>
+        </PackageInformation>
+        <PersonalData>
+          <PersonName type="subject">
+            <GivenName>Bruce</GivenName>
+            <FamilyName>Wayne</FamilyName>
+          </PersonName>
+          <PostalAddress type="current" isPermanent="false" validFrom="1985-09-01">
+            <CountryCode>AU</CountryCode>
+            <PostalCode>2372</PostalCode>
+            <Region>NSW</Region>
+            <Municipality type="city">Sandy Flat</Municipality>
+            <DeliveryAddress>
+              <AddressLine>40 Rimbanda Road</AddressLine>
+            </DeliveryAddress>
+          </PostalAddress>
+          <ContactMethod>
+            <Telephone>
+              <Number>+1 2123456789</Number>
+            </Telephone>
+            <Telephone/>
+            <InternetEmailAddress>sumitra.hebbar@fadv.com</InternetEmailAddress>
+          </ContactMethod>
+          <DemographicDetail>
+            <DateOfBirth>1980-07-17</DateOfBirth>
+            <GovernmentId issuingAuthority="PASSPORT" issuingCountry="AU" identityTypeCode="PASSPORT">5G19890</GovernmentId>
+            <GovernmentId issuingAuthority="SSN" issuingCountry="US" identityTypeCode="SSN">123123123</GovernmentId>
+          </DemographicDetail>
+          <EmploymentHistory>
+            <Employer type="current" isDrivingPosition="No" sourceId="" faaSecurityCheckEnabled="">
+              <EmployerName>#3434</EmployerName>
+              <EmployerLocation>Lords Hill</EmployerLocation>
+              <EmployerAddress>
+                <CountryCode>AU</CountryCode>
+                <PostalCode>2632</PostalCode>
+                <Region>NSW</Region>
+                <Municipality type="city">Lords Hill</Municipality>
+                <DeliveryAddress>
+                  <AddressLine>82 Davenport Street</AddressLine>
+                </DeliveryAddress>
+              </EmployerAddress>
+              <Title>Sr Lead</Title>
+              <DatesOfEmployment>
+                <StartDate>2006-02-01</StartDate>
+                <Position>Sr Lead</Position>
+              </DatesOfEmployment>
+              <ContactInfo>
+                <PersonName>nama</PersonName>
+                <ContactMethod>
+                  <Telephone type="work">
+                    <Number>+2 987987989</Number>
+                  </Telephone>
+                </ContactMethod>
+              </ContactInfo>
+              <ReasonForLeaving>self nmnm</ReasonForLeaving>
+              <PermissionToContact>true</PermissionToContact>
+              <PTCOverrideFlag>false</PTCOverrideFlag>
+              <Documents/>
+              <JobType>permanent</JobType>
+            </Employer>
+          </EmploymentHistory>
+          <EducationHistory>
+            <SchoolOrInstitution sourceId="">
+              <SchoolName>qw34</SchoolName>
+              <SchoolLocation>Sandy Flat</SchoolLocation>
+              <LocationSummary>
+                <CountryCode>AU</CountryCode>
+                <PostalCode>2372</PostalCode>
+                <Region>NSW</Region>
+                <Municipality type="city">Sandy Flat</Municipality>
+                <DeliveryAddress/>
+              </LocationSummary>
+              <Degree degreeType="bachelors">
+                <DegreeDate>2000-04-01</DegreeDate>
+              </Degree>
+              <DatesOfAttendance>
+                <StartDate>1996-04-01</StartDate>
+                <EndDate>2000-04-01</EndDate>
+              </DatesOfAttendance>
+              <Documents/>
+            </SchoolOrInstitution>
+          </EducationHistory>
+          <Disclosures>
+            <Disclosure>
+              <Question>Are you, or a business in which you are/were substantially involved, currently the subject of any pending investigation or enforcement proceeding by a local, state or federal financial institution regulator, for expample, the Securities Exchange Commission, Federal Trade Commission, Office of the Comptroller of the currency, or Federal Deposite Insurance Corporation!!!</Question>
+              <Answer>0</Answer>
+            </Disclosure>
+            <Disclosure>
+              <Question>Have you ever been convicted of any crime involving dishonesty, breach of trust, fraud, theft, money laundering or illegal manufacture, sale, distribution of or trafficking in controlled substances??</Question>
+              <Answer>0</Answer>
+            </Disclosure>
+          </Disclosures>
+          <Licenses>
+            <License sourceId="">
+              <LicenseNumber>lic123123</LicenseNumber>
+              <LicenseName>lic</LicenseName>
+              <CountryCode>AU</CountryCode>
+              <LicenseDescription>aus license, Issuer: aus_lic</LicenseDescription>
+              <LicenseRegion>NSW</LicenseRegion>
+              <CandidateNameOnLicense>daintllic test1</CandidateNameOnLicense>
+              <LicensingAgency>aus_lic</LicensingAgency>
+              <LicenseAuthorityAddress/>
+              <Institute/>
+              <Documents>
+                <Document id="8828879" level="Element">
+                  <Type>50</Type>
+                </Document>
+              </Documents>
+            </License>
+            <License sourceId="">
+              <LicenseNumber>lic987987</LicenseNumber>
+              <LicenseName>lic</LicenseName>
+              <CountryCode>AG</CountryCode>
+              <LicenseDescription>aAndb license, Issuer: ant_barb agent</LicenseDescription>
+              <LicenseRegion>04</LicenseRegion>
+              <CandidateNameOnLicense>daintllic test1</CandidateNameOnLicense>
+              <LicensingAgency>ant_barb agent</LicensingAgency>
+              <LicenseAuthorityAddress/>
+              <Institute/>
+              <Documents/>
+            </License>
+            <License sourceId="">
+              <LicenseName>ins</LicenseName>
+              <CountryCode>US</CountryCode>
+              <LicenseDescription/>
+              <LicenseAuthorityAddress/>
+              <Institute/>
+            </License>
+          </Licenses>
+          <FAAVerifications>
+            <FAAVerification/>
+          </FAAVerifications>
+          <Documents>
+            <Document id="8828880" level="Subject">
+              <Type>143</Type>
+            </Document>
+            <Document id="8828866" level="Subject">
+              <Type>205</Type>
+            </Document>
+            <Document id="8828865" level="Subject">
+              <Type>2</Type>
+            </Document>
+          </Documents>
+        </PersonalData>
+        <Screenings type="add-ons">
+            <Screening subtype="FandM" type="PRI-FM">
+                <PublicRecord>
+                <PersonName type="subject">
+                    <GivenName>Bat</GivenName>
+                    <MiddleName></MiddleName>
+                    <FamilyName>Man</FamilyName>
+                    <Suffix></Suffix>
+                </PersonName>
+                <PostalAddress type="current">
+                    <CountryCode>US</CountryCode>
+                    <PostalCode>43342-9529</PostalCode>
+                    <Region>NY</Region>
+                    <Municipality type="city">Gotham</Municipality>
+                    <DeliveryAddress>
+                    <AddressLine>123 Batcave Ln.</AddressLine>
+                    </DeliveryAddress>
+                </PostalAddress>
+                </PublicRecord>
+            </Screening>
+            <Screening type="PRI-FAM" subtype="FAM" clientReferenceId="293027">
+                <PublicRecord>
+                    <PersonName type="subject">
+                        <GivenName>Bruce</GivenName>
+                        <MiddleName>Ray</MiddleName>
+                        <FamilyName>Wayne</FamilyName>
+                    </PersonName>
+                    <PostalAddress type="current">
+                        <CountryCode>US</CountryCode>
+                        <PostalCode>57703</PostalCode>
+                        <Region>SD</Region>
+                        <Municipality type="city">Rapid City</Municipality>
+                        <DeliveryAddress>
+                            <AddressLine>325 Stellar Dr</AddressLine>
+                            <Unit></Unit>
+                        </DeliveryAddress>
+                    </PostalAddress>
+                </PublicRecord>
+            </Screening>
+            <Screening type="PRINCRF" subtype="NCRF" clientReferenceId="293031">
+            <PublicRecord>
+              <PersonName type="subject">
+                <GivenName>Bruce</GivenName>
+                <FamilyName>Wayne</FamilyName>
+              </PersonName>
+              <PostalAddress type="current">
+                <CountryCode>US</CountryCode>
+                <PostalCode>57703</PostalCode>
+                <Region>SD</Region>
+                <Municipality type="city">Rapid City</Municipality>
+                <DeliveryAddress>
+                  <AddressLine>325 Stellar Dr</AddressLine>
+                  <Unit></Unit>
+                </DeliveryAddress>
+              </PostalAddress>
+            </PublicRecord>
+          </Screening>
+          <Screening type="SSNV" subtype="SSNV" />
+      </Screenings>
+      </BackgroundSearchPackage>
+    </BackgroundCheck>
+  </S:Body>
+</S:Envelope>

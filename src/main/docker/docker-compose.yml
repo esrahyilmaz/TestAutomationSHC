@@ -1,0 +1,98 @@
+version: "3"
+services:
+
+        chrome:
+                image: selenium/node-chrome:111.0
+                shm_size: 3gb
+                depends_on:
+                        - selenium-hub
+                deploy:
+                        replicas: 2
+                environment:
+                        - SE_EVENT_BUS_HOST=selenium-hub
+                        - SE_EVENT_BUS_PUBLISH_PORT=4442
+                        - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+                        - SE_NODE_MAX_INSTANCES=2
+                        - SE_NODE_MAX_SESSIONS=2
+                        - SE_NODE_SESSION_TIMEOUT=10
+                        - SE_SESSION_REQUEST_TIMEOUT=60
+                        - SE_NODE_OVERRIDE_MAX_SESSIONS=true
+
+        edge:
+                image: selenium/node-edge:latest
+                shm_size: 2gb
+                depends_on:
+                        - selenium-hub
+                deploy:
+                        replicas: 2
+                environment:
+                        - SE_EVENT_BUS_HOST=selenium-hub
+                        - SE_EVENT_BUS_PUBLISH_PORT=4442
+                        - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+                        - SE_NODE_MAX_INSTANCES=1
+                        - SE_NODE_MAX_SESSIONS=1
+                        - SE_NODE_OVERRIDE_MAX_SESSIONS=true
+
+        firefox:
+                image: selenium/node-firefox:latest
+                shm_size: 2gb
+                depends_on:
+                        - selenium-hub
+                deploy:
+                        replicas: 2
+                environment:
+                        - SE_EVENT_BUS_HOST=selenium-hub
+                        - SE_EVENT_BUS_PUBLISH_PORT=4442
+                        - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+                        - SE_NODE_MAX_INSTANCES=1
+                        - SE_NODE_MAX_SESSIONS=1
+                        - SE_NODE_OVERRIDE_MAX_SESSIONS=true
+
+        chrome_video:
+                image: selenium/video:ffmpeg-4.3.1-20220812
+                volumes:
+                        - /tmp/videos:/videos
+                depends_on:
+                        - chrome
+                environment:
+                        - DISPLAY_CONTAINER_NAME=chrome
+                        - FILE_NAME=chrome_video.mp4
+
+        edge_video:
+                image: selenium/video:latest
+                volumes:
+                        - /tmp/videos:/videos
+                depends_on:
+                        - edge
+                environment:
+                        - DISPLAY_CONTAINER_NAME=edge
+                        - FILE_NAME=edge_video.mp4
+
+
+        firefox_video:
+                image: selenium/video:latest
+                volumes:
+                        - /tmp/videos:/videos
+                depends_on:
+                        - firefox
+                environment:
+                        - DISPLAY_CONTAINER_NAME=firefox
+                        - FILE_NAME=firefox_video.mp4
+
+        novnc:
+                image: javanile/novnc
+                environment:
+                        - REMOTE_HOST=localhost
+                        - REMOTE_PORT=7900
+                ports:
+                        - 8081:8081
+                links:
+                        - selenium-hub
+
+        selenium-hub:
+                image: selenium/hub:4.6.0
+                container_name: selenium-hub
+                ports:
+                        - "4442:4442"
+                        - "4443:4443"
+                        - "4444:4444"

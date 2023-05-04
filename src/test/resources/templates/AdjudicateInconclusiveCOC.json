@@ -1,0 +1,53 @@
+{
+  "adjudicatorSignatureImageString": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TxQ8qhdpBxCFDdbIgKuIoVSyChdJWaNXB5NIvaNKQpLg4Cq4FBz8Wqw4uzro6uAqC4AeIk6OToouU+L+k0CLGg+N+vLv3uHsHCI0KU82uCUDVLCMVj4nZ3KrY84o+hBCEgJDETD2RXszAc3zdw8fXuyjP8j735xhQ8iYDfCLxHNMNi3iDeGbT0jnvE4dZSVKIz4nHDbog8SPXZZffOBcdFnhm2Mik5onDxGKxg+UOZiVDJZ4mjiiqRvlC1mWF8xZntVJjrXvyFwby2kqa6zRHEMcSEkhChIwayqjAQpRWjRQTKdqPefiHHX+SXDK5ymDkWEAVKiTHD/4Hv7s1C1OTblIgBnS/2PbHKNCzCzTrtv19bNvNE8D/DFxpbX+1Acx+kl5va5EjILgNXFy3NXkPuNwBhp50yZAcyU9TKBSA9zP6phwweAv0r7m9tfZx+gBkqKvlG+DgEBgrUva6x7t7O3v790yrvx8lanKIb/NYRQAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB+QJEg8CMke8em4AAANNSURBVDjLZZNNTJsFAIaffl//KIUCHQFafopskLjhKmCmnUh1uESyCCZOsmxxaIyZhukwnqbJ8GL04BjqgZObfwdj4uCCTochsFVkS9ECjpUhpSstpUBb+kc/+FpP6qbv+Xne26PgvxtwWFgJdeBfbSc/D0qMIGcgRz1Eru4SrxyI3Isr7pP7R3vZiJw7UW3kq6uzkIWKOjMVuWocy+sgChEqSvt5w977tyL+I/eNXMQXPEMihUaW8aehUqtkc2oOaWWVaDCMIR7TNmXi9rtPv2xh7Juhfw/Oj/SRTp9CKXIoV+Aaamz7K3i8WI+Q2aFITuJdWkGbilOiUeCddFk5elrBxOVRBQMOS0N4dTEWSTAfCHP2qI0vvBF8vg3wrFC2vMAzj9XS/NQBFtcT/O6+y9DYNL3d7fSGhWqRls5z+q2tRwNzHqTUNuMLITaTEsf3mWmxGNFKSXL1OtZlBeO3/Vx3LWIuzmdoxAmhtSWRutYPNlTqUimVJk+vQ9qWYW6eApXAdhZa95rZUaro7rARKjTgi8Q4cnAvk8NXoaFBK+hFwYrbR6NWQd+rh6G0ABRZxme8zM7M82CVEZNBw5cjU9wcuUnQv8GnQ79CRoadHatwpq0BpDTu2dv0fHQZXG5IJEABd35x0PPuJ9istQTzDcxuKzj/4pNU5mlAliGbRRzTWLtISwWSf4l6UwGH9lfjcvsoNxdz4Z0urlyb5rufp7ixEEJObaHy+7j+0xj5Og3PtTRNiDQesZJMWyk0EljbZF/lLrQqkblbf6LMZlkOJ/HKaga6nyXqDzL4gwNiIdKICI2PDIo8/3q0zWToytOpCejz8bjmOX2ilWlfmMlbXtDm0FxXwrffT3BnMYDGYCCdikFtPUG17pjA2bbR4VRm0L0a5c22RrIaLW99PIg/mgSVEr2wQ63JSDYe4bUX7DRVGSirqYGq6gv0n/QoASgveym+EbGM33BbKS9lTzJGPJ7EtHs3x5rrefuzHyGTw4fOZZByON7Z/tvXkva9+2MacBTgnLlIarvjiV0q4gEfTl8McnSgVLGnxkw8ESewJV+ixdbDKVvk/zUCvD9sZ+aPk2SydoxFFoJrUFToOfjQA6OpYuPnzs6HR+/F/wL+8WTwapbqmAAAAABJRU5ErkJggg==",
+  "testResults": [
+    {
+      "drugName": "Amphetimine",
+      "drugCode": "AMP",
+      "colorCode": "#478df0",
+      "status": null
+    },
+    {
+      "drugName": "Phencyclidine",
+      "drugCode": "PCP",
+      "colorCode": "#20B2AA",
+      "status": null
+    },
+    {
+      "drugName": "Benzodiazepine",
+      "drugCode": "BZD",
+      "colorCode": "#d6a800",
+      "status": null
+    },
+    {
+      "drugName": "Cocaine",
+      "drugCode": "COC",
+      "colorCode": "#f9d37b",
+      "status": "inconclusive"
+    },
+    {
+      "drugName": "Methamphetamine",
+      "drugCode": "MET",
+      "colorCode": "#006605",
+      "status": null
+    },
+    {
+      "drugName": "Opiate",
+      "drugCode": "OPI",
+      "colorCode": "#500066",
+      "status": "inconclusive"
+    },
+    {
+      "drugName": "OXYCODONE",
+      "drugCode": "OXY",
+      "colorCode": "#ffad66",
+      "status": null
+    },
+    {
+      "drugName": "Tetrahydrocannabinol",
+      "drugCode": "THC",
+      "colorCode": "#0a0fa3",
+      "status": null
+    }
+  ]
+}

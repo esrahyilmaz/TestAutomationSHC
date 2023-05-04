@@ -1,0 +1,29 @@
+{
+  "id": "518f8ba1-251a-40af-b43e-2e183718d332",
+  "created": "2021-07-30T14:58:42.8341079-04:00",
+  "createdBy": "3ff7da03-43e3-47ac-bdd6-b4abd3850f7c",
+  "status": "new",
+  "reasonForTest": "PRE",
+  "ssn": "409-13-0156",
+  "firstName": "Terry",
+  "lastName": "Automation",
+  "phoneNumber": "6788863227",
+  "dateOfBirth": "2000-01-01",
+  "emailAddress": "esra.yilmaz@fadv.com",
+  "address": {
+    "line1": "123 W Main St ",
+    "line2": null,
+    "city": "Buford",
+    "state": "GA",
+    "zip": "30518",
+    "country": "US"
+  },
+  "orderPackageId": "2112",
+  "candidateId": "1234567890ad",
+  "orderSource": "admin-ui",
+  "hireLocation": {
+    "city": "Buford",
+    "state": "GA",
+    "country": "US"
+  }
+}

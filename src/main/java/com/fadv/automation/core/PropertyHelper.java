@@ -1,4 +1,4 @@
-package helpers;
+package com.fadv.automation.core;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -15,7 +15,7 @@ public class PropertyHelper extends BaseClass {
         try {
             property.load(new FileInputStream(System.getProperty("user.dir") + filePath));
         } catch (IOException e) {
-            log.info("Unable to load Data");
+            logger.info("Unable to load Data");
         }
         return property.getProperty(key);
     }

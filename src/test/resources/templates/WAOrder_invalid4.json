@@ -1,0 +1,15 @@
+{
+  "firstName": "khttestapplicanta",
+  "lastName": "khttestlastname",
+  "dateOfBirth": "10/12/1952",
+  "address": {
+    "city": "minneapolis",
+    "state": "mn",
+    "zip": "90424"
+  },
+  "phoneNumber": "800-123-4444",
+  "wellnessId": 867023111,
+  "status": "new",
+  "expires": "02/12/2021",
+  "location": "0772d1ef-670e-4bfc-9b7c-5d358ae587f4"
+}

@@ -1,0 +1,23 @@
+{
+  "firstName": "Test",
+  "lastName": "khttestlastname",
+  "dateOfBirth": "01/01/2000",
+  "Address": {
+    "line1": "123 park ave north",
+    "line2": "",
+    "city": "minneapolis",
+    "state": "mn",
+    "zip": "90424"
+  },
+  "emailAddress": "testytester@fadv.com",
+  "phoneNumber": "(404)222-4444",
+  "EACaseId": "867023111",
+  "wellnessId": 867023111,
+  "deviceType": "oralTox",
+  "reasonForTest": "PRE",
+  "status": "new",
+  "expires": "02/12/2024",
+  "ssn": "0156",
+  "location": "a9de45e5-8724-482f-a44e-70940c6f35e1",
+  "orderPackageId": 4000
+}
