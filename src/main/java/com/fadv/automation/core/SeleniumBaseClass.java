@@ -261,7 +261,6 @@ public class SeleniumBaseClass extends BaseClass {
                 throw new RuntimeException("Browser not support [" + browser + "]");
         }
         logger.info("returning driver " + driver);
-        setEventDriver();
         htmlCsRunner = new HtmlCsRunner(driver);
         return driver;
 
@@ -731,14 +730,14 @@ public class SeleniumBaseClass extends BaseClass {
             logger.info("Failed - Error in function wait() - check logs for more details");
         }
     }
-    public static EventFiringWebDriver setEventDriver() {
+    public EventFiringWebDriver setEventDriver() {
         eventFiringWebDriver = new EventFiringWebDriver(driver);
         setEventListener(eventFiringWebDriver);
         return eventFiringWebDriver;
     }
 
 
-    public static void setEventListener(EventFiringWebDriver eventFiringWebDriver) {
+    public void setEventListener(EventFiringWebDriver eventFiringWebDriver) {
 // Create an instance of your event listener class
         eventListener = new EventListener();
 

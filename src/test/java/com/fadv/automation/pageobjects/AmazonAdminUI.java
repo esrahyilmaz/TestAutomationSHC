@@ -806,7 +806,7 @@ public class AmazonAdminUI extends SeleniumBaseClass {
 
     public void launchAdminUI() {
         String url = environment.getEnvironmentBaseUrl() + "/admin";
-        getDriver().get(url);
+        eventFiringWebDriver.get(url);
         report("launching url : " + url);
     }
 
