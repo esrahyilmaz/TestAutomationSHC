@@ -18,6 +18,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
@@ -31,6 +32,7 @@ public class RoomAdminUIDef extends BaseClass {
     static final Logger logger = Logger.getLogger (RoomAdminUIDef.class.getName ( ));
     private AmazonAdminUI ui = null;
     private WebDriver driver = null;
+    //static EventFiringWebDriver driver = null;
     final static SeleniumBaseClass seleniumBaseClass = new SeleniumBaseClass (null);
 
     @Before
@@ -69,6 +71,7 @@ public class RoomAdminUIDef extends BaseClass {
 
     public AmazonAdminUI getAdminUIPageObject() throws Exception {
         driver = seleniumBaseClass.setBrowserFromProperty (driver);
+        driver=seleniumBaseClass.getDriver();
         ui = PageFactory.initElements (driver, AmazonAdminUI.class);
         ui.setTestObject (testObject);
         return ui;

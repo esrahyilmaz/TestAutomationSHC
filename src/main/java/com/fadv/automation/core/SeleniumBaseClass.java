@@ -52,7 +52,8 @@ public class SeleniumBaseClass extends BaseClass {
         String driverPath = null;
         String videoPath = null;
 
-        RemoteWebDriver driver = null;
+   // RemoteWebDriver driver = null;
+
 
         Map<String, Object> deviceMetrics = null;
         Map<String, Object> mobileEmulation = null;
@@ -92,17 +93,17 @@ public class SeleniumBaseClass extends BaseClass {
                     DesiredCapabilities caps = new DesiredCapabilities();
                     caps.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
                     driver = new RemoteWebDriver(new URL("http://10.74.141.78:4444/wd/hub"), caps);
-                    DriverFactory.getInstance().setMultiDriver(driver);
+                    DriverFactory.getInstance().setMultiDriver((RemoteWebDriver) driver);
                     driver = DriverFactory.getInstance().getMultiDriver();
-                    driver.setFileDetector(new LocalFileDetector());
+                    ((RemoteWebDriver) driver).setFileDetector(new LocalFileDetector());
                 }
                 else{
                     driver = new ChromeDriver(chromeOptions);
-                    DriverFactory.getInstance().setMultiDriver(driver);
+                    DriverFactory.getInstance().setMultiDriver((RemoteWebDriver) driver);
                     driver = DriverFactory.getInstance().getMultiDriver();
                     driver.manage().window().maximize();
                 }
-                        htmlCsRunner = new HtmlCsRunner(driver);
+                  //      htmlCsRunner = new HtmlCsRunner(driver);
                     }
                 break;
             case BROWSER_CHROME_IPHONE:
@@ -136,17 +137,17 @@ public class SeleniumBaseClass extends BaseClass {
                     DesiredCapabilities caps = new DesiredCapabilities();
                     caps.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
                     driver = new RemoteWebDriver(new URL("http://10.74.141.78:4444/wd/hub"), caps);
-                    DriverFactory.getInstance().setMultiDriver(driver);
+                    DriverFactory.getInstance().setMultiDriver((RemoteWebDriver) driver);
                     driver = DriverFactory.getInstance().getMultiDriver();
-                    driver.setFileDetector(new LocalFileDetector());
+                    ((RemoteWebDriver) driver).setFileDetector(new LocalFileDetector());
                 }
                 else{
                     driver = new ChromeDriver(chromeOptions);
-                    DriverFactory.getInstance().setMultiDriver(driver);
+                    DriverFactory.getInstance().setMultiDriver((RemoteWebDriver) driver);
                     driver = DriverFactory.getInstance().getMultiDriver();
                     driver.manage().window().maximize();
                 }}
-                    htmlCsRunner = new HtmlCsRunner(driver);
+                  //  htmlCsRunner = new HtmlCsRunner(driver);
                     break;
             case BROWSER_CHROME:
                 logger.info("start: setting chromedriver preferences.....");
@@ -172,18 +173,24 @@ public class SeleniumBaseClass extends BaseClass {
                     DesiredCapabilities caps = new DesiredCapabilities();
                     caps.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
                     driver = new RemoteWebDriver(new URL("http://10.74.141.78:4444/wd/hub"), caps);
-                    DriverFactory.getInstance().setMultiDriver(driver);
+                    DriverFactory.getInstance().setMultiDriver((RemoteWebDriver) driver);
                     driver = DriverFactory.getInstance().getMultiDriver();
                     logger.info("Chrome: Remote Webdriver set for http://10.74.141.78:4444/wd/hub");
-                    driver.setFileDetector(new LocalFileDetector());
+                    ((RemoteWebDriver) driver).setFileDetector(new LocalFileDetector());
                 }
-                else{
+                else if(dryRun.equalsIgnoreCase("TRUE")) {
                     driver = new ChromeDriver(chromeOptions);
-                    DriverFactory.getInstance().setMultiDriver(driver);
+                    DriverFactory.getInstance().setMultiDriver((RemoteWebDriver) driver);
                     driver = DriverFactory.getInstance().getMultiDriver();
                     driver.manage().window().maximize();
                 }}
-                    htmlCsRunner = new HtmlCsRunner(driver);
+                else {
+                    driver = new ChromeDriver(chromeOptions);
+                    DriverFactory.getInstance().setMultiDriver((RemoteWebDriver) driver);
+                    driver = DriverFactory.getInstance().getMultiDriver();
+                    driver.manage().window().maximize();
+                }
+//                    htmlCsRunner = new HtmlCsRunner(driver);
                     break;
             case BROWSER_FIREFOX:
                 logger.info("start: setting firefox preferences preferences....");
@@ -204,20 +211,20 @@ public class SeleniumBaseClass extends BaseClass {
                 if (dryRun.equalsIgnoreCase("FALSE")) {
                     DesiredCapabilities caps = new DesiredCapabilities();
                     driver = new RemoteWebDriver(new URL("http://10.74.141.78:4444/wd/hub"), caps);
-                    DriverFactory.getInstance().setMultiDriver(driver);
+                    DriverFactory.getInstance().setMultiDriver((RemoteWebDriver) driver);
                     driver = DriverFactory.getInstance().getMultiDriver();
                     logger.info("Firefox: Remote Webdriver set for http://10.74.141.78:4444/wd/hub");
-                    driver.setFileDetector(new LocalFileDetector());
+                    ((RemoteWebDriver) driver).setFileDetector(new LocalFileDetector());
                     logger.info("file has been set for firefox browser...");
                 }
                 else{
                     driver = new FirefoxDriver(firefoxOptions);
-                    DriverFactory.getInstance().setMultiDriver(driver);
+                    DriverFactory.getInstance().setMultiDriver((RemoteWebDriver) driver);
                     driver = DriverFactory.getInstance().getMultiDriver();
                     logger.info("Setting driver to run locally...");
                     driver.manage().window().maximize();
                 }}
-                    htmlCsRunner = new HtmlCsRunner(driver);
+                   // htmlCsRunner = new HtmlCsRunner(driver);
                     break;
             case BROWSER_EDGE:
                 driverPath = System.getProperty("user.dir") + "\\src\\test\\resources\\drivers\\msedgedriver.exe";
@@ -236,25 +243,28 @@ public class SeleniumBaseClass extends BaseClass {
                 if (dryRun.equalsIgnoreCase("FALSE")) {
                     DesiredCapabilities caps = new DesiredCapabilities();
                     driver = new RemoteWebDriver(new URL("http://10.74.141.78:4444/wd/hub"), caps);
-                    DriverFactory.getInstance().setMultiDriver(driver);
+                    DriverFactory.getInstance().setMultiDriver((RemoteWebDriver) driver);
                     driver = DriverFactory.getInstance().getMultiDriver();
                     logger.info("Edge: Remote Webdriver set for http://10.74.141.78:4444/wd/hub");
-                    driver.setFileDetector(new LocalFileDetector());
+                    ((RemoteWebDriver) driver).setFileDetector(new LocalFileDetector());
                     logger.info("file has been set for Edge browser...");
                 }
                 else{
                     driver = new EdgeDriver(options);
-                    DriverFactory.getInstance().setMultiDriver(driver);
+                    DriverFactory.getInstance().setMultiDriver((RemoteWebDriver) driver);
                     driver = DriverFactory.getInstance().getMultiDriver();
                     driver.manage().window().maximize();
                 }}
-                    htmlCsRunner = new HtmlCsRunner(driver);
+                  //  htmlCsRunner = new HtmlCsRunner(driver);
                     break;
             default:
                 throw new RuntimeException("Browser not support [" + browser + "]");
         }
         logger.info("returning driver " + driver);
+        setEventDriver();
+        htmlCsRunner = new HtmlCsRunner(driver);
         return driver;
+
     }
 
 

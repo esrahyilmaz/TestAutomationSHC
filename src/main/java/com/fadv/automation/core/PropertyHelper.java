@@ -7,7 +7,7 @@ import java.util.Properties;
 public class PropertyHelper extends BaseClass {
 
     public static String getProperty(String key) {
-        return getProperty("/src/test/resources/config/config.properties", key);
+        return getProperty("/src/test/resources/configs/config.properties", key);
     }
 
     public static String getProperty(String filePath, String key) {
