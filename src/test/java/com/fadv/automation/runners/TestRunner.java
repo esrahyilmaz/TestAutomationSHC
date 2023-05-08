@@ -1,10 +1,9 @@
 package com.fadv.automation.runners;
 
 import com.fadv.automation.core.SeleniumBaseClass;
-import com.fadv.automation.core.WebElementHelper;
-import io.cucumber.java.After;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
+import org.testng.annotations.AfterSuite;
 
 //@RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/features",
@@ -17,16 +16,16 @@ import io.cucumber.testng.CucumberOptions;
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 
-    @After()
-    public void afterScenario() {
+    @AfterSuite
+    public void afterSuite() {
         try {
             if (SeleniumBaseClass.driver != null) {
                 SeleniumBaseClass.driver.quit();
                 SeleniumBaseClass.eventFiringWebDriver.quit();
             }
-            WebElementHelper.writeMap();
         } catch (Exception e) {
             System.err.println("Unable to close webdriver");
         }
     }
+
 }
