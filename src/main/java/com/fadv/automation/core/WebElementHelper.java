@@ -115,6 +115,12 @@ public class WebElementHelper extends BaseClass {
         }
         Gson gson = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
         String json = gson.toJson(mapping);
+        File pageDir = new File(outputFilePath + "\\" + pageFolder);
+        if (!pageDir.exists()) {
+            if (!pageDir.mkdirs()) {
+                logger.info("Unable to create " + pageFolder + " directory");
+            }
+        }
         File file = new File(getOutputFilePath() + "\\" + getPage());
         try (FileWriter writer = new FileWriter(file)) {
             writer.write(json);
