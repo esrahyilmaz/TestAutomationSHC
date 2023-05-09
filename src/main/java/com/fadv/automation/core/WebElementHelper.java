@@ -70,7 +70,7 @@ public class WebElementHelper extends BaseClass {
     static boolean recordMode;
     static String pageFolder = "pageElements/";
 
-    public static Map<WebDriver, String> pages = new HashMap<>();  // This will be updated using script.  Default Page to Load.
+    public static String page = "";  // This will be updated using script.  Default Page to Load.
     static String targetURL = "file:///" + projectFolder + "src/test/resources/WebPages/myPage.html";
     static String outputFilePath = System.getProperty("user.dir") + System.getProperty("file.separator") + "src/test/resources";
 
@@ -339,13 +339,14 @@ public class WebElementHelper extends BaseClass {
      *
      * @param findByKey
      */
-    public static void retrieveMapValuesByKey(String findByKey) {
+    public static boolean retrieveMapValuesByKey(String findByKey) {
         System.out.println("Key Search:" + findByKey);
         if (mapping.containsKey(findByKey)) {
             Map<String, String> valueMap = mapping.get(findByKey);
             setProperties(valueMap);
+            return true;
         } else {
-            log.debug("Mapping does not contain key value of '" + findByKey + "'.");
+            return false;
         }
     }
 
@@ -456,24 +457,14 @@ public class WebElementHelper extends BaseClass {
     }
 
     public static String getPage() {
-        String threadPage = pages.get(DriverFactory.getMultiDriver());
-        return pageFolder + threadPage;
+        return pageFolder + page;
     }
 
     public static void setPage(String page) {
         if (!(page.endsWith(".json"))) {
             page = page + ".json";
         }
-//        if (getRecordMode()) {
-//            try {
-//                writeMap();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-        pages.put(DriverFactory.getMultiDriver(), page);
-
-//        retrieveExistingMapFromFile();
+        WebElementHelper.page = page;
     }
 
     public static String getSrc() {
@@ -566,24 +557,31 @@ public class WebElementHelper extends BaseClass {
             String findByContext = "";
             String findByType = null;
             String element1 = null;
-            System.out.println("Error Message: " + inputString);
-            String pattern = "findElement \\{using=(.*?), value=[a-z]+\\}";
+            String[] elementParts;
+            System.out.println("Error Message : Unable to find element " + inputString + " on page " + targetURL);
+            String pattern = "findElement \\{using=[a-z]+, value=(.*?)+}";
             Pattern p = Pattern.compile(pattern);
             Matcher m = p.matcher(inputString);
             if (m.find()) {
                 String input = m.group();
-                logger.info(input);
+                log.info("<b>Error : </b>Unable to find element " + input + "<br><b>URL : </b> " + targetURL);
+                log.info(inputString);
                 String[] parts = input.split(",");
-
                 findByType = parts[0].split("=")[1];
-                element1 = parts[1].split("=")[1].replace("}", "");
+                elementParts = parts[1].split("=");
+                if(elementParts.length>2){
+                    element1 =  elementParts[1] +"="+ elementParts[2];
+                } else {
+                    element1 = elementParts[1];
+                }
+                element1 = element1.replace("}", "");
 
                 //Hate to do it this way but good for now, in a hurry
                 if (findByType.contains("tag name")) {
                     findByType = "tagName";
                 }
-                System.out.println("id: " + findByType);
-                System.out.println("heading: " + element1);
+                System.out.println("Type: " + findByType);
+                System.out.println("Value: " + element1);
                 findByContext = "By." + findByType + ": " + element1;
             }
             if (findByContext.isEmpty()) {
@@ -605,28 +603,50 @@ public class WebElementHelper extends BaseClass {
                 }
             }
             if (!findByContext.isEmpty()) {
-                retrieveMapValuesByKey(findByContext);
-                System.out.println("Element Not Found:");
-                System.out.println(findByContext + ": {");
-                System.out.println("    \"" + "className\": \"" + getClassName() + "\",");
-                System.out.println("    \"" + "textContent\": \"" + getTextContent() + "\",");
-                System.out.println("    \"" + "location\": \"" + getLocation() + "\",");
-                System.out.println("    \"" + "id\": \"" + getId() + "\",");
-                System.out.println("    \"" + "tagName\": \"" + getTagName() + "\"");
-                System.out.println("    \"" + "alt\": \"" + getAlt() + "\"");
-                System.out.println("    \"" + "src\": \"" + getSrc() + "\"");
-                System.out.println("    \"" + "href\": \"" + getHref() + "\"");
-                System.out.println("    \"" + "name\": \"" + getName() + "\"");
-                System.out.println("    \"" + "keyValue\": \"" + getRandomKey() + "\"");
-                System.out.println("}\n");
-                //Need a method to read from stored map and retrieve key value properties
-                logger.info("Key : " + getRandomKey());
-                // System.out.println("Location:"+helper.getLocation());
-                FindClosestMatchingElement.findClosestMatch(eventFiringWebDriver, findByContext, getClassName(),
-                        getTextContent(), getId(), getTagName(), getLocation(),
-                        getSrc(), getAlt(), getHref(), getName(), getType());
-                logger.info("Trying to find element with suggested xpath " + FindClosestMatchingElement.getAltXpathId());
-                ele = findAndReturnElement(eventFiringWebDriver, By.xpath(FindClosestMatchingElement.getAltXpathId()));
+                log.info("Trying to find previously stored element in " + page);
+                if (retrieveMapValuesByKey(findByContext)) {
+                    System.out.println("Element Not Found:");
+                    System.out.println(findByContext + ": {");
+                    System.out.println("    \"" + "className\": \"" + getClassName() + "\",");
+                    System.out.println("    \"" + "textContent\": \"" + getTextContent() + "\",");
+                    System.out.println("    \"" + "location\": \"" + getLocation() + "\",");
+                    System.out.println("    \"" + "id\": \"" + getId() + "\",");
+                    System.out.println("    \"" + "tagName\": \"" + getTagName() + "\"");
+                    System.out.println("    \"" + "alt\": \"" + getAlt() + "\"");
+                    System.out.println("    \"" + "src\": \"" + getSrc() + "\"");
+                    System.out.println("    \"" + "href\": \"" + getHref() + "\"");
+                    System.out.println("    \"" + "name\": \"" + getName() + "\"");
+                    System.out.println("    \"" + "keyValue\": \"" + getRandomKey() + "\"");
+                    System.out.println("}\n");
+                    //Need a method to read from stored map and retrieve key value properties
+                    log.info("Stored element key for " + findByType + " = " + element1 + " -> " + getRandomKey());
+                    // System.out.println("Location:"+helper.getLocation());
+                    log.info("Trying to find the closest possible match");
+                    FindClosestMatchingElement.findClosestMatch(eventFiringWebDriver, findByContext, getClassName(),
+                            getTextContent(), getId(), getTagName(), getLocation(),
+                            getSrc(), getAlt(), getHref(), getName(), getType());
+                    String altXpath = null;
+                    if(FindClosestMatchingElement.getAltXpathId()!=null && findByType!="id" && !element1.contains("@id=")){
+                        altXpath = FindClosestMatchingElement.getAltXpathId();
+                    }
+                    if (altXpath==null && FindClosestMatchingElement.getAltXpathName()!=null && findByType!="name" && !element1.contains("@name=")) {
+                        altXpath = FindClosestMatchingElement.getAltXpathName();
+                    }
+                    if (altXpath==null && FindClosestMatchingElement.getAltXpathClassName()!=null && findByType!="class" && !element1.contains("@class=")) {
+                        altXpath = FindClosestMatchingElement.getAltXpathClassName();
+                    }
+                    if (altXpath==null && FindClosestMatchingElement.getAltXpathTextContent()!=null && findByType!="text" && !element1.contains("@text=")) {
+                        altXpath = FindClosestMatchingElement.getAltXpathTextContent();
+                    }
+                    if(altXpath==null){
+                        fail("Alternate xpath is not set");
+                    }
+                    log.info("Trying to find element with suggested xpath " + altXpath);
+                    ele = findAndReturnElement(eventFiringWebDriver, By.xpath(altXpath));
+                } else {
+                    log.info("<b>Error : </b>Mapping does not contain key value of '" + findByContext + "'.");
+                    fail("Mapping does not contain key value of '" + findByContext + "'.");
+                }
             }
         }
         return ele;

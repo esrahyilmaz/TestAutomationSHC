@@ -289,521 +289,521 @@ public class AmazonAdminUI extends SeleniumBaseClass {
 
     //Web Elements
 
-    @FindBy(id = "next-button")
-    public WebElement alcoholFlowNextButtonWebElement;
-
-    @FindBy(xpath = "//signature-pad[@id='sigPad']/canvas")
-    public WebElement signaturePad;
-
-    @FindBy(id = "header-menu")
-    public WebElement weMenu_WebElement;
-
-    @FindBy(xpath = "(//div/span)[1]")
-    public WebElement locationTitleWE;
-
-    @FindBy(xpath = "//select/option")
-    public List<WebElement> invalidOptions;
-
-    @FindBy(xpath = "//table/thead/tr/th")
-    public List<WebElement> sideAlleyResultsScreenHeader;
-
-    @FindBy(xpath = "//table//td[2]")
-    public List<WebElement> sideAlleyResultsLNameList;
-
-    @FindBy(xpath = "//table//td[5]")
-    public WebElement sideAlleyResultsOrderLocation;
-
-    @FindBy(xpath = "//tbody/tr/td")
-    public List<WebElement> getSideAlleyCandidateResultRow;
-
-    @FindBy(xpath ="//div[@class='col']/a")
-    public List<WebElement> adminLandingPageLocationSearchResults;
-
-    @FindBy(xpath ="//div[@class='row row-striped odd']/div[2]")
-    public List<WebElement> adminLandingPageStateSearchResults1;
-
-    @FindBy(xpath ="//div[@class='row row-striped even']/div[2]")
-    public List<WebElement> adminLandingPageStateSearchResults2;
-
-    @FindBy(xpath = "//button[@id='incon-btn']")
-    public WebElement adjInconclusiveWebElementButton;
-
-    @FindBy(id="clear-btn")
-    public WebElement adjClearButtonWebElement;
-
-    @FindBy(id="retest-btn")
-    public WebElement adjRetestButtonWebElement;
-
-    @FindBy(id = "testing-pic")
-    public WebElement adjudicateDeviceImage_WebElement;
-
-    @FindBy(xpath = "//label[contains(@class,'custom-control-label')]")
-    public WebElement invertedSwitchWebElement;
-
-    @FindBy(xpath = "//h3[contains(text(),'Order has been successfully submitted.')]")
-    public WebElement submitValidOrderConfirmationMessage;
-
-    @FindBy(xpath = "//select/option")
-    public List<WebElement> abandonOptions;
-
-    @FindBy(xpath = "//div[contains(text(), 'might be')]/following::div[@class='drug-rect white-color']")
-    public List<WebElement> whiteNegativeRecStrips;
-
-    @FindBy(xpath = "//p[contains(text(),'Specimen ID')]/following::h1")
-    public WebElement specimenId_WebElement;
-
-    @FindBy(xpath = "//button[contains(text(),'Yes')]")
-    public WebElement adminSpecimenYesButton_WebElement;
-
-    @FindBy(xpath = "//button[contains(text(),'No')]")
-    public WebElement adminSpecimenNoButton_WebElement;
-
-    @FindBy(xpath = "//select[@id='orderPackageId']")
-    public WebElement orderPackageWElementSelector;
-
-    @FindBy(xpath = "//select[@id='businessLine']")
-    public WebElement orderBusinessLineWE;
-
-    @FindBy(xpath = "//select[@id='reasonForTest']")
-    public WebElement orderPackageReasonWESelector;
-
-    @FindBy(xpath = "//option[contains(text(),'Pre-employment')]")
-    public WebElement orderPackageReasonPreWE;
-
-    @FindBy(id = "submit-button")
-    public WebElement orderNextWebElementButton;
-
-    @FindBy(id = "firstName")
-    public WebElement orderFirstNameWebElement;
-
-    @FindBy(id = "lastName")
-    public WebElement orderLastNameWebElement;
-
-    @FindBy(xpath = "//input[@id='ssn']")
-    public WebElement orderSsnWebElement;
-
-    @FindBy(xpath = "//input[@id='dateOfBirth']")
-    public WebElement orderDobWebElement;
-
-    @FindBy(id = "candidateId")
-    public WebElement orderCandidateIdWebElement;
-
-    @FindBy(id = "employeeId")
-    public WebElement orderIdentificationEmpIDWE;
-
-    @FindBy(id = "phoneNumber")
-    public WebElement orderPhoneNumberWebElement;
-
-    @FindBy(xpath = "//input[@id='line1']")
-    public WebElement orderAddressLine1WebElement;
-
-    @FindBy(id = "emailAddress")
-    public WebElement orderEmailAddressWebElement;
-
-    @FindBy(xpath = "//*[@id='scan-information']")
-    public WebElement lastScannedDetailsWebElement;
-
-    @FindBy(xpath = "//div[@class='drug-rect orange-color']")
-    public List<WebElement> postiveTestStripsOnResult;
-
-    @FindBy(xpath = "//table/tbody/tr[1]")
-    public List<WebElement> firstRowTableData;
-
-    @FindBy(xpath = "//button[@id='refuse-btn']")
-    public WebElement abandonedButtonWebElement;
-
-    @FindBy(xpath = "//span/preceding::span[@class='ng-value-icon left'][1]")
-    public List<WebElement> selectedStatuses;
-
-    @FindBy(xpath = "//span[@class='ng-option-label']")
-    public List<WebElement> placeOrderStatusesWebElement;
-
-    @FindBy(xpath = "//table//tr")
-    public List<WebElement> placeOrderTableRows;
-
-    @FindBy(xpath = "//table//tr/td[1]")
-    public List<WebElement> placedOrderNames;
-
-    @FindBy(xpath = "//table//tr/td[4]")
-    public List<WebElement> placedOrderDateTimes;
-
-    @FindBy(xpath = "//button[contains(text(),'Next')]")
-    public WebElement sideAlleyNextButtonWebElement;
-
-    @FindBy(xpath = "//button[@class='btn button btnActive']")
-    public WebElement sideAlleyIamHappyCoCPhotoBtnWE;
-
-    @FindBy(xpath = "//input[@type='file']")
-    public WebElement uploadCOCPhotoAreaWebElement;
-
-    @FindBy(xpath = "//input[@class='form-control uploadbutton']")
-    public WebElement uploadPhotoSideAlleyAreaWebElement;
-
-    @FindBy(xpath = "//input[@id='lastNameId']")
-    public WebElement candidateLookupLastNameWebElement;
-
-    @FindBy(xpath = "//input[@id='monthId']")
-    public WebElement candidateLookupMonthWebElement;
-
-    @FindBy(xpath = "//input[@id='dayId']")
-    public WebElement candidateLookupDayWebElement;
-
-    @FindBy(xpath = "//input[@id='yearId']")
-    public WebElement candidateLookupYearWebElement;
-
-    @FindBy(xpath = "//input[@id='ssnId']")
-    public WebElement candidateLookupSsnWebElement;
-
-    @FindBy(xpath = "//table[@class='table table-striped']/thead/tr/th")
-    public List<WebElement> adminPlacedOrdersTableTitles;
-
-    @FindBy(xpath = "//a[contains(text(),'Create New Order')]")
-    public WebElement createNewOrderOnSubmitWebElement;
-
-    @FindBy(xpath = "//button[@name='submitButton']")
-    public WebElement sideAlleyGetStartedButtonWE;
-
-    @FindBy(xpath = "//table/tbody/tr/td[2]")
-    public List<WebElement> placedOrdersSSNcolumn;
-
-    @FindBy(xpath = "//table/tbody/tr/td[4]")
-    public List<WebElement> adminPlacedOrderChronologicalOrder;
-
-    @FindBy(xpath = "//table/tbody/tr/td[4]")
-    public List<WebElement> adminBulkOrderChronologicalOrder;
-
-    @FindBy(xpath = "//table//tbody/tr")
-    public List<WebElement> bulkOrdersListRows;
-
-    @FindBy(xpath = "//table/tbody/tr/td[1]")
-    public List<WebElement> bulkOrderUploadStatusColumnRows;
-
-    @FindBy(xpath = "//select[@id='selectPackage']/option[contains(text(),'Choose a Package')]")
-    public WebElement bulkUploadPackageDefaultTextWebElement;
-
-    @FindBy(xpath = "//select[@id='selectReasonForTest']/option[contains(text(),'Choose a Reason For Test')]")
-    public WebElement bulkUploadChooseReasonDefaultTextWebElement;
-
-    @FindBy(xpath = "//button[@name='submitButton']")
-    public WebElement bulkUploadAdminUISubmitButtonWebElement;
-
-    @FindBy(xpath = "//div/h3[contains(text(),'Error Orders')]/following::div[1]")
-    public WebElement bulkUploadItemDetailsStatusWebElement;
-
-    @FindBy(xpath = "//div[@class='error-summary']")
-    public WebElement bulkUploadItemDetailErrSumWebElement;
-
-    @FindBy(xpath = "//div[@class='order-detail']")
-    public WebElement bulkUploadItemOrderDetailsWebElement;
-
-    @FindBy(xpath = "//button[contains(text(),'Sign and Submit')]")
-    public WebElement adminFourEyesCheckCertifyBtnWE;
-
-    @FindBy(xpath = "//*[@id='view-negative-example-btn']")
-    public WebElement adminViewExampleClearWE;
-
-    @FindBy(xpath = "//*[@id='view-inconclusive-example-btn']")
-    public WebElement adminViewExampleInconclusiveWE;
-
-    @FindBy(xpath = "//*[@id='view-invalid-example-btn']")
-    public WebElement adminViewExampleRetestWE;
-
-    @FindBy(id = "alias")
-    public WebElement adminAmazonAliasWE;
-
-    @FindBy(id = "trackingNumber")
-    public WebElement adminTrackingNumberWE;
-	
-	 @FindBy(id="searchAlias")
-    public WebElement adminLandingPageLocationFilterWE;
-
-    @FindBy(id="searchState")
-    public WebElement adminLandingPageStateFilterWE;
-	
-	@FindBy(xpath = "//b[contains(text(),'Recent Locations:')]/following::div[@class='col-md-2']/a")
-    public List<WebElement> adminRecentLocations;
-
-    @FindBy(xpath = "//button[@id='view-valid-example-btn']")
-    public WebElement adminModifiedViewExampleValidWE;
-
-    @FindBy(xpath = "//button[@id='view-retest-example-btn']")
-    public WebElement adminModifiedViewExampleRetestWE;
-
-    @FindBy(xpath="//button[@id='retest-btn']")
-    public WebElement adminModifiedAdjudicationRetestWE;
-
-    @FindBy(id="valid-btn")
-    public WebElement adminModifiedAdjudicationValidWE;
-
-    @FindBy(xpath = "//button[@id='sign-btn']")
-    public WebElement adminModifiedAdjudicationCertifyBtnWE;
-
-    @FindBy(xpath ="//h4/following-sibling::p")
-    public WebElement adminFinalTestResult4EyesSelection;
-
-    @FindBy(id="nameSearch")
-    public WebElement adminSupportToolsPageSearchByNameWE;
-
-    @FindBy(xpath ="//td[@class='a']/a")
-    public List<WebElement> adminSupportToolsPageCandidateNameSearchResults;
-
-    @FindBy(xpath = "//table[@class='table table-striped']/thead/tr/th")
-    public List<WebElement> adminSupportToolsTableTitles;
-
-    @FindBy(xpath ="//table[@class='table table-striped']/tbody/tr/td[3]")
-    public List<WebElement> adminSupportToolsPageDeviceIDSearchResults;
-
-    @FindBy(xpath = "//table[@class='table table-striped']/tbody/tr/td[1]")
-    public WebElement adminNameFieldSupportTools_WebElement;
-
-    @FindBy(xpath = "//button[@id='save-button']")
-    public WebElement adminSaveChangesSupportTool_WebElement;
-
-    @FindBy(xpath ="//div[@class='flex-column']/h2")
-    public List<WebElement> adminCandidateResultsPageCandidateNameWE;
-
-    @FindBy(xpath = "//select[@id='new-status-step']")
-    public WebElement currentStepWESelector;
-
-    @FindBy(xpath ="//textarea[@id='json']")
-    public List<WebElement> adminSupportToolsCandidateNameOnTheJSON;
+//    @FindBy(id = "next-button")
+//    public WebElement alcoholFlowNextButtonWebElement;
+//
+//    @FindBy(xpath = "//signature-pad[@id='sigPad']/canvas")
+//    public WebElement signaturePad;
+//
+//    @FindBy(id = "header-menu")
+//    public WebElement weMenu_WebElement;
+//
+//    @FindBy(xpath = "(//div/span)[1]")
+//    public WebElement locationTitleWE;
+//
+//    @FindBy(xpath = "//select/option")
+//    public List<WebElement> invalidOptions;
+//
+//    @FindBy(xpath = "//table/thead/tr/th")
+//    public List<WebElement> sideAlleyResultsScreenHeader;
+//
+//    @FindBy(xpath = "//table//td[2]")
+//    public List<WebElement> sideAlleyResultsLNameList;
+//
+//    @FindBy(xpath = "//table//td[5]")
+//    public WebElement sideAlleyResultsOrderLocation;
+//
+//    @FindBy(xpath = "//tbody/tr/td")
+//    public List<WebElement> getSideAlleyCandidateResultRow;
+//
+//    @FindBy(xpath ="//div[@class='col']/a")
+//    public List<WebElement> adminLandingPageLocationSearchResults;
+//
+//    @FindBy(xpath ="//div[@class='row row-striped odd']/div[2]")
+//    public List<WebElement> adminLandingPageStateSearchResults1;
+//
+//    @FindBy(xpath ="//div[@class='row row-striped even']/div[2]")
+//    public List<WebElement> adminLandingPageStateSearchResults2;
+//
+//    @FindBy(xpath = "//button[@id='incon-btn']")
+//    public WebElement adjInconclusiveWebElementButton;
+//
+//    @FindBy(id="clear-btn")
+//    public WebElement adjClearButtonWebElement;
+//
+//    @FindBy(id="retest-btn")
+//    public WebElement adjRetestButtonWebElement;
+//
+//    @FindBy(id = "testing-pic")
+//    public WebElement adjudicateDeviceImage_WebElement;
+//
+//    @FindBy(xpath = "//label[contains(@class,'custom-control-label')]")
+//    public WebElement invertedSwitchWebElement;
+//
+//    @FindBy(xpath = "//h3[contains(text(),'Order has been successfully submitted.')]")
+//    public WebElement submitValidOrderConfirmationMessage;
+//
+//    @FindBy(xpath = "//select/option")
+//    public List<WebElement> abandonOptions;
+//
+//    @FindBy(xpath = "//div[contains(text(), 'might be')]/following::div[@class='drug-rect white-color']")
+//    public List<WebElement> whiteNegativeRecStrips;
+//
+//    @FindBy(xpath = "//p[contains(text(),'Specimen ID')]/following::h1")
+//    public WebElement specimenId_WebElement;
+//
+//    @FindBy(xpath = "//button[contains(text(),'Yes')]")
+//    public WebElement adminSpecimenYesButton_WebElement;
+//
+//    @FindBy(xpath = "//button[contains(text(),'No')]")
+//    public WebElement adminSpecimenNoButton_WebElement;
+//
+//    @FindBy(xpath = "//select[@id='orderPackageId']")
+//    public WebElement orderPackageWElementSelector;
+//
+//    @FindBy(xpath = "//select[@id='businessLine']")
+//    public WebElement orderBusinessLineWE;
+//
+//    @FindBy(xpath = "//select[@id='reasonForTest']")
+//    public WebElement orderPackageReasonWESelector;
+//
+//    @FindBy(xpath = "//option[contains(text(),'Pre-employment')]")
+//    public WebElement orderPackageReasonPreWE;
+//
+//    @FindBy(id = "submit-button")
+//    public WebElement orderNextWebElementButton;
+//
+//    @FindBy(id = "firstName")
+//    public WebElement orderFirstNameWebElement;
+//
+//    @FindBy(id = "lastName")
+//    public WebElement orderLastNameWebElement;
+//
+//    @FindBy(xpath = "//input[@id='ssn']")
+//    public WebElement orderSsnWebElement;
+//
+//    @FindBy(xpath = "//input[@id='dateOfBirth']")
+//    public WebElement orderDobWebElement;
+//
+//    @FindBy(id = "candidateId")
+//    public WebElement orderCandidateIdWebElement;
+//
+//    @FindBy(id = "employeeId")
+//    public WebElement orderIdentificationEmpIDWE;
+//
+//    @FindBy(id = "phoneNumber")
+//    public WebElement orderPhoneNumberWebElement;
+//
+//    @FindBy(xpath = "//input[@id='line1']")
+//    public WebElement orderAddressLine1WebElement;
+//
+//    @FindBy(id = "emailAddress")
+//    public WebElement orderEmailAddressWebElement;
+//
+//    @FindBy(xpath = "//*[@id='scan-information']")
+//    public WebElement lastScannedDetailsWebElement;
+//
+//    @FindBy(xpath = "//div[@class='drug-rect orange-color']")
+//    public List<WebElement> postiveTestStripsOnResult;
+//
+//    @FindBy(xpath = "//table/tbody/tr[1]")
+//    public List<WebElement> firstRowTableData;
+//
+//    @FindBy(xpath = "//button[@id='refuse-btn']")
+//    public WebElement abandonedButtonWebElement;
+//
+//    @FindBy(xpath = "//span/preceding::span[@class='ng-value-icon left'][1]")
+//    public List<WebElement> selectedStatuses;
+//
+//    @FindBy(xpath = "//span[@class='ng-option-label']")
+//    public List<WebElement> placeOrderStatusesWebElement;
+//
+//    @FindBy(xpath = "//table//tr")
+//    public List<WebElement> placeOrderTableRows;
+//
+//    @FindBy(xpath = "//table//tr/td[1]")
+//    public List<WebElement> placedOrderNames;
+//
+//    @FindBy(xpath = "//table//tr/td[4]")
+//    public List<WebElement> placedOrderDateTimes;
+//
+//    @FindBy(xpath = "//button[contains(text(),'Next')]")
+//    public WebElement sideAlleyNextButtonWebElement;
+//
+//    @FindBy(xpath = "//button[@class='btn button btnActive']")
+//    public WebElement sideAlleyIamHappyCoCPhotoBtnWE;
+//
+//    @FindBy(xpath = "//input[@type='file']")
+//    public WebElement uploadCOCPhotoAreaWebElement;
+//
+//    @FindBy(xpath = "//input[@class='form-control uploadbutton']")
+//    public WebElement uploadPhotoSideAlleyAreaWebElement;
+//
+//    @FindBy(xpath = "//input[@id='lastNameId']")
+//    public WebElement candidateLookupLastNameWebElement;
+//
+//    @FindBy(xpath = "//input[@id='monthId']")
+//    public WebElement candidateLookupMonthWebElement;
+//
+//    @FindBy(xpath = "//input[@id='dayId']")
+//    public WebElement candidateLookupDayWebElement;
+//
+//    @FindBy(xpath = "//input[@id='yearId']")
+//    public WebElement candidateLookupYearWebElement;
+//
+//    @FindBy(xpath = "//input[@id='ssnId']")
+//    public WebElement candidateLookupSsnWebElement;
+//
+//    @FindBy(xpath = "//table[@class='table table-striped']/thead/tr/th")
+//    public List<WebElement> adminPlacedOrdersTableTitles;
+//
+//    @FindBy(xpath = "//a[contains(text(),'Create New Order')]")
+//    public WebElement createNewOrderOnSubmitWebElement;
+//
+//    @FindBy(xpath = "//button[@name='submitButton']")
+//    public WebElement sideAlleyGetStartedButtonWE;
+//
+//    @FindBy(xpath = "//table/tbody/tr/td[2]")
+//    public List<WebElement> placedOrdersSSNcolumn;
+//
+//    @FindBy(xpath = "//table/tbody/tr/td[4]")
+//    public List<WebElement> adminPlacedOrderChronologicalOrder;
+//
+//    @FindBy(xpath = "//table/tbody/tr/td[4]")
+//    public List<WebElement> adminBulkOrderChronologicalOrder;
+//
+//    @FindBy(xpath = "//table//tbody/tr")
+//    public List<WebElement> bulkOrdersListRows;
+//
+//    @FindBy(xpath = "//table/tbody/tr/td[1]")
+//    public List<WebElement> bulkOrderUploadStatusColumnRows;
+//
+//    @FindBy(xpath = "//select[@id='selectPackage']/option[contains(text(),'Choose a Package')]")
+//    public WebElement bulkUploadPackageDefaultTextWebElement;
+//
+//    @FindBy(xpath = "//select[@id='selectReasonForTest']/option[contains(text(),'Choose a Reason For Test')]")
+//    public WebElement bulkUploadChooseReasonDefaultTextWebElement;
+//
+//    @FindBy(xpath = "//button[@name='submitButton']")
+//    public WebElement bulkUploadAdminUISubmitButtonWebElement;
+//
+//    @FindBy(xpath = "//div/h3[contains(text(),'Error Orders')]/following::div[1]")
+//    public WebElement bulkUploadItemDetailsStatusWebElement;
+//
+//    @FindBy(xpath = "//div[@class='error-summary']")
+//    public WebElement bulkUploadItemDetailErrSumWebElement;
+//
+//    @FindBy(xpath = "//div[@class='order-detail']")
+//    public WebElement bulkUploadItemOrderDetailsWebElement;
+//
+//    @FindBy(xpath = "//button[contains(text(),'Sign and Submit')]")
+//    public WebElement adminFourEyesCheckCertifyBtnWE;
+//
+//    @FindBy(xpath = "//*[@id='view-negative-example-btn']")
+//    public WebElement adminViewExampleClearWE;
+//
+//    @FindBy(xpath = "//*[@id='view-inconclusive-example-btn']")
+//    public WebElement adminViewExampleInconclusiveWE;
+//
+//    @FindBy(xpath = "//*[@id='view-invalid-example-btn']")
+//    public WebElement adminViewExampleRetestWE;
+//
+//    @FindBy(id = "alias")
+//    public WebElement adminAmazonAliasWE;
+//
+//    @FindBy(id = "trackingNumber")
+//    public WebElement adminTrackingNumberWE;
+//
+//	 @FindBy(id="searchAlias")
+//    public WebElement adminLandingPageLocationFilterWE;
+//
+//    @FindBy(id="searchState")
+//    public WebElement adminLandingPageStateFilterWE;
+//
+//	@FindBy(xpath = "//b[contains(text(),'Recent Locations:')]/following::div[@class='col-md-2']/a")
+//    public List<WebElement> adminRecentLocations;
+//
+//    @FindBy(xpath = "//button[@id='view-valid-example-btn']")
+//    public WebElement adminModifiedViewExampleValidWE;
+//
+//    @FindBy(xpath = "//button[@id='view-retest-example-btn']")
+//    public WebElement adminModifiedViewExampleRetestWE;
+//
+//    @FindBy(xpath="//button[@id='retest-btn']")
+//    public WebElement adminModifiedAdjudicationRetestWE;
+//
+//    @FindBy(id="valid-btn")
+//    public WebElement adminModifiedAdjudicationValidWE;
+//
+//    @FindBy(xpath = "//button[@id='sign-btn']")
+//    public WebElement adminModifiedAdjudicationCertifyBtnWE;
+//
+//    @FindBy(xpath ="//h4/following-sibling::p")
+//    public WebElement adminFinalTestResult4EyesSelection;
+//
+//    @FindBy(id="nameSearch")
+//    public WebElement adminSupportToolsPageSearchByNameWE;
+//
+//    @FindBy(xpath ="//td[@class='a']/a")
+//    public List<WebElement> adminSupportToolsPageCandidateNameSearchResults;
+//
+//    @FindBy(xpath = "//table[@class='table table-striped']/thead/tr/th")
+//    public List<WebElement> adminSupportToolsTableTitles;
+//
+//    @FindBy(xpath ="//table[@class='table table-striped']/tbody/tr/td[3]")
+//    public List<WebElement> adminSupportToolsPageDeviceIDSearchResults;
+//
+//    @FindBy(xpath = "//table[@class='table table-striped']/tbody/tr/td[1]")
+//    public WebElement adminNameFieldSupportTools_WebElement;
+//
+//    @FindBy(xpath = "//button[@id='save-button']")
+//    public WebElement adminSaveChangesSupportTool_WebElement;
+//
+//    @FindBy(xpath ="//div[@class='flex-column']/h2")
+//    public List<WebElement> adminCandidateResultsPageCandidateNameWE;
+//
+//    @FindBy(xpath = "//select[@id='new-status-step']")
+//    public WebElement currentStepWESelector;
+//
+//    @FindBy(xpath ="//textarea[@id='json']")
+//    public List<WebElement> adminSupportToolsCandidateNameOnTheJSON;
 
         //    Return Methods
-    public By pastHourButton(String text){
-        String button = String.format("//button[contains(text(),'%s')]", text);
-        return By.xpath(button);
-    }
-
-    public int getAbandonReasonOptionsCount() {
-        return abandonOptions.size();
-    }
-
-    private By getCandidateCard(String name) {
-        String[] fullName = name.split(" ");
-        String lName = fullName[1];
-        logger.info("Candidate's full Name: " + name);
-        logger.info("Candidate Card: " + lName);
-        return By.xpath("//amzn-candidate-card//*[contains(text(),'" + lName + "')]/following::div[@class='action-flag'][1]");
-    }
-
-    private By getEACandidateCard(String name) {
-
-        return By.xpath("//amzn-candidate-card//*[contains(text(),'" + name + "')]/following::div[@class='action-flag'][1]");
-    }
-
-    public Boolean isCandidateCardPresent(String name) {
-        logger.info("last name to find:" + name);
-        return exists(getCandidateCard(name));
-    }
-
-    private WebElement getCandidateCardByWebElement(String name) {
-        String xpath = "//amzn-candidate-card//*[contains(text(),'" + name + "')]";
-        return driver.findElement(By.xpath(xpath));
-    }
-
-    public By reasonOption(String reason) {
-        String xpath = String.format("//select/option[contains(text(),'%s')]", reason);
-        return By.xpath(xpath);
-    }
-
-    public By businessLineOption(String businessLine) {
-        String xpath = String.format("//select/option[contains(text(),'%s')]", businessLine);
-        return By.xpath(xpath);
-    }
-
-    public By randomReasonOption() {
-        int num = (int) (Math.random() * 2 + 1);
-        String number = "" + num;
-        String xpath = String.format("//select/option['%s']", number);
-        return By.xpath(xpath);
-    }
-
-    public String getApplicantStepByName(String name) {
-        By card = By.xpath("(//div[@class='candidate-card']/div[text()='" + name + "']/../div[@class='subpanel-container']/div[@class='card-subpanel'])[1]");
-        WebElement we = driver.findElement(card);
-        return we.getText();
-    }
-
-    public String getApplicantBoothByName(String name) {
-        By card = By.xpath("//div[@class='candidate-card']/div[text()='" + name + "']/../div[@class='subpanel-container']/div[@class='card-subpanel id-container']");
-        WebElement we = driver.findElement(card);
-        return we.getText();
-    }
-
-    private String calculatePreviousDays(int daysPrior) {
-        Calendar cal = Calendar.getInstance();
-        //subtracting days
-        cal.add(Calendar.DATE, daysPrior);
-
-        SimpleDateFormat formatter = new SimpleDateFormat("EEEE, MMMMM d, yyyy", Locale.US);
-        Date date = cal.getTime();
-        return formatter.format(date);
-    }
-
-    private String getCurrentDateforFilter() {
-        SimpleDateFormat formatter = new SimpleDateFormat("EEEE, MMMMM d, yyyy", Locale.US);
-        Date date = new Date();
-        return formatter.format(date);
-    }
-
-    public By testResultReturned(String numberCount) {
-        return By.xpath("//p[contains(text(),'" + numberCount + " Tests Returned in Past 24 Hours')]");
-    }
-
-    public By resultsPagination(String pageNumber) {
-        String xpath = String.format("//a/span[contains(text(),'%s')]", pageNumber);
-        return By.xpath(xpath);
-    }
-
-    public int getInvalidReasonOptionsCount() {
-        return invalidOptions.size();
-    }
-
-    public boolean isCertifySubmitButtonEnabled() {
-        String xpath = "//button[contains(text(), 'Sign and Submit')]";
-        return driver.findElement(By.xpath(xpath)).isEnabled();
-    }
-
-    private By getDateRangeLabel(String dateLabel) {
-        String formatDateLabel = String.format("//div[@aria-label='%s']", dateLabel);
-        return By.xpath(formatDateLabel);
-    }
-
-    public By candidateCardElementFNameOnly() {
-        String currentCandidate = getCandidateName();
-        List<String> fullName = Arrays.asList(currentCandidate.split(" "));
-        String fName = fullName.get(0);
-        report("Current Candidate: " + currentCandidate);
-        return By.xpath("//amzn-candidate-card//*[contains(text(),'" + fName + "')]");
-    }
-
-    public By candidateGreenCardByFirstName(String candidateFirstName) {
-        String xpath = String.format("//div[@class='bg-green candidate-card']/div[contains(text(),'%s')]", candidateFirstName);
-        return By.xpath(xpath);
-    }
-
-    public int countDrugCollection() {
-        return driver.findElements(drugCollectionCheckbox).size();
-    }
-
-
-    public boolean isOrderNextButtonEnabled() {
-        return orderNextWebElementButton.isEnabled();
-    }
-
-    public boolean isAdminUIBulkOrderSubmitButtonEnabled() {
-        return bulkUploadAdminUISubmitButtonWebElement.isEnabled();
-    }
-
-
-    public String getLastScannedDetails() throws Exception {
-        return getText(lastScannedDetailsWebElement);
-    }
-
-
-    public int adminUITabCount() {
-        return driver.findElements(By.xpath("//amzn-dashboard//*/a")).size();
-    }
-
-
-    public boolean textExists(String text) {
-        String xpath = String.format("//*[contains(text(),'%s')]", text);
-        return exists(By.xpath(xpath));
-    }
-
-    public int verifyAllNegativeTestStrips() {
-        return whiteNegativeRecStrips.size();
-    }
-
-    public int howManyPositiveStripsOnResult() {
-        return postiveTestStripsOnResult.size();
-    }
-
-
-    public Boolean isValueInTableRow(String... valueToFind) throws Exception {
-        for (WebElement element : firstRowTableData) {
-            logger.info("Looking for value.... " + getText(element));
-            if (getText(element).contains(valueToFind[0])) {
-                logger.info(valueToFind[0] + " was found.");
-                return true;
-            }
-        }
-        return false;
-    }
-
-
-    public Boolean isBulkUploadColumnHeaderPresent(String... values) {
-        for (String value : values) {
-            String xpath = String.format("//table//th//span[contains(text(),'%s')]", value);
-            logger.info("checking value: " + value);
-            return exists(By.xpath(xpath));
-        }
-        return false;
-    }
-
-    public String getBulkUploadStatusText(String fileNameUploaded) throws Exception {
-      String xpath= String.format("//td[contains(text(),'%s')]/preceding::td", fileNameUploaded);
-      WebElement element = driver.findElement(By.xpath(xpath));
-      return getText(element);
-    }
-
-
-    public String getBulkUploadItemDetailsStatus() throws Exception {
-        return getText(bulkUploadItemDetailsStatusWebElement);
-    }
-
-    public String getBulkUploadItemDetailsErrorSummary() throws Exception {
-        return getText(bulkUploadItemDetailErrSumWebElement);
-    }
-
-    public String getBulkUploadItemOrderDetails() throws Exception {
-        return getText(bulkUploadItemOrderDetailsWebElement);
-    }
-
-    public String verifyBatchUploadErrorsInXlsCsvFile() throws Exception {
-        SharedBaseClass sharedBaseClass = new SharedBaseClass(driver);
-        return sharedBaseClass.verifyMessageInXls();
-    }
-
-    public Boolean bulkUploadPackageSelectionDisplayed() throws Exception {
-        waitForElementPresent(bulkUploadPackageDefaultTextWebElement);
-        return bulkUploadPackageDefaultTextWebElement.isDisplayed();
-    }
-
-    public Boolean bulkUploadReasonSelectionDisplayed() throws Exception {
-        waitForElementPresent(bulkUploadChooseReasonDefaultTextWebElement);
-        return bulkUploadChooseReasonDefaultTextWebElement.isDisplayed();
-    }
-
-
-//    *** void methods************************
-
-    public void enterIdentificationFName(String fName) throws Exception {
-        waitForElementPresent(orderFirstNameWebElement);
-        setElementValue(orderIdentificationFName, fName);
-        testObject.setTestData("orderAdminUIFirstName", fName);
-    }
-
-    public void enterIdentificationLName(String lName) throws Exception {
-        waitForElementPresent(orderLastNameWebElement);
-        setElementValue(orderIdentificationLName, lName);
-        testObject.setTestData("orderAdminUILastName", lName);
-    }
-
-    public void enterIdentificationDoB(String DoB) throws Exception {
-        waitForElementPresent(orderDobWebElement);
-        setElementValue(orderIdentificationDoB, DoB);
-        testObject.setTestData("orderAdminUIDob", DoB);
-    }
-
-    public void enterIdentificationSSN(String ssn) throws Exception {
-        waitForElementPresent(orderSsnWebElement);
-        clickElement(orderIdentificationSSN);
-        setElementValue(orderIdentificationSSN, ssn);
-        testObject.setTestData("orderAdminUISsn", ssn);
-
-    }
-
+//    public By pastHourButton(String text){
+//        String button = String.format("//button[contains(text(),'%s')]", text);
+//        return By.xpath(button);
+//    }
+//
+//    public int getAbandonReasonOptionsCount() {
+//        return abandonOptions.size();
+//    }
+//
+//    private By getCandidateCard(String name) {
+//        String[] fullName = name.split(" ");
+//        String lName = fullName[1];
+//        logger.info("Candidate's full Name: " + name);
+//        logger.info("Candidate Card: " + lName);
+//        return By.xpath("//amzn-candidate-card//*[contains(text(),'" + lName + "')]/following::div[@class='action-flag'][1]");
+//    }
+//
+//    private By getEACandidateCard(String name) {
+//
+//        return By.xpath("//amzn-candidate-card//*[contains(text(),'" + name + "')]/following::div[@class='action-flag'][1]");
+//    }
+//
+//    public Boolean isCandidateCardPresent(String name) {
+//        logger.info("last name to find:" + name);
+//        return exists(getCandidateCard(name));
+//    }
+//
+//    private WebElement getCandidateCardByWebElement(String name) {
+//        String xpath = "//amzn-candidate-card//*[contains(text(),'" + name + "')]";
+//        return driver.findElement(By.xpath(xpath));
+//    }
+//
+//    public By reasonOption(String reason) {
+//        String xpath = String.format("//select/option[contains(text(),'%s')]", reason);
+//        return By.xpath(xpath);
+//    }
+//
+//    public By businessLineOption(String businessLine) {
+//        String xpath = String.format("//select/option[contains(text(),'%s')]", businessLine);
+//        return By.xpath(xpath);
+//    }
+//
+//    public By randomReasonOption() {
+//        int num = (int) (Math.random() * 2 + 1);
+//        String number = "" + num;
+//        String xpath = String.format("//select/option['%s']", number);
+//        return By.xpath(xpath);
+//    }
+//
+//    public String getApplicantStepByName(String name) {
+//        By card = By.xpath("(//div[@class='candidate-card']/div[text()='" + name + "']/../div[@class='subpanel-container']/div[@class='card-subpanel'])[1]");
+//        WebElement we = driver.findElement(card);
+//        return we.getText();
+//    }
+//
+//    public String getApplicantBoothByName(String name) {
+//        By card = By.xpath("//div[@class='candidate-card']/div[text()='" + name + "']/../div[@class='subpanel-container']/div[@class='card-subpanel id-container']");
+//        WebElement we = driver.findElement(card);
+//        return we.getText();
+//    }
+//
+//    private String calculatePreviousDays(int daysPrior) {
+//        Calendar cal = Calendar.getInstance();
+//        //subtracting days
+//        cal.add(Calendar.DATE, daysPrior);
+//
+//        SimpleDateFormat formatter = new SimpleDateFormat("EEEE, MMMMM d, yyyy", Locale.US);
+//        Date date = cal.getTime();
+//        return formatter.format(date);
+//    }
+//
+//    private String getCurrentDateforFilter() {
+//        SimpleDateFormat formatter = new SimpleDateFormat("EEEE, MMMMM d, yyyy", Locale.US);
+//        Date date = new Date();
+//        return formatter.format(date);
+//    }
+//
+//    public By testResultReturned(String numberCount) {
+//        return By.xpath("//p[contains(text(),'" + numberCount + " Tests Returned in Past 24 Hours')]");
+//    }
+//
+//    public By resultsPagination(String pageNumber) {
+//        String xpath = String.format("//a/span[contains(text(),'%s')]", pageNumber);
+//        return By.xpath(xpath);
+//    }
+//
+//    public int getInvalidReasonOptionsCount() {
+//        return invalidOptions.size();
+//    }
+//
+//    public boolean isCertifySubmitButtonEnabled() {
+//        String xpath = "//button[contains(text(), 'Sign and Submit')]";
+//        return driver.findElement(By.xpath(xpath)).isEnabled();
+//    }
+//
+//    private By getDateRangeLabel(String dateLabel) {
+//        String formatDateLabel = String.format("//div[@aria-label='%s']", dateLabel);
+//        return By.xpath(formatDateLabel);
+//    }
+//
+//    public By candidateCardElementFNameOnly() {
+//        String currentCandidate = getCandidateName();
+//        List<String> fullName = Arrays.asList(currentCandidate.split(" "));
+//        String fName = fullName.get(0);
+//        report("Current Candidate: " + currentCandidate);
+//        return By.xpath("//amzn-candidate-card//*[contains(text(),'" + fName + "')]");
+//    }
+//
+//    public By candidateGreenCardByFirstName(String candidateFirstName) {
+//        String xpath = String.format("//div[@class='bg-green candidate-card']/div[contains(text(),'%s')]", candidateFirstName);
+//        return By.xpath(xpath);
+//    }
+//
+//    public int countDrugCollection() {
+//        return driver.findElements(drugCollectionCheckbox).size();
+//    }
+//
+//
+//    public boolean isOrderNextButtonEnabled() {
+//        return orderNextWebElementButton.isEnabled();
+//    }
+//
+//    public boolean isAdminUIBulkOrderSubmitButtonEnabled() {
+//        return bulkUploadAdminUISubmitButtonWebElement.isEnabled();
+//    }
+//
+//
+//    public String getLastScannedDetails() throws Exception {
+//        return getText(lastScannedDetailsWebElement);
+//    }
+//
+//
+//    public int adminUITabCount() {
+//        return driver.findElements(By.xpath("//amzn-dashboard//*/a")).size();
+//    }
+//
+//
+//    public boolean textExists(String text) {
+//        String xpath = String.format("//*[contains(text(),'%s')]", text);
+//        return exists(By.xpath(xpath));
+//    }
+//
+//    public int verifyAllNegativeTestStrips() {
+//        return whiteNegativeRecStrips.size();
+//    }
+//
+//    public int howManyPositiveStripsOnResult() {
+//        return postiveTestStripsOnResult.size();
+//    }
+//
+//
+//    public Boolean isValueInTableRow(String... valueToFind) throws Exception {
+//        for (WebElement element : firstRowTableData) {
+//            logger.info("Looking for value.... " + getText(element));
+//            if (getText(element).contains(valueToFind[0])) {
+//                logger.info(valueToFind[0] + " was found.");
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
+//
+//
+//    public Boolean isBulkUploadColumnHeaderPresent(String... values) {
+//        for (String value : values) {
+//            String xpath = String.format("//table//th//span[contains(text(),'%s')]", value);
+//            logger.info("checking value: " + value);
+//            return exists(By.xpath(xpath));
+//        }
+//        return false;
+//    }
+//
+//    public String getBulkUploadStatusText(String fileNameUploaded) throws Exception {
+//      String xpath= String.format("//td[contains(text(),'%s')]/preceding::td", fileNameUploaded);
+//      WebElement element = driver.findElement(By.xpath(xpath));
+//      return getText(element);
+//    }
+//
+//
+//    public String getBulkUploadItemDetailsStatus() throws Exception {
+//        return getText(bulkUploadItemDetailsStatusWebElement);
+//    }
+//
+//    public String getBulkUploadItemDetailsErrorSummary() throws Exception {
+//        return getText(bulkUploadItemDetailErrSumWebElement);
+//    }
+//
+//    public String getBulkUploadItemOrderDetails() throws Exception {
+//        return getText(bulkUploadItemOrderDetailsWebElement);
+//    }
+//
+//    public String verifyBatchUploadErrorsInXlsCsvFile() throws Exception {
+//        SharedBaseClass sharedBaseClass = new SharedBaseClass(driver);
+//        return sharedBaseClass.verifyMessageInXls();
+//    }
+//
+//    public Boolean bulkUploadPackageSelectionDisplayed() throws Exception {
+//        waitForElementPresent(bulkUploadPackageDefaultTextWebElement);
+//        return bulkUploadPackageDefaultTextWebElement.isDisplayed();
+//    }
+//
+//    public Boolean bulkUploadReasonSelectionDisplayed() throws Exception {
+//        waitForElementPresent(bulkUploadChooseReasonDefaultTextWebElement);
+//        return bulkUploadChooseReasonDefaultTextWebElement.isDisplayed();
+//    }
+//
+//
+////    *** void methods************************
+//
+//    public void enterIdentificationFName(String fName) throws Exception {
+//        waitForElementPresent(orderFirstNameWebElement);
+//        setElementValue(orderIdentificationFName, fName);
+//        testObject.setTestData("orderAdminUIFirstName", fName);
+//    }
+//
+//    public void enterIdentificationLName(String lName) throws Exception {
+//        waitForElementPresent(orderLastNameWebElement);
+//        setElementValue(orderIdentificationLName, lName);
+//        testObject.setTestData("orderAdminUILastName", lName);
+//    }
+//
+//    public void enterIdentificationDoB(String DoB) throws Exception {
+//        waitForElementPresent(orderDobWebElement);
+//        setElementValue(orderIdentificationDoB, DoB);
+//        testObject.setTestData("orderAdminUIDob", DoB);
+//    }
+//
+//    public void enterIdentificationSSN(String ssn) throws Exception {
+//        waitForElementPresent(orderSsnWebElement);
+//        clickElement(orderIdentificationSSN);
+//        setElementValue(orderIdentificationSSN, ssn);
+//        testObject.setTestData("orderAdminUISsn", ssn);
+//
+//    }
+//
     public void launchAdminUI() {
         String url = environment.getEnvironmentBaseUrl() + "/admin";
         eventFiringWebDriver.get(url);
@@ -852,1802 +852,1802 @@ public class AmazonAdminUI extends SeleniumBaseClass {
         }
     }
 
-    public void loginAndCloseBrowser(String username, String password) throws InterruptedException, IOException {
-
-        By btnLogin = By.id("login-button");
-        By fUser = By.id("signInName");
-        By fPass = By.id("password");
-        By btnSignIn = By.xpath("//button[@id='next']");
-        By btnMenu = By.id("menu-btn");
-
-        if (username.startsWith("data.")) {
-            username = testObject.getProperty(username); // load from config file
-        }
-        if (password.startsWith("data.")) {
-            password = testObject.getProperty(password); // load from config file
-        }
-
-        logger.info("user = " + username + ", pass = *hidden*");
-
-        this.waitFor(btnLogin);
-        this.clickElement(btnLogin);
-
-        if (this.waitFor(fUser)) {
-            this.setElementValue(fUser, username);
-            this.setElementValue(fPass, password);
-            this.clickElement(btnSignIn);
-            this.waitFor(btnMenu);
-        } else {
-            throw new RuntimeException("Login pass is not showing");
-        }
-
-        Set<Cookie> webCookies = this.getDriver().manage().getCookies();
-        Map<String, Object> cookies = new HashMap<>();
-        for (Cookie c : webCookies) {
-            cookies.put(c.getName(), c.getValue());
-        }
-        if (!cookies.isEmpty()) {
-            String file = System.getProperty("user.dir") + "\\src\\test\\resources\\configs\\cookies.json";
-            CommonMethods.object2JsonFile(cookies, file);
-        }
-        driver.close();
-    }
-
-    public void verifyLogin() throws InterruptedException {
-        By btnMenu = By.id("menu-btn");
-        if (!this.waitFor(btnMenu)) {
-            throw new RuntimeException("This is not a logged in page.");
-        }
-
-        Set<Cookie> cookies = this.driver.manage().getCookies();
-        System.out.println("cookies = " + cookies.toString());
-
-        for (Cookie c : cookies) {
-            System.out.println("c name : " + c.getName() + " | value : " + c.getValue());
-        }
-
-    }
-
-    public void signSignaturePad() {
-        Actions builder = new Actions(getDriver());
-        Action drawAction = builder.moveToElement(signaturePad, 50, 50)
-                //signatureWebElement is the element that holds the signature element you have in the DOM
-                .clickAndHold()
-                .moveByOffset(60, 40)
-                .moveByOffset(62, 55)
-                .release()
-                .build();
-        drawAction.perform();
-    }
-    public void signSignaturePadAbandoned() {
-        Actions builder = new Actions(getDriver());
-        Action drawAction = builder.moveToElement(signaturePad, 50, 50)
-                //signatureWebElement is the element that holds the signature element you have in the DOM
-                .clickAndHold()
-                .moveByOffset(30, 20)
-                .moveByOffset(32, 25)
-                .release()
-                .build();
-        drawAction.perform();
-    }
-    public void signSignaturePadFinalAlcPage() {
-        Actions builder = new Actions(getDriver());
-        Action drawAction = builder.moveToElement(signaturePad, 50, 50)
-                //signatureWebElement is the element that holds the signature element you have in the DOM
-                .clickAndHold()
-                .moveByOffset(30, 20)
-                .moveByOffset(32, 25)
-                .release()
-                .build();
-        drawAction.perform();
-    }
-
-    public void validateNeedHelpDashboard() {
-        By cardName = By.xpath("//amzn-candidate-card//div[@class='candidate-container']");
-
-        boolean found = false;
-        String expectedCard = "Auto";
-
-        List<WebElement> cards = driver.findElements(cardName);
-        for (WebElement c : cards) {
-            if (c.getText().contains(expectedCard)) {
-                found = true;
-                report("found candidate name: " + expectedCard);
-            }
-        }
-
-        Assert.assertTrue(found);
-    }
-
-    public void enterHelpComment(String helpComment) {
-        By helpDone = By.id("done-button");
-        this.setElementValue(helpText, helpComment);
-        this.clickElement(helpDone);
-
-        try {
-            new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.alertIsPresent());
-            report("alert text = " + driver.switchTo().alert().getText());
-            this.getDriver().switchTo().alert().accept();
-        } catch (Exception e) {
-            logger.info("Error: " + e);
-        }
-    }
-
-    public void clickHelpLink() {
-        By weLink = By.xpath("//li/a[text()='Need Help']");
-        this.clickElement(weLink);
-    }
-
-    public void clickManageOrdersTab(String tabText) throws Exception {
-        String xpath = String.format("//a[contains(text(), '%s')]", tabText);
-        By tab = By.xpath(xpath);
-        waitForElementClickable(tab);
-        clickElement(tab);
-    }
-
-    public void clickAllStripsInAdminReviewPage() {
-        for (int i = 0; i < 7; i++) {
-            String xpath = "(//div[@class='check-box'])[" + i + "]";
-            clickElement(By.xpath(xpath));
-        }
-    }
-
-    public void clickAdjudicateRetake() {
-        By button = By.xpath("//button[contains(text(),'Re-take')]");
-        if (this.exists(button)) {
-            this.clickElement(button);
-        } else {
-            throw new RuntimeException("Re-take button is not visible");
-        }
-    }
-
-    public void clickAdjudicateInconclusive() throws Exception {
-        waitForElementPresent(adjInconclusiveWebElementButton);
-        clickElement(adjudicateInconclusivebutton);
-        testObject.setTestData("Adjudication"," Inconclusive");
-        logger.info("adjudication is "+testObject.getTestData("Adjudication"));
-
-    }
-
-    public void clickReadyToAdjudicate() {
-        By weLink = By.xpath("//li/a[text()='Ready to Adjudicate']");
-        if (this.exists(weLink)) {
-            this.clickElement(weLink);
-
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                logger.info("Error: " + e);
-            }
-        }
-    }
-
-
-    public void clickOnCandidateCard(String name) throws Exception {
-        By applicantCard = getCandidateCard(name);
-        logger.info("!!!!! applicant card information " + applicantCard);
-        logger.info("***** candidate card clicked: " + name);
-        waitForElementClickable(applicantCard);
-        clickElement(applicantCard);
-    }
-
-    public void clickOnEACandidateCard(String name) throws Exception {
-        By applicantCard = getEACandidateCard(name);
-
-        waitForElementClickable(applicantCard);
-        clickElement(applicantCard);
-    }
-
-    public void javaClickOnCandidateCard() throws Exception {
-        javaScriptClick(getCandidateCardByWebElement(getCandidateName()));
-    }
-
-    public String getCandidateName() {
-        return testObject.processString("data.runtime.invite-name");
-    }
-
-    public By candidateCardElement() {
-        String currentCandidate = getCandidateName();
-        report("Current Candidate: " + currentCandidate);
-        return By.xpath("//amzn-candidate-card//*[text()='" + currentCandidate + "']");
-    }
-
-
-    public void clickLocationNameCard(String locationName) throws Exception {
-        By locationNameCard = By.xpath("//amzn-building-card//div[text()='" + locationName + "']");
-        if (exists(locationNameCard)) {
-            waitForElementClickable(locationNameCard);
-            clickElement(locationNameCard);
-        } else {
-            throw new RuntimeException("Location Name [" + locationName + "] is not visible");
-        }
-    }
-
-    public void clickAdjudicateRetest() {
-        By button = By.xpath("//button[@id='retest-btn']");
-        if (this.exists(button)) {
-            this.clickElement(button);
-        } else {
-            throw new RuntimeException("Retest button is not visible");
-        }
-    }
-
-    public void clickAdjudicateClear() {
-        By buttonClear = By.xpath("//button[@id='clear-btn']");
-        if (this.exists(buttonClear)) {
-            this.clickElement(buttonClear);
-        } else {
-            throw new RuntimeException("Clear button is not visible");
-        }
-    }
-
-    public void selectAdjudicationStripsByIndex(List<Integer> indexes) {
-        for (Integer index : indexes) {
-            By checkbox = By.xpath("(//div[@class='check-box'])[" + index + "]");
-            this.clickElement(checkbox);
-        }
-    }
-
-    public void clickAdjudicateCertifySubmit() throws Exception {
-        waitForElementClickable(certifySubmitButton);
-        clickElement(certifySubmitButton);
-        report("Certify and Submit Button clicked.");
-    }
-
-    public void clickAdjudicateSignSubmit() throws Exception {
-        waitForElementClickable(signAndSubmitButton);
-        clickElement(signAndSubmitButton);
-        report("Sign and Submit Button clicked.");
-    }
-
-
-    public void validateReadyToAdjudicateDashboard() {
-        String currentCandidate = getCandidateName();
-        List<String> fullName = Arrays.asList(currentCandidate.split(" "));
-        String fName = fullName.get(0);
-        Assert.assertTrue(exists(candidateGreenCardByFirstName(fName)),"Adjudicated Green card for " + currentCandidate + " was not found as expected.");
-    }
-
-    public void validateTestsInProgressDashboard() {
-        boolean found = false;
-        String expectedCard = testObject.getTestData ("lName");
-
-        List<WebElement> cards = getDriver().findElements(cardName);
-        for (WebElement c : cards) {
-            if (c.getText().contains(expectedCard)) {
-                found = true;
-                report("found candidate name: " + expectedCard);
-            }
-        }
-        Assert.assertTrue(found);
-    }
-
-    public void validateNotInTestsInProgressDashboard() throws Exception {
-        String currentCandidate = getCandidateName();
-        boolean found = false;
-        List<WebElement> cards = getDriver().findElements(cardName);
-        for (WebElement c : cards) {
-            if (getText(c).contains(currentCandidate)) {
-                found = true;
-                report("found candidate name: " + currentCandidate);
-            }
-        }
-
-        Assert.assertFalse(found);
-    }
-
-    public void validateConcludedTestsDashboard() throws Exception {
-        String currentCandidate = getCandidateName();
-        boolean found = false;
-        List<WebElement> cards = getDriver().findElements(cardName);
-        for (WebElement c : cards) {
-            if (getText(c).contains(currentCandidate)) {
-                found = true;
-                report("found candidate name: " + currentCandidate);
-            }
-        }
-        Assert.assertTrue(found);
-    }
-
-    public void clickTestsInProgressLink() {
-        By weLink = By.xpath("//li/a[text()='Tests in Progress']");
-        this.clickElement(weLink);
-    }
-
-    public void clickConcludedTestsLink() {
-        By ctLink = By.xpath("//a[text()='Concluded Tests']");
-        this.clickElement(ctLink);
-    }
-
-    public void validateCorrectLocationShowing() throws Exception {
-        String location = environment.getEnvironmentLocationName();
-        if (!this.exists(weMenu)) {
-            throw new RuntimeException("Header menu does not exist");
-        }
-        String capturedLocation = getText(locationTitleWE);
-        report("Location: " + capturedLocation);
-        Assert.assertTrue(capturedLocation.contains(location),"Location was not found as expected Found: " + capturedLocation + " instead of: " + location);
-    }
-
-    public void selectLocation() throws Exception {
-        String locName = environment.getEnvironmentLocationName();
-        String stateName = environment.getEnvironmentLocationState();
-        logger.info("State to click: " + stateName);
-        By btnState = By.xpath("//div/*[text()='" + stateName + "']");
-        waitForElementClickable(btnState);
-        Thread.sleep(500);
-        By divLocation = By.xpath("//div[contains(text(), '" + locName + "')]");
-
-        if (this.exists(divLocation)) {
-            this.clickElement(divLocation);
-        } else {
-            throw new RuntimeException("Location tile does not exist or visible.");
-        }
-    }
-
-
-    public void clickDefaultLocationCard() throws Exception {
-        String locationName = environment.getEnvironmentLocationName();
-        clickLocationNameCard(locationName);
-    }
-
-    public void clickAutomationLocationCard() throws Exception {
-        String locationName = testObject.getProperty("automation.location.name");
-        logger.info("location Name card to click: " + locationName);
-        clickLocationNameCard(locationName);
-    }
-
-
-    public void selectInconclusiveDrug(By... drugOption) {
-        for (By drug : drugOption) {
-            checkbox(drug, true);
-        }
-    }
-
-    public void clickCancel() throws Exception {
-        waitForElementClickable(adjCancelButton);
-        clickElement(adjCancelButton);
-    }
-
-    public void clickConfirm() throws Exception {
-        waitForElementClickable(adjConfirmButton);
-        clickElement(adjConfirmButton);
-    }
-
-    public void clickCompletedTestsTab() throws Exception {
-        waitForElementClickable(concludedTab);
-        clickElement(concludedTab);
-    }
-
-
-    public void verifyCardListedUnderFilter(String filterOption) {
-        Assert.assertTrue(exists(candidateCardElement()),"Candidate Card was not found under filter: " + filterOption);
-    }
-
-
-    public void clickRestartTestCheckbox() {
-        checkbox(restartTestCheckbox, true);
-    }
-
-    public void clickHelpDoneButton() throws Exception {
-        waitForElementClickable(helpDoneButton);
-        clickElement(helpDoneButton);
-    }
-
-    public void clickLogout() throws Exception {
-        waitForElementClickable(mainMenu);
-        clickElement(mainMenu);
-        waitForElementClickable(logoutMenu);
-        clickElement(logoutMenu);
-    }
-
-    public void clickChooseAnotherLocation() throws Exception {
-        waitForElementClickable(mainMenu);
-        clickElement(mainMenu);
-        waitForElementClickable(chooseAnotherLocationMenu);
-        clickElement(chooseAnotherLocationMenu);
-    }
-
-    public void clickManageOrders() throws Exception {
-        waitForElementClickable(mainMenu);
-        clickElement(mainMenu);
-        logger.info("main menu clicked");
-        waitForElementClickable(manageOrdersMenu);
-        clickElement(manageOrdersMenu);
-    }
-
-    public void clickCocConversion() throws Exception {
-        waitForElementClickable(mainMenu);
-        clickElement(mainMenu);
-        waitForElementClickable(cocConversionMenu);
-        clickElement(cocConversionMenu);
-    }
-
-
-    public void enterHelpCommentOnly(String text) {
-        setElementValueNoClear(helpText, text);
-    }
-
-    public void enterTextToSearch(String searchText, boolean clearValue) {
-        if (clearValue) {
-            setElementValue(candidateSearchTextBox, searchText);
-        } else {
-            setElementValueNoClear(candidateSearchTextBox, searchText);
-        }
-    }
-
-
-    public void clickStartDateRange(String dateLabel) throws Exception {
-        waitForElementClickable(startDateRange);
-        clickElement(startDateRange);
-        wait(1);
-        clickElement(getDateRangeLabel(dateLabel));
-    }
-
-    public void clickEndDateRange(String dateLabel) throws Exception {
-        waitForElementClickable(endDateRange);
-        clickElement(endDateRange);
-        clickElement(getDateRangeLabel(dateLabel));
-    }
-
-    public void setCurrentDayAsEndDateToSearch() throws Exception {
-        waitForElementClickable(endDateRange);
-        clickElement(endDateRange);
-        String currentDate = getCurrentDateforFilter();
-        logger.info("setting end date: " + currentDate);
-        clickElement(getDateRangeLabel(currentDate));
-    }
-
-    public void setRandomStartDateToSearch(int daysPriorCurrentDay) throws Exception {
-        waitForElementClickable(startDateRange);
-        clickElement(startDateRange);
-        String currentDate = calculatePreviousDays(daysPriorCurrentDay);
-        logger.info("setting start date: " + currentDate);
-        clickElement(getDateRangeLabel(currentDate));
-        waitForSeconds(1);
-    }
-
-
-    public void goToPageNumber(String pageNumber) throws Exception {
-        waitForElementClickable(resultsPagination(pageNumber));
-        clickElement(resultsPagination(pageNumber));
-    }
-
-    public void clickAdjudicatedBackButton() throws Exception {
-        waitForElementClickable(adjudicatedBackButton);
-        clickElement(adjudicatedBackButton);
-    }
-
-    public void clickPastHoursButton(String buttonText) throws Exception {
-        waitForElementClickable(pastHourButton(buttonText));
-        clickElement(pastHourButton(buttonText));
-    }
-
-    public void clickStartDateRangeCalendar() throws Exception {
-        waitForElementClickable(startDateRange);
-        clickElement(startDateRange);
-    }
-
-    public void verifyPastHoursButtonExists(String buttonText) throws Exception {
-        clickStartDateRangeCalendar();
-        Assert.assertTrue(exists(pastHourButton(buttonText)), buttonText + " Button was not found as expected.");
-        clickPastHoursButton(buttonText);
-        waitForDisappear(pastHourButton(buttonText));
-    }
-
-    public void selectAreasonForAbandoned() throws Exception {
-        By element = randomReasonOption();
-        waitForElementClickable(element);
-        clickElement(element);
-        if (element.toString().contains("Other")) {
-            addAbandonedReasonComments("Test");
-        }
-    }
-
-    public void selectReasonForCertification(String reason) throws Exception {
-        By element = reasonOption(reason);
-        waitForElementClickable(element);
-        clickElement(element);
-    }
-
-    public void addInvalidReasonComments(String reasonDetailsComment) {
-        setElementValueNoClear(reasonComment, reasonDetailsComment);
-    }
-
-    public void clickInvalidButton() throws Exception {
-        waitForElementClickable(invalidButton);
-        clickElement(invalidButton);
-    }
-
-
-    public void clickInvertedSwitch() throws Exception {
-        waitForElementPresent(invertedSwitchWebElement);
-        scrollTo(invertedSwitchWebElement);
-        clickElement(invertedSwitch);
-    }
-
-    public void isImageInverted() {
-        String className = adjudicateDeviceImage_WebElement.getAttribute("class");
-        Assert.assertEquals(className, "inverted","Inverted Image was not found as expected." );
-    }
-
-    public String getAdminSpecimenIdDisplayed() throws Exception {
-        return getText(specimenId_WebElement).replace(" ", "");
-    }
-
-    public void clickSpecimenYesButton() throws Exception {
-        waitForElementPresent(adminSpecimenYesButton_WebElement);
-        clickElement(adminSpecimenYesButton);
-    }
-
-    public void clickSpecimenNoButton() throws Exception {
-        waitForElementPresent(adminSpecimenNoButton_WebElement);
-        clickElement(adminSpecimenNoButton);
-    }
-
-    public void addAbandonedReasonComments(String reasonDetailsComment) {
-        setElementValueNoClear(reasonComment, reasonDetailsComment);
-    }
-
-    public void clickAbandonedProcess() throws Exception {
-        scrollTo(abandonedButtonWebElement);
-        waitForElementClickable(abandonedProcessButton);
-        clickElement(abandonedProcessButton);
-    }
-
-    public void selectPackage(String packageText) throws Exception {
-        waitForElementPresent(orderPackageWElementSelector);
-        clickElement(orderPackageSelector);
-        waitForSeconds(1);
-        String xpath = String.format("//select[@id='orderPackageId']/option[contains(text(),'%s')]", packageText);
-        clickElement(By.xpath(xpath));
-    }
-
-    public Boolean packageInfoDisplayed(String optionText) throws Exception {
-        waitForElementPresent(orderPackageWElementSelector);
-        String xpath = String.format("//select[@id='orderPackageId']/option[contains(text(),'%s')]", optionText);
-        return driver.findElement(By.xpath(xpath)).isDisplayed();
-    }
-
-
-    public void selectPackageReason(String reason) throws Exception {
-        waitForElementPresent(orderPackageReasonWESelector);
-        selectElement(orderPackageReasonSelector, reason);
-    }
-
-    public String packageInfoReasonDisplayed() throws Exception {
-        waitForElementPresent(orderPackageReasonWESelector);
-        Select select = new Select(driver.findElement(By.id("reasonForTest")));
-        WebElement element = select.getFirstSelectedOption();
-        return getText(element);
-    }
-
-    public void selectHiringCountry(String country) {
-        String xpath = String.format("//select[@id='country']/option[contains(text(), '%s')]", country);
-        clickElement(By.xpath(xpath));
-    }
-
-
-    public void selectHiringState(String state) {
-        clickElement(orderStateSelector);
-        String xpath = String.format("//select[@id='state']/option[contains(text(),'%s')]", state);
-        clickElement(By.xpath(xpath));
-        //using this line to redirect focus off of the state element
-        clickElement(orderCity);
-    }
-
-    public void enterOrderCity(String city) {
-        setElementValue(orderCity, city);
-    }
-
-    public void enterOrderZipCode(String zipCode) {
-        setElementValueNoClear(orderPostalCode, zipCode);
-    }
-
-    public void enterOrderAddress1(String address) throws Exception {
-        waitForElementPresent(orderAddressLine1WebElement);
-        setElementValueNoClear(orderAddressLine1, address);
-    }
-
-    public void enterOrderPhoneNumber(String phone, Boolean clearValue) throws Exception {
-        waitForElementPresent(orderPhoneNumberWebElement);
-        waitForElementPresent(orderEmailAddressWebElement);
-        if (clearValue) {
-            orderPhoneNumberWebElement.sendKeys(Keys.DELETE);
-            setElementValue(orderPhoneNumber, phone);
-        } else {
-            setElementValueNoClear(orderPhoneNumber, phone);
-        }
-    }
-
-    public void enterOrderEmailAddress(String email, Boolean clearValue) throws Exception {
-        waitForSeconds (2);
-        waitForElementPresent (orderEmailAddressWebElement);
-        if (clearValue) {
-            setElementValue (orderEmailAddress, email);
-        } else {
-            setElementValueNoClear (orderEmailAddress, email);
-        }
-
-    }
-
-    public void clickOrderNextButton() throws Exception {
-        waitForElementClickable(orderNextButton);
-        clickElement(orderNextButton);
-    }
-    public void clickAlcoholFlowNextButton() throws Exception {
-        waitForElementClickable(alcoholFlowNextBtn);
-        clickElement(alcoholFlowNextBtn);
-    }
-
-    public void clickOrderPreviousButton() throws Exception {
-        waitForElementClickable(orderPreviousButton);
-        clickElement(orderPreviousButton);
-        waitForSeconds(5);
-    }
-
-    public void clickCoCtakePhotoButton() throws Exception {
-        waitForElementClickable(sideAlleyCoCTakePhotoButton);
-        clickElement(sideAlleyCoCTakePhotoButton);
-    }
-
-    public void clickStartNewCandidateButton() throws Exception {
-        waitForElementClickable(orderCreateAnotherButton);
-        clickElement(orderCreateAnotherButton);
-    }
-
-    public void clickBrowserBackButton() {
-        browserBackButton();
-    }
-
-    public void clickOrderExitButton() throws Exception {
-        waitForElementClickable(orderExitButton);
-        clickElement(orderExitButton);
-    }
-
-    public void clickGetStartedButton() throws Exception {
-        waitForElementClickable(orderGetStartedButton);
-        clickElement(orderGetStartedButton);
-    }
-
-    public void clickUseThisIdButton() throws Exception {
-        waitForElementClickable(orderUseIdButton);
-        clickElement(orderUseIdButton);
-    }
-
-    public void clickNewOrderButton() throws Exception {
-        waitForElementClickable(createNewOrderButton);
-        clickElement(createNewOrderButton);
-    }
-
-    public void clickCreateNewOrderButtonSubmitPage() throws Exception {
-        waitForElementPresent(createNewOrderOnSubmitWebElement);
-        clickElement(adminUIcreateNewOrders);
-    }
-
-    public void enterCandidateLastName(String candidateLastName) throws Exception {
-        waitForElementPresent(candidateLookupLastNameWebElement);
-        logger.info("entering last name: " + candidateLastName);
-        setElementValue(orderLookupLastName, candidateLastName);
-    }
-
-    public void enterCandidateDobMonth(String candidateDobMonth) throws Exception {
-        waitForElementPresent(candidateLookupMonthWebElement);
-        setElementValue(orderLookupBirthMonth, candidateDobMonth);
-    }
-
-    public void enterCandidateDobDay(String candidateDobDay) throws Exception {
-        waitForElementPresent(candidateLookupDayWebElement);
-        setElementValue(orderLookupBirthDay, candidateDobDay);
-    }
-
-    public void enterCandidateDobYear(String candidateDobYear) throws Exception {
-        waitForElementPresent(candidateLookupYearWebElement);
-        setElementValue(orderLookupBirthYear, candidateDobYear);
-    }
-
-    public void enterCandidateSsn(String candidateSsn) throws Exception {
-        waitForElementPresent(candidateLookupSsnWebElement);
-        setElementValue(orderLookupSsn, candidateSsn);
-    }
-
-
-    public void clickSideAlleySubmitButton() throws Exception {
-        waitForElementClickable(sideAlleyUploadSubmitButton);
-        clickElement(sideAlleyUploadSubmitButton);
-    }
-
-
-    public void clickKeepThisButton() throws Exception {
-        waitForElementClickable(keepThisButton);
-        clickElement(keepThisButton);
-    }
-
-    public void clickSwitchToThisButton() throws Exception {
-        waitForElementClickable(switchToThisButton);
-        clickElement(switchToThisButton);
-    }
-
-    public void clickViewThisOrderButton() throws Exception {
-        waitForElementClickable(adminUIViewOrderButton);
-        clickElement(adminUIViewOrderButton);
-    }
-
-    public void clickOrderDoneButton() throws Exception {
-        waitForElementClickable(orderDoneButton);
-        clickElement(orderDoneButton);
-    }
-
-    public void clickInvalidOrderSubmitConfRetryButton() throws Exception {
-        waitForElementClickable(submitInvalidOrderConfRetrySubmittingButton);
-        clickElement(submitInvalidOrderConfRetrySubmittingButton);
-    }
-
-    public void clickInvalidOrderSubmitConfCreateNewButton() throws Exception {
-        waitForElementClickable(submitInvalidOrderConfCreateNewOrderButton);
-        clickElement(submitInvalidOrderConfCreateNewOrderButton);
-    }
-
-    public void clickSubmitConfDoneButton() throws Exception {
-        waitForElementClickable(submitOrderConfDoneButton);
-        clickElement(submitOrderConfDoneButton);
-    }
-
-    public void clickSubmitConfCreateNewButton() throws Exception {
-        waitForElementClickable(submitOrderConfCreateNewButton);
-        clickElement(submitOrderConfCreateNewButton);
-    }
-
-    public void setSideAlleyTestLocation(String location) {
-        clickElement(sideAlleyTestLocationSelector);
-        waitForSeconds(1);
-        String xpath = String.format("//select[@id='testLocation']/option[text()='%s']", location);
-        clickElement(By.xpath(xpath));
-        clickElement(sideAlleySelectLocationScreen);
-        waitForSeconds(2);
-    }
-
-    public void enterCandidateInformation() throws IOException {
-        CreateOrderWrapper order = this.getCreateOrderWrapper();
-
-        String lName = order.getRequestField("lastName");
-        String socialSecurityNumber = order.getRequestField("ssn");
-        String dateOfBirth = order.getRequestField("dateOfBirth");
-        String[] dob = dateOfBirth.split("/");
-        String month = dob[0];
-        String day = dob[1];
-        String year = dob[2];
-        setElementValue(orderLookupLastName, lName);
-        setElementValueNoClear(orderLookupBirthMonth, month);
-        setElementValueNoClear(orderLookupBirthDay, day);
-        setElementValueNoClear(orderLookupBirthYear, year);
-        setElementValueNoClear(orderLookupSsn, socialSecurityNumber);
-        report(Status.PASS, "Entered Candidate's Information:" + lName + "\n" + month + "\n" + day + "\n" + year + "\n" + socialSecurityNumber);
-    }
-
-    public Object getCandidateInfoFromOrderWrapper(String jsonPathName) throws Exception {
-        CreateOrderWrapper order = this.getCreateOrderWrapper();
-        return order.getRequestField(jsonPathName);
-    }
-
-
-    public void clickCandidateRowByLastName(String lastNameToFind) {
-        By result = getCandidateRowByLastName(lastNameToFind);
-        clickElement(result);
-    }
-
-    public void refreshTheBrowser() {
-        SharedBaseClass sharedBaseClass = new SharedBaseClass(driver);
-        sharedBaseClass.browserRefresh();
-    }
-
-    public void switchToAdminUIWindow() {
-        SharedBaseClass sharedBaseClass = new SharedBaseClass(driver);
-        sharedBaseClass.switchWindow();
-    }
-
-    public void clickInconclusiveRecommendation() throws Exception {
-        waitForElementClickable(sideAlleyInconclusiveOption);
-        clickElement(sideAlleyInconclusiveOption);
-    }
-
-    public void clearNameFilterInOrderList() {
-        setElementValue(orderNameFilterTextbox, "");
-        report("Order Name Filter textbox cleared");
-        logger.info("Order Name Filter textbox cleared");
-    }
-
-    public void clearSsnFilterInOrderList() {
-        setElementValue(orderSsnFilterTextbox, "");
-        report("Order Ssn Filter textbox cleared");
-        logger.info("Order Ssn Filter textbox cleared");
-    }
-
-    public void enterOrderNameInFilterTextbox(String nameToFind) {
-        setElementValue(orderNameFilterTextbox, nameToFind);
-    }
-
-    public void enterOrderIdInFilterTextbox(String idToFind) {
-        setElementValue(orderIdFilterTextbox, idToFind);
-    }
-
-    public void enterOrderSsnInFilterTextbox(String last4Ssn) {
-        setElementValue(orderSsnFilterTextbox, last4Ssn);
-    }
-
-    public void clearStatusDefaultSelection() {
-        clickElement(clearNewStatusFilterX);
-    }
-
-    public void selectOrderStatusFilter(String... statuses) throws Exception {
-        clearStatusDefaultSelection();
-        //default to return search results in app is 3 sec. giving time to reset
-        waitForSeconds(7);
-        clickElement(placedOrderStatusFilter);
-        //to reset dropdown...
-        clickElement(orderIdFilterTextbox);
-        clickElement(placedOrderStatusFilter);
-        for (String status : statuses) {
-            String xpath = String.format("//ng-select[@placeholder='Statuses']//div/span[contains(text(),'%s')]", status);
-            waitForElementClickable(By.xpath(xpath));
-            clickElement(By.xpath(xpath));
-        }
-    }
-
-    public void selectBulkPackagesFilter(String orderPackage){
-        clickElement(bulkUploadPackageSelector);
-            String xpath = String.format("//ng-Select[@placeholder='Packages']//div[@role='option']/span[contains(text(),'%s')]", orderPackage);
-            clickElement(By.xpath(xpath));
-    }
-
-    public void selectBulkUploadStatusFilter(String status){
-        clickElement(bulkUploadStatusSelector);
-        String xpath = String.format("//ng-Select[@placeholder='Bulk Upload Status']//div[@role='option']/span[contains(text(),'%s')]", status);
-        clickElement(By.xpath(xpath));
-    }
-
-    public void verifyBulkUploadStatus(String... statuses){
-        clickElement(bulkUploadStatusSelector);
-        for(String status:statuses) {
-            String xpath = String.format("//ng-Select[@placeholder='Bulk Upload Status']//div[@role='option']/span[contains(text(),'%s')]", status);
-            logger.info("checking bulk upload status: " + status);
-            Assert.assertTrue(exists(By.xpath(xpath)));
-        }
-    }
-
-    public boolean isFileInBulkOrderList(String fileName) throws Exception {
-            for(WebElement dataRow:bulkOrdersListRows) {
-                if(getText(dataRow).contains(fileName))
-                {
-                    return true;
-                }
-            }
-            return false;
-    }
-
-    public boolean isBulkStatusInAllRows(String status) throws Exception {
-        for(WebElement dataRow:bulkOrderUploadStatusColumnRows) {
-            if(!getText(dataRow).equalsIgnoreCase(status))
-            {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public void clearOrderStatusFilter() throws Exception {
-
-        for (WebElement removeStatus : selectedStatuses) {
-            logger.info("cleared " + getText(removeStatus));
-            clickElement(By.xpath("//span/preceding::span[@class='ng-value-icon left'][1]"));
-        }
-    }
-
-    public void setBulkUploadStartDate(String month, String day){
-        clickElement(bulkUploadDateRangeSelector);
-        String xpath = String.format("//button/span[text()='%s']/following::span[text()='%s'][1]", month, day);
-        clickElement(By.xpath(xpath));
-    }
-
-    public void setPlacedOrdersStartDate(String month, String day){
-        clickElement(placedOrdersDatePicker);
-        String xpath = String.format("//button/span[text()='%s']/following::span[text()='%s'][1]", month, day);
-        clickElement(By.xpath(xpath));
-    }
-
-    public void setPlacedOrdersEndDate(String month, String day) {
-        String xpath = String.format("//button/span[text()='%s']/following::span[text()='%s'][1]", month, day);
-        logger.info("xpath for end date clicked " + xpath);
-        clickElement(By.xpath(xpath));
-    }
-
-    public void setCurrentMMDDForPOEndDate() {
-        String currentDate = getCurrentDateforFilter();
-        String[] holdDateElement = currentDate.split(",");
-        String[] reformatMmDd = holdDateElement[1].split(" ");
-        logger.info("current month and day to set: " + reformatMmDd[1] + " day " + reformatMmDd[2]);
-        setPlacedOrdersEndDate(reformatMmDd[1], reformatMmDd[2]);
-    }
-
-    public void clickSideAlleyBackButton() throws Exception {
-        waitForElementClickable(sideAlleyBackButton);
-        clickElement(sideAlleyBackButton);
-    }
-
-    public Boolean checkPlacedOrderStatuses() throws Exception {
-        boolean found = false;
-        String[] list = new String[]{"New", "In Progress", "Adjudicate", "Invalid", "Retake Picture", "Inconclusive", "Negative",
-                "Expired", "Abandoned", "Incomplete"};
-        clickElement(placedOrderStatusFilter);
-
-        for (int i = 0; i < list.length; i++) {
-            if ((!found) && (i != 0)) {
-                return false;
-            }
-            if (found) {
-                found = false;
-            }
-            for (WebElement status : placeOrderStatusesWebElement) {
-                logger.info("checking status... " + getText(status) + " for " + i + " " + list[i]);
-                if (getText(status).trim().equalsIgnoreCase(list[i].trim())) {
-                    found = true;
-                    logger.info("status was found: " + getText(status));
-                    break;
-                }
-            }
-        }
-        return found;
-    }
-
-
-    public void verifyAdminPlacedOrdersListedChronological() throws Exception {
-        List<Date> expected = new ArrayList<>();
-        for (WebElement day : adminPlacedOrderChronologicalOrder) {
-
-            SimpleDateFormat str = new SimpleDateFormat("MM/dd/yy, hh:mm a");
-            str.setTimeZone(TimeZone.getTimeZone("America/New_York"));
-            Date date1 = str.parse(getText(day));
-            expected.add(date1);
-        }
-
-        List<Date> actual = new ArrayList<>();
-        for (WebElement day : adminPlacedOrderChronologicalOrder) {
-            SimpleDateFormat str = new SimpleDateFormat("MM/dd/yy, hh:mm a");
-            str.setTimeZone(TimeZone.getTimeZone("America/New_York"));
-            Date date1 = str.parse(getText(day));
-            actual.add(date1);
-        }
-        Collections.sort(expected);
-        Collections.reverse(expected);
-        Assert.assertEquals(actual, expected, "Items were not found in chronological order.");
-    }
-
-    public void verifyAdminBulkOrdersListedChronological() throws Exception {
-        List<Date> expected = new ArrayList<>();
-        for (WebElement day : adminBulkOrderChronologicalOrder) {
-
-            SimpleDateFormat str = new SimpleDateFormat("MM/dd/yy, hh:mm a");
-            str.setTimeZone(TimeZone.getTimeZone("America/New_York"));
-            Date date1 = str.parse(getText(day));
-            expected.add(date1);
-        }
-
-        List<Date> actual = new ArrayList<>();
-        for (WebElement day : adminBulkOrderChronologicalOrder) {
-            SimpleDateFormat str = new SimpleDateFormat("MM/dd/yy, hh:mm a");
-            str.setTimeZone(TimeZone.getTimeZone("America/New_York"));
-            Date date1 = str.parse(getText(day));
-            actual.add(date1);
-        }
-        Collections.sort(expected);
-        Collections.reverse(expected);
-        Assert.assertEquals( actual,expected,"Items were not found in chronological order.");
-    }
-
-    public void verifyAdminPlacedOrdersListedReverseChronological() throws Exception {
-        List<Date> expected = new ArrayList<>();
-        for (WebElement day : adminPlacedOrderChronologicalOrder) {
-            SimpleDateFormat str = new SimpleDateFormat("MM/dd/yy, hh:mm a");
-            str.setTimeZone(TimeZone.getTimeZone("America/New_York"));
-            Date date1 = str.parse(getText(day));
-            expected.add(date1);
-        }
-
-
-        List<Date> actual = new ArrayList<>();
-        for (WebElement day : adminPlacedOrderChronologicalOrder) {
-            SimpleDateFormat str = new SimpleDateFormat("MM/dd/yy, hh:mm a");
-            str.setTimeZone(TimeZone.getTimeZone("America/New_York"));
-            Date date1 = str.parse(getText(day));
-            actual.add(date1);
-        }
-        Collections.sort(expected);
-        Assert.assertEquals(expected, actual);
-    }
-
-    public void clickSideAlleyNextButton() throws Exception {
-        waitForElementPresent(sideAlleyNextButtonWebElement);
-        waitForElementClickable(sideAlleyNextButton);
-        clickElement(sideAlleyNextButton);
-    }
-
-    public void clickSideAlleyNextButtonSelectLocationScreen() throws Exception {
-        waitForElementPresent(sideAlleyNextButtonWebElement);
-        clickElement(sideAlleyNextButtonSelectLocationScreen);
-    }
-
-    public void isCandidateInFirstRowOfResultsList(String lastName) {
-        Assert.assertTrue(exists(getCandidateRowByLastName(lastName)), "Candidate was not found in first row of candidate results list.");
-    }
-
-    private By getCandidateRowByLastName(String lastNameToSearch) {
-        String xpath = String.format("//th[contains(text(),'Name')]/following::td[contains(text(),'%s')][1]", lastNameToSearch);
-        return By.xpath(xpath);
-    }
-
-
-    private CreateOrderWrapper getCreateOrderWrapper() {
-        if (createOrderWrapper == null) {
-            BackendApi api = (BackendApi) testObject.getRuntimeData(Constants.BACKEND_API);
-            createOrderWrapper = new CreateOrderWrapper(testObject, api);
-        }
-        return createOrderWrapper;
-    }
-
-    public void clickGetStartedOnSideAlley() throws Exception {
-        waitForElementClickable(sideAlleyGetStartedButton);
-        clickElement(sideAlleyGetStartedButton);
-
-    }
-
-    public void clickIamHappyButtonAdminUI() throws Exception {
-        waitForElementClickable (sideAlleyIamHappyWithMyPhotoButton);
-        clickElement (sideAlleyIamHappyWithMyPhotoButton);
-    }
-
-    public void clickTakePhotoButtonSA() throws Exception {
-        waitForElementClickable(sideAlleyTakePhotoButton);
-        clickElement(sideAlleyTakePhotoButton);
-    }
-
-    public void uploadCOCPhoto(String file) {
-        String directory = System.getProperty("user.dir") + file;
-        logger.info("directory/folder path:  " + directory);
-        uploadCOCPhotoAreaWebElement.sendKeys(directory);
-    }
-
-    public void verifyAdminPlacedOrdersColumnTitles() {
-        List<String> expected = new ArrayList<>(Arrays.asList("Name", "SSN", "DOB", "Created", "Status", "Location", "Order Id", "Package", "One Strip"));
-        List<String> titles = new ArrayList<>();
-        for (WebElement title : adminPlacedOrdersTableTitles
-        ) {
-            titles.add(title.getText());
-        }
-        Assert.assertEquals(expected, titles);
-    }
-
-    public void uploadPhotoSA(String file) {
-        String directory = System.getProperty("user.dir") + file;
-        logger.info("directory/folder path:  " + directory);
-        uploadPhotoSideAlleyAreaWebElement.sendKeys(directory);
-    }
-
-
-    public void clickNegativeInSideAlley() throws Exception {
-        waitForElementClickable(sideAlleyNegativeOption);
-        clickElement(sideAlleyNegativeOption);
-    }
-
-    public void clickSubmitOnSideAlleyReview() throws Exception {
-        waitForElementClickable(sideAlleyAdjudicationSubmitButton);
-        clickElement(sideAlleyAdjudicationSubmitButton);
-    }
-
-    public void uploadDuplicatePhotoSA(String file) {
-        String directory = System.getProperty("user.dir") + file;
-        logger.info("directory/folder path:  " + directory);
-        uploadPhotoSideAlleyAreaWebElement.sendKeys(directory);
-    }
-
-    public void enterGeneratedCandidateInfoOnInfoScreen() throws Exception {
-        //generate the candidate information and store to retrieval
-        autoGenerateCandidateInformation();
-        enterIdentificationFName(testObject.getTestData("adminUIOrderFName"));
-        enterIdentificationLName(testObject.getTestData("adminUIOrderLName"));
-        enterIdentificationDoB(testObject.getTestData("adminUIOrderDob"));
-        waitForSeconds(2);
-        String ssn = testObject.getTestData("adminUIOrderSsn");
-        logger.info("Entering candidate ssn: " + ssn);
-        enterIdentificationSSN(ssn);
-    }
-
-    private void autoGenerateCandidateInformation() {
-        Random r = new Random();
-        String firstName = "F-" + r.nextInt(99999);
-        testObject.setTestData("adminUIOrderFName", firstName);
-        String lastName = "L-" + r.nextInt(99999);
-        testObject.setTestData("adminUIOrderLName", lastName);
-        int temp = r.nextInt(99);
-        logger.info("temp random last 2 digits for ssn assigned:" + temp);
-        String ssn = "5094510" + temp;
-        testObject.setTestData("adminUIOrderSsn", ssn);
-        String dob = "05/1" + r.nextInt(9) + "/195" + r.nextInt(9);
-        testObject.setTestData("adminUIOrderDob", dob);
-        String phoneNumber = String.valueOf((long) (Math.random() * 100000 + 3333000000L));
-        testObject.setTestData("adminUIOrderPhone", phoneNumber);
-        String email = "email" + r.nextInt() + "@gmail.com";
-        testObject.setTestData("adminUIOrderEmail", email);
-    }
-
-
-    public void clickReTakePhotoButtonSA() throws Exception {
-        waitForElementClickable(sideAlleyRetakePhotoButton);
-        clickElement(sideAlleyRetakePhotoButton);
-    }
-
-    public void clickUploadPhotoButtonSA() throws Exception {
-        waitForElementClickable(sideAlleyUploadPhotoButton);
-        clickElement(sideAlleyUploadPhotoButton);
-    }
-
-    public void clickEnterSpecimenIDButtonSA() throws Exception {
-        waitForElementClickable(sideAlleyEnterSpecimenIDButton);
-        clickElement(sideAlleyEnterSpecimenIDButton);
-    }
-
-    public void enterSampleInformationSA(String sampleId, Boolean clearField) {
-        if (clearField.equals(true)) {
-            setElementValue(sideAlleySampleIdTextBox, sampleId);
-            setElementValue(sideAlleyConfirmSampleIdTextBox, sampleId);
-        } else {
-            setElementValueNoClear(sideAlleySampleIdTextBox, sampleId);
-            setElementValueNoClear(sideAlleyConfirmSampleIdTextBox, sampleId);
-        }
-        report(Status.PASS, "Entered Sample Information");
-    }
-
-    public void enterGeneratedCandidateInfoToLookup() throws Exception {
-        SharedBaseClass sharedBaseClass = new SharedBaseClass(driver);
-        String lastName = testObject.getTestData("adminUIOrderLName");
-        String ssn = testObject.getTestData("adminUIOrderSsn");
-        String birthday = testObject.getTestData("adminUIOrderDob");
-        logger.info("candidate's dob to lookup: " + birthday);
-        String[] dob = birthday.split("/");
-        String month = dob[0];
-        String day = dob[1];
-        String year = dob[2];
-        enterCandidateLastName(lastName);
-        enterCandidateDobMonth(month);
-        enterCandidateDobDay(day);
-        enterCandidateDobYear(year);
-        enterCandidateSsn(sharedBaseClass.getLast4SsNumber(ssn));
-    }
-
-
-    public void clickNextButtonOnEnterIDpageSA() throws Exception {
-        waitForElementClickable(sideAlleyNextButtonOnEnterIDScreen);
-        clickElement(sideAlleyNextButtonOnEnterIDScreen);
-    }
-
-    public void clickAdminUIRetakeButton() throws Exception {
-        waitForElementClickable(adminUIRetakeButton);
-        clickElement(adminUIRetakeButton);
-    }
-
-    public boolean isSideAlleyGetStartedButtonEnabled() {
-        return sideAlleyGetStartedButtonWE.isEnabled();
-    }
-
-    public String isLocationSelected(String locationName) {
-        String xpath = String.format("//select[@id='testLocation']/option[text()='%s']", locationName);
-        WebElement locationElement = driver.findElement(By.xpath(xpath));
-        return getAttribute(locationElement, "selected");
-    }
-
-    public void verifyOrderHasLocationInAdminUI() throws Exception {
-        Assert.assertFalse(getText(getSideAlleyCandidateResultRow.get(3)).isEmpty(), "Location is not assigned for the order");
-        logger.info("Assigned Location: " + getText(getSideAlleyCandidateResultRow.get(3)));
-    }
-
-    public void verifyOrderHasNoLocationInAdminUI() throws Exception {
-        Assert.assertTrue( getText(getSideAlleyCandidateResultRow.get(3)).isEmpty(),"Location is assigned for the order");
-        logger.info("Assigned Location: " + getText(getSideAlleyCandidateResultRow.get(3)));
-    }
-
-    public void verifySideAlleyResultsPageTableColumns() throws Exception {
-        List<String> expectedColumns = new ArrayList<>(Arrays.asList("Name", "DOB", "SSN", "Location"));
-        List<String> tableColumns = new ArrayList<>();
-        for (WebElement column : sideAlleyResultsScreenHeader
-        ) {
-            tableColumns.add(getText(column));
-        }
-        Assert.assertEquals( tableColumns, expectedColumns,"Candidate Results columns are not found as expected");
-    }
-
-    public void searchForlastNameInSideAlleyResults(String lName) throws Exception {
-        for (WebElement candidate : sideAlleyResultsLNameList) {
-            if (getText(candidate).equals(lName)) {
-                Assert.assertEquals(lName, getText(candidate));
-            }
-        }
-    }
-
-    public void clickPlacedOrdersSSNsortingArrow() throws Exception {
-        waitForElementClickable(adminPlacedOrderSSNsortingArrow);
-        clickElement(adminPlacedOrderSSNsortingArrow);
-    }
-
-    public void clickPlacedOrdersCreatedSortingArrow() throws Exception {
-        waitForElementClickable(adminPlacedOrderCreatedSortingArrow);
-        clickElement(adminPlacedOrderCreatedSortingArrow);
-    }
-
-    public void verifyPlacedOrdersSortedAscendingBySSN() throws Exception {
-        List<Integer> ssnActual = new ArrayList<>();
-        for (WebElement num : placedOrdersSSNcolumn) {
-            String temp = getText(num);
-            if (!temp.isEmpty()) {
-                ssnActual.add(Integer.parseInt(getText(num)));
-            }
-        }
-
-        List<Integer> ssnExpected = new ArrayList<>();
-        for (WebElement num : placedOrdersSSNcolumn) {
-            String temp = getText(num);
-            if (!temp.isEmpty()) {
-                ssnExpected.add(Integer.parseInt(getText(num)));
-            }
-        }
-        Collections.sort(ssnExpected);
-        Assert.assertEquals(ssnExpected, ssnActual);
-    }
-
-    public void verifyPlacedOrdersSortedDescendingBySSN() throws Exception {
-        List<Integer> ssnActual = new ArrayList<>();
-        for (WebElement num : placedOrdersSSNcolumn) {
-            ssnActual.add(Integer.parseInt(getText(num)));
-        }
-
-        List<Integer> ssnExpected = new ArrayList<>();
-        for (WebElement num : placedOrdersSSNcolumn) {
-            ssnExpected.add(Integer.parseInt(getText(num)));
-        }
-        Collections.sort(ssnExpected);
-        Collections.reverse(ssnExpected);
-        Assert.assertEquals(ssnExpected, ssnActual);
-    }
-
-    public void enterCandidateID(String candidateID) throws Exception {
-        waitForElementPresent(orderCandidateIdWebElement);
-        setElementValue(orderIdentificationCID, candidateID);
-    }
-
-
-    public void verifyOrdersLocationInSideAlleyResults(String location) throws Exception {
-        Assert.assertEquals("Location is not equal to " + location, getText(sideAlleyResultsOrderLocation), location);
-    }
-
-    public void clickInvalidInSideAlley() throws Exception {
-        waitForElementClickable(sideAlleyInvalidOption);
-        clickElement(sideAlleyInvalidOption);
-    }
-
-    public void clickIamHappyCOCPhotoButtonAdminUI() throws Exception {
-        waitForElementClickable(sideAlleyIamHappyWithMyCoCPhotoButton);
-        clickElement(sideAlleyIamHappyWithMyCoCPhotoButton);
-    }
-
-    public void clickInconclusiveInSideAlley() throws Exception {
-        waitForElementClickable(sideAlleyInconclusiveOption);
-        clickElement(sideAlleyInconclusiveOption);
-    }
-
-    public void verifyConcludedTestsTab() {
-        Assert.assertTrue(exists(concludedTab));
-    }
-
-    public void clearBrowserCookies() {
-        SharedBaseClass sharedBaseClass = new SharedBaseClass(driver);
-        sharedBaseClass.clearAllCookies();
-    }
-
-    public void verifyBoothNumberOnTheCard(String boothNumber) {
-        String xpath1 = ("//div[@class='card-subpanel id-container' and contains(text(),'" + boothNumber + "')]");
-        Assert.assertTrue(exists(By.xpath(xpath1)));
-        logger.info("booth number found " + boothNumber);
-    }
-
-    public void clickBulkUploadButton() throws Exception {
-        waitForElementClickable(adminBulkUploadButton);
-        clickElement(adminBulkUploadButton);
-    }
-
-    public void clickBulkUploadSubmitButton() throws Exception {
-        waitForElementClickable(adminBulkUploadSubmitButton);
-        clickElement(adminBulkUploadSubmitButton);
-    }
-
-    public void selectBulkUploadReasonForTest(String reason) throws Exception {
-        waitForElementClickable(adminBulkReasonForTestSelector);
-        clickElement(adminBulkReasonForTestSelector);
-        String xpath = String.format("//select[@id='selectReasonForTest']/option[contains(text(),'%s')]", reason);
-        clickElement(By.xpath(xpath));
-    }
-
-    public void selectBulkUploadPackage(String packageName) throws Exception {
-        waitForElementClickable(adminBulkPackageSelector);
-        clickElement(adminBulkPackageSelector);
-        String xpath = String.format("//select[@id='selectPackage']/option[contains(text(),'%s')]", packageName);
-        clickElement(By.xpath(xpath));
-    }
-
-    public void verifyImHappyBtnCOCPage() {
-        Assert.assertTrue(sideAlleyIamHappyCoCPhotoBtnWE.isEnabled());
-    }
-
-    public void enterPhoneData(DataTable dataTable) {
-        List<List<String>> values = dataTable.asLists ( );
-        for (List<String> value : values) {
-            for (String s : value) {
-                setElementValue(orderPhoneNumber, s);
-
-                Assert.assertTrue(isOrderNextButtonEnabled(), "Next button was disabled.");
-
-                for (int k = 0; k < 15; k++) {
-                    orderPhoneNumberWebElement.sendKeys(Keys.BACK_SPACE);
-                }
-            }
-        }
-    }
-
-    public void useBlankSpreadSheetAndUpload(String fileName) throws Exception {
-        SharedBaseClass sharedBaseClass = new SharedBaseClass(driver);
-        sharedBaseClass.getFileToUpload(fileName);
-    }
-
-
-
-    public void clickBulkUploadDetailsIcon(String fileName) throws Exception {
-        for(WebElement dataRow:bulkOrdersListRows) {
-            if(getText(dataRow).contains(fileName))
-            {
-                clickElement(bulkUploadDetailsIcon);
-            }
-        }
-    }
-
-    public void clickBulkUploadItemDetailsButton() throws Exception {
-        waitForElementClickable(bulkUploadItemDetailsBackButton);
-        clickElement(bulkUploadItemDetailsBackButton);
-    }
-
-    public void clickBulkUploadGetErrorFileLink() throws Exception {
-        waitForElementClickable(bulkUploadGetErrorFileLink);
-        clickElement(bulkUploadGetErrorFileLink);
-    }
-
-   public void openNewBrowserTabWindow(){
-        SeleniumBaseClass seleniumBaseClass = new SeleniumBaseClass(driver);
-        seleniumBaseClass.openNewBrowserTab();
-   }
-
-   public void switchToParentWindow(){
-       SharedBaseClass sharedBaseClass = new SharedBaseClass(driver);
-       sharedBaseClass.switchToParentWindow();
-   }
-
-    public void isLocationExist(String locationAlias) throws Exception {
-        String xpath="//table//td[6]";
-        WebElement element=driver.findElement (By.xpath (xpath));
-        Assert.assertEquals (getText(element),locationAlias,"Location alias is not found");
-    }
-
-    public void enterSalariedLeaderName(String salariedLeaderName) {
-         setElementValue(adminSLeaderName, salariedLeaderName);
-    }
-
-    public void enterSalariedLeaderComment(String salariedLeaderComment) {
-        setElementValue(adminSLeaderComment, salariedLeaderComment);
-    }
-
-    public void signSignaturePad4EyesCheck() {
-        Actions builder = new Actions(getDriver());
-        Action drawAction = builder.moveToElement(signaturePad, 50, 50)
-                //signatureWebElement is the element that holds the signature element you have in the DOM
-                .clickAndHold()
-                .moveByOffset(15, 20)
-                .moveByOffset(17, 23)
-                .release()
-                .build();
-        drawAction.perform();
-
-    }
-
-/*
-This method did not work in current pdf browser, should be deleted after check
- */
-    public void verifyFAQpdfOpens() {
-        Assert.assertEquals("FAQ PDF browser tab is not found", "AmazonTrainingDocJan2022.pdf", "getDriver().getTitle()");
-
-    }
-	public void clickProceedBtnOn4EyePopUp() throws Exception {
-        waitForElementClickable(adminSLeaderPopUpProceedBtn);
-        clickElement(adminSLeaderPopUpProceedBtn);
-
-    }
-
-    public void enterAlias(String amazonAlias) {
-        waitForElementPresent(adminAmazonAliasWE);
-        setElementValue(adminAmazonAlias,amazonAlias);
-    }
-
-    public void clickLocationLink(String locationName) {
-        By locationNameLink = By.xpath("//a[contains(text(),'" + locationName + "')]");
-        if (exists(locationNameLink)) {
-            waitForElementClickable(locationNameLink);
-            clickElement(locationNameLink);
-        } else {
-            throw new RuntimeException("Location Name [" + locationName + "] is not visible");
-        }
-    }
- public void adminSelectCarrier(String carrier) {
-        waitForElementClickable(adminCarrierSelector);
-        clickElement(adminCarrierSelector);
-        String xpath = String.format("//select[@id='shipper']/option[contains(text(),'%s')]", carrier);
-        clickElement(By.xpath(xpath));
-    }
-
-    public void enterTrackingNumber(String trackingNumber) {
-        waitForElementPresent(adminTrackingNumberWE);
-        setElementValue(adminTrackingNumber,trackingNumber);
-    }
-
-    public void clickTrackingCertifyBtn() {
-        waitForElementClickable(orderNextButton);
-        clickElement(orderNextButton);
-    }
-
-    public void enterEmployeeID(String employeeID) {
-        waitForElementPresent(orderIdentificationEmpIDWE);
-        setElementValue(orderIdentificationEmpID,employeeID);
-    }
-	 public void searchForLocation(String locationName) {
-        waitForElementPresent(adminLandingPageLocationFilterWE);
-        setElementValue(adminLandingPageLocationFilter,locationName);
-    }
-
-    public void searchForState(String state) {
-        waitForElementPresent(adminLandingPageStateFilterWE);
-        setElementValue(adminLandingPageStateFilter,state);
-    }
-
-    public void verifyLocationSearchResults(String searchLocation) {
-        List<WebElement>locations=new ArrayList<>();
-        locations.addAll(adminLandingPageLocationSearchResults);
-        for (WebElement location:locations
-             ) {
-            logger.info("name "+getText(location));
-            Assert.assertTrue(getText(location).contains(searchLocation));
-
-        }
-    }
-
-    public void verifyLocationStateSearchResults(String searchState) {
-        List<WebElement>states=new ArrayList<>();
-        states.addAll(adminLandingPageStateSearchResults1);
-        states.addAll(adminLandingPageStateSearchResults2);
-        for (WebElement state:states
-        ) {
-            logger.info("name "+getText(state));
-            Assert.assertTrue(getText(state).contains(searchState));
-
-        }}
-		
-    
-     public void verifyRecentLocations(String location1, String location2, String location3) {
-
-        String xpathLoc1=String.format("(//a[contains(text(),' %s ')])[1]",location1);
-         String xpathLoc2=String.format("(//a[contains(text(),' %s ')])[1]",location2);
-         String xpathLoc3=String.format("(//a[contains(text(),' %s ')])[1]",location3);
-         WebElement location1WE=driver.findElement(By.xpath(xpathLoc1));
-         WebElement location2WE=driver.findElement(By.xpath(xpathLoc2));
-         WebElement location3WE=driver.findElement(By.xpath(xpathLoc3));
-         Assert.assertTrue(location1WE.isDisplayed());
-         Assert.assertTrue(location2WE.isDisplayed());
-         Assert.assertTrue(location3WE.isDisplayed());
-
-
-    }
-    public void enterSampleIDInFirstField(String sampleId, Boolean clearField) {
-        if (clearField.equals(true)) {
-            setElementValue(sideAlleySampleIdTextBox, sampleId);
-        }else {
-            setElementValueNoClear(sideAlleySampleIdTextBox, sampleId);
-        } report(Status.PASS, "Entered Sample Information");
-
-    }
-    public void enterSampleIDInSecondField(String sampleId, Boolean clearField) {
-        if (clearField.equals(true)) {
-            setElementValue(sideAlleyConfirmSampleIdTextBox, sampleId);
-        }else {
-            setElementValueNoClear(sideAlleyConfirmSampleIdTextBox, sampleId);
-        } report(Status.PASS, "Entered Sample Information");
-    }
-    public void clickModifiedAdjudicationCertifyBtn() {
-        waitForElementClickable(adminModifiedAdjudicationCertifyBtn);
-        clickElement(adminModifiedAdjudicationCertifyBtnWE);
-    }
-
-    public void clickValidForModifiedAdminPage() {
-        waitForElementClickable(adminModifiedAdjudicationValidBtn);
-        clickElement(adminModifiedAdjudicationValidWE);
-    }
-
-    public void clickRetestForModifiedAdminPage() {
-        waitForElementClickable(adminModifiedAdjudicationRetestBtn);
-        clickElement(adminModifiedAdjudicationRetestWE);
-    }
-
-    public void verifyLocationPageFields() {
-
-        waitForSeconds(2);
-        List<By> elements=new ArrayList<>(Arrays.asList(orderCity,orderStateSelector,orderPackageReasonSelector,orderCountrySelector));
-        for (By element:elements) {
-            Assert.assertTrue(exists(element),element+ " does not exist on the Location Information page");
-        }
-
-    }
-
-    public void verifyReasonPre(String reasonForTest) {
-        Select select = new Select(orderPackageReasonWESelector);
-        String defaultOption = select.getFirstSelectedOption().getText();
-        Assert.assertEquals(defaultOption,reasonForTest,"Pre-employment is not the default reason for test option");
-    }
-
-    public void verifyDefaultPackage(String packageOption) {
-        Select select = new Select(orderPackageWElementSelector);
-        String defaultOption = select.getFirstSelectedOption().getText();
-        Assert.assertEquals(defaultOption,packageOption,"OralTox 6 Panel is not the default package option");
-    }
-
-    public void verifyBusinessLineDropDownList() {
-        Select select = new Select(orderBusinessLineWE);
-        List<WebElement> options=select.getOptions();
-        List<String>optionsText=new ArrayList<>();
-        for (WebElement option:options
-             ) {
-            optionsText.add(option.getText());
-        }
-        List<String>expectedOptions=new ArrayList<>(Arrays.asList("North American Fulfillment Center"));
-        Assert.assertEquals(optionsText,expectedOptions,"Business Line drop down options are not found as expected");
-
-        }
-
-    public void verifyPackageDropDownList() {
-        Select select = new Select(orderPackageWElementSelector);
-        clickElement(orderPackageWElementSelector);
-        List<WebElement> options=select.getOptions();
-        List<String>optionsText=new ArrayList<>();
-        for (WebElement option:options
-        ) {
-            optionsText.add(option.getText());
-        }
-        List<String>expectedOptions=new ArrayList<>(Arrays.asList("OralTox 6 Panel"));
-        Assert.assertEquals( optionsText,expectedOptions,"Package drop down options are not found as expected");
-
-    }
-
-    public void selectBusinessLine(String businessLine) {
-        By element = businessLineOption(businessLine);
-        waitForElementClickable(element);
-        clickElement(element);
-    }
-
-    public void verifyStepOnCard(String stepOnTheCard) {
-        By stepCard=By.xpath("//div[contains(text(),'"+stepOnTheCard+"')]");
-        Assert.assertTrue(exists(stepCard), "Card does not show"+stepOnTheCard+"step");
-    }
-
-    public void clickDashboardBtn() {
-        waitForElementClickable(adminDashboardButton);
-        clickElement(adminDashboardButton);
-    }
-
-    public void verify4EyesCheckPageDrugOptions() {
-        waitForElementClickable(adjudicateInconclusivebutton);
-        List<WebElement>options=new ArrayList<>(Arrays.asList(adjInconclusiveWebElementButton,adjClearButtonWebElement,adjRetestButtonWebElement));
-
-        for(WebElement option:options){
-            Assert.assertTrue(option.isEnabled());
-        }
-    }
-
-    public void verify4EyesCheckCertificationForAlcoholLevels() {
-        String [] alcoholCheckBox= {"0.0","20", "40", "80", "300"};
-        WebElement text=getDriver().findElement(By.xpath("(//strong)[3]"));
-        for (String box:alcoholCheckBox
-        ) {
-            By alcoholBox=By.xpath("//span[contains(text(),'"+box+"')]");
-            clickElement(alcoholBox);
-            waitForSeconds(1);
-            if(box.equalsIgnoreCase("0.0")){
-                Assert.assertEquals(text.getText(), "Clear", "Certification Language is not Clear");
-            }
-            else {
-                Assert.assertEquals(text.getText(), "Inconclusive", "Certification Language is not Inconclusive");
-            }
-        }
-    }
-
-
-
-    public void drugHas7Strips() {
-        SharedBaseClass sharedBaseClass = new SharedBaseClass(driver);
-        List<WebElement> xpaths = getDriver().findElements(By.xpath("//div[@class='check-box']"));
-        for (WebElement xpath : xpaths) {
-            Assert.assertTrue(sharedBaseClass.checkIsEnabled(xpath), "CheckBox is disabled");
-            logger.info("strip" + xpath + " is enabled");
-
-        }
-    }
-    public void verifyAlcBoxesDisabled() {
-
-            SharedBaseClass sharedBaseClass = new SharedBaseClass(driver);
-        for (int i = 1; i <6 ; i++) {
-            WebElement alcoholBox=getDriver().findElement(By.xpath("//div[@class='square alch-"+i+" disabledSquare']"));
-                Assert.assertTrue(sharedBaseClass.checkIsEnabled(alcoholBox),"AlcoholBox is enabled");
-            }
-
-        }
-
-    public void checkConcludedTabAlcCheckBoxes(String alcBox) {
-
-        String xpath="//div[@id='alch-"+alcBox+"']/following-sibling::div[@class='checkmark disabledCheckmark']";
-        By element=By.xpath(xpath);
-        Assert.assertTrue(exists(element),"Alcohol Check Box is not showing as selected by the Admin");
-
-    }
-    public void verifyFinalTestResultHas4EyesSelection(){
-    String result[]=getText(adminFinalTestResult4EyesSelection).split(":");
-    Assert.assertEquals(result[1],testObject.getTestData("Adjudication"),"Final Test Result Selection Page does not have 4 eyes check result");
-
-    }
-
-    public void verifyCertifyClearPage() {
-        Assert.assertTrue(exists(certifyClearDeviceImage), "Device image is missing");
-        Assert.assertTrue(exists(certifyClearAlcoholResults),"Alcohol results are missing");
-        Assert.assertTrue(exists(certifyClearText), "Certification text is missing");
-    }
-
-    public void clickSupportTools() throws Exception {
-        waitForElementClickable(mainMenu);
-        clickElement(mainMenu);
-        logger.info("main menu clicked");
-        waitForElementClickable(supportToolsMenu);
-        clickElement(supportToolsMenu);
-    }
-
-    public void searchByName (String state) {
-        waitForElementPresent(adminSupportToolsPageSearchByNameWE);
-        setElementValue(adminSupportToolsPageSearchByName,state);
-    }
-    
-    public void searchForCandidate(String CandidateName) {
-        waitForElementPresent(adminSupportToolsPageSearchByNameWE);
-        setElementValue(adminSupportToolsPageSearchByName,CandidateName);
-    }
-
-    public void verifyCandidateSearchResults(String searchCandidate) {
-        List<WebElement>candiates=new ArrayList<>();
-        candiates.addAll(adminSupportToolsPageCandidateNameSearchResults);
-        for (WebElement candiate:candiates
-        ) {
-            logger.info("name " + getText(candiate));
-            Assert.assertTrue(getText(candiate).contains(searchCandidate));
-        }
-
-    }
-
-    public void verifyAdminSupportToolsColumnTitles() {
-        List<String> expected = new ArrayList<>(Arrays.asList("Name", "Last Update", "Device ID", "Wellness ID", "Status", "Step"));
-        List<String> titles = new ArrayList<>();
-        for (WebElement title : adminSupportToolsTableTitles
-        ) {
-            titles.add(title.getText());
-        }
-        Assert.assertEquals(expected, titles);
-    }
-
-    public void searchForDeviceID(String DeviceID) {
-        waitForElementPresent(adminSupportToolsPageSearchByNameWE);
-        setElementValue(adminSupportToolsPageSearchByDeviceID,DeviceID);
-    }
-
-    public void verifyDeviceIDSearchResults(String searchDeviceID) {
-        List<WebElement>devices=new ArrayList<>();
-        devices.addAll(adminSupportToolsPageDeviceIDSearchResults);
-        for (WebElement device:devices
-        ) {
-            logger.info("Device ID " + getText(device));
-            Assert.assertTrue(getText(device).contains(searchDeviceID));
-        }
-
-    }
-
-    public void clickNameFieldOnSupportTools() throws Exception {
-        waitForElementPresent(adminNameFieldSupportTools_WebElement);
-        clickElement(adminNameFieldSupportTools);
-    }
-
-    public void WellnessAdvantageID(String WellnessAdvandtageID) {
-        setElementValue(WAIdSupportTool, WellnessAdvandtageID);
-    }
-
-    public void clickSaveChangesOnSupportTools() throws Exception {
-        waitForElementPresent(adminSaveChangesSupportTool_WebElement);
-        clickElement(adminSaveChangesSupportTool);
-    }
-
-    public void verifyCandidateName(String candidateName) {
-        List<WebElement>candiates=new ArrayList<>();
-        candiates.addAll(adminCandidateResultsPageCandidateNameWE);
-        for (WebElement candiate:candiates
-        ) {
-            logger.info("name " + getText(candiate));
-            Assert.assertTrue(getText(candiate).contains(candidateName));
-        }
-
-    }
-
-    public void selectCurrentStep(String step) throws Exception {
-        waitForElementPresent(currentStepWESelector);
-        selectElement(currentStepSelector, step);
-    }
-
-    public void verifyCandidateInTheJSON(String searchCandidateInTheJSON) {
-        List<WebElement> candiates = new ArrayList<>();
-        candiates.addAll(adminSupportToolsCandidateNameOnTheJSON);
-        for (WebElement candiate : candiates
-        ) {
-            logger.info("name " + getText(candiate));
-            Assert.assertTrue(getText(candiate).contains(searchCandidateInTheJSON));
-        }
-    }
-
-    public void clickBackToResultsButtonSupportTools() throws Exception {
-        waitForElementClickable(backToResultsButton);
-        clickElement(backToResultsButton);
-    }
-
-    public void isOneStrip(String isOneStrip,String candidate) throws Exception {
-        String actualOneStrip = driver.findElement(By.xpath("(//td[.='" + candidate + "']/..//td)[last()]")).getText();
-        String expected = isOneStrip;
-        logger.info("is OneStrip= " + actualOneStrip);
-        Assert.assertEquals(actualOneStrip, expected, "The onestrip status is not found as expected");
-    }
-
-    public void clickReasonForTest() throws Exception {
-        waitForElementClickable(orderPackageReasonSelector);
-        clickElement(orderPackageReasonSelector);
-    }
-
-    public void verifyOrderReasonDropDownList() {
-        Select select = new Select(orderPackageReasonWESelector);
-        List<WebElement> options=select.getOptions();
-        List<String>actualOptions=new ArrayList<>();
-        for (WebElement option:options
-        ) {
-            actualOptions.add(getText(option));
-        }
-        List<String>expectedOptions=new ArrayList<>(Arrays.asList("Pre-employment", "Random",
-                "Reasonable Suspicion", "Post Accident"));
-        Assert.assertEquals(actualOptions,expectedOptions,"Order Reason drop down options are not found as expected");
-    }
-
-    public void clickBusinessLineList() throws Exception {
-        waitForElementClickable(businessLine);
-        clickElement(businessLine);
-    }
+//    public void loginAndCloseBrowser(String username, String password) throws InterruptedException, IOException {
+//
+//        By btnLogin = By.id("login-button");
+//        By fUser = By.id("signInName");
+//        By fPass = By.id("password");
+//        By btnSignIn = By.xpath("//button[@id='next']");
+//        By btnMenu = By.id("menu-btn");
+//
+//        if (username.startsWith("data.")) {
+//            username = testObject.getProperty(username); // load from config file
+//        }
+//        if (password.startsWith("data.")) {
+//            password = testObject.getProperty(password); // load from config file
+//        }
+//
+//        logger.info("user = " + username + ", pass = *hidden*");
+//
+//        this.waitFor(btnLogin);
+//        this.clickElement(btnLogin);
+//
+//        if (this.waitFor(fUser)) {
+//            this.setElementValue(fUser, username);
+//            this.setElementValue(fPass, password);
+//            this.clickElement(btnSignIn);
+//            this.waitFor(btnMenu);
+//        } else {
+//            throw new RuntimeException("Login pass is not showing");
+//        }
+//
+//        Set<Cookie> webCookies = this.getDriver().manage().getCookies();
+//        Map<String, Object> cookies = new HashMap<>();
+//        for (Cookie c : webCookies) {
+//            cookies.put(c.getName(), c.getValue());
+//        }
+//        if (!cookies.isEmpty()) {
+//            String file = System.getProperty("user.dir") + "\\src\\test\\resources\\configs\\cookies.json";
+//            CommonMethods.object2JsonFile(cookies, file);
+//        }
+//        driver.close();
+//    }
+//
+//    public void verifyLogin() throws InterruptedException {
+//        By btnMenu = By.id("menu-btn");
+//        if (!this.waitFor(btnMenu)) {
+//            throw new RuntimeException("This is not a logged in page.");
+//        }
+//
+//        Set<Cookie> cookies = this.driver.manage().getCookies();
+//        System.out.println("cookies = " + cookies.toString());
+//
+//        for (Cookie c : cookies) {
+//            System.out.println("c name : " + c.getName() + " | value : " + c.getValue());
+//        }
+//
+//    }
+//
+//    public void signSignaturePad() {
+//        Actions builder = new Actions(getDriver());
+//        Action drawAction = builder.moveToElement(signaturePad, 50, 50)
+//                //signatureWebElement is the element that holds the signature element you have in the DOM
+//                .clickAndHold()
+//                .moveByOffset(60, 40)
+//                .moveByOffset(62, 55)
+//                .release()
+//                .build();
+//        drawAction.perform();
+//    }
+//    public void signSignaturePadAbandoned() {
+//        Actions builder = new Actions(getDriver());
+//        Action drawAction = builder.moveToElement(signaturePad, 50, 50)
+//                //signatureWebElement is the element that holds the signature element you have in the DOM
+//                .clickAndHold()
+//                .moveByOffset(30, 20)
+//                .moveByOffset(32, 25)
+//                .release()
+//                .build();
+//        drawAction.perform();
+//    }
+//    public void signSignaturePadFinalAlcPage() {
+//        Actions builder = new Actions(getDriver());
+//        Action drawAction = builder.moveToElement(signaturePad, 50, 50)
+//                //signatureWebElement is the element that holds the signature element you have in the DOM
+//                .clickAndHold()
+//                .moveByOffset(30, 20)
+//                .moveByOffset(32, 25)
+//                .release()
+//                .build();
+//        drawAction.perform();
+//    }
+//
+//    public void validateNeedHelpDashboard() {
+//        By cardName = By.xpath("//amzn-candidate-card//div[@class='candidate-container']");
+//
+//        boolean found = false;
+//        String expectedCard = "Auto";
+//
+//        List<WebElement> cards = driver.findElements(cardName);
+//        for (WebElement c : cards) {
+//            if (c.getText().contains(expectedCard)) {
+//                found = true;
+//                report("found candidate name: " + expectedCard);
+//            }
+//        }
+//
+//        Assert.assertTrue(found);
+//    }
+//
+//    public void enterHelpComment(String helpComment) {
+//        By helpDone = By.id("done-button");
+//        this.setElementValue(helpText, helpComment);
+//        this.clickElement(helpDone);
+//
+//        try {
+//            new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.alertIsPresent());
+//            report("alert text = " + driver.switchTo().alert().getText());
+//            this.getDriver().switchTo().alert().accept();
+//        } catch (Exception e) {
+//            logger.info("Error: " + e);
+//        }
+//    }
+//
+//    public void clickHelpLink() {
+//        By weLink = By.xpath("//li/a[text()='Need Help']");
+//        this.clickElement(weLink);
+//    }
+//
+//    public void clickManageOrdersTab(String tabText) throws Exception {
+//        String xpath = String.format("//a[contains(text(), '%s')]", tabText);
+//        By tab = By.xpath(xpath);
+//        waitForElementClickable(tab);
+//        clickElement(tab);
+//    }
+//
+//    public void clickAllStripsInAdminReviewPage() {
+//        for (int i = 0; i < 7; i++) {
+//            String xpath = "(//div[@class='check-box'])[" + i + "]";
+//            clickElement(By.xpath(xpath));
+//        }
+//    }
+//
+//    public void clickAdjudicateRetake() {
+//        By button = By.xpath("//button[contains(text(),'Re-take')]");
+//        if (this.exists(button)) {
+//            this.clickElement(button);
+//        } else {
+//            throw new RuntimeException("Re-take button is not visible");
+//        }
+//    }
+//
+//    public void clickAdjudicateInconclusive() throws Exception {
+//        waitForElementPresent(adjInconclusiveWebElementButton);
+//        clickElement(adjudicateInconclusivebutton);
+//        testObject.setTestData("Adjudication"," Inconclusive");
+//        logger.info("adjudication is "+testObject.getTestData("Adjudication"));
+//
+//    }
+//
+//    public void clickReadyToAdjudicate() {
+//        By weLink = By.xpath("//li/a[text()='Ready to Adjudicate']");
+//        if (this.exists(weLink)) {
+//            this.clickElement(weLink);
+//
+//            try {
+//                Thread.sleep(500);
+//            } catch (InterruptedException e) {
+//                logger.info("Error: " + e);
+//            }
+//        }
+//    }
+//
+//
+//    public void clickOnCandidateCard(String name) throws Exception {
+//        By applicantCard = getCandidateCard(name);
+//        logger.info("!!!!! applicant card information " + applicantCard);
+//        logger.info("***** candidate card clicked: " + name);
+//        waitForElementClickable(applicantCard);
+//        clickElement(applicantCard);
+//    }
+//
+//    public void clickOnEACandidateCard(String name) throws Exception {
+//        By applicantCard = getEACandidateCard(name);
+//
+//        waitForElementClickable(applicantCard);
+//        clickElement(applicantCard);
+//    }
+//
+//    public void javaClickOnCandidateCard() throws Exception {
+//        javaScriptClick(getCandidateCardByWebElement(getCandidateName()));
+//    }
+//
+//    public String getCandidateName() {
+//        return testObject.processString("data.runtime.invite-name");
+//    }
+//
+//    public By candidateCardElement() {
+//        String currentCandidate = getCandidateName();
+//        report("Current Candidate: " + currentCandidate);
+//        return By.xpath("//amzn-candidate-card//*[text()='" + currentCandidate + "']");
+//    }
+//
+//
+//    public void clickLocationNameCard(String locationName) throws Exception {
+//        By locationNameCard = By.xpath("//amzn-building-card//div[text()='" + locationName + "']");
+//        if (exists(locationNameCard)) {
+//            waitForElementClickable(locationNameCard);
+//            clickElement(locationNameCard);
+//        } else {
+//            throw new RuntimeException("Location Name [" + locationName + "] is not visible");
+//        }
+//    }
+//
+//    public void clickAdjudicateRetest() {
+//        By button = By.xpath("//button[@id='retest-btn']");
+//        if (this.exists(button)) {
+//            this.clickElement(button);
+//        } else {
+//            throw new RuntimeException("Retest button is not visible");
+//        }
+//    }
+//
+//    public void clickAdjudicateClear() {
+//        By buttonClear = By.xpath("//button[@id='clear-btn']");
+//        if (this.exists(buttonClear)) {
+//            this.clickElement(buttonClear);
+//        } else {
+//            throw new RuntimeException("Clear button is not visible");
+//        }
+//    }
+//
+//    public void selectAdjudicationStripsByIndex(List<Integer> indexes) {
+//        for (Integer index : indexes) {
+//            By checkbox = By.xpath("(//div[@class='check-box'])[" + index + "]");
+//            this.clickElement(checkbox);
+//        }
+//    }
+//
+//    public void clickAdjudicateCertifySubmit() throws Exception {
+//        waitForElementClickable(certifySubmitButton);
+//        clickElement(certifySubmitButton);
+//        report("Certify and Submit Button clicked.");
+//    }
+//
+//    public void clickAdjudicateSignSubmit() throws Exception {
+//        waitForElementClickable(signAndSubmitButton);
+//        clickElement(signAndSubmitButton);
+//        report("Sign and Submit Button clicked.");
+//    }
+//
+//
+//    public void validateReadyToAdjudicateDashboard() {
+//        String currentCandidate = getCandidateName();
+//        List<String> fullName = Arrays.asList(currentCandidate.split(" "));
+//        String fName = fullName.get(0);
+//        Assert.assertTrue(exists(candidateGreenCardByFirstName(fName)),"Adjudicated Green card for " + currentCandidate + " was not found as expected.");
+//    }
+//
+//    public void validateTestsInProgressDashboard() {
+//        boolean found = false;
+//        String expectedCard = testObject.getTestData ("lName");
+//
+//        List<WebElement> cards = getDriver().findElements(cardName);
+//        for (WebElement c : cards) {
+//            if (c.getText().contains(expectedCard)) {
+//                found = true;
+//                report("found candidate name: " + expectedCard);
+//            }
+//        }
+//        Assert.assertTrue(found);
+//    }
+//
+//    public void validateNotInTestsInProgressDashboard() throws Exception {
+//        String currentCandidate = getCandidateName();
+//        boolean found = false;
+//        List<WebElement> cards = getDriver().findElements(cardName);
+//        for (WebElement c : cards) {
+//            if (getText(c).contains(currentCandidate)) {
+//                found = true;
+//                report("found candidate name: " + currentCandidate);
+//            }
+//        }
+//
+//        Assert.assertFalse(found);
+//    }
+//
+//    public void validateConcludedTestsDashboard() throws Exception {
+//        String currentCandidate = getCandidateName();
+//        boolean found = false;
+//        List<WebElement> cards = getDriver().findElements(cardName);
+//        for (WebElement c : cards) {
+//            if (getText(c).contains(currentCandidate)) {
+//                found = true;
+//                report("found candidate name: " + currentCandidate);
+//            }
+//        }
+//        Assert.assertTrue(found);
+//    }
+//
+//    public void clickTestsInProgressLink() {
+//        By weLink = By.xpath("//li/a[text()='Tests in Progress']");
+//        this.clickElement(weLink);
+//    }
+//
+//    public void clickConcludedTestsLink() {
+//        By ctLink = By.xpath("//a[text()='Concluded Tests']");
+//        this.clickElement(ctLink);
+//    }
+//
+//    public void validateCorrectLocationShowing() throws Exception {
+//        String location = environment.getEnvironmentLocationName();
+//        if (!this.exists(weMenu)) {
+//            throw new RuntimeException("Header menu does not exist");
+//        }
+//        String capturedLocation = getText(locationTitleWE);
+//        report("Location: " + capturedLocation);
+//        Assert.assertTrue(capturedLocation.contains(location),"Location was not found as expected Found: " + capturedLocation + " instead of: " + location);
+//    }
+//
+//    public void selectLocation() throws Exception {
+//        String locName = environment.getEnvironmentLocationName();
+//        String stateName = environment.getEnvironmentLocationState();
+//        logger.info("State to click: " + stateName);
+//        By btnState = By.xpath("//div/*[text()='" + stateName + "']");
+//        waitForElementClickable(btnState);
+//        Thread.sleep(500);
+//        By divLocation = By.xpath("//div[contains(text(), '" + locName + "')]");
+//
+//        if (this.exists(divLocation)) {
+//            this.clickElement(divLocation);
+//        } else {
+//            throw new RuntimeException("Location tile does not exist or visible.");
+//        }
+//    }
+//
+//
+//    public void clickDefaultLocationCard() throws Exception {
+//        String locationName = environment.getEnvironmentLocationName();
+//        clickLocationNameCard(locationName);
+//    }
+//
+//    public void clickAutomationLocationCard() throws Exception {
+//        String locationName = testObject.getProperty("automation.location.name");
+//        logger.info("location Name card to click: " + locationName);
+//        clickLocationNameCard(locationName);
+//    }
+//
+//
+//    public void selectInconclusiveDrug(By... drugOption) {
+//        for (By drug : drugOption) {
+//            checkbox(drug, true);
+//        }
+//    }
+//
+//    public void clickCancel() throws Exception {
+//        waitForElementClickable(adjCancelButton);
+//        clickElement(adjCancelButton);
+//    }
+//
+//    public void clickConfirm() throws Exception {
+//        waitForElementClickable(adjConfirmButton);
+//        clickElement(adjConfirmButton);
+//    }
+//
+//    public void clickCompletedTestsTab() throws Exception {
+//        waitForElementClickable(concludedTab);
+//        clickElement(concludedTab);
+//    }
+//
+//
+//    public void verifyCardListedUnderFilter(String filterOption) {
+//        Assert.assertTrue(exists(candidateCardElement()),"Candidate Card was not found under filter: " + filterOption);
+//    }
+//
+//
+//    public void clickRestartTestCheckbox() {
+//        checkbox(restartTestCheckbox, true);
+//    }
+//
+//    public void clickHelpDoneButton() throws Exception {
+//        waitForElementClickable(helpDoneButton);
+//        clickElement(helpDoneButton);
+//    }
+//
+//    public void clickLogout() throws Exception {
+//        waitForElementClickable(mainMenu);
+//        clickElement(mainMenu);
+//        waitForElementClickable(logoutMenu);
+//        clickElement(logoutMenu);
+//    }
+//
+//    public void clickChooseAnotherLocation() throws Exception {
+//        waitForElementClickable(mainMenu);
+//        clickElement(mainMenu);
+//        waitForElementClickable(chooseAnotherLocationMenu);
+//        clickElement(chooseAnotherLocationMenu);
+//    }
+//
+//    public void clickManageOrders() throws Exception {
+//        waitForElementClickable(mainMenu);
+//        clickElement(mainMenu);
+//        logger.info("main menu clicked");
+//        waitForElementClickable(manageOrdersMenu);
+//        clickElement(manageOrdersMenu);
+//    }
+//
+//    public void clickCocConversion() throws Exception {
+//        waitForElementClickable(mainMenu);
+//        clickElement(mainMenu);
+//        waitForElementClickable(cocConversionMenu);
+//        clickElement(cocConversionMenu);
+//    }
+//
+//
+//    public void enterHelpCommentOnly(String text) {
+//        setElementValueNoClear(helpText, text);
+//    }
+//
+//    public void enterTextToSearch(String searchText, boolean clearValue) {
+//        if (clearValue) {
+//            setElementValue(candidateSearchTextBox, searchText);
+//        } else {
+//            setElementValueNoClear(candidateSearchTextBox, searchText);
+//        }
+//    }
+//
+//
+//    public void clickStartDateRange(String dateLabel) throws Exception {
+//        waitForElementClickable(startDateRange);
+//        clickElement(startDateRange);
+//        wait(1);
+//        clickElement(getDateRangeLabel(dateLabel));
+//    }
+//
+//    public void clickEndDateRange(String dateLabel) throws Exception {
+//        waitForElementClickable(endDateRange);
+//        clickElement(endDateRange);
+//        clickElement(getDateRangeLabel(dateLabel));
+//    }
+//
+//    public void setCurrentDayAsEndDateToSearch() throws Exception {
+//        waitForElementClickable(endDateRange);
+//        clickElement(endDateRange);
+//        String currentDate = getCurrentDateforFilter();
+//        logger.info("setting end date: " + currentDate);
+//        clickElement(getDateRangeLabel(currentDate));
+//    }
+//
+//    public void setRandomStartDateToSearch(int daysPriorCurrentDay) throws Exception {
+//        waitForElementClickable(startDateRange);
+//        clickElement(startDateRange);
+//        String currentDate = calculatePreviousDays(daysPriorCurrentDay);
+//        logger.info("setting start date: " + currentDate);
+//        clickElement(getDateRangeLabel(currentDate));
+//        waitForSeconds(1);
+//    }
+//
+//
+//    public void goToPageNumber(String pageNumber) throws Exception {
+//        waitForElementClickable(resultsPagination(pageNumber));
+//        clickElement(resultsPagination(pageNumber));
+//    }
+//
+//    public void clickAdjudicatedBackButton() throws Exception {
+//        waitForElementClickable(adjudicatedBackButton);
+//        clickElement(adjudicatedBackButton);
+//    }
+//
+//    public void clickPastHoursButton(String buttonText) throws Exception {
+//        waitForElementClickable(pastHourButton(buttonText));
+//        clickElement(pastHourButton(buttonText));
+//    }
+//
+//    public void clickStartDateRangeCalendar() throws Exception {
+//        waitForElementClickable(startDateRange);
+//        clickElement(startDateRange);
+//    }
+//
+//    public void verifyPastHoursButtonExists(String buttonText) throws Exception {
+//        clickStartDateRangeCalendar();
+//        Assert.assertTrue(exists(pastHourButton(buttonText)), buttonText + " Button was not found as expected.");
+//        clickPastHoursButton(buttonText);
+//        waitForDisappear(pastHourButton(buttonText));
+//    }
+//
+//    public void selectAreasonForAbandoned() throws Exception {
+//        By element = randomReasonOption();
+//        waitForElementClickable(element);
+//        clickElement(element);
+//        if (element.toString().contains("Other")) {
+//            addAbandonedReasonComments("Test");
+//        }
+//    }
+//
+//    public void selectReasonForCertification(String reason) throws Exception {
+//        By element = reasonOption(reason);
+//        waitForElementClickable(element);
+//        clickElement(element);
+//    }
+//
+//    public void addInvalidReasonComments(String reasonDetailsComment) {
+//        setElementValueNoClear(reasonComment, reasonDetailsComment);
+//    }
+//
+//    public void clickInvalidButton() throws Exception {
+//        waitForElementClickable(invalidButton);
+//        clickElement(invalidButton);
+//    }
+//
+//
+//    public void clickInvertedSwitch() throws Exception {
+//        waitForElementPresent(invertedSwitchWebElement);
+//        scrollTo(invertedSwitchWebElement);
+//        clickElement(invertedSwitch);
+//    }
+//
+//    public void isImageInverted() {
+//        String className = adjudicateDeviceImage_WebElement.getAttribute("class");
+//        Assert.assertEquals(className, "inverted","Inverted Image was not found as expected." );
+//    }
+//
+//    public String getAdminSpecimenIdDisplayed() throws Exception {
+//        return getText(specimenId_WebElement).replace(" ", "");
+//    }
+//
+//    public void clickSpecimenYesButton() throws Exception {
+//        waitForElementPresent(adminSpecimenYesButton_WebElement);
+//        clickElement(adminSpecimenYesButton);
+//    }
+//
+//    public void clickSpecimenNoButton() throws Exception {
+//        waitForElementPresent(adminSpecimenNoButton_WebElement);
+//        clickElement(adminSpecimenNoButton);
+//    }
+//
+//    public void addAbandonedReasonComments(String reasonDetailsComment) {
+//        setElementValueNoClear(reasonComment, reasonDetailsComment);
+//    }
+//
+//    public void clickAbandonedProcess() throws Exception {
+//        scrollTo(abandonedButtonWebElement);
+//        waitForElementClickable(abandonedProcessButton);
+//        clickElement(abandonedProcessButton);
+//    }
+//
+//    public void selectPackage(String packageText) throws Exception {
+//        waitForElementPresent(orderPackageWElementSelector);
+//        clickElement(orderPackageSelector);
+//        waitForSeconds(1);
+//        String xpath = String.format("//select[@id='orderPackageId']/option[contains(text(),'%s')]", packageText);
+//        clickElement(By.xpath(xpath));
+//    }
+//
+//    public Boolean packageInfoDisplayed(String optionText) throws Exception {
+//        waitForElementPresent(orderPackageWElementSelector);
+//        String xpath = String.format("//select[@id='orderPackageId']/option[contains(text(),'%s')]", optionText);
+//        return driver.findElement(By.xpath(xpath)).isDisplayed();
+//    }
+//
+//
+//    public void selectPackageReason(String reason) throws Exception {
+//        waitForElementPresent(orderPackageReasonWESelector);
+//        selectElement(orderPackageReasonSelector, reason);
+//    }
+//
+//    public String packageInfoReasonDisplayed() throws Exception {
+//        waitForElementPresent(orderPackageReasonWESelector);
+//        Select select = new Select(driver.findElement(By.id("reasonForTest")));
+//        WebElement element = select.getFirstSelectedOption();
+//        return getText(element);
+//    }
+//
+//    public void selectHiringCountry(String country) {
+//        String xpath = String.format("//select[@id='country']/option[contains(text(), '%s')]", country);
+//        clickElement(By.xpath(xpath));
+//    }
+//
+//
+//    public void selectHiringState(String state) {
+//        clickElement(orderStateSelector);
+//        String xpath = String.format("//select[@id='state']/option[contains(text(),'%s')]", state);
+//        clickElement(By.xpath(xpath));
+//        //using this line to redirect focus off of the state element
+//        clickElement(orderCity);
+//    }
+//
+//    public void enterOrderCity(String city) {
+//        setElementValue(orderCity, city);
+//    }
+//
+//    public void enterOrderZipCode(String zipCode) {
+//        setElementValueNoClear(orderPostalCode, zipCode);
+//    }
+//
+//    public void enterOrderAddress1(String address) throws Exception {
+//        waitForElementPresent(orderAddressLine1WebElement);
+//        setElementValueNoClear(orderAddressLine1, address);
+//    }
+//
+//    public void enterOrderPhoneNumber(String phone, Boolean clearValue) throws Exception {
+//        waitForElementPresent(orderPhoneNumberWebElement);
+//        waitForElementPresent(orderEmailAddressWebElement);
+//        if (clearValue) {
+//            orderPhoneNumberWebElement.sendKeys(Keys.DELETE);
+//            setElementValue(orderPhoneNumber, phone);
+//        } else {
+//            setElementValueNoClear(orderPhoneNumber, phone);
+//        }
+//    }
+//
+//    public void enterOrderEmailAddress(String email, Boolean clearValue) throws Exception {
+//        waitForSeconds (2);
+//        waitForElementPresent (orderEmailAddressWebElement);
+//        if (clearValue) {
+//            setElementValue (orderEmailAddress, email);
+//        } else {
+//            setElementValueNoClear (orderEmailAddress, email);
+//        }
+//
+//    }
+//
+//    public void clickOrderNextButton() throws Exception {
+//        waitForElementClickable(orderNextButton);
+//        clickElement(orderNextButton);
+//    }
+//    public void clickAlcoholFlowNextButton() throws Exception {
+//        waitForElementClickable(alcoholFlowNextBtn);
+//        clickElement(alcoholFlowNextBtn);
+//    }
+//
+//    public void clickOrderPreviousButton() throws Exception {
+//        waitForElementClickable(orderPreviousButton);
+//        clickElement(orderPreviousButton);
+//        waitForSeconds(5);
+//    }
+//
+//    public void clickCoCtakePhotoButton() throws Exception {
+//        waitForElementClickable(sideAlleyCoCTakePhotoButton);
+//        clickElement(sideAlleyCoCTakePhotoButton);
+//    }
+//
+//    public void clickStartNewCandidateButton() throws Exception {
+//        waitForElementClickable(orderCreateAnotherButton);
+//        clickElement(orderCreateAnotherButton);
+//    }
+//
+//    public void clickBrowserBackButton() {
+//        browserBackButton();
+//    }
+//
+//    public void clickOrderExitButton() throws Exception {
+//        waitForElementClickable(orderExitButton);
+//        clickElement(orderExitButton);
+//    }
+//
+//    public void clickGetStartedButton() throws Exception {
+//        waitForElementClickable(orderGetStartedButton);
+//        clickElement(orderGetStartedButton);
+//    }
+//
+//    public void clickUseThisIdButton() throws Exception {
+//        waitForElementClickable(orderUseIdButton);
+//        clickElement(orderUseIdButton);
+//    }
+//
+//    public void clickNewOrderButton() throws Exception {
+//        waitForElementClickable(createNewOrderButton);
+//        clickElement(createNewOrderButton);
+//    }
+//
+//    public void clickCreateNewOrderButtonSubmitPage() throws Exception {
+//        waitForElementPresent(createNewOrderOnSubmitWebElement);
+//        clickElement(adminUIcreateNewOrders);
+//    }
+//
+//    public void enterCandidateLastName(String candidateLastName) throws Exception {
+//        waitForElementPresent(candidateLookupLastNameWebElement);
+//        logger.info("entering last name: " + candidateLastName);
+//        setElementValue(orderLookupLastName, candidateLastName);
+//    }
+//
+//    public void enterCandidateDobMonth(String candidateDobMonth) throws Exception {
+//        waitForElementPresent(candidateLookupMonthWebElement);
+//        setElementValue(orderLookupBirthMonth, candidateDobMonth);
+//    }
+//
+//    public void enterCandidateDobDay(String candidateDobDay) throws Exception {
+//        waitForElementPresent(candidateLookupDayWebElement);
+//        setElementValue(orderLookupBirthDay, candidateDobDay);
+//    }
+//
+//    public void enterCandidateDobYear(String candidateDobYear) throws Exception {
+//        waitForElementPresent(candidateLookupYearWebElement);
+//        setElementValue(orderLookupBirthYear, candidateDobYear);
+//    }
+//
+//    public void enterCandidateSsn(String candidateSsn) throws Exception {
+//        waitForElementPresent(candidateLookupSsnWebElement);
+//        setElementValue(orderLookupSsn, candidateSsn);
+//    }
+//
+//
+//    public void clickSideAlleySubmitButton() throws Exception {
+//        waitForElementClickable(sideAlleyUploadSubmitButton);
+//        clickElement(sideAlleyUploadSubmitButton);
+//    }
+//
+//
+//    public void clickKeepThisButton() throws Exception {
+//        waitForElementClickable(keepThisButton);
+//        clickElement(keepThisButton);
+//    }
+//
+//    public void clickSwitchToThisButton() throws Exception {
+//        waitForElementClickable(switchToThisButton);
+//        clickElement(switchToThisButton);
+//    }
+//
+//    public void clickViewThisOrderButton() throws Exception {
+//        waitForElementClickable(adminUIViewOrderButton);
+//        clickElement(adminUIViewOrderButton);
+//    }
+//
+//    public void clickOrderDoneButton() throws Exception {
+//        waitForElementClickable(orderDoneButton);
+//        clickElement(orderDoneButton);
+//    }
+//
+//    public void clickInvalidOrderSubmitConfRetryButton() throws Exception {
+//        waitForElementClickable(submitInvalidOrderConfRetrySubmittingButton);
+//        clickElement(submitInvalidOrderConfRetrySubmittingButton);
+//    }
+//
+//    public void clickInvalidOrderSubmitConfCreateNewButton() throws Exception {
+//        waitForElementClickable(submitInvalidOrderConfCreateNewOrderButton);
+//        clickElement(submitInvalidOrderConfCreateNewOrderButton);
+//    }
+//
+//    public void clickSubmitConfDoneButton() throws Exception {
+//        waitForElementClickable(submitOrderConfDoneButton);
+//        clickElement(submitOrderConfDoneButton);
+//    }
+//
+//    public void clickSubmitConfCreateNewButton() throws Exception {
+//        waitForElementClickable(submitOrderConfCreateNewButton);
+//        clickElement(submitOrderConfCreateNewButton);
+//    }
+//
+//    public void setSideAlleyTestLocation(String location) {
+//        clickElement(sideAlleyTestLocationSelector);
+//        waitForSeconds(1);
+//        String xpath = String.format("//select[@id='testLocation']/option[text()='%s']", location);
+//        clickElement(By.xpath(xpath));
+//        clickElement(sideAlleySelectLocationScreen);
+//        waitForSeconds(2);
+//    }
+//
+//    public void enterCandidateInformation() throws IOException {
+//        CreateOrderWrapper order = this.getCreateOrderWrapper();
+//
+//        String lName = order.getRequestField("lastName");
+//        String socialSecurityNumber = order.getRequestField("ssn");
+//        String dateOfBirth = order.getRequestField("dateOfBirth");
+//        String[] dob = dateOfBirth.split("/");
+//        String month = dob[0];
+//        String day = dob[1];
+//        String year = dob[2];
+//        setElementValue(orderLookupLastName, lName);
+//        setElementValueNoClear(orderLookupBirthMonth, month);
+//        setElementValueNoClear(orderLookupBirthDay, day);
+//        setElementValueNoClear(orderLookupBirthYear, year);
+//        setElementValueNoClear(orderLookupSsn, socialSecurityNumber);
+//        report(Status.PASS, "Entered Candidate's Information:" + lName + "\n" + month + "\n" + day + "\n" + year + "\n" + socialSecurityNumber);
+//    }
+//
+//    public Object getCandidateInfoFromOrderWrapper(String jsonPathName) throws Exception {
+//        CreateOrderWrapper order = this.getCreateOrderWrapper();
+//        return order.getRequestField(jsonPathName);
+//    }
+//
+//
+//    public void clickCandidateRowByLastName(String lastNameToFind) {
+//        By result = getCandidateRowByLastName(lastNameToFind);
+//        clickElement(result);
+//    }
+//
+//    public void refreshTheBrowser() {
+//        SharedBaseClass sharedBaseClass = new SharedBaseClass(driver);
+//        sharedBaseClass.browserRefresh();
+//    }
+//
+//    public void switchToAdminUIWindow() {
+//        SharedBaseClass sharedBaseClass = new SharedBaseClass(driver);
+//        sharedBaseClass.switchWindow();
+//    }
+//
+//    public void clickInconclusiveRecommendation() throws Exception {
+//        waitForElementClickable(sideAlleyInconclusiveOption);
+//        clickElement(sideAlleyInconclusiveOption);
+//    }
+//
+//    public void clearNameFilterInOrderList() {
+//        setElementValue(orderNameFilterTextbox, "");
+//        report("Order Name Filter textbox cleared");
+//        logger.info("Order Name Filter textbox cleared");
+//    }
+//
+//    public void clearSsnFilterInOrderList() {
+//        setElementValue(orderSsnFilterTextbox, "");
+//        report("Order Ssn Filter textbox cleared");
+//        logger.info("Order Ssn Filter textbox cleared");
+//    }
+//
+//    public void enterOrderNameInFilterTextbox(String nameToFind) {
+//        setElementValue(orderNameFilterTextbox, nameToFind);
+//    }
+//
+//    public void enterOrderIdInFilterTextbox(String idToFind) {
+//        setElementValue(orderIdFilterTextbox, idToFind);
+//    }
+//
+//    public void enterOrderSsnInFilterTextbox(String last4Ssn) {
+//        setElementValue(orderSsnFilterTextbox, last4Ssn);
+//    }
+//
+//    public void clearStatusDefaultSelection() {
+//        clickElement(clearNewStatusFilterX);
+//    }
+//
+//    public void selectOrderStatusFilter(String... statuses) throws Exception {
+//        clearStatusDefaultSelection();
+//        //default to return search results in app is 3 sec. giving time to reset
+//        waitForSeconds(7);
+//        clickElement(placedOrderStatusFilter);
+//        //to reset dropdown...
+//        clickElement(orderIdFilterTextbox);
+//        clickElement(placedOrderStatusFilter);
+//        for (String status : statuses) {
+//            String xpath = String.format("//ng-select[@placeholder='Statuses']//div/span[contains(text(),'%s')]", status);
+//            waitForElementClickable(By.xpath(xpath));
+//            clickElement(By.xpath(xpath));
+//        }
+//    }
+//
+//    public void selectBulkPackagesFilter(String orderPackage){
+//        clickElement(bulkUploadPackageSelector);
+//            String xpath = String.format("//ng-Select[@placeholder='Packages']//div[@role='option']/span[contains(text(),'%s')]", orderPackage);
+//            clickElement(By.xpath(xpath));
+//    }
+//
+//    public void selectBulkUploadStatusFilter(String status){
+//        clickElement(bulkUploadStatusSelector);
+//        String xpath = String.format("//ng-Select[@placeholder='Bulk Upload Status']//div[@role='option']/span[contains(text(),'%s')]", status);
+//        clickElement(By.xpath(xpath));
+//    }
+//
+//    public void verifyBulkUploadStatus(String... statuses){
+//        clickElement(bulkUploadStatusSelector);
+//        for(String status:statuses) {
+//            String xpath = String.format("//ng-Select[@placeholder='Bulk Upload Status']//div[@role='option']/span[contains(text(),'%s')]", status);
+//            logger.info("checking bulk upload status: " + status);
+//            Assert.assertTrue(exists(By.xpath(xpath)));
+//        }
+//    }
+//
+//    public boolean isFileInBulkOrderList(String fileName) throws Exception {
+//            for(WebElement dataRow:bulkOrdersListRows) {
+//                if(getText(dataRow).contains(fileName))
+//                {
+//                    return true;
+//                }
+//            }
+//            return false;
+//    }
+//
+//    public boolean isBulkStatusInAllRows(String status) throws Exception {
+//        for(WebElement dataRow:bulkOrderUploadStatusColumnRows) {
+//            if(!getText(dataRow).equalsIgnoreCase(status))
+//            {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+//
+//    public void clearOrderStatusFilter() throws Exception {
+//
+//        for (WebElement removeStatus : selectedStatuses) {
+//            logger.info("cleared " + getText(removeStatus));
+//            clickElement(By.xpath("//span/preceding::span[@class='ng-value-icon left'][1]"));
+//        }
+//    }
+//
+//    public void setBulkUploadStartDate(String month, String day){
+//        clickElement(bulkUploadDateRangeSelector);
+//        String xpath = String.format("//button/span[text()='%s']/following::span[text()='%s'][1]", month, day);
+//        clickElement(By.xpath(xpath));
+//    }
+//
+//    public void setPlacedOrdersStartDate(String month, String day){
+//        clickElement(placedOrdersDatePicker);
+//        String xpath = String.format("//button/span[text()='%s']/following::span[text()='%s'][1]", month, day);
+//        clickElement(By.xpath(xpath));
+//    }
+//
+//    public void setPlacedOrdersEndDate(String month, String day) {
+//        String xpath = String.format("//button/span[text()='%s']/following::span[text()='%s'][1]", month, day);
+//        logger.info("xpath for end date clicked " + xpath);
+//        clickElement(By.xpath(xpath));
+//    }
+//
+//    public void setCurrentMMDDForPOEndDate() {
+//        String currentDate = getCurrentDateforFilter();
+//        String[] holdDateElement = currentDate.split(",");
+//        String[] reformatMmDd = holdDateElement[1].split(" ");
+//        logger.info("current month and day to set: " + reformatMmDd[1] + " day " + reformatMmDd[2]);
+//        setPlacedOrdersEndDate(reformatMmDd[1], reformatMmDd[2]);
+//    }
+//
+//    public void clickSideAlleyBackButton() throws Exception {
+//        waitForElementClickable(sideAlleyBackButton);
+//        clickElement(sideAlleyBackButton);
+//    }
+//
+//    public Boolean checkPlacedOrderStatuses() throws Exception {
+//        boolean found = false;
+//        String[] list = new String[]{"New", "In Progress", "Adjudicate", "Invalid", "Retake Picture", "Inconclusive", "Negative",
+//                "Expired", "Abandoned", "Incomplete"};
+//        clickElement(placedOrderStatusFilter);
+//
+//        for (int i = 0; i < list.length; i++) {
+//            if ((!found) && (i != 0)) {
+//                return false;
+//            }
+//            if (found) {
+//                found = false;
+//            }
+//            for (WebElement status : placeOrderStatusesWebElement) {
+//                logger.info("checking status... " + getText(status) + " for " + i + " " + list[i]);
+//                if (getText(status).trim().equalsIgnoreCase(list[i].trim())) {
+//                    found = true;
+//                    logger.info("status was found: " + getText(status));
+//                    break;
+//                }
+//            }
+//        }
+//        return found;
+//    }
+//
+//
+//    public void verifyAdminPlacedOrdersListedChronological() throws Exception {
+//        List<Date> expected = new ArrayList<>();
+//        for (WebElement day : adminPlacedOrderChronologicalOrder) {
+//
+//            SimpleDateFormat str = new SimpleDateFormat("MM/dd/yy, hh:mm a");
+//            str.setTimeZone(TimeZone.getTimeZone("America/New_York"));
+//            Date date1 = str.parse(getText(day));
+//            expected.add(date1);
+//        }
+//
+//        List<Date> actual = new ArrayList<>();
+//        for (WebElement day : adminPlacedOrderChronologicalOrder) {
+//            SimpleDateFormat str = new SimpleDateFormat("MM/dd/yy, hh:mm a");
+//            str.setTimeZone(TimeZone.getTimeZone("America/New_York"));
+//            Date date1 = str.parse(getText(day));
+//            actual.add(date1);
+//        }
+//        Collections.sort(expected);
+//        Collections.reverse(expected);
+//        Assert.assertEquals(actual, expected, "Items were not found in chronological order.");
+//    }
+//
+//    public void verifyAdminBulkOrdersListedChronological() throws Exception {
+//        List<Date> expected = new ArrayList<>();
+//        for (WebElement day : adminBulkOrderChronologicalOrder) {
+//
+//            SimpleDateFormat str = new SimpleDateFormat("MM/dd/yy, hh:mm a");
+//            str.setTimeZone(TimeZone.getTimeZone("America/New_York"));
+//            Date date1 = str.parse(getText(day));
+//            expected.add(date1);
+//        }
+//
+//        List<Date> actual = new ArrayList<>();
+//        for (WebElement day : adminBulkOrderChronologicalOrder) {
+//            SimpleDateFormat str = new SimpleDateFormat("MM/dd/yy, hh:mm a");
+//            str.setTimeZone(TimeZone.getTimeZone("America/New_York"));
+//            Date date1 = str.parse(getText(day));
+//            actual.add(date1);
+//        }
+//        Collections.sort(expected);
+//        Collections.reverse(expected);
+//        Assert.assertEquals( actual,expected,"Items were not found in chronological order.");
+//    }
+//
+//    public void verifyAdminPlacedOrdersListedReverseChronological() throws Exception {
+//        List<Date> expected = new ArrayList<>();
+//        for (WebElement day : adminPlacedOrderChronologicalOrder) {
+//            SimpleDateFormat str = new SimpleDateFormat("MM/dd/yy, hh:mm a");
+//            str.setTimeZone(TimeZone.getTimeZone("America/New_York"));
+//            Date date1 = str.parse(getText(day));
+//            expected.add(date1);
+//        }
+//
+//
+//        List<Date> actual = new ArrayList<>();
+//        for (WebElement day : adminPlacedOrderChronologicalOrder) {
+//            SimpleDateFormat str = new SimpleDateFormat("MM/dd/yy, hh:mm a");
+//            str.setTimeZone(TimeZone.getTimeZone("America/New_York"));
+//            Date date1 = str.parse(getText(day));
+//            actual.add(date1);
+//        }
+//        Collections.sort(expected);
+//        Assert.assertEquals(expected, actual);
+//    }
+//
+//    public void clickSideAlleyNextButton() throws Exception {
+//        waitForElementPresent(sideAlleyNextButtonWebElement);
+//        waitForElementClickable(sideAlleyNextButton);
+//        clickElement(sideAlleyNextButton);
+//    }
+//
+//    public void clickSideAlleyNextButtonSelectLocationScreen() throws Exception {
+//        waitForElementPresent(sideAlleyNextButtonWebElement);
+//        clickElement(sideAlleyNextButtonSelectLocationScreen);
+//    }
+//
+//    public void isCandidateInFirstRowOfResultsList(String lastName) {
+//        Assert.assertTrue(exists(getCandidateRowByLastName(lastName)), "Candidate was not found in first row of candidate results list.");
+//    }
+//
+//    private By getCandidateRowByLastName(String lastNameToSearch) {
+//        String xpath = String.format("//th[contains(text(),'Name')]/following::td[contains(text(),'%s')][1]", lastNameToSearch);
+//        return By.xpath(xpath);
+//    }
+//
+//
+//    private CreateOrderWrapper getCreateOrderWrapper() {
+//        if (createOrderWrapper == null) {
+//            BackendApi api = (BackendApi) testObject.getRuntimeData(Constants.BACKEND_API);
+//            createOrderWrapper = new CreateOrderWrapper(testObject, api);
+//        }
+//        return createOrderWrapper;
+//    }
+//
+//    public void clickGetStartedOnSideAlley() throws Exception {
+//        waitForElementClickable(sideAlleyGetStartedButton);
+//        clickElement(sideAlleyGetStartedButton);
+//
+//    }
+//
+//    public void clickIamHappyButtonAdminUI() throws Exception {
+//        waitForElementClickable (sideAlleyIamHappyWithMyPhotoButton);
+//        clickElement (sideAlleyIamHappyWithMyPhotoButton);
+//    }
+//
+//    public void clickTakePhotoButtonSA() throws Exception {
+//        waitForElementClickable(sideAlleyTakePhotoButton);
+//        clickElement(sideAlleyTakePhotoButton);
+//    }
+//
+//    public void uploadCOCPhoto(String file) {
+//        String directory = System.getProperty("user.dir") + file;
+//        logger.info("directory/folder path:  " + directory);
+//        uploadCOCPhotoAreaWebElement.sendKeys(directory);
+//    }
+//
+//    public void verifyAdminPlacedOrdersColumnTitles() {
+//        List<String> expected = new ArrayList<>(Arrays.asList("Name", "SSN", "DOB", "Created", "Status", "Location", "Order Id", "Package", "One Strip"));
+//        List<String> titles = new ArrayList<>();
+//        for (WebElement title : adminPlacedOrdersTableTitles
+//        ) {
+//            titles.add(title.getText());
+//        }
+//        Assert.assertEquals(expected, titles);
+//    }
+//
+//    public void uploadPhotoSA(String file) {
+//        String directory = System.getProperty("user.dir") + file;
+//        logger.info("directory/folder path:  " + directory);
+//        uploadPhotoSideAlleyAreaWebElement.sendKeys(directory);
+//    }
+//
+//
+//    public void clickNegativeInSideAlley() throws Exception {
+//        waitForElementClickable(sideAlleyNegativeOption);
+//        clickElement(sideAlleyNegativeOption);
+//    }
+//
+//    public void clickSubmitOnSideAlleyReview() throws Exception {
+//        waitForElementClickable(sideAlleyAdjudicationSubmitButton);
+//        clickElement(sideAlleyAdjudicationSubmitButton);
+//    }
+//
+//    public void uploadDuplicatePhotoSA(String file) {
+//        String directory = System.getProperty("user.dir") + file;
+//        logger.info("directory/folder path:  " + directory);
+//        uploadPhotoSideAlleyAreaWebElement.sendKeys(directory);
+//    }
+//
+//    public void enterGeneratedCandidateInfoOnInfoScreen() throws Exception {
+//        //generate the candidate information and store to retrieval
+//        autoGenerateCandidateInformation();
+//        enterIdentificationFName(testObject.getTestData("adminUIOrderFName"));
+//        enterIdentificationLName(testObject.getTestData("adminUIOrderLName"));
+//        enterIdentificationDoB(testObject.getTestData("adminUIOrderDob"));
+//        waitForSeconds(2);
+//        String ssn = testObject.getTestData("adminUIOrderSsn");
+//        logger.info("Entering candidate ssn: " + ssn);
+//        enterIdentificationSSN(ssn);
+//    }
+//
+//    private void autoGenerateCandidateInformation() {
+//        Random r = new Random();
+//        String firstName = "F-" + r.nextInt(99999);
+//        testObject.setTestData("adminUIOrderFName", firstName);
+//        String lastName = "L-" + r.nextInt(99999);
+//        testObject.setTestData("adminUIOrderLName", lastName);
+//        int temp = r.nextInt(99);
+//        logger.info("temp random last 2 digits for ssn assigned:" + temp);
+//        String ssn = "5094510" + temp;
+//        testObject.setTestData("adminUIOrderSsn", ssn);
+//        String dob = "05/1" + r.nextInt(9) + "/195" + r.nextInt(9);
+//        testObject.setTestData("adminUIOrderDob", dob);
+//        String phoneNumber = String.valueOf((long) (Math.random() * 100000 + 3333000000L));
+//        testObject.setTestData("adminUIOrderPhone", phoneNumber);
+//        String email = "email" + r.nextInt() + "@gmail.com";
+//        testObject.setTestData("adminUIOrderEmail", email);
+//    }
+//
+//
+//    public void clickReTakePhotoButtonSA() throws Exception {
+//        waitForElementClickable(sideAlleyRetakePhotoButton);
+//        clickElement(sideAlleyRetakePhotoButton);
+//    }
+//
+//    public void clickUploadPhotoButtonSA() throws Exception {
+//        waitForElementClickable(sideAlleyUploadPhotoButton);
+//        clickElement(sideAlleyUploadPhotoButton);
+//    }
+//
+//    public void clickEnterSpecimenIDButtonSA() throws Exception {
+//        waitForElementClickable(sideAlleyEnterSpecimenIDButton);
+//        clickElement(sideAlleyEnterSpecimenIDButton);
+//    }
+//
+//    public void enterSampleInformationSA(String sampleId, Boolean clearField) {
+//        if (clearField.equals(true)) {
+//            setElementValue(sideAlleySampleIdTextBox, sampleId);
+//            setElementValue(sideAlleyConfirmSampleIdTextBox, sampleId);
+//        } else {
+//            setElementValueNoClear(sideAlleySampleIdTextBox, sampleId);
+//            setElementValueNoClear(sideAlleyConfirmSampleIdTextBox, sampleId);
+//        }
+//        report(Status.PASS, "Entered Sample Information");
+//    }
+//
+//    public void enterGeneratedCandidateInfoToLookup() throws Exception {
+//        SharedBaseClass sharedBaseClass = new SharedBaseClass(driver);
+//        String lastName = testObject.getTestData("adminUIOrderLName");
+//        String ssn = testObject.getTestData("adminUIOrderSsn");
+//        String birthday = testObject.getTestData("adminUIOrderDob");
+//        logger.info("candidate's dob to lookup: " + birthday);
+//        String[] dob = birthday.split("/");
+//        String month = dob[0];
+//        String day = dob[1];
+//        String year = dob[2];
+//        enterCandidateLastName(lastName);
+//        enterCandidateDobMonth(month);
+//        enterCandidateDobDay(day);
+//        enterCandidateDobYear(year);
+//        enterCandidateSsn(sharedBaseClass.getLast4SsNumber(ssn));
+//    }
+//
+//
+//    public void clickNextButtonOnEnterIDpageSA() throws Exception {
+//        waitForElementClickable(sideAlleyNextButtonOnEnterIDScreen);
+//        clickElement(sideAlleyNextButtonOnEnterIDScreen);
+//    }
+//
+//    public void clickAdminUIRetakeButton() throws Exception {
+//        waitForElementClickable(adminUIRetakeButton);
+//        clickElement(adminUIRetakeButton);
+//    }
+//
+//    public boolean isSideAlleyGetStartedButtonEnabled() {
+//        return sideAlleyGetStartedButtonWE.isEnabled();
+//    }
+//
+//    public String isLocationSelected(String locationName) {
+//        String xpath = String.format("//select[@id='testLocation']/option[text()='%s']", locationName);
+//        WebElement locationElement = driver.findElement(By.xpath(xpath));
+//        return getAttribute(locationElement, "selected");
+//    }
+//
+//    public void verifyOrderHasLocationInAdminUI() throws Exception {
+//        Assert.assertFalse(getText(getSideAlleyCandidateResultRow.get(3)).isEmpty(), "Location is not assigned for the order");
+//        logger.info("Assigned Location: " + getText(getSideAlleyCandidateResultRow.get(3)));
+//    }
+//
+//    public void verifyOrderHasNoLocationInAdminUI() throws Exception {
+//        Assert.assertTrue( getText(getSideAlleyCandidateResultRow.get(3)).isEmpty(),"Location is assigned for the order");
+//        logger.info("Assigned Location: " + getText(getSideAlleyCandidateResultRow.get(3)));
+//    }
+//
+//    public void verifySideAlleyResultsPageTableColumns() throws Exception {
+//        List<String> expectedColumns = new ArrayList<>(Arrays.asList("Name", "DOB", "SSN", "Location"));
+//        List<String> tableColumns = new ArrayList<>();
+//        for (WebElement column : sideAlleyResultsScreenHeader
+//        ) {
+//            tableColumns.add(getText(column));
+//        }
+//        Assert.assertEquals( tableColumns, expectedColumns,"Candidate Results columns are not found as expected");
+//    }
+//
+//    public void searchForlastNameInSideAlleyResults(String lName) throws Exception {
+//        for (WebElement candidate : sideAlleyResultsLNameList) {
+//            if (getText(candidate).equals(lName)) {
+//                Assert.assertEquals(lName, getText(candidate));
+//            }
+//        }
+//    }
+//
+//    public void clickPlacedOrdersSSNsortingArrow() throws Exception {
+//        waitForElementClickable(adminPlacedOrderSSNsortingArrow);
+//        clickElement(adminPlacedOrderSSNsortingArrow);
+//    }
+//
+//    public void clickPlacedOrdersCreatedSortingArrow() throws Exception {
+//        waitForElementClickable(adminPlacedOrderCreatedSortingArrow);
+//        clickElement(adminPlacedOrderCreatedSortingArrow);
+//    }
+//
+//    public void verifyPlacedOrdersSortedAscendingBySSN() throws Exception {
+//        List<Integer> ssnActual = new ArrayList<>();
+//        for (WebElement num : placedOrdersSSNcolumn) {
+//            String temp = getText(num);
+//            if (!temp.isEmpty()) {
+//                ssnActual.add(Integer.parseInt(getText(num)));
+//            }
+//        }
+//
+//        List<Integer> ssnExpected = new ArrayList<>();
+//        for (WebElement num : placedOrdersSSNcolumn) {
+//            String temp = getText(num);
+//            if (!temp.isEmpty()) {
+//                ssnExpected.add(Integer.parseInt(getText(num)));
+//            }
+//        }
+//        Collections.sort(ssnExpected);
+//        Assert.assertEquals(ssnExpected, ssnActual);
+//    }
+//
+//    public void verifyPlacedOrdersSortedDescendingBySSN() throws Exception {
+//        List<Integer> ssnActual = new ArrayList<>();
+//        for (WebElement num : placedOrdersSSNcolumn) {
+//            ssnActual.add(Integer.parseInt(getText(num)));
+//        }
+//
+//        List<Integer> ssnExpected = new ArrayList<>();
+//        for (WebElement num : placedOrdersSSNcolumn) {
+//            ssnExpected.add(Integer.parseInt(getText(num)));
+//        }
+//        Collections.sort(ssnExpected);
+//        Collections.reverse(ssnExpected);
+//        Assert.assertEquals(ssnExpected, ssnActual);
+//    }
+//
+//    public void enterCandidateID(String candidateID) throws Exception {
+//        waitForElementPresent(orderCandidateIdWebElement);
+//        setElementValue(orderIdentificationCID, candidateID);
+//    }
+//
+//
+//    public void verifyOrdersLocationInSideAlleyResults(String location) throws Exception {
+//        Assert.assertEquals("Location is not equal to " + location, getText(sideAlleyResultsOrderLocation), location);
+//    }
+//
+//    public void clickInvalidInSideAlley() throws Exception {
+//        waitForElementClickable(sideAlleyInvalidOption);
+//        clickElement(sideAlleyInvalidOption);
+//    }
+//
+//    public void clickIamHappyCOCPhotoButtonAdminUI() throws Exception {
+//        waitForElementClickable(sideAlleyIamHappyWithMyCoCPhotoButton);
+//        clickElement(sideAlleyIamHappyWithMyCoCPhotoButton);
+//    }
+//
+//    public void clickInconclusiveInSideAlley() throws Exception {
+//        waitForElementClickable(sideAlleyInconclusiveOption);
+//        clickElement(sideAlleyInconclusiveOption);
+//    }
+//
+//    public void verifyConcludedTestsTab() {
+//        Assert.assertTrue(exists(concludedTab));
+//    }
+//
+//    public void clearBrowserCookies() {
+//        SharedBaseClass sharedBaseClass = new SharedBaseClass(driver);
+//        sharedBaseClass.clearAllCookies();
+//    }
+//
+//    public void verifyBoothNumberOnTheCard(String boothNumber) {
+//        String xpath1 = ("//div[@class='card-subpanel id-container' and contains(text(),'" + boothNumber + "')]");
+//        Assert.assertTrue(exists(By.xpath(xpath1)));
+//        logger.info("booth number found " + boothNumber);
+//    }
+//
+//    public void clickBulkUploadButton() throws Exception {
+//        waitForElementClickable(adminBulkUploadButton);
+//        clickElement(adminBulkUploadButton);
+//    }
+//
+//    public void clickBulkUploadSubmitButton() throws Exception {
+//        waitForElementClickable(adminBulkUploadSubmitButton);
+//        clickElement(adminBulkUploadSubmitButton);
+//    }
+//
+//    public void selectBulkUploadReasonForTest(String reason) throws Exception {
+//        waitForElementClickable(adminBulkReasonForTestSelector);
+//        clickElement(adminBulkReasonForTestSelector);
+//        String xpath = String.format("//select[@id='selectReasonForTest']/option[contains(text(),'%s')]", reason);
+//        clickElement(By.xpath(xpath));
+//    }
+//
+//    public void selectBulkUploadPackage(String packageName) throws Exception {
+//        waitForElementClickable(adminBulkPackageSelector);
+//        clickElement(adminBulkPackageSelector);
+//        String xpath = String.format("//select[@id='selectPackage']/option[contains(text(),'%s')]", packageName);
+//        clickElement(By.xpath(xpath));
+//    }
+//
+//    public void verifyImHappyBtnCOCPage() {
+//        Assert.assertTrue(sideAlleyIamHappyCoCPhotoBtnWE.isEnabled());
+//    }
+//
+//    public void enterPhoneData(DataTable dataTable) {
+//        List<List<String>> values = dataTable.asLists ( );
+//        for (List<String> value : values) {
+//            for (String s : value) {
+//                setElementValue(orderPhoneNumber, s);
+//
+//                Assert.assertTrue(isOrderNextButtonEnabled(), "Next button was disabled.");
+//
+//                for (int k = 0; k < 15; k++) {
+//                    orderPhoneNumberWebElement.sendKeys(Keys.BACK_SPACE);
+//                }
+//            }
+//        }
+//    }
+//
+//    public void useBlankSpreadSheetAndUpload(String fileName) throws Exception {
+//        SharedBaseClass sharedBaseClass = new SharedBaseClass(driver);
+//        sharedBaseClass.getFileToUpload(fileName);
+//    }
+//
+//
+//
+//    public void clickBulkUploadDetailsIcon(String fileName) throws Exception {
+//        for(WebElement dataRow:bulkOrdersListRows) {
+//            if(getText(dataRow).contains(fileName))
+//            {
+//                clickElement(bulkUploadDetailsIcon);
+//            }
+//        }
+//    }
+//
+//    public void clickBulkUploadItemDetailsButton() throws Exception {
+//        waitForElementClickable(bulkUploadItemDetailsBackButton);
+//        clickElement(bulkUploadItemDetailsBackButton);
+//    }
+//
+//    public void clickBulkUploadGetErrorFileLink() throws Exception {
+//        waitForElementClickable(bulkUploadGetErrorFileLink);
+//        clickElement(bulkUploadGetErrorFileLink);
+//    }
+//
+//   public void openNewBrowserTabWindow(){
+//        SeleniumBaseClass seleniumBaseClass = new SeleniumBaseClass(driver);
+//        seleniumBaseClass.openNewBrowserTab();
+//   }
+//
+//   public void switchToParentWindow(){
+//       SharedBaseClass sharedBaseClass = new SharedBaseClass(driver);
+//       sharedBaseClass.switchToParentWindow();
+//   }
+//
+//    public void isLocationExist(String locationAlias) throws Exception {
+//        String xpath="//table//td[6]";
+//        WebElement element=driver.findElement (By.xpath (xpath));
+//        Assert.assertEquals (getText(element),locationAlias,"Location alias is not found");
+//    }
+//
+//    public void enterSalariedLeaderName(String salariedLeaderName) {
+//         setElementValue(adminSLeaderName, salariedLeaderName);
+//    }
+//
+//    public void enterSalariedLeaderComment(String salariedLeaderComment) {
+//        setElementValue(adminSLeaderComment, salariedLeaderComment);
+//    }
+//
+//    public void signSignaturePad4EyesCheck() {
+//        Actions builder = new Actions(getDriver());
+//        Action drawAction = builder.moveToElement(signaturePad, 50, 50)
+//                //signatureWebElement is the element that holds the signature element you have in the DOM
+//                .clickAndHold()
+//                .moveByOffset(15, 20)
+//                .moveByOffset(17, 23)
+//                .release()
+//                .build();
+//        drawAction.perform();
+//
+//    }
+//
+///*
+//This method did not work in current pdf browser, should be deleted after check
+// */
+//    public void verifyFAQpdfOpens() {
+//        Assert.assertEquals("FAQ PDF browser tab is not found", "AmazonTrainingDocJan2022.pdf", "getDriver().getTitle()");
+//
+//    }
+//	public void clickProceedBtnOn4EyePopUp() throws Exception {
+//        waitForElementClickable(adminSLeaderPopUpProceedBtn);
+//        clickElement(adminSLeaderPopUpProceedBtn);
+//
+//    }
+//
+//    public void enterAlias(String amazonAlias) {
+//        waitForElementPresent(adminAmazonAliasWE);
+//        setElementValue(adminAmazonAlias,amazonAlias);
+//    }
+//
+//    public void clickLocationLink(String locationName) {
+//        By locationNameLink = By.xpath("//a[contains(text(),'" + locationName + "')]");
+//        if (exists(locationNameLink)) {
+//            waitForElementClickable(locationNameLink);
+//            clickElement(locationNameLink);
+//        } else {
+//            throw new RuntimeException("Location Name [" + locationName + "] is not visible");
+//        }
+//    }
+// public void adminSelectCarrier(String carrier) {
+//        waitForElementClickable(adminCarrierSelector);
+//        clickElement(adminCarrierSelector);
+//        String xpath = String.format("//select[@id='shipper']/option[contains(text(),'%s')]", carrier);
+//        clickElement(By.xpath(xpath));
+//    }
+//
+//    public void enterTrackingNumber(String trackingNumber) {
+//        waitForElementPresent(adminTrackingNumberWE);
+//        setElementValue(adminTrackingNumber,trackingNumber);
+//    }
+//
+//    public void clickTrackingCertifyBtn() {
+//        waitForElementClickable(orderNextButton);
+//        clickElement(orderNextButton);
+//    }
+//
+//    public void enterEmployeeID(String employeeID) {
+//        waitForElementPresent(orderIdentificationEmpIDWE);
+//        setElementValue(orderIdentificationEmpID,employeeID);
+//    }
+//	 public void searchForLocation(String locationName) {
+//        waitForElementPresent(adminLandingPageLocationFilterWE);
+//        setElementValue(adminLandingPageLocationFilter,locationName);
+//    }
+//
+//    public void searchForState(String state) {
+//        waitForElementPresent(adminLandingPageStateFilterWE);
+//        setElementValue(adminLandingPageStateFilter,state);
+//    }
+//
+//    public void verifyLocationSearchResults(String searchLocation) {
+//        List<WebElement>locations=new ArrayList<>();
+//        locations.addAll(adminLandingPageLocationSearchResults);
+//        for (WebElement location:locations
+//             ) {
+//            logger.info("name "+getText(location));
+//            Assert.assertTrue(getText(location).contains(searchLocation));
+//
+//        }
+//    }
+//
+//    public void verifyLocationStateSearchResults(String searchState) {
+//        List<WebElement>states=new ArrayList<>();
+//        states.addAll(adminLandingPageStateSearchResults1);
+//        states.addAll(adminLandingPageStateSearchResults2);
+//        for (WebElement state:states
+//        ) {
+//            logger.info("name "+getText(state));
+//            Assert.assertTrue(getText(state).contains(searchState));
+//
+//        }}
+//
+//
+//     public void verifyRecentLocations(String location1, String location2, String location3) {
+//
+//        String xpathLoc1=String.format("(//a[contains(text(),' %s ')])[1]",location1);
+//         String xpathLoc2=String.format("(//a[contains(text(),' %s ')])[1]",location2);
+//         String xpathLoc3=String.format("(//a[contains(text(),' %s ')])[1]",location3);
+//         WebElement location1WE=driver.findElement(By.xpath(xpathLoc1));
+//         WebElement location2WE=driver.findElement(By.xpath(xpathLoc2));
+//         WebElement location3WE=driver.findElement(By.xpath(xpathLoc3));
+//         Assert.assertTrue(location1WE.isDisplayed());
+//         Assert.assertTrue(location2WE.isDisplayed());
+//         Assert.assertTrue(location3WE.isDisplayed());
+//
+//
+//    }
+//    public void enterSampleIDInFirstField(String sampleId, Boolean clearField) {
+//        if (clearField.equals(true)) {
+//            setElementValue(sideAlleySampleIdTextBox, sampleId);
+//        }else {
+//            setElementValueNoClear(sideAlleySampleIdTextBox, sampleId);
+//        } report(Status.PASS, "Entered Sample Information");
+//
+//    }
+//    public void enterSampleIDInSecondField(String sampleId, Boolean clearField) {
+//        if (clearField.equals(true)) {
+//            setElementValue(sideAlleyConfirmSampleIdTextBox, sampleId);
+//        }else {
+//            setElementValueNoClear(sideAlleyConfirmSampleIdTextBox, sampleId);
+//        } report(Status.PASS, "Entered Sample Information");
+//    }
+//    public void clickModifiedAdjudicationCertifyBtn() {
+//        waitForElementClickable(adminModifiedAdjudicationCertifyBtn);
+//        clickElement(adminModifiedAdjudicationCertifyBtnWE);
+//    }
+//
+//    public void clickValidForModifiedAdminPage() {
+//        waitForElementClickable(adminModifiedAdjudicationValidBtn);
+//        clickElement(adminModifiedAdjudicationValidWE);
+//    }
+//
+//    public void clickRetestForModifiedAdminPage() {
+//        waitForElementClickable(adminModifiedAdjudicationRetestBtn);
+//        clickElement(adminModifiedAdjudicationRetestWE);
+//    }
+//
+//    public void verifyLocationPageFields() {
+//
+//        waitForSeconds(2);
+//        List<By> elements=new ArrayList<>(Arrays.asList(orderCity,orderStateSelector,orderPackageReasonSelector,orderCountrySelector));
+//        for (By element:elements) {
+//            Assert.assertTrue(exists(element),element+ " does not exist on the Location Information page");
+//        }
+//
+//    }
+//
+//    public void verifyReasonPre(String reasonForTest) {
+//        Select select = new Select(orderPackageReasonWESelector);
+//        String defaultOption = select.getFirstSelectedOption().getText();
+//        Assert.assertEquals(defaultOption,reasonForTest,"Pre-employment is not the default reason for test option");
+//    }
+//
+//    public void verifyDefaultPackage(String packageOption) {
+//        Select select = new Select(orderPackageWElementSelector);
+//        String defaultOption = select.getFirstSelectedOption().getText();
+//        Assert.assertEquals(defaultOption,packageOption,"OralTox 6 Panel is not the default package option");
+//    }
+//
+//    public void verifyBusinessLineDropDownList() {
+//        Select select = new Select(orderBusinessLineWE);
+//        List<WebElement> options=select.getOptions();
+//        List<String>optionsText=new ArrayList<>();
+//        for (WebElement option:options
+//             ) {
+//            optionsText.add(option.getText());
+//        }
+//        List<String>expectedOptions=new ArrayList<>(Arrays.asList("North American Fulfillment Center"));
+//        Assert.assertEquals(optionsText,expectedOptions,"Business Line drop down options are not found as expected");
+//
+//        }
+//
+//    public void verifyPackageDropDownList() {
+//        Select select = new Select(orderPackageWElementSelector);
+//        clickElement(orderPackageWElementSelector);
+//        List<WebElement> options=select.getOptions();
+//        List<String>optionsText=new ArrayList<>();
+//        for (WebElement option:options
+//        ) {
+//            optionsText.add(option.getText());
+//        }
+//        List<String>expectedOptions=new ArrayList<>(Arrays.asList("OralTox 6 Panel"));
+//        Assert.assertEquals( optionsText,expectedOptions,"Package drop down options are not found as expected");
+//
+//    }
+//
+//    public void selectBusinessLine(String businessLine) {
+//        By element = businessLineOption(businessLine);
+//        waitForElementClickable(element);
+//        clickElement(element);
+//    }
+//
+//    public void verifyStepOnCard(String stepOnTheCard) {
+//        By stepCard=By.xpath("//div[contains(text(),'"+stepOnTheCard+"')]");
+//        Assert.assertTrue(exists(stepCard), "Card does not show"+stepOnTheCard+"step");
+//    }
+//
+//    public void clickDashboardBtn() {
+//        waitForElementClickable(adminDashboardButton);
+//        clickElement(adminDashboardButton);
+//    }
+//
+//    public void verify4EyesCheckPageDrugOptions() {
+//        waitForElementClickable(adjudicateInconclusivebutton);
+//        List<WebElement>options=new ArrayList<>(Arrays.asList(adjInconclusiveWebElementButton,adjClearButtonWebElement,adjRetestButtonWebElement));
+//
+//        for(WebElement option:options){
+//            Assert.assertTrue(option.isEnabled());
+//        }
+//    }
+//
+//    public void verify4EyesCheckCertificationForAlcoholLevels() {
+//        String [] alcoholCheckBox= {"0.0","20", "40", "80", "300"};
+//        WebElement text=getDriver().findElement(By.xpath("(//strong)[3]"));
+//        for (String box:alcoholCheckBox
+//        ) {
+//            By alcoholBox=By.xpath("//span[contains(text(),'"+box+"')]");
+//            clickElement(alcoholBox);
+//            waitForSeconds(1);
+//            if(box.equalsIgnoreCase("0.0")){
+//                Assert.assertEquals(text.getText(), "Clear", "Certification Language is not Clear");
+//            }
+//            else {
+//                Assert.assertEquals(text.getText(), "Inconclusive", "Certification Language is not Inconclusive");
+//            }
+//        }
+//    }
+//
+//
+//
+//    public void drugHas7Strips() {
+//        SharedBaseClass sharedBaseClass = new SharedBaseClass(driver);
+//        List<WebElement> xpaths = getDriver().findElements(By.xpath("//div[@class='check-box']"));
+//        for (WebElement xpath : xpaths) {
+//            Assert.assertTrue(sharedBaseClass.checkIsEnabled(xpath), "CheckBox is disabled");
+//            logger.info("strip" + xpath + " is enabled");
+//
+//        }
+//    }
+//    public void verifyAlcBoxesDisabled() {
+//
+//            SharedBaseClass sharedBaseClass = new SharedBaseClass(driver);
+//        for (int i = 1; i <6 ; i++) {
+//            WebElement alcoholBox=getDriver().findElement(By.xpath("//div[@class='square alch-"+i+" disabledSquare']"));
+//                Assert.assertTrue(sharedBaseClass.checkIsEnabled(alcoholBox),"AlcoholBox is enabled");
+//            }
+//
+//        }
+//
+//    public void checkConcludedTabAlcCheckBoxes(String alcBox) {
+//
+//        String xpath="//div[@id='alch-"+alcBox+"']/following-sibling::div[@class='checkmark disabledCheckmark']";
+//        By element=By.xpath(xpath);
+//        Assert.assertTrue(exists(element),"Alcohol Check Box is not showing as selected by the Admin");
+//
+//    }
+//    public void verifyFinalTestResultHas4EyesSelection(){
+//    String result[]=getText(adminFinalTestResult4EyesSelection).split(":");
+//    Assert.assertEquals(result[1],testObject.getTestData("Adjudication"),"Final Test Result Selection Page does not have 4 eyes check result");
+//
+//    }
+//
+//    public void verifyCertifyClearPage() {
+//        Assert.assertTrue(exists(certifyClearDeviceImage), "Device image is missing");
+//        Assert.assertTrue(exists(certifyClearAlcoholResults),"Alcohol results are missing");
+//        Assert.assertTrue(exists(certifyClearText), "Certification text is missing");
+//    }
+//
+//    public void clickSupportTools() throws Exception {
+//        waitForElementClickable(mainMenu);
+//        clickElement(mainMenu);
+//        logger.info("main menu clicked");
+//        waitForElementClickable(supportToolsMenu);
+//        clickElement(supportToolsMenu);
+//    }
+//
+//    public void searchByName (String state) {
+//        waitForElementPresent(adminSupportToolsPageSearchByNameWE);
+//        setElementValue(adminSupportToolsPageSearchByName,state);
+//    }
+//
+//    public void searchForCandidate(String CandidateName) {
+//        waitForElementPresent(adminSupportToolsPageSearchByNameWE);
+//        setElementValue(adminSupportToolsPageSearchByName,CandidateName);
+//    }
+//
+//    public void verifyCandidateSearchResults(String searchCandidate) {
+//        List<WebElement>candiates=new ArrayList<>();
+//        candiates.addAll(adminSupportToolsPageCandidateNameSearchResults);
+//        for (WebElement candiate:candiates
+//        ) {
+//            logger.info("name " + getText(candiate));
+//            Assert.assertTrue(getText(candiate).contains(searchCandidate));
+//        }
+//
+//    }
+//
+//    public void verifyAdminSupportToolsColumnTitles() {
+//        List<String> expected = new ArrayList<>(Arrays.asList("Name", "Last Update", "Device ID", "Wellness ID", "Status", "Step"));
+//        List<String> titles = new ArrayList<>();
+//        for (WebElement title : adminSupportToolsTableTitles
+//        ) {
+//            titles.add(title.getText());
+//        }
+//        Assert.assertEquals(expected, titles);
+//    }
+//
+//    public void searchForDeviceID(String DeviceID) {
+//        waitForElementPresent(adminSupportToolsPageSearchByNameWE);
+//        setElementValue(adminSupportToolsPageSearchByDeviceID,DeviceID);
+//    }
+//
+//    public void verifyDeviceIDSearchResults(String searchDeviceID) {
+//        List<WebElement>devices=new ArrayList<>();
+//        devices.addAll(adminSupportToolsPageDeviceIDSearchResults);
+//        for (WebElement device:devices
+//        ) {
+//            logger.info("Device ID " + getText(device));
+//            Assert.assertTrue(getText(device).contains(searchDeviceID));
+//        }
+//
+//    }
+//
+//    public void clickNameFieldOnSupportTools() throws Exception {
+//        waitForElementPresent(adminNameFieldSupportTools_WebElement);
+//        clickElement(adminNameFieldSupportTools);
+//    }
+//
+//    public void WellnessAdvantageID(String WellnessAdvandtageID) {
+//        setElementValue(WAIdSupportTool, WellnessAdvandtageID);
+//    }
+//
+//    public void clickSaveChangesOnSupportTools() throws Exception {
+//        waitForElementPresent(adminSaveChangesSupportTool_WebElement);
+//        clickElement(adminSaveChangesSupportTool);
+//    }
+//
+//    public void verifyCandidateName(String candidateName) {
+//        List<WebElement>candiates=new ArrayList<>();
+//        candiates.addAll(adminCandidateResultsPageCandidateNameWE);
+//        for (WebElement candiate:candiates
+//        ) {
+//            logger.info("name " + getText(candiate));
+//            Assert.assertTrue(getText(candiate).contains(candidateName));
+//        }
+//
+//    }
+//
+//    public void selectCurrentStep(String step) throws Exception {
+//        waitForElementPresent(currentStepWESelector);
+//        selectElement(currentStepSelector, step);
+//    }
+//
+//    public void verifyCandidateInTheJSON(String searchCandidateInTheJSON) {
+//        List<WebElement> candiates = new ArrayList<>();
+//        candiates.addAll(adminSupportToolsCandidateNameOnTheJSON);
+//        for (WebElement candiate : candiates
+//        ) {
+//            logger.info("name " + getText(candiate));
+//            Assert.assertTrue(getText(candiate).contains(searchCandidateInTheJSON));
+//        }
+//    }
+//
+//    public void clickBackToResultsButtonSupportTools() throws Exception {
+//        waitForElementClickable(backToResultsButton);
+//        clickElement(backToResultsButton);
+//    }
+//
+//    public void isOneStrip(String isOneStrip,String candidate) throws Exception {
+//        String actualOneStrip = driver.findElement(By.xpath("(//td[.='" + candidate + "']/..//td)[last()]")).getText();
+//        String expected = isOneStrip;
+//        logger.info("is OneStrip= " + actualOneStrip);
+//        Assert.assertEquals(actualOneStrip, expected, "The onestrip status is not found as expected");
+//    }
+//
+//    public void clickReasonForTest() throws Exception {
+//        waitForElementClickable(orderPackageReasonSelector);
+//        clickElement(orderPackageReasonSelector);
+//    }
+//
+//    public void verifyOrderReasonDropDownList() {
+//        Select select = new Select(orderPackageReasonWESelector);
+//        List<WebElement> options=select.getOptions();
+//        List<String>actualOptions=new ArrayList<>();
+//        for (WebElement option:options
+//        ) {
+//            actualOptions.add(getText(option));
+//        }
+//        List<String>expectedOptions=new ArrayList<>(Arrays.asList("Pre-employment", "Random",
+//                "Reasonable Suspicion", "Post Accident"));
+//        Assert.assertEquals(actualOptions,expectedOptions,"Order Reason drop down options are not found as expected");
+//    }
+//
+//    public void clickBusinessLineList() throws Exception {
+//        waitForElementClickable(businessLine);
+//        clickElement(businessLine);
+//    }
 
     
 }

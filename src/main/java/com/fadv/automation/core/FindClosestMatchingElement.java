@@ -164,6 +164,16 @@ public class FindClosestMatchingElement extends BaseClass {
         return altXpathId;
     }
 
+    public static String getAltXpathName() {
+        return altXpathName;
+    }
+
+    public static String getAltXpathClassName() {
+        return altXpathClass;
+    }
+
+    public static String getAltXpathTextContent() { return altXpathText; }
+
     /**
      * This method prints the Element Details for the element; best matched.
      *
