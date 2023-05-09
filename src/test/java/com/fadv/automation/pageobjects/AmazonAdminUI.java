@@ -812,7 +812,8 @@ public class AmazonAdminUI extends SeleniumBaseClass {
 
     public void login(String username, String password) throws InterruptedException, IOException {
 
-        By fUser = By.id("signInName");
+        //By fUser = By.id("signInName");
+        By fUser = By.name("Sign in name");
         By fPass = By.id("password");
         By btnSignIn = By.xpath("//button[@id='next']");
         By btnMenu = By.id("menu-btn");
@@ -826,7 +827,13 @@ public class AmazonAdminUI extends SeleniumBaseClass {
 
         if (this.waitFor(fUser)) {
             waitFor(fUser);
-            this.setElementValue(fUser, username);
+            setAttribute(driver,fUser,"name","sign in name" );
+            if(isExistAndDisplayed(driver,fUser,1)){
+                setElementValue(fUser,username);
+            }
+            else {
+                WebElementHelper.enterText(eventFiringWebDriver, fUser, username);
+            }
             waitFor(fPass);
             this.setElementValue(fPass, password);
             if (isExistAndDisplayed(driver,btnSignIn,1)){

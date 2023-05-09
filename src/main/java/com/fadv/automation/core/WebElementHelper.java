@@ -588,7 +588,7 @@ public class WebElementHelper extends BaseClass {
             }
             if (findByContext.isEmpty()) {
                 // Extract the XPath expression
-                pattern = "(//li\\[contains\\(text\\(\\),')(.*?)('\\)\\])";
+                pattern = "//*[contains(.,'*')]";
                 p = Pattern.compile(pattern);
                 m = p.matcher(inputString);
 
@@ -598,8 +598,6 @@ public class WebElementHelper extends BaseClass {
                 if (m.find()) {
                     String input = m.group();
                     System.out.println("Input:" + input);
-                    findByType = m.group(1) + m.group(2) + m.group(3);
-                    element1 = m.group(2);
                     findByContext = "By.xpath: " + input;
 
                 }
