@@ -14,7 +14,7 @@ import org.testng.annotations.AfterSuite;
         , monochrome = false
         , tags = "@Sanity_01"
 )
-public class TestRunner extends AbstractTestNGCucumberTests {
+public class TestRunnerClass extends AbstractTestNGCucumberTests {
 
     @AfterSuite
     public void afterSuite() {
