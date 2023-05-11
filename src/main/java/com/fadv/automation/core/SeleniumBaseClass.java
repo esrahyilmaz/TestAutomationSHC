@@ -43,9 +43,6 @@ public class SeleniumBaseClass extends BaseClass {
 
     public static EventFiringWebDriver eventFiringWebDriver;
     public static EventListener eventListener;
-    public SeleniumBaseClass( WebDriver driver) {
-        this.driver = driver;
-    }
 
 
     public static WebDriver initBrowser(String browser) throws Exception {

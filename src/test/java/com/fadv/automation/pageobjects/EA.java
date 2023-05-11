@@ -85,10 +85,6 @@ public class EA extends SeleniumBaseClass {
     @FindBy(xpath = "//td[@class='GO-GOE2LMC']")
     public List<WebElement> eaAllSearchResultTabs_WebElement;
 
-    public EA(WebDriver driver) {
-        super(driver);
-    }
-
     private By getDownloadRejectsButton(String batchName){
         String xpath = String.format("//div[contains(text(), '%s')]/following::div[contains(text(), 'Download Rejects')]", batchName);
         return By.xpath(xpath);

@@ -29,9 +29,6 @@ import java.util.logging.Logger;
 public class AmazonAdminUI extends SeleniumBaseClass {
     static final Logger logger = Logger.getLogger(AmazonAdminUI.class.getName());
     private Environment environment = new Environment(System.getProperty("env"));
-    public AmazonAdminUI(WebDriver driver) {
-        super(driver);
-    }
 
     //By Element
     public final By cardName = By.xpath("//amzn-candidate-card//div[@class='candidate-container']");
@@ -221,13 +218,13 @@ public class AmazonAdminUI extends SeleniumBaseClass {
     public final By bulkUploadGetErrorFileLink = By.xpath("//div[@class='error-file-link']");
     public By adminClearSignaturePage = By.xpath("//*[contains(text(),'Certify ')]");
     public By adminRetestSignaturePage = By.xpath("//*[contains(text(),'Select a reason and certify')]");
-	public By adminSalariedLeaderPopUp = By.xpath("//*[contains(text(),'Contact your salaried leader ')]");
+    public By adminSalariedLeaderPopUp = By.xpath("//*[contains(text(),'Contact your salaried leader ')]");
     public final By adminSLeaderPopUpProceedBtn = By.xpath("//*[contains(text(),'Proceed')]");
     public final By adminSLeaderName = By.id("leader-name-input");
     public final By adminSLeaderComment = By.id("comment");
     public By adminFinalResultSelectPage = By.xpath("//*[contains(text(),'Final Test Result Selection')]");
-    public By adminFinalResultSelectAlcPage=By.xpath("//*[contains(text(),' Selection - Alcohol')]");
-    public By adminCertifyTestResultsPage=By.xpath("//div[contains(text(),'Certify Inconclusive')]");
+    public By adminFinalResultSelectAlcPage = By.xpath("//*[contains(text(),' Selection - Alcohol')]");
+    public By adminCertifyTestResultsPage = By.xpath("//div[contains(text(),'Certify Inconclusive')]");
     public By adminFourEyesCheckPage = By.xpath("//*[contains(text(),'Four Eyes Check')]");
     public By adminViewExampleClearBtn = By.xpath("//*[@id='view-negative-example-btn'] ");
     public By adminViewExampleInconclusiveBtn = By.xpath("//*[@id='view-inconclusive-example-btn']");
@@ -260,14 +257,14 @@ public class AmazonAdminUI extends SeleniumBaseClass {
     public By adminModifiedAdjudicationPageTitle = By.xpath("//span[contains(text(),'Validating')]");
     public By adminModifiedAdjudicationModalConfirmBtn = By.xpath("//h4[contains(text(),'Confirm')]");
     public By adminModifiedAdjudicationCertifySignPage = By.xpath("//h2[contains(text(),'Please certify')]");
-    public By adminDashboardButton=By.xpath("//div[@id='go-to-dashboard-container']");
-    public By adminAlcoholAdjudicationPage=By.xpath("//div[contains(text(),'Alcohol Test')]");
-    public By adminAlcoholCertifyClearPage=By.xpath("//div[contains(text(),'Certify Clear Test Results')]");
-    public By alcoholFlowNextBtn=By.id("next-button");
-    public By applicantStartOverPage=By.xpath("//p[contains(text(),'Start Over')]");
-    public By certifyClearDeviceImage=By.id("testing-pic");
-    public By certifyClearAlcoholResults=By.xpath("//form[@class='form-container ng-untouched ng-pristine ng-valid']");
-    public By certifyClearText=By.xpath("//p[@class='text-left']");
+    public By adminDashboardButton = By.xpath("//div[@id='go-to-dashboard-container']");
+    public By adminAlcoholAdjudicationPage = By.xpath("//div[contains(text(),'Alcohol Test')]");
+    public By adminAlcoholCertifyClearPage = By.xpath("//div[contains(text(),'Certify Clear Test Results')]");
+    public By alcoholFlowNextBtn = By.id("next-button");
+    public By applicantStartOverPage = By.xpath("//p[contains(text(),'Start Over')]");
+    public By certifyClearDeviceImage = By.id("testing-pic");
+    public By certifyClearAlcoholResults = By.xpath("//form[@class='form-container ng-untouched ng-pristine ng-valid']");
+    public By certifyClearText = By.xpath("//p[@class='text-left']");
     public final By supportToolsMenu = By.xpath("//a[contains(text(),'Support Tool')]");
     public By adminSupportToolsPage = By.xpath("//span[contains(text(),'Support Tool')]");
     public By adminSupportToolsPageSearchByName = By.id("nameSearch");
@@ -284,12 +281,12 @@ public class AmazonAdminUI extends SeleniumBaseClass {
     public By adminSupportToolsResultsPageCurrentStepDropDown = By.xpath("//div[@class='row-sm-4'][2]/select");
     public final By currentStepSelector = By.xpath("//select[@id='new-status-step']");
     public final By backToResultsButton = By.xpath("//div[@class='offset-1 col-sm-4']/div/p");
-    public By adminSupportToolsSearchPageCurrentStep= By.xpath("//table[@class='table table-striped']/tbody/tr/td/span[contains(text(),'Retake Photo')]");
+    public By adminSupportToolsSearchPageCurrentStep = By.xpath("//table[@class='table table-striped']/tbody/tr/td/span[contains(text(),'Retake Photo')]");
     public By businessLine = By.xpath("//select[@id='businessLine']");
 
     //Web Elements
 
-//    @FindBy(id = "next-button")
+    //    @FindBy(id = "next-button")
 //    public WebElement alcoholFlowNextButtonWebElement;
 //
 //    @FindBy(xpath = "//signature-pad[@id='sigPad']/canvas")
@@ -366,7 +363,7 @@ public class AmazonAdminUI extends SeleniumBaseClass {
 //
 //    @FindBy(xpath = "//select[@id='reasonForTest']")
     By orderPackageReasonWESelector = By.id("reasonForTest");
-//
+    //
 //    @FindBy(xpath = "//option[contains(text(),'Pre-employment')]")
 //    public WebElement orderPackageReasonPreWE;
 //
@@ -375,30 +372,30 @@ public class AmazonAdminUI extends SeleniumBaseClass {
 //
 //    @FindBy(id = "firstName")
     public By orderFirstNameWebElement = By.id("firstName");
-//
+    //
 //    @FindBy(id = "lastName")
-    public By orderLastNameWebElement= By.id("lastName");
-//
+    public By orderLastNameWebElement = By.id("lastName");
+    //
 //    @FindBy(xpath = "//input[@id='ssn']")
-    public By orderSsnWebElement= By.id("ssn");
-//
+    public By orderSsnWebElement = By.id("ssn");
+    //
 //    @FindBy(xpath = "//input[@id='dateOfBirth']")
-    public By orderDobWebElement= By.id("dateOfBirth");
-//
+    public By orderDobWebElement = By.id("dateOfBirth");
+    //
 //    @FindBy(id = "candidateId")
     public By orderCandidateIdWebElement = By.id("candidateId");
-//
+    //
 //    @FindBy(id = "employeeId")
 //    public WebElement orderIdentificationEmpIDWE;
 //
 //    @FindBy(id = "phoneNumber")
-    public By orderPhoneNumberWebElement=By.id("phoneNumber");
-//
+    public By orderPhoneNumberWebElement = By.id("phoneNumber");
+    //
 //    @FindBy(xpath = "//input[@id='line1']")
-    public By orderAddressLine1WebElement=By.id("line1");
-//
+    public By orderAddressLine1WebElement = By.id("line1");
+    //
 //    @FindBy(id = "emailAddress")
-    public By orderEmailAddressWebElement=By.id("emailAddress");
+    public By orderEmailAddressWebElement = By.id("emailAddress");
 //
 //    @FindBy(xpath = "//*[@id='scan-information']")
 //    public WebElement lastScannedDetailsWebElement;
@@ -568,7 +565,7 @@ public class AmazonAdminUI extends SeleniumBaseClass {
 //    @FindBy(xpath ="//textarea[@id='json']")
 //    public List<WebElement> adminSupportToolsCandidateNameOnTheJSON;
 
-        //    Return Methods
+    //    Return Methods
 //    public By pastHourButton(String text){
 //        String button = String.format("//button[contains(text(),'%s')]", text);
 //        return By.xpath(button);
@@ -828,7 +825,7 @@ public class AmazonAdminUI extends SeleniumBaseClass {
         if (this.waitFor(fUser)) {
             waitFor(fUser);
 //            setAttribute(fUser,"name","sign in name" );
-            enterTextUsingSelfHealing(fUser,username);
+            enterTextUsingSelfHealing(fUser, username);
             waitFor(fPass);
             this.setElementValue(fPass, password);
             clickElementUsingSelfHealing(btnSignIn);
@@ -1457,12 +1454,12 @@ public class AmazonAdminUI extends SeleniumBaseClass {
     }
 
     public void enterOrderEmailAddress(String email, Boolean clearValue) throws Exception {
-        wait (2);
-        waitFor (orderEmailAddressWebElement);
+        wait(2);
+        waitFor(orderEmailAddressWebElement);
         if (clearValue) {
-            enterTextUsingSelfHealing (orderEmailAddress, email);
+            enterTextUsingSelfHealing(orderEmailAddress, email);
         } else {
-            setElementValueNoClear (orderEmailAddress, email);
+            setElementValueNoClear(orderEmailAddress, email);
         }
 
     }
@@ -2645,5 +2642,5 @@ public class AmazonAdminUI extends SeleniumBaseClass {
 //        clickElement(businessLine);
 //    }
 
-    
+
 }

@@ -16,10 +16,6 @@ import java.util.*;
 import java.util.logging.Logger;
 
 public class EACloudOrderDetails extends SeleniumBaseClass {
-    public EACloudOrderDetails(WebDriver driver) {
-        super(driver);
-    }
-
     static Logger logger = Logger.getLogger(EACloudOrderDetails.class.getName());
 
     public final By createOrderButton = By.xpath("//button[@data-test-id='createOrder']");

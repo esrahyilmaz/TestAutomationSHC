@@ -247,10 +247,6 @@ public class AmazonApplicant extends SeleniumBaseClass {
 
     private CreateOrderWrapper createOrderWrapper = null;
 
-    public AmazonApplicant(WebDriver driver) {
-        super(driver);
-    }
-
     public CreateOrderWrapper getCreateOrderWrapper() {
         if (createOrderWrapper == null) {
             BackendApi api = (BackendApi) testObject.getRuntimeData(Constants.BACKEND_API);

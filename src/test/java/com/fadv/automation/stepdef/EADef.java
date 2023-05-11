@@ -24,7 +24,7 @@ import java.util.logging.Logger;
 
 public class EADef extends BaseClass {
     static final Logger logger = Logger.getLogger(EADef.class.getName());
-    final static SeleniumBaseClass seleniumBaseClass = new SeleniumBaseClass(null);
+    final static SeleniumBaseClass seleniumBaseClass = new SeleniumBaseClass();
     private WebDriver driver = null;
     private EA ui = null;
 

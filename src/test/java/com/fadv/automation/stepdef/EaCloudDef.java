@@ -24,7 +24,7 @@ import java.util.logging.Logger;
 
 public class EaCloudDef extends BaseClass {
     static final Logger logger = Logger.getLogger (EaCloudDef.class.getName ( ));
-    final static SeleniumBaseClass seleniumBaseClass = new SeleniumBaseClass(null);
+    final static SeleniumBaseClass seleniumBaseClass = new SeleniumBaseClass();
     private WebDriver driver = null;
     private EACloudOrderDetails ui = null;
 
