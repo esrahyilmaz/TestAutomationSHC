@@ -111,10 +111,10 @@ public class FindClosestMatchingElement extends BaseClass {
         double distance = 0;
         Point currentElementLocation = element.getLocation();
         String[] pointValues = storedLocation.replace("(", "").replace(")", "").split(",");
-        for (int i = 0; i < pointValues.length; i++) {
-            System.out.println("pointValues: " + i + " " + pointValues[i]);
-        }
-        if(pointValues.length > 1 && isNumeric(pointValues[0].trim()) && isNumeric(pointValues[1].trim())){
+//        for (int i = 0; i < pointValues.length; i++) {
+//            System.out.println("pointValues: " + i + " " + pointValues[i]);
+//        }
+        if (pointValues.length > 1 && isNumeric(pointValues[0].trim()) && isNumeric(pointValues[1].trim())) {
             int x = Integer.parseInt(pointValues[0].trim());
             int y = Integer.parseInt(pointValues[1].trim());
             Point previousElementLocation = new Point(x, y);
