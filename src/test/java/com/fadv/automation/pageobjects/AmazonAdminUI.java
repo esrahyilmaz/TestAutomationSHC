@@ -29,6 +29,7 @@ import java.util.logging.Logger;
 public class AmazonAdminUI extends SeleniumBaseClass {
     static final Logger logger = Logger.getLogger(AmazonAdminUI.class.getName());
     private Environment environment = new Environment(System.getProperty("env"));
+
     public AmazonAdminUI(WebDriver driver) {
         super(driver);
     }
@@ -221,13 +222,13 @@ public class AmazonAdminUI extends SeleniumBaseClass {
     public final By bulkUploadGetErrorFileLink = By.xpath("//div[@class='error-file-link']");
     public By adminClearSignaturePage = By.xpath("//*[contains(text(),'Certify ')]");
     public By adminRetestSignaturePage = By.xpath("//*[contains(text(),'Select a reason and certify')]");
-	public By adminSalariedLeaderPopUp = By.xpath("//*[contains(text(),'Contact your salaried leader ')]");
+    public By adminSalariedLeaderPopUp = By.xpath("//*[contains(text(),'Contact your salaried leader ')]");
     public final By adminSLeaderPopUpProceedBtn = By.xpath("//*[contains(text(),'Proceed')]");
     public final By adminSLeaderName = By.id("leader-name-input");
     public final By adminSLeaderComment = By.id("comment");
     public By adminFinalResultSelectPage = By.xpath("//*[contains(text(),'Final Test Result Selection')]");
-    public By adminFinalResultSelectAlcPage=By.xpath("//*[contains(text(),' Selection - Alcohol')]");
-    public By adminCertifyTestResultsPage=By.xpath("//div[contains(text(),'Certify Inconclusive')]");
+    public By adminFinalResultSelectAlcPage = By.xpath("//*[contains(text(),' Selection - Alcohol')]");
+    public By adminCertifyTestResultsPage = By.xpath("//div[contains(text(),'Certify Inconclusive')]");
     public By adminFourEyesCheckPage = By.xpath("//*[contains(text(),'Four Eyes Check')]");
     public By adminViewExampleClearBtn = By.xpath("//*[@id='view-negative-example-btn'] ");
     public By adminViewExampleInconclusiveBtn = By.xpath("//*[@id='view-inconclusive-example-btn']");
@@ -260,14 +261,14 @@ public class AmazonAdminUI extends SeleniumBaseClass {
     public By adminModifiedAdjudicationPageTitle = By.xpath("//span[contains(text(),'Validating')]");
     public By adminModifiedAdjudicationModalConfirmBtn = By.xpath("//h4[contains(text(),'Confirm')]");
     public By adminModifiedAdjudicationCertifySignPage = By.xpath("//h2[contains(text(),'Please certify')]");
-    public By adminDashboardButton=By.xpath("//div[@id='go-to-dashboard-container']");
-    public By adminAlcoholAdjudicationPage=By.xpath("//div[contains(text(),'Alcohol Test')]");
-    public By adminAlcoholCertifyClearPage=By.xpath("//div[contains(text(),'Certify Clear Test Results')]");
-    public By alcoholFlowNextBtn=By.id("next-button");
-    public By applicantStartOverPage=By.xpath("//p[contains(text(),'Start Over')]");
-    public By certifyClearDeviceImage=By.id("testing-pic");
-    public By certifyClearAlcoholResults=By.xpath("//form[@class='form-container ng-untouched ng-pristine ng-valid']");
-    public By certifyClearText=By.xpath("//p[@class='text-left']");
+    public By adminDashboardButton = By.xpath("//div[@id='go-to-dashboard-container']");
+    public By adminAlcoholAdjudicationPage = By.xpath("//div[contains(text(),'Alcohol Test')]");
+    public By adminAlcoholCertifyClearPage = By.xpath("//div[contains(text(),'Certify Clear Test Results')]");
+    public By alcoholFlowNextBtn = By.id("next-button");
+    public By applicantStartOverPage = By.xpath("//p[contains(text(),'Start Over')]");
+    public By certifyClearDeviceImage = By.id("testing-pic");
+    public By certifyClearAlcoholResults = By.xpath("//form[@class='form-container ng-untouched ng-pristine ng-valid']");
+    public By certifyClearText = By.xpath("//p[@class='text-left']");
     public final By supportToolsMenu = By.xpath("//a[contains(text(),'Support Tool')]");
     public By adminSupportToolsPage = By.xpath("//span[contains(text(),'Support Tool')]");
     public By adminSupportToolsPageSearchByName = By.id("nameSearch");
@@ -284,7 +285,7 @@ public class AmazonAdminUI extends SeleniumBaseClass {
     public By adminSupportToolsResultsPageCurrentStepDropDown = By.xpath("//div[@class='row-sm-4'][2]/select");
     public final By currentStepSelector = By.xpath("//select[@id='new-status-step']");
     public final By backToResultsButton = By.xpath("//div[@class='offset-1 col-sm-4']/div/p");
-    public By adminSupportToolsSearchPageCurrentStep= By.xpath("//table[@class='table table-striped']/tbody/tr/td/span[contains(text(),'Retake Photo')]");
+    public By adminSupportToolsSearchPageCurrentStep = By.xpath("//table[@class='table table-striped']/tbody/tr/td/span[contains(text(),'Retake Photo')]");
     public By businessLine = By.xpath("//select[@id='businessLine']");
 
     //Web Elements
@@ -316,22 +317,22 @@ public class AmazonAdminUI extends SeleniumBaseClass {
     @FindBy(xpath = "//tbody/tr/td")
     public List<WebElement> getSideAlleyCandidateResultRow;
 
-    @FindBy(xpath ="//div[@class='col']/a")
+    @FindBy(xpath = "//div[@class='col']/a")
     public List<WebElement> adminLandingPageLocationSearchResults;
 
-    @FindBy(xpath ="//div[@class='row row-striped odd']/div[2]")
+    @FindBy(xpath = "//div[@class='row row-striped odd']/div[2]")
     public List<WebElement> adminLandingPageStateSearchResults1;
 
-    @FindBy(xpath ="//div[@class='row row-striped even']/div[2]")
+    @FindBy(xpath = "//div[@class='row row-striped even']/div[2]")
     public List<WebElement> adminLandingPageStateSearchResults2;
 
     @FindBy(xpath = "//button[@id='incon-btn']")
     public WebElement adjInconclusiveWebElementButton;
 
-    @FindBy(id="clear-btn")
+    @FindBy(id = "clear-btn")
     public WebElement adjClearButtonWebElement;
 
-    @FindBy(id="retest-btn")
+    @FindBy(id = "retest-btn")
     public WebElement adjRetestButtonWebElement;
 
     @FindBy(id = "testing-pic")
@@ -513,14 +514,14 @@ public class AmazonAdminUI extends SeleniumBaseClass {
 
     @FindBy(id = "trackingNumber")
     public WebElement adminTrackingNumberWE;
-	
-	 @FindBy(id="searchAlias")
+
+    @FindBy(id = "searchAlias")
     public WebElement adminLandingPageLocationFilterWE;
 
-    @FindBy(id="searchState")
+    @FindBy(id = "searchState")
     public WebElement adminLandingPageStateFilterWE;
-	
-	@FindBy(xpath = "//b[contains(text(),'Recent Locations:')]/following::div[@class='col-md-2']/a")
+
+    @FindBy(xpath = "//b[contains(text(),'Recent Locations:')]/following::div[@class='col-md-2']/a")
     public List<WebElement> adminRecentLocations;
 
     @FindBy(xpath = "//button[@id='view-valid-example-btn']")
@@ -529,28 +530,28 @@ public class AmazonAdminUI extends SeleniumBaseClass {
     @FindBy(xpath = "//button[@id='view-retest-example-btn']")
     public WebElement adminModifiedViewExampleRetestWE;
 
-    @FindBy(xpath="//button[@id='retest-btn']")
+    @FindBy(xpath = "//button[@id='retest-btn']")
     public WebElement adminModifiedAdjudicationRetestWE;
 
-    @FindBy(id="valid-btn")
+    @FindBy(id = "valid-btn")
     public WebElement adminModifiedAdjudicationValidWE;
 
     @FindBy(xpath = "//button[@id='sign-btn']")
     public WebElement adminModifiedAdjudicationCertifyBtnWE;
 
-    @FindBy(xpath ="//h4/following-sibling::p")
+    @FindBy(xpath = "//h4/following-sibling::p")
     public WebElement adminFinalTestResult4EyesSelection;
 
-    @FindBy(id="nameSearch")
+    @FindBy(id = "nameSearch")
     public WebElement adminSupportToolsPageSearchByNameWE;
 
-    @FindBy(xpath ="//td[@class='a']/a")
+    @FindBy(xpath = "//td[@class='a']/a")
     public List<WebElement> adminSupportToolsPageCandidateNameSearchResults;
 
     @FindBy(xpath = "//table[@class='table table-striped']/thead/tr/th")
     public List<WebElement> adminSupportToolsTableTitles;
 
-    @FindBy(xpath ="//table[@class='table table-striped']/tbody/tr/td[3]")
+    @FindBy(xpath = "//table[@class='table table-striped']/tbody/tr/td[3]")
     public List<WebElement> adminSupportToolsPageDeviceIDSearchResults;
 
     @FindBy(xpath = "//table[@class='table table-striped']/tbody/tr/td[1]")
@@ -559,17 +560,17 @@ public class AmazonAdminUI extends SeleniumBaseClass {
     @FindBy(xpath = "//button[@id='save-button']")
     public WebElement adminSaveChangesSupportTool_WebElement;
 
-    @FindBy(xpath ="//div[@class='flex-column']/h2")
+    @FindBy(xpath = "//div[@class='flex-column']/h2")
     public List<WebElement> adminCandidateResultsPageCandidateNameWE;
 
     @FindBy(xpath = "//select[@id='new-status-step']")
     public WebElement currentStepWESelector;
 
-    @FindBy(xpath ="//textarea[@id='json']")
+    @FindBy(xpath = "//textarea[@id='json']")
     public List<WebElement> adminSupportToolsCandidateNameOnTheJSON;
 
-        //    Return Methods
-    public By pastHourButton(String text){
+    //    Return Methods
+    public By pastHourButton(String text) {
         String button = String.format("//button[contains(text(),'%s')]", text);
         return By.xpath(button);
     }
@@ -742,9 +743,9 @@ public class AmazonAdminUI extends SeleniumBaseClass {
     }
 
     public String getBulkUploadStatusText(String fileNameUploaded) throws Exception {
-      String xpath= String.format("//td[contains(text(),'%s')]/preceding::td", fileNameUploaded);
-      WebElement element = driver.findElement(By.xpath(xpath));
-      return getText(element);
+        String xpath = String.format("//td[contains(text(),'%s')]/preceding::td", fileNameUploaded);
+        WebElement element = driver.findElement(By.xpath(xpath));
+        return getText(element);
     }
 
 
@@ -812,8 +813,8 @@ public class AmazonAdminUI extends SeleniumBaseClass {
 
     public void login(String username, String password) throws InterruptedException, IOException {
 
-        By fUser = By.id("signInName");
-        By fPass = By.id("password");
+        By fUser = By.name("Sign in name");
+        By fPass = By.name("Password");
         By btnSignIn = By.xpath("//button[@id='next']");
         By btnMenu = By.id("menu-btn");
 
@@ -824,16 +825,19 @@ public class AmazonAdminUI extends SeleniumBaseClass {
         this.waitFor(btnLogin);
         this.clickElement(btnLogin);
 
-        if (this.waitFor(fUser)) {
+        if (waitFor(fUser)) {
             waitFor(fUser);
-            this.setElementValue(fUser, username);
+            setAttribute(eventFiringWebDriver, fUser, "name", "sign in name");
+            if (isExistAndDisplayed(eventFiringWebDriver, fUser, 1))
+                setElementValue(fUser, username);
+            else
+                WebElementHelper.enterText(eventFiringWebDriver, fUser, username);
             waitFor(fPass);
-            this.setElementValue(fPass, password);
-            if (isExistAndDisplayed(driver,btnSignIn,1)){
-                this.clickElement(btnSignIn);
-            }
-            else {
-                WebElementHelper.clickElement(setEventDriver(),btnSignIn);
+            setElementValue(fPass, password);
+            if (isExistAndDisplayed(driver, btnSignIn, 1)) {
+                clickElement(btnSignIn);
+            } else {
+                WebElementHelper.clickElement(setEventDriver(), btnSignIn);
             }
 
             this.waitFor(btnMenu);
@@ -919,6 +923,7 @@ public class AmazonAdminUI extends SeleniumBaseClass {
                 .build();
         drawAction.perform();
     }
+
     public void signSignaturePadAbandoned() {
         Actions builder = new Actions(getDriver());
         Action drawAction = builder.moveToElement(signaturePad, 50, 50)
@@ -930,6 +935,7 @@ public class AmazonAdminUI extends SeleniumBaseClass {
                 .build();
         drawAction.perform();
     }
+
     public void signSignaturePadFinalAlcPage() {
         Actions builder = new Actions(getDriver());
         Action drawAction = builder.moveToElement(signaturePad, 50, 50)
@@ -1004,8 +1010,8 @@ public class AmazonAdminUI extends SeleniumBaseClass {
     public void clickAdjudicateInconclusive() throws Exception {
         waitForElementPresent(adjInconclusiveWebElementButton);
         clickElement(adjudicateInconclusivebutton);
-        testObject.setTestData("Adjudication"," Inconclusive");
-        logger.info("adjudication is "+testObject.getTestData("Adjudication"));
+        testObject.setTestData("Adjudication", " Inconclusive");
+        logger.info("adjudication is " + testObject.getTestData("Adjudication"));
 
     }
 
@@ -1105,12 +1111,12 @@ public class AmazonAdminUI extends SeleniumBaseClass {
         String currentCandidate = getCandidateName();
         List<String> fullName = Arrays.asList(currentCandidate.split(" "));
         String fName = fullName.get(0);
-        Assert.assertTrue(exists(candidateGreenCardByFirstName(fName)),"Adjudicated Green card for " + currentCandidate + " was not found as expected.");
+        Assert.assertTrue(exists(candidateGreenCardByFirstName(fName)), "Adjudicated Green card for " + currentCandidate + " was not found as expected.");
     }
 
     public void validateTestsInProgressDashboard() {
         boolean found = false;
-        String expectedCard = testObject.getTestData ("lName");
+        String expectedCard = testObject.getTestData("lName");
 
         List<WebElement> cards = getDriver().findElements(cardName);
         for (WebElement c : cards) {
@@ -1166,7 +1172,7 @@ public class AmazonAdminUI extends SeleniumBaseClass {
         }
         String capturedLocation = getText(locationTitleWE);
         report("Location: " + capturedLocation);
-        Assert.assertTrue(capturedLocation.contains(location),"Location was not found as expected Found: " + capturedLocation + " instead of: " + location);
+        Assert.assertTrue(capturedLocation.contains(location), "Location was not found as expected Found: " + capturedLocation + " instead of: " + location);
     }
 
     public void selectLocation() throws Exception {
@@ -1221,7 +1227,7 @@ public class AmazonAdminUI extends SeleniumBaseClass {
 
 
     public void verifyCardListedUnderFilter(String filterOption) {
-        Assert.assertTrue(exists(candidateCardElement()),"Candidate Card was not found under filter: " + filterOption);
+        Assert.assertTrue(exists(candidateCardElement()), "Candidate Card was not found under filter: " + filterOption);
     }
 
 
@@ -1368,7 +1374,7 @@ public class AmazonAdminUI extends SeleniumBaseClass {
 
     public void isImageInverted() {
         String className = adjudicateDeviceImage_WebElement.getAttribute("class");
-        Assert.assertEquals(className, "inverted","Inverted Image was not found as expected." );
+        Assert.assertEquals(className, "inverted", "Inverted Image was not found as expected.");
     }
 
     public String getAdminSpecimenIdDisplayed() throws Exception {
@@ -1461,12 +1467,12 @@ public class AmazonAdminUI extends SeleniumBaseClass {
     }
 
     public void enterOrderEmailAddress(String email, Boolean clearValue) throws Exception {
-        waitForSeconds (2);
-        waitForElementPresent (orderEmailAddressWebElement);
+        waitForSeconds(2);
+        waitForElementPresent(orderEmailAddressWebElement);
         if (clearValue) {
-            setElementValue (orderEmailAddress, email);
+            setElementValue(orderEmailAddress, email);
         } else {
-            setElementValueNoClear (orderEmailAddress, email);
+            setElementValueNoClear(orderEmailAddress, email);
         }
 
     }
@@ -1475,6 +1481,7 @@ public class AmazonAdminUI extends SeleniumBaseClass {
         waitForElementClickable(orderNextButton);
         clickElement(orderNextButton);
     }
+
     public void clickAlcoholFlowNextButton() throws Exception {
         waitForElementClickable(alcoholFlowNextBtn);
         clickElement(alcoholFlowNextBtn);
@@ -1694,21 +1701,21 @@ public class AmazonAdminUI extends SeleniumBaseClass {
         }
     }
 
-    public void selectBulkPackagesFilter(String orderPackage){
+    public void selectBulkPackagesFilter(String orderPackage) {
         clickElement(bulkUploadPackageSelector);
-            String xpath = String.format("//ng-Select[@placeholder='Packages']//div[@role='option']/span[contains(text(),'%s')]", orderPackage);
-            clickElement(By.xpath(xpath));
+        String xpath = String.format("//ng-Select[@placeholder='Packages']//div[@role='option']/span[contains(text(),'%s')]", orderPackage);
+        clickElement(By.xpath(xpath));
     }
 
-    public void selectBulkUploadStatusFilter(String status){
+    public void selectBulkUploadStatusFilter(String status) {
         clickElement(bulkUploadStatusSelector);
         String xpath = String.format("//ng-Select[@placeholder='Bulk Upload Status']//div[@role='option']/span[contains(text(),'%s')]", status);
         clickElement(By.xpath(xpath));
     }
 
-    public void verifyBulkUploadStatus(String... statuses){
+    public void verifyBulkUploadStatus(String... statuses) {
         clickElement(bulkUploadStatusSelector);
-        for(String status:statuses) {
+        for (String status : statuses) {
             String xpath = String.format("//ng-Select[@placeholder='Bulk Upload Status']//div[@role='option']/span[contains(text(),'%s')]", status);
             logger.info("checking bulk upload status: " + status);
             Assert.assertTrue(exists(By.xpath(xpath)));
@@ -1716,19 +1723,17 @@ public class AmazonAdminUI extends SeleniumBaseClass {
     }
 
     public boolean isFileInBulkOrderList(String fileName) throws Exception {
-            for(WebElement dataRow:bulkOrdersListRows) {
-                if(getText(dataRow).contains(fileName))
-                {
-                    return true;
-                }
+        for (WebElement dataRow : bulkOrdersListRows) {
+            if (getText(dataRow).contains(fileName)) {
+                return true;
             }
-            return false;
+        }
+        return false;
     }
 
     public boolean isBulkStatusInAllRows(String status) throws Exception {
-        for(WebElement dataRow:bulkOrderUploadStatusColumnRows) {
-            if(!getText(dataRow).equalsIgnoreCase(status))
-            {
+        for (WebElement dataRow : bulkOrderUploadStatusColumnRows) {
+            if (!getText(dataRow).equalsIgnoreCase(status)) {
                 return false;
             }
         }
@@ -1743,13 +1748,13 @@ public class AmazonAdminUI extends SeleniumBaseClass {
         }
     }
 
-    public void setBulkUploadStartDate(String month, String day){
+    public void setBulkUploadStartDate(String month, String day) {
         clickElement(bulkUploadDateRangeSelector);
         String xpath = String.format("//button/span[text()='%s']/following::span[text()='%s'][1]", month, day);
         clickElement(By.xpath(xpath));
     }
 
-    public void setPlacedOrdersStartDate(String month, String day){
+    public void setPlacedOrdersStartDate(String month, String day) {
         clickElement(placedOrdersDatePicker);
         String xpath = String.format("//button/span[text()='%s']/following::span[text()='%s'][1]", month, day);
         clickElement(By.xpath(xpath));
@@ -1841,7 +1846,7 @@ public class AmazonAdminUI extends SeleniumBaseClass {
         }
         Collections.sort(expected);
         Collections.reverse(expected);
-        Assert.assertEquals( actual,expected,"Items were not found in chronological order.");
+        Assert.assertEquals(actual, expected, "Items were not found in chronological order.");
     }
 
     public void verifyAdminPlacedOrdersListedReverseChronological() throws Exception {
@@ -1901,8 +1906,8 @@ public class AmazonAdminUI extends SeleniumBaseClass {
     }
 
     public void clickIamHappyButtonAdminUI() throws Exception {
-        waitForElementClickable (sideAlleyIamHappyWithMyPhotoButton);
-        clickElement (sideAlleyIamHappyWithMyPhotoButton);
+        waitForElementClickable(sideAlleyIamHappyWithMyPhotoButton);
+        clickElement(sideAlleyIamHappyWithMyPhotoButton);
     }
 
     public void clickTakePhotoButtonSA() throws Exception {
@@ -2050,7 +2055,7 @@ public class AmazonAdminUI extends SeleniumBaseClass {
     }
 
     public void verifyOrderHasNoLocationInAdminUI() throws Exception {
-        Assert.assertTrue( getText(getSideAlleyCandidateResultRow.get(3)).isEmpty(),"Location is assigned for the order");
+        Assert.assertTrue(getText(getSideAlleyCandidateResultRow.get(3)).isEmpty(), "Location is assigned for the order");
         logger.info("Assigned Location: " + getText(getSideAlleyCandidateResultRow.get(3)));
     }
 
@@ -2061,7 +2066,7 @@ public class AmazonAdminUI extends SeleniumBaseClass {
         ) {
             tableColumns.add(getText(column));
         }
-        Assert.assertEquals( tableColumns, expectedColumns,"Candidate Results columns are not found as expected");
+        Assert.assertEquals(tableColumns, expectedColumns, "Candidate Results columns are not found as expected");
     }
 
     public void searchForlastNameInSideAlleyResults(String lName) throws Exception {
@@ -2186,7 +2191,7 @@ public class AmazonAdminUI extends SeleniumBaseClass {
     }
 
     public void enterPhoneData(DataTable dataTable) {
-        List<List<String>> values = dataTable.asLists ( );
+        List<List<String>> values = dataTable.asLists();
         for (List<String> value : values) {
             for (String s : value) {
                 setElementValue(orderPhoneNumber, s);
@@ -2206,11 +2211,9 @@ public class AmazonAdminUI extends SeleniumBaseClass {
     }
 
 
-
     public void clickBulkUploadDetailsIcon(String fileName) throws Exception {
-        for(WebElement dataRow:bulkOrdersListRows) {
-            if(getText(dataRow).contains(fileName))
-            {
+        for (WebElement dataRow : bulkOrdersListRows) {
+            if (getText(dataRow).contains(fileName)) {
                 clickElement(bulkUploadDetailsIcon);
             }
         }
@@ -2226,24 +2229,24 @@ public class AmazonAdminUI extends SeleniumBaseClass {
         clickElement(bulkUploadGetErrorFileLink);
     }
 
-   public void openNewBrowserTabWindow(){
+    public void openNewBrowserTabWindow() {
         SeleniumBaseClass seleniumBaseClass = new SeleniumBaseClass(driver);
         seleniumBaseClass.openNewBrowserTab();
-   }
+    }
 
-   public void switchToParentWindow(){
-       SharedBaseClass sharedBaseClass = new SharedBaseClass(driver);
-       sharedBaseClass.switchToParentWindow();
-   }
+    public void switchToParentWindow() {
+        SharedBaseClass sharedBaseClass = new SharedBaseClass(driver);
+        sharedBaseClass.switchToParentWindow();
+    }
 
     public void isLocationExist(String locationAlias) throws Exception {
-        String xpath="//table//td[6]";
-        WebElement element=driver.findElement (By.xpath (xpath));
-        Assert.assertEquals (getText(element),locationAlias,"Location alias is not found");
+        String xpath = "//table//td[6]";
+        WebElement element = driver.findElement(By.xpath(xpath));
+        Assert.assertEquals(getText(element), locationAlias, "Location alias is not found");
     }
 
     public void enterSalariedLeaderName(String salariedLeaderName) {
-         setElementValue(adminSLeaderName, salariedLeaderName);
+        setElementValue(adminSLeaderName, salariedLeaderName);
     }
 
     public void enterSalariedLeaderComment(String salariedLeaderComment) {
@@ -2263,14 +2266,15 @@ public class AmazonAdminUI extends SeleniumBaseClass {
 
     }
 
-/*
-This method did not work in current pdf browser, should be deleted after check
- */
+    /*
+    This method did not work in current pdf browser, should be deleted after check
+     */
     public void verifyFAQpdfOpens() {
         Assert.assertEquals("FAQ PDF browser tab is not found", "AmazonTrainingDocJan2022.pdf", "getDriver().getTitle()");
 
     }
-	public void clickProceedBtnOn4EyePopUp() throws Exception {
+
+    public void clickProceedBtnOn4EyePopUp() throws Exception {
         waitForElementClickable(adminSLeaderPopUpProceedBtn);
         clickElement(adminSLeaderPopUpProceedBtn);
 
@@ -2278,7 +2282,7 @@ This method did not work in current pdf browser, should be deleted after check
 
     public void enterAlias(String amazonAlias) {
         waitForElementPresent(adminAmazonAliasWE);
-        setElementValue(adminAmazonAlias,amazonAlias);
+        setElementValue(adminAmazonAlias, amazonAlias);
     }
 
     public void clickLocationLink(String locationName) {
@@ -2290,7 +2294,8 @@ This method did not work in current pdf browser, should be deleted after check
             throw new RuntimeException("Location Name [" + locationName + "] is not visible");
         }
     }
- public void adminSelectCarrier(String carrier) {
+
+    public void adminSelectCarrier(String carrier) {
         waitForElementClickable(adminCarrierSelector);
         clickElement(adminCarrierSelector);
         String xpath = String.format("//select[@id='shipper']/option[contains(text(),'%s')]", carrier);
@@ -2299,7 +2304,7 @@ This method did not work in current pdf browser, should be deleted after check
 
     public void enterTrackingNumber(String trackingNumber) {
         waitForElementPresent(adminTrackingNumberWE);
-        setElementValue(adminTrackingNumber,trackingNumber);
+        setElementValue(adminTrackingNumber, trackingNumber);
     }
 
     public void clickTrackingCertifyBtn() {
@@ -2309,70 +2314,77 @@ This method did not work in current pdf browser, should be deleted after check
 
     public void enterEmployeeID(String employeeID) {
         waitForElementPresent(orderIdentificationEmpIDWE);
-        setElementValue(orderIdentificationEmpID,employeeID);
+        setElementValue(orderIdentificationEmpID, employeeID);
     }
-	 public void searchForLocation(String locationName) {
+
+    public void searchForLocation(String locationName) {
         waitForElementPresent(adminLandingPageLocationFilterWE);
-        setElementValue(adminLandingPageLocationFilter,locationName);
+        setElementValue(adminLandingPageLocationFilter, locationName);
     }
 
     public void searchForState(String state) {
         waitForElementPresent(adminLandingPageStateFilterWE);
-        setElementValue(adminLandingPageStateFilter,state);
+        setElementValue(adminLandingPageStateFilter, state);
     }
 
     public void verifyLocationSearchResults(String searchLocation) {
-        List<WebElement>locations=new ArrayList<>();
+        List<WebElement> locations = new ArrayList<>();
         locations.addAll(adminLandingPageLocationSearchResults);
-        for (WebElement location:locations
-             ) {
-            logger.info("name "+getText(location));
+        for (WebElement location : locations
+        ) {
+            logger.info("name " + getText(location));
             Assert.assertTrue(getText(location).contains(searchLocation));
 
         }
     }
 
     public void verifyLocationStateSearchResults(String searchState) {
-        List<WebElement>states=new ArrayList<>();
+        List<WebElement> states = new ArrayList<>();
         states.addAll(adminLandingPageStateSearchResults1);
         states.addAll(adminLandingPageStateSearchResults2);
-        for (WebElement state:states
+        for (WebElement state : states
         ) {
-            logger.info("name "+getText(state));
+            logger.info("name " + getText(state));
             Assert.assertTrue(getText(state).contains(searchState));
 
-        }}
-		
-    
-     public void verifyRecentLocations(String location1, String location2, String location3) {
+        }
+    }
 
-        String xpathLoc1=String.format("(//a[contains(text(),' %s ')])[1]",location1);
-         String xpathLoc2=String.format("(//a[contains(text(),' %s ')])[1]",location2);
-         String xpathLoc3=String.format("(//a[contains(text(),' %s ')])[1]",location3);
-         WebElement location1WE=driver.findElement(By.xpath(xpathLoc1));
-         WebElement location2WE=driver.findElement(By.xpath(xpathLoc2));
-         WebElement location3WE=driver.findElement(By.xpath(xpathLoc3));
-         Assert.assertTrue(location1WE.isDisplayed());
-         Assert.assertTrue(location2WE.isDisplayed());
-         Assert.assertTrue(location3WE.isDisplayed());
+
+    public void verifyRecentLocations(String location1, String location2, String location3) {
+
+        String xpathLoc1 = String.format("(//a[contains(text(),' %s ')])[1]", location1);
+        String xpathLoc2 = String.format("(//a[contains(text(),' %s ')])[1]", location2);
+        String xpathLoc3 = String.format("(//a[contains(text(),' %s ')])[1]", location3);
+        WebElement location1WE = driver.findElement(By.xpath(xpathLoc1));
+        WebElement location2WE = driver.findElement(By.xpath(xpathLoc2));
+        WebElement location3WE = driver.findElement(By.xpath(xpathLoc3));
+        Assert.assertTrue(location1WE.isDisplayed());
+        Assert.assertTrue(location2WE.isDisplayed());
+        Assert.assertTrue(location3WE.isDisplayed());
 
 
     }
+
     public void enterSampleIDInFirstField(String sampleId, Boolean clearField) {
         if (clearField.equals(true)) {
             setElementValue(sideAlleySampleIdTextBox, sampleId);
-        }else {
+        } else {
             setElementValueNoClear(sideAlleySampleIdTextBox, sampleId);
-        } report(Status.PASS, "Entered Sample Information");
+        }
+        report(Status.PASS, "Entered Sample Information");
 
     }
+
     public void enterSampleIDInSecondField(String sampleId, Boolean clearField) {
         if (clearField.equals(true)) {
             setElementValue(sideAlleyConfirmSampleIdTextBox, sampleId);
-        }else {
+        } else {
             setElementValueNoClear(sideAlleyConfirmSampleIdTextBox, sampleId);
-        } report(Status.PASS, "Entered Sample Information");
+        }
+        report(Status.PASS, "Entered Sample Information");
     }
+
     public void clickModifiedAdjudicationCertifyBtn() {
         waitForElementClickable(adminModifiedAdjudicationCertifyBtn);
         clickElement(adminModifiedAdjudicationCertifyBtnWE);
@@ -2391,9 +2403,9 @@ This method did not work in current pdf browser, should be deleted after check
     public void verifyLocationPageFields() {
 
         waitForSeconds(2);
-        List<By> elements=new ArrayList<>(Arrays.asList(orderCity,orderStateSelector,orderPackageReasonSelector,orderCountrySelector));
-        for (By element:elements) {
-            Assert.assertTrue(exists(element),element+ " does not exist on the Location Information page");
+        List<By> elements = new ArrayList<>(Arrays.asList(orderCity, orderStateSelector, orderPackageReasonSelector, orderCountrySelector));
+        for (By element : elements) {
+            Assert.assertTrue(exists(element), element + " does not exist on the Location Information page");
         }
 
     }
@@ -2401,39 +2413,39 @@ This method did not work in current pdf browser, should be deleted after check
     public void verifyReasonPre(String reasonForTest) {
         Select select = new Select(orderPackageReasonWESelector);
         String defaultOption = select.getFirstSelectedOption().getText();
-        Assert.assertEquals(defaultOption,reasonForTest,"Pre-employment is not the default reason for test option");
+        Assert.assertEquals(defaultOption, reasonForTest, "Pre-employment is not the default reason for test option");
     }
 
     public void verifyDefaultPackage(String packageOption) {
         Select select = new Select(orderPackageWElementSelector);
         String defaultOption = select.getFirstSelectedOption().getText();
-        Assert.assertEquals(defaultOption,packageOption,"OralTox 6 Panel is not the default package option");
+        Assert.assertEquals(defaultOption, packageOption, "OralTox 6 Panel is not the default package option");
     }
 
     public void verifyBusinessLineDropDownList() {
         Select select = new Select(orderBusinessLineWE);
-        List<WebElement> options=select.getOptions();
-        List<String>optionsText=new ArrayList<>();
-        for (WebElement option:options
-             ) {
+        List<WebElement> options = select.getOptions();
+        List<String> optionsText = new ArrayList<>();
+        for (WebElement option : options
+        ) {
             optionsText.add(option.getText());
         }
-        List<String>expectedOptions=new ArrayList<>(Arrays.asList("North American Fulfillment Center"));
-        Assert.assertEquals(optionsText,expectedOptions,"Business Line drop down options are not found as expected");
+        List<String> expectedOptions = new ArrayList<>(Arrays.asList("North American Fulfillment Center"));
+        Assert.assertEquals(optionsText, expectedOptions, "Business Line drop down options are not found as expected");
 
-        }
+    }
 
     public void verifyPackageDropDownList() {
         Select select = new Select(orderPackageWElementSelector);
         clickElement(orderPackageWElementSelector);
-        List<WebElement> options=select.getOptions();
-        List<String>optionsText=new ArrayList<>();
-        for (WebElement option:options
+        List<WebElement> options = select.getOptions();
+        List<String> optionsText = new ArrayList<>();
+        for (WebElement option : options
         ) {
             optionsText.add(option.getText());
         }
-        List<String>expectedOptions=new ArrayList<>(Arrays.asList("OralTox 6 Panel"));
-        Assert.assertEquals( optionsText,expectedOptions,"Package drop down options are not found as expected");
+        List<String> expectedOptions = new ArrayList<>(Arrays.asList("OralTox 6 Panel"));
+        Assert.assertEquals(optionsText, expectedOptions, "Package drop down options are not found as expected");
 
     }
 
@@ -2444,8 +2456,8 @@ This method did not work in current pdf browser, should be deleted after check
     }
 
     public void verifyStepOnCard(String stepOnTheCard) {
-        By stepCard=By.xpath("//div[contains(text(),'"+stepOnTheCard+"')]");
-        Assert.assertTrue(exists(stepCard), "Card does not show"+stepOnTheCard+"step");
+        By stepCard = By.xpath("//div[contains(text(),'" + stepOnTheCard + "')]");
+        Assert.assertTrue(exists(stepCard), "Card does not show" + stepOnTheCard + "step");
     }
 
     public void clickDashboardBtn() {
@@ -2455,30 +2467,28 @@ This method did not work in current pdf browser, should be deleted after check
 
     public void verify4EyesCheckPageDrugOptions() {
         waitForElementClickable(adjudicateInconclusivebutton);
-        List<WebElement>options=new ArrayList<>(Arrays.asList(adjInconclusiveWebElementButton,adjClearButtonWebElement,adjRetestButtonWebElement));
+        List<WebElement> options = new ArrayList<>(Arrays.asList(adjInconclusiveWebElementButton, adjClearButtonWebElement, adjRetestButtonWebElement));
 
-        for(WebElement option:options){
+        for (WebElement option : options) {
             Assert.assertTrue(option.isEnabled());
         }
     }
 
     public void verify4EyesCheckCertificationForAlcoholLevels() {
-        String [] alcoholCheckBox= {"0.0","20", "40", "80", "300"};
-        WebElement text=getDriver().findElement(By.xpath("(//strong)[3]"));
-        for (String box:alcoholCheckBox
+        String[] alcoholCheckBox = {"0.0", "20", "40", "80", "300"};
+        WebElement text = getDriver().findElement(By.xpath("(//strong)[3]"));
+        for (String box : alcoholCheckBox
         ) {
-            By alcoholBox=By.xpath("//span[contains(text(),'"+box+"')]");
+            By alcoholBox = By.xpath("//span[contains(text(),'" + box + "')]");
             clickElement(alcoholBox);
             waitForSeconds(1);
-            if(box.equalsIgnoreCase("0.0")){
+            if (box.equalsIgnoreCase("0.0")) {
                 Assert.assertEquals(text.getText(), "Clear", "Certification Language is not Clear");
-            }
-            else {
+            } else {
                 Assert.assertEquals(text.getText(), "Inconclusive", "Certification Language is not Inconclusive");
             }
         }
     }
-
 
 
     public void drugHas7Strips() {
@@ -2490,32 +2500,34 @@ This method did not work in current pdf browser, should be deleted after check
 
         }
     }
+
     public void verifyAlcBoxesDisabled() {
 
-            SharedBaseClass sharedBaseClass = new SharedBaseClass(driver);
-        for (int i = 1; i <6 ; i++) {
-            WebElement alcoholBox=getDriver().findElement(By.xpath("//div[@class='square alch-"+i+" disabledSquare']"));
-                Assert.assertTrue(sharedBaseClass.checkIsEnabled(alcoholBox),"AlcoholBox is enabled");
-            }
-
+        SharedBaseClass sharedBaseClass = new SharedBaseClass(driver);
+        for (int i = 1; i < 6; i++) {
+            WebElement alcoholBox = getDriver().findElement(By.xpath("//div[@class='square alch-" + i + " disabledSquare']"));
+            Assert.assertTrue(sharedBaseClass.checkIsEnabled(alcoholBox), "AlcoholBox is enabled");
         }
+
+    }
 
     public void checkConcludedTabAlcCheckBoxes(String alcBox) {
 
-        String xpath="//div[@id='alch-"+alcBox+"']/following-sibling::div[@class='checkmark disabledCheckmark']";
-        By element=By.xpath(xpath);
-        Assert.assertTrue(exists(element),"Alcohol Check Box is not showing as selected by the Admin");
+        String xpath = "//div[@id='alch-" + alcBox + "']/following-sibling::div[@class='checkmark disabledCheckmark']";
+        By element = By.xpath(xpath);
+        Assert.assertTrue(exists(element), "Alcohol Check Box is not showing as selected by the Admin");
 
     }
-    public void verifyFinalTestResultHas4EyesSelection(){
-    String result[]=getText(adminFinalTestResult4EyesSelection).split(":");
-    Assert.assertEquals(result[1],testObject.getTestData("Adjudication"),"Final Test Result Selection Page does not have 4 eyes check result");
+
+    public void verifyFinalTestResultHas4EyesSelection() {
+        String result[] = getText(adminFinalTestResult4EyesSelection).split(":");
+        Assert.assertEquals(result[1], testObject.getTestData("Adjudication"), "Final Test Result Selection Page does not have 4 eyes check result");
 
     }
 
     public void verifyCertifyClearPage() {
         Assert.assertTrue(exists(certifyClearDeviceImage), "Device image is missing");
-        Assert.assertTrue(exists(certifyClearAlcoholResults),"Alcohol results are missing");
+        Assert.assertTrue(exists(certifyClearAlcoholResults), "Alcohol results are missing");
         Assert.assertTrue(exists(certifyClearText), "Certification text is missing");
     }
 
@@ -2527,20 +2539,20 @@ This method did not work in current pdf browser, should be deleted after check
         clickElement(supportToolsMenu);
     }
 
-    public void searchByName (String state) {
+    public void searchByName(String state) {
         waitForElementPresent(adminSupportToolsPageSearchByNameWE);
-        setElementValue(adminSupportToolsPageSearchByName,state);
+        setElementValue(adminSupportToolsPageSearchByName, state);
     }
-    
+
     public void searchForCandidate(String CandidateName) {
         waitForElementPresent(adminSupportToolsPageSearchByNameWE);
-        setElementValue(adminSupportToolsPageSearchByName,CandidateName);
+        setElementValue(adminSupportToolsPageSearchByName, CandidateName);
     }
 
     public void verifyCandidateSearchResults(String searchCandidate) {
-        List<WebElement>candiates=new ArrayList<>();
+        List<WebElement> candiates = new ArrayList<>();
         candiates.addAll(adminSupportToolsPageCandidateNameSearchResults);
-        for (WebElement candiate:candiates
+        for (WebElement candiate : candiates
         ) {
             logger.info("name " + getText(candiate));
             Assert.assertTrue(getText(candiate).contains(searchCandidate));
@@ -2560,13 +2572,13 @@ This method did not work in current pdf browser, should be deleted after check
 
     public void searchForDeviceID(String DeviceID) {
         waitForElementPresent(adminSupportToolsPageSearchByNameWE);
-        setElementValue(adminSupportToolsPageSearchByDeviceID,DeviceID);
+        setElementValue(adminSupportToolsPageSearchByDeviceID, DeviceID);
     }
 
     public void verifyDeviceIDSearchResults(String searchDeviceID) {
-        List<WebElement>devices=new ArrayList<>();
+        List<WebElement> devices = new ArrayList<>();
         devices.addAll(adminSupportToolsPageDeviceIDSearchResults);
-        for (WebElement device:devices
+        for (WebElement device : devices
         ) {
             logger.info("Device ID " + getText(device));
             Assert.assertTrue(getText(device).contains(searchDeviceID));
@@ -2589,9 +2601,9 @@ This method did not work in current pdf browser, should be deleted after check
     }
 
     public void verifyCandidateName(String candidateName) {
-        List<WebElement>candiates=new ArrayList<>();
+        List<WebElement> candiates = new ArrayList<>();
         candiates.addAll(adminCandidateResultsPageCandidateNameWE);
-        for (WebElement candiate:candiates
+        for (WebElement candiate : candiates
         ) {
             logger.info("name " + getText(candiate));
             Assert.assertTrue(getText(candiate).contains(candidateName));
@@ -2619,7 +2631,7 @@ This method did not work in current pdf browser, should be deleted after check
         clickElement(backToResultsButton);
     }
 
-    public void isOneStrip(String isOneStrip,String candidate) throws Exception {
+    public void isOneStrip(String isOneStrip, String candidate) throws Exception {
         String actualOneStrip = driver.findElement(By.xpath("(//td[.='" + candidate + "']/..//td)[last()]")).getText();
         String expected = isOneStrip;
         logger.info("is OneStrip= " + actualOneStrip);
@@ -2633,15 +2645,15 @@ This method did not work in current pdf browser, should be deleted after check
 
     public void verifyOrderReasonDropDownList() {
         Select select = new Select(orderPackageReasonWESelector);
-        List<WebElement> options=select.getOptions();
-        List<String>actualOptions=new ArrayList<>();
-        for (WebElement option:options
+        List<WebElement> options = select.getOptions();
+        List<String> actualOptions = new ArrayList<>();
+        for (WebElement option : options
         ) {
             actualOptions.add(getText(option));
         }
-        List<String>expectedOptions=new ArrayList<>(Arrays.asList("Pre-employment", "Random",
+        List<String> expectedOptions = new ArrayList<>(Arrays.asList("Pre-employment", "Random",
                 "Reasonable Suspicion", "Post Accident"));
-        Assert.assertEquals(actualOptions,expectedOptions,"Order Reason drop down options are not found as expected");
+        Assert.assertEquals(actualOptions, expectedOptions, "Order Reason drop down options are not found as expected");
     }
 
     public void clickBusinessLineList() throws Exception {
@@ -2649,5 +2661,5 @@ This method did not work in current pdf browser, should be deleted after check
         clickElement(businessLine);
     }
 
-    
+
 }

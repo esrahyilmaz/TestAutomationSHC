@@ -23,38 +23,38 @@ import java.util.Random;
 
 public class SharedBaseClass extends BaseClass {
 
-    protected final WebDriver driver;
     //private WebDriverWait wait;
     public static String fileToUse;
+    protected final WebDriver driver;
 
     public SharedBaseClass(WebDriver driver) {
         this.driver = driver;
     }
 
-    public String getLast4SsNumber(String wholeSsN){
-        return  wholeSsN.substring(wholeSsN.length()-4);
+    public String getLast4SsNumber(String wholeSsN) {
+        return wholeSsN.substring(wholeSsN.length() - 4);
     }
 
-    public String getAlias(String alias){
-        return  alias;
+    public String getAlias(String alias) {
+        return alias;
     }
 
-    public void browserRefresh(){
+    public void browserRefresh() {
         driver.navigate().refresh();
     }
 
-    public void switchWindow(){
+    public void switchWindow() {
         //Switch to new window opened
-        for(String winHandle : driver.getWindowHandles()){
+        for (String winHandle : driver.getWindowHandles()) {
             driver.switchTo().window(winHandle);
         }
     }
 
-    public void clearAllCookies(){
+    public void clearAllCookies() {
         driver.manage().deleteAllCookies();
     }
 
-    public void switchToParentWindow(){
+    public void switchToParentWindow() {
         logger.info("switching to main window");
         ((JavascriptExecutor) driver).executeScript("window.open()");
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
@@ -62,13 +62,12 @@ public class SharedBaseClass extends BaseClass {
     }
 
 
-    public void insertDataInWorksheetCell(DataTable dataTable, boolean useForUploadToAdminUI) throws Exception{
+    public void insertDataInWorksheetCell(DataTable dataTable, boolean useForUploadToAdminUI) throws Exception {
         Path downloadFile;
         logger.info("....Preparing to access the excel file....");
-        if (useForUploadToAdminUI){
+        if (useForUploadToAdminUI) {
             downloadFile = getFileToUpload("AutoBulkUploadFile.csv");
-        }
-        else {
+        } else {
             downloadFile = getDownloadedFile(true);
         }
         fileToUse = downloadFile.toString();
@@ -89,7 +88,7 @@ public class SharedBaseClass extends BaseClass {
         int rowNumCounter = 1;
 
         //dataTable row counter
-        for (int dataTableRowCount =1; dataTableRowCount < numRowsToCheck; dataTableRowCount++) {
+        for (int dataTableRowCount = 1; dataTableRowCount < numRowsToCheck; dataTableRowCount++) {
             //dataTable column counter
             Row dataRow = sheet.createRow(rowNumCounter);
             logger.info("current spreadsheet row (starts at 1 to leave out header): " + rowNumCounter);
@@ -99,7 +98,7 @@ public class SharedBaseClass extends BaseClass {
                     String columnName = currentTableRow.get(x);
                     logger.info("checking Column Name: " + columnName);
                     String columnValue = table.get(rowNumCounter).get(x);
-                    logger.info("checking Column Value: " + columnValue +"\n");
+                    logger.info("checking Column Value: " + columnValue + "\n");
                     //goes through spreadsheet to the last header column
                     for (int i = 0; i < header.getLastCellNum(); i++) {
                         if (header.getCell(i).getStringCellValue().trim().equals(columnName)) {
@@ -121,13 +120,12 @@ public class SharedBaseClass extends BaseClass {
         }
     }
 
-    public void insertDataInWorksheetCell2(DataTable dataTable, boolean useForUploadToAdminUI) throws Exception{
+    public void insertDataInWorksheetCell2(DataTable dataTable, boolean useForUploadToAdminUI) throws Exception {
         Path downloadFile;
         logger.info("....Preparing to access the excel file....");
-        if (useForUploadToAdminUI){
+        if (useForUploadToAdminUI) {
             downloadFile = getFileToUpload2();
-        }
-        else {
+        } else {
             downloadFile = getDownloadedFile(true);
         }
         fileToUse = downloadFile.toString();
@@ -148,7 +146,7 @@ public class SharedBaseClass extends BaseClass {
         int rowNumCounter = 1;
 
         //dataTable row counter
-        for (int dataTableRowCount =1; dataTableRowCount < numRowsToCheck; dataTableRowCount++) {
+        for (int dataTableRowCount = 1; dataTableRowCount < numRowsToCheck; dataTableRowCount++) {
             //dataTable column counter
             Row dataRow = sheet.createRow(rowNumCounter);
             logger.info("current spreadsheet row (starts at 1 to leave out header): " + rowNumCounter);
@@ -158,7 +156,7 @@ public class SharedBaseClass extends BaseClass {
                     String columnName = currentTableRow.get(x);
                     logger.info("checking Column Name: " + columnName);
                     String columnValue = table.get(rowNumCounter).get(x);
-                    logger.info("checking Column Value: " + columnValue +"\n");
+                    logger.info("checking Column Value: " + columnValue + "\n");
                     //goes through spreadsheet to the last header column
                     for (int i = 0; i < header.getLastCellNum(); i++) {
                         if (header.getCell(i).getStringCellValue().trim().equals(columnName)) {
@@ -180,26 +178,23 @@ public class SharedBaseClass extends BaseClass {
         }
     }
 
-    public Path getDownloadedFile(Boolean renameFile) throws Exception{
+    public Path getDownloadedFile(Boolean renameFile) throws Exception {
         String directory = System.getProperty("user.dir") + "/src/test/resources/downloads/";
-        String[] extensions = new String[] { "xls", "xlsx", "csv" };
+        String[] extensions = new String[]{"xls", "xlsx", "csv"};
         List<File> files = (List<File>) FileUtils.listFiles(new File(directory), extensions, true);
         Random random = new Random();
-        if (files.size() == 0){
+        if (files.size() == 0) {
             Assert.fail("No files where found in the directory: " + directory);
         }
-        if(files.size() > 1)
-        {
+        if (files.size() > 1) {
             Assert.fail("There's more than 1 file that exists in the downloads folder. Please clean the downloads folder.");
-        }
-        else {
+        } else {
             if (renameFile) {
                 int randomNumber = random.nextInt(10000);
 
                 File newFileName = new File(files.get(0).getParent(), "Automation" + randomNumber + ".xls");
                 return Files.move(files.get(0).toPath(), newFileName.toPath());
-            }
-            else{
+            } else {
                 return files.get(0).toPath();
             }
         }
@@ -208,36 +203,36 @@ public class SharedBaseClass extends BaseClass {
 
     public Path getFileToUpload(String fileName) {
         String directory = System.getProperty("user.dir") + "/src/test/resources/uploads/" + fileName;
-        String[] extensions = new String[] { "xls", "xlsx", "csv" };
+        String[] extensions = new String[]{"xls", "xlsx", "csv"};
         List<File> files = (List<File>) FileUtils.listFiles(new File(directory), extensions, true);
-        if (files.size() == 0){
+        if (files.size() == 0) {
             Assert.fail("No files where found in the directory: " + directory);
         }
-        if(files.size() > 1)
-        {
+        if (files.size() > 1) {
             Assert.fail("There's more than 1 file that exists in the downloads folder. Please clean the downloads folder.");
+        } else {
+            return files.get(0).toPath();
         }
-        else {
-                return files.get(0).toPath();
-            }
         return null;
     }
-    public Path getFileToUpload2() throws Exception{
-        String directory = System.getProperty("user.dir") + "/src/test/resources/uploads/" ;
-        String[] extensions = new String[] { "xls", "xlsx", "csv" };
+
+    public Path getFileToUpload2() throws Exception {
+        String directory = System.getProperty("user.dir") + "/src/test/resources/uploads/";
+        String[] extensions = new String[]{"xls", "xlsx", "csv"};
         List<File> files = (List<File>) FileUtils.listFiles(new File(directory), extensions, true);
 
-        for (File file:files) {
+        for (File file : files) {
             if (file.getName().equals("AutoBulkUploadFile.csv")) {
                 logger.info("file= " + file.getName());
-                 return file.toPath();
+                return file.toPath();
 
             }
         }
-     return null;
+        return null;
     }
-    public Boolean verifyHeadersExistsInExcelSheet(String headerName) throws Exception{
-        if (headerName.isEmpty()){
+
+    public Boolean verifyHeadersExistsInExcelSheet(String headerName) throws Exception {
+        if (headerName.isEmpty()) {
             return false;
         }
         Path downloadFile = getDownloadedFile(false);
@@ -249,15 +244,14 @@ public class SharedBaseClass extends BaseClass {
         HSSFSheet sheet = workbook.getSheetAt(1);
         Row row = sheet.getRow(0);
 
-        for(int i=0; i < row.getLastCellNum(); i++)
-        {
-            if(row.getCell(i).getStringCellValue().trim().equals(headerName))
+        for (int i = 0; i < row.getLastCellNum(); i++) {
+            if (row.getCell(i).getStringCellValue().trim().equals(headerName))
                 return true;
         }
         return false;
     }
 
-    public String verifyMessageInXls() throws Exception{
+    public String verifyMessageInXls() throws Exception {
         Path downloadFile = getDownloadedFile(false);
         File file = new File(downloadFile.toString());
 
@@ -271,7 +265,8 @@ public class SharedBaseClass extends BaseClass {
         logger.info("checking row cell value " + cellValue);
         return cellValue;
     }
-    public Boolean checkIsEnabled(WebElement element){
+
+    public Boolean checkIsEnabled(WebElement element) {
         return element.isEnabled();
     }
 

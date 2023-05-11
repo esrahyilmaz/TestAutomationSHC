@@ -16,8 +16,6 @@ import java.net.URL;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import static org.testng.Assert.fail;
 
@@ -113,6 +111,20 @@ public class WebElementHelper extends BaseClass {
             log.debug("Not in Record Mode for method: {}" + Thread.currentThread().getStackTrace()[1].getMethodName());
             return;
         }
+        try {
+            String folderName = outputFilePath + "/pageElements";
+            File file = new File(folderName);
+            if (!file.exists()) {
+                if (file.mkdir()) {
+                    logger.info("Folder is created: " + folderName);
+                } else {
+                    logger.info("Failed to create folder: " + folderName);
+                }
+            }
+            file.setWritable(true);
+        } catch (Exception e) {
+            logger.info("Unable to create folder: " + e);
+        }
         Gson gson = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
         String json = gson.toJson(mapping);
         File file = new File(getOutputFilePath() + "\\" + getPage());
@@ -121,7 +133,7 @@ public class WebElementHelper extends BaseClass {
             writer.close();
             log.debug("File written: {}" + file.getAbsolutePath());
             logger.info(json);
-           // logger.info(json);
+            // logger.info(json);
         } catch (IOException e) {
             log.error("Error writing to file: {}" + file.getAbsolutePath(), e);
             throw e;
@@ -555,73 +567,33 @@ public class WebElementHelper extends BaseClass {
         try {
             ele = eventFiringWebDriver.findElement(element);
         } catch (NoSuchElementException e) {
+
+            String locator = element.toString();
             log.error(e);
-            String inputString = e.getLocalizedMessage();
-            String findByContext = "";
-            String findByType = null;
-            String element1 = null;
-            System.out.println("Error Message: " + inputString);
-            String pattern = "findElement \\{using=(.*?), value=[a-z]+\\}";
-            Pattern p = Pattern.compile(pattern);
-            Matcher m = p.matcher(inputString);
-            if (m.find()) {
-                String input = m.group();
-                logger.info(input);
-                String[] parts = input.split(",");
 
-                findByType = parts[0].split("=")[1];
-                element1 = parts[1].split("=")[1].replace("}", "");
+            retrieveMapValuesByKey(locator);
+            System.out.println("Element Not Found:");
+            System.out.println(locator + ": {");
+            System.out.println("    \"" + "className\": \"" + getClassName() + "\",");
+            System.out.println("    \"" + "textContent\": \"" + getTextContent() + "\",");
+            System.out.println("    \"" + "location\": \"" + getLocation() + "\",");
+            System.out.println("    \"" + "id\": \"" + getId() + "\",");
+            System.out.println("    \"" + "tagName\": \"" + getTagName() + "\"");
+            System.out.println("    \"" + "alt\": \"" + getAlt() + "\"");
+            System.out.println("    \"" + "src\": \"" + getSrc() + "\"");
+            System.out.println("    \"" + "href\": \"" + getHref() + "\"");
+            System.out.println("    \"" + "name\": \"" + getName() + "\"");
+            System.out.println("    \"" + "keyValue\": \"" + getRandomKey() + "\"");
+            System.out.println("}\n");
+            //Need a method to read from stored map and retrieve key value properties
+            logger.info("Key : " + getRandomKey());
+            // System.out.println("Location:"+helper.getLocation());
+            FindClosestMatchingElement.findClosestMatch(eventFiringWebDriver, locator, getClassName(),
+                    getTextContent(), getId(), getTagName(), getLocation(),
+                    getSrc(), getAlt(), getHref(), getName(), getType());
+            logger.info("Trying to find element with suggested xpath " + FindClosestMatchingElement.getAltXpathId());
+            ele = findAndReturnElement(eventFiringWebDriver, By.xpath(FindClosestMatchingElement.getAltXpathId()));
 
-                //Hate to do it this way but good for now, in a hurry
-                if (findByType.contains("tag name")) {
-                    findByType = "tagName";
-                }
-                System.out.println("id: " + findByType);
-                System.out.println("heading: " + element1);
-                findByContext = "By." + findByType + ": " + element1;
-            }
-            if (findByContext.isEmpty()) {
-                // Extract the XPath expression
-                pattern = "(//li\\[contains\\(text\\(\\),')(.*?)('\\)\\])";
-                p = Pattern.compile(pattern);
-                m = p.matcher(inputString);
-
-                String xpath = "";
-                String text = "";
-
-                if (m.find()) {
-                    String input = m.group();
-                    System.out.println("Input:" + input);
-                    findByType = m.group(1) + m.group(2) + m.group(3);
-                    element1 = m.group(2);
-                    findByContext = "By.xpath: " + input;
-
-                }
-            }
-            if (!findByContext.isEmpty()) {
-                retrieveMapValuesByKey(findByContext);
-                System.out.println("Element Not Found:");
-                System.out.println(findByContext + ": {");
-                System.out.println("    \"" + "className\": \"" + getClassName() + "\",");
-                System.out.println("    \"" + "textContent\": \"" + getTextContent() + "\",");
-                System.out.println("    \"" + "location\": \"" + getLocation() + "\",");
-                System.out.println("    \"" + "id\": \"" + getId() + "\",");
-                System.out.println("    \"" + "tagName\": \"" + getTagName() + "\"");
-                System.out.println("    \"" + "alt\": \"" + getAlt() + "\"");
-                System.out.println("    \"" + "src\": \"" + getSrc() + "\"");
-                System.out.println("    \"" + "href\": \"" + getHref() + "\"");
-                System.out.println("    \"" + "name\": \"" + getName() + "\"");
-                System.out.println("    \"" + "keyValue\": \"" + getRandomKey() + "\"");
-                System.out.println("}\n");
-                //Need a method to read from stored map and retrieve key value properties
-                logger.info("Key : " + getRandomKey());
-                // System.out.println("Location:"+helper.getLocation());
-                FindClosestMatchingElement.findClosestMatch(eventFiringWebDriver, findByContext, getClassName(),
-                        getTextContent(), getId(), getTagName(), getLocation(),
-                        getSrc(), getAlt(), getHref(), getName(), getType());
-                logger.info("Trying to find element with suggested xpath " + FindClosestMatchingElement.getAltXpathId());
-                ele = findAndReturnElement(eventFiringWebDriver, By.xpath(FindClosestMatchingElement.getAltXpathId()));
-            }
         }
         return ele;
     }

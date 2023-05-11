@@ -1,4 +1,5 @@
 package com.fadv.automation.core;
+
 import java.util.logging.Logger;
 
 public class Environment {
@@ -8,174 +9,117 @@ public class Environment {
     protected TestObject testObject;
     protected String envName = null;
 
-    public String getEnvName() {
-        return envName;
-    }
-    public String getEnv() { return env;}
-    public void setEnvName(String envName) {
-        this.envName = envName;
-    }
-    public Environment(String name){
+    public Environment(String name) {
         this.envName = name;
     }
 
-
-
     public static String getEnvironmentBaseUrl() {
-        if (env == null )
-        {
+        if (env == null) {
             return TestObject.getProperty("data.uat.env.url");
         }
 
-        return  TestObject.getProperty("data." + env + ".env.url");
+        return TestObject.getProperty("data." + env + ".env.url");
     }
 
-    public static String getEaEnvironmentBaseUrl(){
-        if (env == null)
-        {
+    public static String getEaEnvironmentBaseUrl() {
+        if (env == null) {
             return TestObject.getProperty("data.ea.uat.env.url");
         }
 
         return TestObject.getProperty("data.ea." + env + ".env.url");
     }
 
-    public static String getEaCMEnvironmentAccount(){
-        if (env == null)
-        {
+    public static String getEaCMEnvironmentAccount() {
+        if (env == null) {
             return TestObject.getProperty("data.cm.uat.login.account");
         }
 
         return TestObject.getProperty("data.cm." + env + ".login.account");
     }
 
-    public static String getEaCMEnvironmentUser(){
-        if (env == null)
-        {
+    public static String getEaCMEnvironmentUser() {
+        if (env == null) {
             return TestObject.getProperty("data.cm.uat.login.user");
         }
 
         return TestObject.getProperty("data.cm." + env + ".login.user");
     }
 
-    public static String getEaCMEnvironmentPassword(){
-        if (env == null)
-        {
+    public static String getEaCMEnvironmentPassword() {
+        if (env == null) {
             return TestObject.getProperty("data.cm.uat.login.password");
         }
 
         return TestObject.getProperty("data.cm." + env + ".login.password");
     }
 
-
-
-    public static String getEaEnvironmentAccount(){
-        if (env == null)
-        {
+    public static String getEaEnvironmentAccount() {
+        if (env == null) {
             return TestObject.getProperty("data.ea.uat.login.account");
         }
 
         return TestObject.getProperty("data.ea." + env + ".login.account");
     }
+
     public static String getEaRndEnvironmentAccount() {
-        if (env == null)
-        {
+        if (env == null) {
             return TestObject.getProperty("data.ea.uatrnd.login.account");
         }
 
         return TestObject.getProperty("data.ea." + env + ".login.account");
     }
 
-    public static String getEaEnvironmentUser(){
-        if (env == null)
-        {
+    public static String getEaEnvironmentUser() {
+        if (env == null) {
             return TestObject.getProperty("data.ea.uat.login.user");
         }
 
         return TestObject.getProperty("data.ea." + env + ".login.user");
     }
+
     public static String getEaRndEnvironmentUser() {
-        if (env == null)
-        {
+        if (env == null) {
             return TestObject.getProperty("data.ea.uatrnd.login.user");
         }
 
         return TestObject.getProperty("data.ea." + env + ".login.user");
     }
-    public static String getEaEnvironmentPassword(){
-        if (env == null)
-        {
+
+    public static String getEaEnvironmentPassword() {
+        if (env == null) {
             return TestObject.getProperty("data.ea.uat.login.password");
         }
 
         return TestObject.getProperty("data.ea." + env + ".login.password");
     }
+
     public static String getEaRndEnvironmentPassword() {
-        if (env == null)
-        {
+        if (env == null) {
             return TestObject.getProperty("data.ea.uatrnd.login.password");
         }
 
         return TestObject.getProperty("data.ea." + env + ".login.user");
     }
+
     public static String getEnvironmentInviteUuid() {
-        if (env == null)
-        {
+        if (env == null) {
             return TestObject.getProperty("data.uat.invite.uuid");
         }
         return TestObject.getProperty("data." + env + "invite.uuid");
     }
 
-    public String getEnvironmentLocationUiUuid() {
-        if (env == null)
-        {
-            logger.info("setting default UI location");
-            return TestObject.getProperty("data.uat.location.ui.uuid");
-        }
-        else {
-            logger.info("setting UI environment location for " + env);
-            return TestObject.getProperty("data.ea." + env + ".location.ui.uuid");
-        }
-    }
-
     public static String getEnvironmentLocationUuid() {
-        if (env == null)
-        {
+        if (env == null) {
             logger.info("setting default location");
             return TestObject.getProperty("data.uat.location.uuid");
-        }
-        else {
+        } else {
             logger.info("setting environment location for " + env);
             return TestObject.getProperty("data." + env + ".location.uuid");
         }
     }
 
-    public String getEnvironmentLocationName() {
-        if (env == null)
-        {
-            logger.info("setting default location name");
-            return TestObject.getProperty("data.uat.location.name");
-        }
-        else {
-            logger.info("setting environment location for " + env);
-            return TestObject.getProperty("data." + env + ".location.name");
-        }
-    }
-
-    public String getEnvironmentLocationState() {
-        if (env == null)
-        {
-            logger.info("setting default location state");
-            return TestObject.getProperty("data.uat.location.state");
-        }
-        else {
-            logger.info("setting environment location for " + env);
-            return TestObject.getProperty("data." + env + ".location.state");
-        }
-    }
-
-    public static String getEaEnvironmentSecret(){
-        if (env == null)
-        {
+    public static String getEaEnvironmentSecret() {
+        if (env == null) {
             return TestObject.getProperty("data.ea.uat.login.secret");
         }
 
@@ -183,28 +127,25 @@ public class Environment {
     }
 
     public static String getEnvironmentLocationAlias() {
-        if (env == null)
-        {
+        if (env == null) {
             logger.info("setting default location alias");
             return TestObject.getProperty("data.uat.location.alias");
-        }
-        else {
+        } else {
             logger.info("setting environment location alias for " + env);
             return TestObject.getProperty("data." + env + ".location.alias");
         }
     }
 
     public static String getCloudEnvironmentBaseUrl() {
-        if (cloud_env == null)
-        {
+        if (cloud_env == null) {
             return TestObject.getProperty("data.cloud.dev.cloud_env.url");
         }
 
-        return  TestObject.getProperty("data.cloud." + cloud_env + ".cloud_env.url");
+        return TestObject.getProperty("data.cloud." + cloud_env + ".cloud_env.url");
     }
+
     public static String getEaAirEnvironmentAccount() {
-        if (env == null)
-        {
+        if (env == null) {
             return TestObject.getProperty("data.ea.uatair.login.account");
         }
 
@@ -212,8 +153,7 @@ public class Environment {
     }
 
     public static String getEaAirSkpEnvironmentAccount() {
-        if (env == null)
-        {
+        if (env == null) {
             return TestObject.getProperty("data.ea.uatairskp.login.account");
         }
 
@@ -221,16 +161,15 @@ public class Environment {
     }
 
     public static String getEaAirEnvironmentUser() {
-        if (env == null)
-        {
+        if (env == null) {
             return TestObject.getProperty("data.ea.uatair.login.user");
         }
 
         return TestObject.getProperty("data.ea." + env + ".login.user");
     }
+
     public static String getEaAirEnvironmentPassword() {
-        if (env == null)
-        {
+        if (env == null) {
             return TestObject.getProperty("data.ea.uatair.login.password");
         }
 
@@ -238,20 +177,61 @@ public class Environment {
     }
 
     public static String getEaAirSkpEnvironmentUser() {
-        if (env == null)
-        {
+        if (env == null) {
             return TestObject.getProperty("data.ea.uatairskp.login.user");
         }
 
         return TestObject.getProperty("data.ea." + env + ".login.user");
     }
+
     public static String getEaAirSkpEnvironmentPassword() {
-        if (env == null)
-        {
+        if (env == null) {
             return TestObject.getProperty("data.ea.uatairskp.login.password");
         }
 
         return TestObject.getProperty("data.ea." + env + ".login.user");
+    }
+
+    public String getEnvName() {
+        return envName;
+    }
+
+    public void setEnvName(String envName) {
+        this.envName = envName;
+    }
+
+    public String getEnv() {
+        return env;
+    }
+
+    public String getEnvironmentLocationUiUuid() {
+        if (env == null) {
+            logger.info("setting default UI location");
+            return TestObject.getProperty("data.uat.location.ui.uuid");
+        } else {
+            logger.info("setting UI environment location for " + env);
+            return TestObject.getProperty("data.ea." + env + ".location.ui.uuid");
+        }
+    }
+
+    public String getEnvironmentLocationName() {
+        if (env == null) {
+            logger.info("setting default location name");
+            return TestObject.getProperty("data.uat.location.name");
+        } else {
+            logger.info("setting environment location for " + env);
+            return TestObject.getProperty("data." + env + ".location.name");
+        }
+    }
+
+    public String getEnvironmentLocationState() {
+        if (env == null) {
+            logger.info("setting default location state");
+            return TestObject.getProperty("data.uat.location.state");
+        } else {
+            logger.info("setting environment location for " + env);
+            return TestObject.getProperty("data." + env + ".location.state");
+        }
     }
 
 }

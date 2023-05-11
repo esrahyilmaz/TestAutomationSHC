@@ -4,19 +4,18 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class DriverFactory {
 
-    private DriverFactory(){
+    static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<RemoteWebDriver>();
+    private static DriverFactory driverInstance = new DriverFactory();
+
+    private DriverFactory() {
         //do nothing... do not allow initialization outside of this class
     }
 
-    private static DriverFactory driverInstance = new DriverFactory();
-
-    public static DriverFactory getInstance(){
+    public static DriverFactory getInstance() {
         return driverInstance;
     }
 
-    static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<RemoteWebDriver>();
-
-    public static RemoteWebDriver getMultiDriver(){
+    public static RemoteWebDriver getMultiDriver() {
         return driver.get();
     }
 
@@ -24,9 +23,9 @@ public class DriverFactory {
         driver.set(driverParam);
     }
 
-        public void removeMultiDriver(){
-            driver.get().quit();
-            driver.remove();
-        }
+    public void removeMultiDriver() {
+        driver.get().quit();
+        driver.remove();
+    }
 
 }

@@ -1,6 +1,7 @@
 package com.fadv.automation.core;
 
 import com.aventstack.extentreports.Status;
+
 import java.util.logging.Logger;
 
 public class BaseClass {
@@ -8,9 +9,10 @@ public class BaseClass {
     protected static TestObject testObject;
     protected ExtentReporter reporter = null;
 
-    public BaseClass() {}
+    public BaseClass() {
+    }
 
-    public BaseClass(TestObject to){
+    public BaseClass(TestObject to) {
         this.setTestObject(to);
     }
 
@@ -19,25 +21,25 @@ public class BaseClass {
         this.reporter = testObject.getReporter();
     }
 
-    public void report(Object message){
+    public void report(Object message) {
         logger.info(message.toString());
         logger.info("testObject.getScenario() is " + testObject.getScenario());
 
         if (reporter != null) {
             reporter.getRepLog().log(Status.INFO, message.toString());
         }
-        if (testObject.getScenario() != null){
+        if (testObject.getScenario() != null) {
             testObject.getScenario().log(message.toString());
         }
     }
 
-    public void report(Status status, Object message){
+    public void report(Status status, Object message) {
         logger.info(message.toString());
 
         if (reporter != null) {
             reporter.getRepLog().log(status, message.toString());
         }
-        if (testObject.getScenario() != null){
+        if (testObject.getScenario() != null) {
             testObject.getScenario().log(message.toString());
         }
     }
