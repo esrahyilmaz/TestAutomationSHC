@@ -365,7 +365,7 @@ public class AmazonAdminUI extends SeleniumBaseClass {
 //    public WebElement orderBusinessLineWE;
 //
 //    @FindBy(xpath = "//select[@id='reasonForTest']")
-//    public WebElement orderPackageReasonWESelector;
+    By orderPackageReasonWESelector = By.id("reasonForTest");
 //
 //    @FindBy(xpath = "//option[contains(text(),'Pre-employment')]")
 //    public WebElement orderPackageReasonPreWE;
@@ -374,31 +374,31 @@ public class AmazonAdminUI extends SeleniumBaseClass {
 //    public WebElement orderNextWebElementButton;
 //
 //    @FindBy(id = "firstName")
-//    public WebElement orderFirstNameWebElement;
+    public By orderFirstNameWebElement = By.id("firstName");
 //
 //    @FindBy(id = "lastName")
-//    public WebElement orderLastNameWebElement;
+    public By orderLastNameWebElement= By.id("lastName");
 //
 //    @FindBy(xpath = "//input[@id='ssn']")
-//    public WebElement orderSsnWebElement;
+    public By orderSsnWebElement= By.id("ssn");
 //
 //    @FindBy(xpath = "//input[@id='dateOfBirth']")
-//    public WebElement orderDobWebElement;
+    public By orderDobWebElement= By.id("dateOfBirth");
 //
 //    @FindBy(id = "candidateId")
-//    public WebElement orderCandidateIdWebElement;
+    public By orderCandidateIdWebElement = By.id("candidateId");
 //
 //    @FindBy(id = "employeeId")
 //    public WebElement orderIdentificationEmpIDWE;
 //
 //    @FindBy(id = "phoneNumber")
-//    public WebElement orderPhoneNumberWebElement;
+    public By orderPhoneNumberWebElement=By.id("phoneNumber");
 //
 //    @FindBy(xpath = "//input[@id='line1']")
-//    public WebElement orderAddressLine1WebElement;
+    public By orderAddressLine1WebElement=By.id("line1");
 //
 //    @FindBy(id = "emailAddress")
-//    public WebElement orderEmailAddressWebElement;
+    public By orderEmailAddressWebElement=By.id("emailAddress");
 //
 //    @FindBy(xpath = "//*[@id='scan-information']")
 //    public WebElement lastScannedDetailsWebElement;
@@ -777,33 +777,33 @@ public class AmazonAdminUI extends SeleniumBaseClass {
 //
 //
 ////    *** void methods************************
-//
-//    public void enterIdentificationFName(String fName) throws Exception {
-//        waitForElementPresent(orderFirstNameWebElement);
-//        setElementValue(orderIdentificationFName, fName);
-//        testObject.setTestData("orderAdminUIFirstName", fName);
-//    }
-//
-//    public void enterIdentificationLName(String lName) throws Exception {
-//        waitForElementPresent(orderLastNameWebElement);
-//        setElementValue(orderIdentificationLName, lName);
-//        testObject.setTestData("orderAdminUILastName", lName);
-//    }
-//
-//    public void enterIdentificationDoB(String DoB) throws Exception {
-//        waitForElementPresent(orderDobWebElement);
-//        setElementValue(orderIdentificationDoB, DoB);
-//        testObject.setTestData("orderAdminUIDob", DoB);
-//    }
-//
-//    public void enterIdentificationSSN(String ssn) throws Exception {
-//        waitForElementPresent(orderSsnWebElement);
-//        clickElement(orderIdentificationSSN);
-//        setElementValue(orderIdentificationSSN, ssn);
-//        testObject.setTestData("orderAdminUISsn", ssn);
-//
-//    }
-//
+
+    public void enterIdentificationFName(String fName) throws Exception {
+        waitFor(orderFirstNameWebElement);
+        setElementValue(orderIdentificationFName, fName);
+        testObject.setTestData("orderAdminUIFirstName", fName);
+    }
+
+    public void enterIdentificationLName(String lName) throws Exception {
+        waitFor(orderLastNameWebElement);
+        enterTextUsingSelfHealing(orderIdentificationLName, lName);
+        testObject.setTestData("orderAdminUILastName", lName);
+    }
+
+    public void enterIdentificationDoB(String DoB) throws Exception {
+        waitFor(orderDobWebElement);
+        enterTextUsingSelfHealing(orderIdentificationDoB, DoB);
+        testObject.setTestData("orderAdminUIDob", DoB);
+    }
+
+    public void enterIdentificationSSN(String ssn) throws Exception {
+        waitFor(orderSsnWebElement);
+        clickElement(orderIdentificationSSN);
+        enterTextUsingSelfHealing(orderIdentificationSSN, ssn);
+        testObject.setTestData("orderAdminUISsn", ssn);
+
+    }
+
     public void launchAdminUI() {
         String url = environment.getEnvironmentBaseUrl() + "/admin";
         eventFiringWebDriver.get(url);
@@ -827,22 +827,11 @@ public class AmazonAdminUI extends SeleniumBaseClass {
 
         if (this.waitFor(fUser)) {
             waitFor(fUser);
-            setAttribute(driver,fUser,"name","sign in name" );
-            if(isExistAndDisplayed(driver,fUser,1)){
-                setElementValue(fUser,username);
-            }
-            else {
-                WebElementHelper.enterText(eventFiringWebDriver, fUser, username);
-            }
+//            setAttribute(fUser,"name","sign in name" );
+            enterTextUsingSelfHealing(fUser,username);
             waitFor(fPass);
             this.setElementValue(fPass, password);
-            if (isExistAndDisplayed(driver,btnSignIn,1)){
-                this.clickElement(btnSignIn);
-            }
-            else {
-                WebElementHelper.clickElement(setEventDriver(),btnSignIn);
-            }
-
+            clickElementUsingSelfHealing(btnSignIn);
             this.waitFor(btnMenu);
         } else {
             throw new RuntimeException("Login pass is not showing");
@@ -984,14 +973,14 @@ public class AmazonAdminUI extends SeleniumBaseClass {
 //        By weLink = By.xpath("//li/a[text()='Need Help']");
 //        this.clickElement(weLink);
 //    }
-//
-//    public void clickManageOrdersTab(String tabText) throws Exception {
-//        String xpath = String.format("//a[contains(text(), '%s')]", tabText);
-//        By tab = By.xpath(xpath);
-//        waitForElementClickable(tab);
-//        clickElement(tab);
-//    }
-//
+
+    public void clickManageOrdersTab(String tabText) throws Exception {
+        String xpath = String.format("//a[contains(text(), '%s')]", tabText);
+        By tab = By.xpath(xpath);
+        waitFor(tab);
+        clickElementUsingSelfHealing(tab);
+    }
+
 //    public void clickAllStripsInAdminReviewPage() {
 //        for (int i = 0; i < 7; i++) {
 //            String xpath = "(//div[@class='check-box'])[" + i + "]";
@@ -1254,15 +1243,15 @@ public class AmazonAdminUI extends SeleniumBaseClass {
 //        waitForElementClickable(chooseAnotherLocationMenu);
 //        clickElement(chooseAnotherLocationMenu);
 //    }
-//
-//    public void clickManageOrders() throws Exception {
-//        waitForElementClickable(mainMenu);
-//        clickElement(mainMenu);
-//        logger.info("main menu clicked");
-//        waitForElementClickable(manageOrdersMenu);
-//        clickElement(manageOrdersMenu);
-//    }
-//
+
+    public void clickManageOrders() throws Exception {
+        waitFor(mainMenu);
+        clickElementUsingSelfHealing(mainMenu);
+        logger.info("main menu clicked");
+        waitFor(manageOrdersMenu);
+        clickElementUsingSelfHealing(manageOrdersMenu);
+    }
+
 //    public void clickCocConversion() throws Exception {
 //        waitForElementClickable(mainMenu);
 //        clickElement(mainMenu);
@@ -1415,73 +1404,73 @@ public class AmazonAdminUI extends SeleniumBaseClass {
 //        String xpath = String.format("//select[@id='orderPackageId']/option[contains(text(),'%s')]", optionText);
 //        return driver.findElement(By.xpath(xpath)).isDisplayed();
 //    }
-//
-//
-//    public void selectPackageReason(String reason) throws Exception {
-//        waitForElementPresent(orderPackageReasonWESelector);
-//        selectElement(orderPackageReasonSelector, reason);
-//    }
-//
-//    public String packageInfoReasonDisplayed() throws Exception {
-//        waitForElementPresent(orderPackageReasonWESelector);
-//        Select select = new Select(driver.findElement(By.id("reasonForTest")));
-//        WebElement element = select.getFirstSelectedOption();
-//        return getText(element);
-//    }
-//
-//    public void selectHiringCountry(String country) {
-//        String xpath = String.format("//select[@id='country']/option[contains(text(), '%s')]", country);
-//        clickElement(By.xpath(xpath));
-//    }
-//
-//
-//    public void selectHiringState(String state) {
-//        clickElement(orderStateSelector);
-//        String xpath = String.format("//select[@id='state']/option[contains(text(),'%s')]", state);
-//        clickElement(By.xpath(xpath));
-//        //using this line to redirect focus off of the state element
-//        clickElement(orderCity);
-//    }
-//
-//    public void enterOrderCity(String city) {
-//        setElementValue(orderCity, city);
-//    }
-//
-//    public void enterOrderZipCode(String zipCode) {
-//        setElementValueNoClear(orderPostalCode, zipCode);
-//    }
-//
-//    public void enterOrderAddress1(String address) throws Exception {
-//        waitForElementPresent(orderAddressLine1WebElement);
-//        setElementValueNoClear(orderAddressLine1, address);
-//    }
-//
-//    public void enterOrderPhoneNumber(String phone, Boolean clearValue) throws Exception {
-//        waitForElementPresent(orderPhoneNumberWebElement);
-//        waitForElementPresent(orderEmailAddressWebElement);
-//        if (clearValue) {
+
+
+    public void selectPackageReason(String reason) throws Exception {
+        waitFor(orderPackageReasonWESelector);
+        selectElement(orderPackageReasonSelector, reason);
+    }
+
+    public String packageInfoReasonDisplayed() throws Exception {
+        waitFor(orderPackageReasonWESelector);
+        Select select = new Select(driver.findElement(By.id("reasonForTest")));
+        WebElement element = select.getFirstSelectedOption();
+        return getText(element);
+    }
+
+    public void selectHiringCountry(String country) {
+        String xpath = String.format("//select[@id='country']/option[contains(text(), '%s')]", country);
+        clickElementUsingSelfHealing(By.xpath(xpath));
+    }
+
+
+    public void selectHiringState(String state) {
+        clickElementUsingSelfHealing(orderStateSelector);
+        String xpath = String.format("//select[@id='state']/option[contains(text(),'%s')]", state);
+        clickElementUsingSelfHealing(By.xpath(xpath));
+        //using this line to redirect focus off of the state element
+        clickElementUsingSelfHealing(orderCity);
+    }
+
+    public void enterOrderCity(String city) {
+        enterTextUsingSelfHealing(orderCity, city);
+    }
+
+    public void enterOrderZipCode(String zipCode) {
+        enterTextUsingSelfHealing(orderPostalCode, zipCode);
+    }
+
+    public void enterOrderAddress1(String address) throws Exception {
+        waitFor(orderAddressLine1WebElement);
+        enterTextUsingSelfHealing(orderAddressLine1, address);
+    }
+
+    public void enterOrderPhoneNumber(String phone, Boolean clearValue) throws Exception {
+        waitFor(orderPhoneNumberWebElement);
+        waitFor(orderEmailAddressWebElement);
+        if (clearValue) {
 //            orderPhoneNumberWebElement.sendKeys(Keys.DELETE);
-//            setElementValue(orderPhoneNumber, phone);
-//        } else {
-//            setElementValueNoClear(orderPhoneNumber, phone);
-//        }
-//    }
-//
-//    public void enterOrderEmailAddress(String email, Boolean clearValue) throws Exception {
-//        waitForSeconds (2);
-//        waitForElementPresent (orderEmailAddressWebElement);
-//        if (clearValue) {
-//            setElementValue (orderEmailAddress, email);
-//        } else {
-//            setElementValueNoClear (orderEmailAddress, email);
-//        }
-//
-//    }
-//
-//    public void clickOrderNextButton() throws Exception {
-//        waitForElementClickable(orderNextButton);
-//        clickElement(orderNextButton);
-//    }
+            setElementValue(orderPhoneNumber, phone);
+        } else {
+            setElementValueNoClear(orderPhoneNumber, phone);
+        }
+    }
+
+    public void enterOrderEmailAddress(String email, Boolean clearValue) throws Exception {
+        wait (2);
+        waitFor (orderEmailAddressWebElement);
+        if (clearValue) {
+            enterTextUsingSelfHealing (orderEmailAddress, email);
+        } else {
+            setElementValueNoClear (orderEmailAddress, email);
+        }
+
+    }
+
+    public void clickOrderNextButton() throws Exception {
+        waitFor(orderNextButton);
+        clickElementUsingSelfHealing(orderNextButton);
+    }
 //    public void clickAlcoholFlowNextButton() throws Exception {
 //        waitForElementClickable(alcoholFlowNextBtn);
 //        clickElement(alcoholFlowNextBtn);
@@ -1502,11 +1491,11 @@ public class AmazonAdminUI extends SeleniumBaseClass {
 //        waitForElementClickable(orderCreateAnotherButton);
 //        clickElement(orderCreateAnotherButton);
 //    }
-//
-//    public void clickBrowserBackButton() {
-//        browserBackButton();
-//    }
-//
+
+    public void clickBrowserBackButton() {
+        browserBackButton();
+    }
+
 //    public void clickOrderExitButton() throws Exception {
 //        waitForElementClickable(orderExitButton);
 //        clickElement(orderExitButton);
@@ -1955,38 +1944,38 @@ public class AmazonAdminUI extends SeleniumBaseClass {
 //        logger.info("directory/folder path:  " + directory);
 //        uploadPhotoSideAlleyAreaWebElement.sendKeys(directory);
 //    }
-//
-//    public void enterGeneratedCandidateInfoOnInfoScreen() throws Exception {
-//        //generate the candidate information and store to retrieval
-//        autoGenerateCandidateInformation();
-//        enterIdentificationFName(testObject.getTestData("adminUIOrderFName"));
-//        enterIdentificationLName(testObject.getTestData("adminUIOrderLName"));
-//        enterIdentificationDoB(testObject.getTestData("adminUIOrderDob"));
-//        waitForSeconds(2);
-//        String ssn = testObject.getTestData("adminUIOrderSsn");
-//        logger.info("Entering candidate ssn: " + ssn);
-//        enterIdentificationSSN(ssn);
-//    }
-//
-//    private void autoGenerateCandidateInformation() {
-//        Random r = new Random();
-//        String firstName = "F-" + r.nextInt(99999);
-//        testObject.setTestData("adminUIOrderFName", firstName);
-//        String lastName = "L-" + r.nextInt(99999);
-//        testObject.setTestData("adminUIOrderLName", lastName);
-//        int temp = r.nextInt(99);
-//        logger.info("temp random last 2 digits for ssn assigned:" + temp);
-//        String ssn = "5094510" + temp;
-//        testObject.setTestData("adminUIOrderSsn", ssn);
-//        String dob = "05/1" + r.nextInt(9) + "/195" + r.nextInt(9);
-//        testObject.setTestData("adminUIOrderDob", dob);
-//        String phoneNumber = String.valueOf((long) (Math.random() * 100000 + 3333000000L));
-//        testObject.setTestData("adminUIOrderPhone", phoneNumber);
-//        String email = "email" + r.nextInt() + "@gmail.com";
-//        testObject.setTestData("adminUIOrderEmail", email);
-//    }
-//
-//
+
+    public void enterGeneratedCandidateInfoOnInfoScreen() throws Exception {
+        //generate the candidate information and store to retrieval
+        autoGenerateCandidateInformation();
+        enterIdentificationFName(testObject.getTestData("adminUIOrderFName"));
+        enterIdentificationLName(testObject.getTestData("adminUIOrderLName"));
+        enterIdentificationDoB(testObject.getTestData("adminUIOrderDob"));
+        waitForSeconds(2);
+        String ssn = testObject.getTestData("adminUIOrderSsn");
+        logger.info("Entering candidate ssn: " + ssn);
+        enterIdentificationSSN(ssn);
+    }
+
+    private void autoGenerateCandidateInformation() {
+        Random r = new Random();
+        String firstName = "F-" + r.nextInt(99999);
+        testObject.setTestData("adminUIOrderFName", firstName);
+        String lastName = "L-" + r.nextInt(99999);
+        testObject.setTestData("adminUIOrderLName", lastName);
+        int temp = r.nextInt(99);
+        logger.info("temp random last 2 digits for ssn assigned:" + temp);
+        String ssn = "5094510" + temp;
+        testObject.setTestData("adminUIOrderSsn", ssn);
+        String dob = "05/1" + r.nextInt(9) + "/195" + r.nextInt(9);
+        testObject.setTestData("adminUIOrderDob", dob);
+        String phoneNumber = String.valueOf((long) (Math.random() * 100000 + 3333000000L));
+        testObject.setTestData("adminUIOrderPhone", phoneNumber);
+        String email = "email" + r.nextInt() + "@gmail.com";
+        testObject.setTestData("adminUIOrderEmail", email);
+    }
+
+
 //    public void clickReTakePhotoButtonSA() throws Exception {
 //        waitForElementClickable(sideAlleyRetakePhotoButton);
 //        clickElement(sideAlleyRetakePhotoButton);
@@ -2123,13 +2112,13 @@ public class AmazonAdminUI extends SeleniumBaseClass {
 //        Collections.reverse(ssnExpected);
 //        Assert.assertEquals(ssnExpected, ssnActual);
 //    }
-//
-//    public void enterCandidateID(String candidateID) throws Exception {
-//        waitForElementPresent(orderCandidateIdWebElement);
-//        setElementValue(orderIdentificationCID, candidateID);
-//    }
-//
-//
+
+    public void enterCandidateID(String candidateID) throws Exception {
+        waitFor(orderCandidateIdWebElement);
+        enterTextUsingSelfHealing(orderIdentificationCID, candidateID);
+    }
+
+
 //    public void verifyOrdersLocationInSideAlleyResults(String location) throws Exception {
 //        Assert.assertEquals("Location is not equal to " + location, getText(sideAlleyResultsOrderLocation), location);
 //    }

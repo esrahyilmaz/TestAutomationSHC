@@ -673,10 +673,10 @@ public class SeleniumBaseClass extends BaseClass {
         }
     }
     
-    public boolean isExistAndDisplayed(WebDriver driver,By by, int second) {
+    public boolean isExistAndDisplayed(By by, int second) {
             boolean bDisplayed;
             for (int i = 0; i < second; i++) {
-                if (isExists(driver, by, 1)) {
+                if (isExists(by, 1)) {
                     try {
                         WebElement element = driver.findElement(by);
                         bDisplayed = element.isDisplayed();
@@ -696,7 +696,7 @@ public class SeleniumBaseClass extends BaseClass {
             return false;
         }
 
-        public static boolean isExists(WebDriver driver,By by, int second) {
+        public static boolean isExists(By by, int second) {
             boolean exists = false;
 
             for (int i = 0; i < second; i++) {
@@ -744,7 +744,7 @@ public class SeleniumBaseClass extends BaseClass {
 // Register the event listener
         eventFiringWebDriver.register(eventListener);
     }
-    public static void setAttribute(WebDriver driver, By by, String attrName, String attrValue) {
+    public static void setAttribute(By by, String attrName, String attrValue) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         WebElement ele = driver.findElement(by);
         js.executeScript("arguments[0].setAttribute('" + attrName + "', '" + attrValue + "')", ele);
@@ -755,5 +755,23 @@ public class SeleniumBaseClass extends BaseClass {
 //            driver.quit();
 //        }
 //    }
+
+    public void clickElementUsingSelfHealing(By element){
+        if(isExistAndDisplayed(element,1)){
+            clickElement(element);
+        }
+        else {
+            WebElementHelper.clickElement(eventFiringWebDriver, element);
+        }
+    }
+
+    public void enterTextUsingSelfHealing(By element, String text){
+        if(isExistAndDisplayed(element,1)){
+            setElementValue(element,text);
+        }
+        else {
+            WebElementHelper.enterText(eventFiringWebDriver, element, text);
+        }
+    }
 
 }

@@ -31,7 +31,7 @@ public class RoomAdminUIDef extends BaseClass {
     static final Logger logger = Logger.getLogger(RoomAdminUIDef.class.getName());
     private AmazonAdminUI ui;
     private WebDriver driver = null;
-    //static EventFiringWebDriver driver = null;
+//    static EventFiringWebDriver driver = null;
     final static SeleniumBaseClass seleniumBaseClass = new SeleniumBaseClass(null);
 
     @Before
@@ -42,6 +42,7 @@ public class RoomAdminUIDef extends BaseClass {
 
     @After
     public void after(Scenario scenario) throws Exception {
+        logger.info("This is after scenario");
         WebElementHelper.writeMap();
         if (this.driver != null) {
             if (scenario.isFailed() && ui != null) {
@@ -52,10 +53,8 @@ public class RoomAdminUIDef extends BaseClass {
             }
             seleniumBaseClass.htmlCsRunner = new HtmlCsRunner(this.driver);
             seleniumBaseClass.htmlCsRunner.execute();
-            driver.close();
             driver.quit();
             driver = null;
-
         }
     }
 
@@ -683,77 +682,77 @@ public class RoomAdminUIDef extends BaseClass {
 //        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
 //        amazonAdminUI.javaClickOnCandidateCard();
 //    }
-//
-//    @When("I click on the menu and choose Manage Orders")
-//    public void iClickOnTheMenuAndChooseManageOrders() throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        amazonAdminUI.clickManageOrders();
-//    }
-//
-//    @And("I choose the Package Reason {string}")
-//    public void iChooseThePackageReason(String reason) throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        amazonAdminUI.selectPackageReason(reason);
-//    }
-//
+
+    @When("I click on the menu and choose Manage Orders")
+    public void iClickOnTheMenuAndChooseManageOrders() throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        amazonAdminUI.clickManageOrders();
+    }
+
+    @And("I choose the Package Reason {string}")
+    public void iChooseThePackageReason(String reason) throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        amazonAdminUI.selectPackageReason(reason);
+    }
+
 //    @And("I choose the Order Package {string}")
 //    public void iChooseTheOrderPackage(String orderPackage) throws Exception {
 //        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
 //        amazonAdminUI.selectPackage(orderPackage);
 //    }
-//
-//    @And("I click the next button for the order in the Admin UI")
-//    public void iClickTheNextButtonForTheOrderInTheAdminUI() throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        amazonAdminUI.clickOrderNextButton();
-//        amazonAdminUI.waitForSeconds(1);
-//    }
-//
+
+    @And("I click the next button for the order in the Admin UI")
+    public void iClickTheNextButtonForTheOrderInTheAdminUI() throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        amazonAdminUI.clickOrderNextButton();
+        amazonAdminUI.waitForSeconds(1);
+    }
+
 //    @And("I click the next button for the Alcohol Flow in the Admin UI")
 //    public void iClickTheNextButtonForTheAlcoholFlowInTheAdminUI() throws Exception {
 //        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
 //        amazonAdminUI.clickAlcoholFlowNextButton();
 //        amazonAdminUI.waitForSeconds(1);
 //    }
-//
-//
-//    @And("I can verify the State is present for the order in the Admin UI")
-//    public void iCanVerifyTheStateIsPresentForTheOrderInTheAdminUI() throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        Assert.assertTrue(amazonAdminUI.exists(amazonAdminUI.orderStateSelector), "State was not found on the Hiring Information Screen.");
-//    }
-//
+
+
+    @And("I can verify the State is present for the order in the Admin UI")
+    public void iCanVerifyTheStateIsPresentForTheOrderInTheAdminUI() throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        Assert.assertTrue(WebElementHelper.existsAndDisplayed(SeleniumBaseClass.eventFiringWebDriver,amazonAdminUI.orderStateSelector), "State was not found on the Hiring Information Screen.");
+    }
+
 //    @Then("I can verify the Location Information screen is displayed")
 //    public void iCanVerifyTheLocationInformationScreenIsDisplayed() throws Exception {
 //        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
 //        Assert.assertTrue(amazonAdminUI.exists(amazonAdminUI.orderLocationScreen), "Location Information Screen was not found as expected.");
 //    }
-//
-//    @And("I can verify the Country is present for the order in the Admin UI")
-//    public void iCanVerifyTheCountryIsPresentForTheOrderInTheAdminUI() throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        Assert.assertTrue(amazonAdminUI.exists(amazonAdminUI.orderCountrySelector), "Country was not found on the Hiring Information Screen.");
-//    }
-//
-//    @And("I can verify the Contact Information screen is displayed")
-//    public void iCanVerifyTheContactInformationScreenIsDisplayed() throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        amazonAdminUI.waitForSeconds(1);
-//        Assert.assertTrue(amazonAdminUI.exists(amazonAdminUI.orderContactScreen), "Contact Information Screen was not found as expected.");
-//    }
-//
+
+    @And("I can verify the Country is present for the order in the Admin UI")
+    public void iCanVerifyTheCountryIsPresentForTheOrderInTheAdminUI() throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        Assert.assertTrue(WebElementHelper.existsAndDisplayed(SeleniumBaseClass.eventFiringWebDriver,amazonAdminUI.orderCountrySelector), "Country was not found on the Hiring Information Screen.");
+    }
+
+    @And("I can verify the Contact Information screen is displayed")
+    public void iCanVerifyTheContactInformationScreenIsDisplayed() throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        amazonAdminUI.waitForSeconds(1);
+        Assert.assertTrue(WebElementHelper.existsAndDisplayed(SeleniumBaseClass.eventFiringWebDriver,amazonAdminUI.orderContactScreen), "Contact Information Screen was not found as expected.");
+    }
+
 //    @When("I can click the previous button for the order in the Admin UI")
 //    public void iCanClickThePreviousButtonForTheOrderInTheAdminUI() throws Exception {
 //        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
 //        amazonAdminUI.clickOrderPreviousButton();
 //    }
-//
-//    @Then("I can verify the Package Information screen is displayed")
-//    public void iCanVerifyThePackageInformationScreenIsDisplayed() throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        Assert.assertTrue(amazonAdminUI.exists(amazonAdminUI.orderPackageScreen), "Package Information Screen was not found as expected.");
-//    }
-//
+
+    @Then("I can verify the Package Information screen is displayed")
+    public void iCanVerifyThePackageInformationScreenIsDisplayed() throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        Assert.assertTrue(WebElementHelper.existsAndDisplayed(SeleniumBaseClass.eventFiringWebDriver,amazonAdminUI.orderPackageScreen), "Package Information Screen was not found as expected.");
+    }
+
 //    @Then("I can verify the Placed Order screen is displayed")
 //    public void iCanVerifyThePlacedOrderScreenIsDisplayed() throws Exception {
 //        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
@@ -771,19 +770,19 @@ public class RoomAdminUIDef extends BaseClass {
 //        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
 //        Assert.assertEquals(amazonAdminUI.packageInfoReasonDisplayed(), reason, "Order Package Reason was not retained.");
 //    }
-//
-//    @And("I enter the city {string} for the order")
-//    public void iEnterTheCityForTheOrder(String city) throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        amazonAdminUI.enterOrderCity(city);
-//    }
-//
-//    @And("I choose the state {string} on the Location Information Screen")
-//    public void iChooseTheStateOnTheLocationInformationScreen(String state) throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        amazonAdminUI.selectHiringState(state);
-//    }
-//
+
+    @And("I enter the city {string} for the order")
+    public void iEnterTheCityForTheOrder(String city) throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        amazonAdminUI.enterOrderCity(city);
+    }
+
+    @And("I choose the state {string} on the Location Information Screen")
+    public void iChooseTheStateOnTheLocationInformationScreen(String state) throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        amazonAdminUI.selectHiringState(state);
+    }
+
 //    @And("I can verify the next button is disabled for the order in the Admin UI")
 //    public void iCanVerifyTheNextButtonIsDisabledForTheOrderInTheAdminUI() throws Exception {
 //        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
@@ -796,73 +795,73 @@ public class RoomAdminUIDef extends BaseClass {
 //        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
 //        Assert.assertTrue(amazonAdminUI.isOrderNextButtonEnabled(), "Next button was not enabled as expected.");
 //    }
-//
-//    @And("I choose the country {string} for the order within the Admin UI")
-//    public void iChooseTheCountryForTheOrderWithinTheAdminUI(String country) throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        amazonAdminUI.selectHiringCountry(country);
-//    }
-//
-//    @Then("I can verify the Residence Information screen is displayed")
-//    public void iCanVerifyTheResidenceInformationScreenIsDisplayed() throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        Assert.assertTrue(amazonAdminUI.exists(amazonAdminUI.orderResidenceScreen), "Residence Information Screen was not found as expected.");
-//    }
-//
-//    @And("I can verify the City is present for the order within the Admin UI")
-//    public void iCanVerifyTheCityIsPresentForTheOrderWithinTheAdminUI() throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        Assert.assertTrue(amazonAdminUI.exists(amazonAdminUI.orderCity), "City was not found on the Admin UI Screen.");
-//    }
-//
-//    @And("I verify the address second line is present on the Residence Screen")
-//    public void iVerifyTheAddressSecondLineIsPresentOnTheResidenceScreen() throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        Assert.assertTrue(amazonAdminUI.exists(amazonAdminUI.orderAddressLine2), "Address Line 2 was not found on the Admin UI Screen.");
-//    }
-//
-//    @And("I verify the address first line is present on the Residence Screen")
-//    public void iVerifyTheAddressFirstLineIsPresentOnTheResidenceScreen() throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        Assert.assertTrue(amazonAdminUI.exists(amazonAdminUI.orderAddressLine1), "Address Line 1 was not found on the Admin UI Screen.");
-//    }
-//
-//    @And("I can verify Zip Code is present for the order in the Admin UI")
-//    public void iCanVerifyZipCodeIsPresentForTheOrderInTheAdminUI() throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        Assert.assertTrue(amazonAdminUI.exists(amazonAdminUI.orderPostalCode), "Zip Code was not found on the Admin UI Screen.");
-//    }
-//
-//    @And("I enter the zip code {string} for the order")
-//    public void iEnterTheZipCodeForTheOrder(String orderZipCode) throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        amazonAdminUI.enterOrderZipCode(orderZipCode);
-//    }
-//
-//    @And("I enter {string} in the second line of the address for the order")
-//    public void iEnterInTheSecondLineOfTheAddressForTheOrder(String address) throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        amazonAdminUI.enterOrderAddress1(address);
-//    }
-//
-//    @And("I enter {string} in the first line of the address for the order")
-//    public void iEnterInTheFirstLineOfTheAddressForTheOrder(String address) throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        amazonAdminUI.enterOrderAddress1(address);
-//    }
-//
-//    @And("I click on the submit button for the order in the Admin UI")
-//    public void iClickOnTheSubmitButtonForTheOrderInTheAdminUI() throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        amazonAdminUI.clickOrderNextButton();
-//    }
-//
-//    @Then("I can verify the Identification Information screen is displayed")
-//    public void iCanVerifyTheIdentificationInformationScreenIsDisplayed() throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        Assert.assertTrue(amazonAdminUI.exists(amazonAdminUI.orderIdentificationScreen), "Identification Information Screen was not found as expected.");
-//    }
-//
+
+    @And("I choose the country {string} for the order within the Admin UI")
+    public void iChooseTheCountryForTheOrderWithinTheAdminUI(String country) throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        amazonAdminUI.selectHiringCountry(country);
+    }
+
+    @Then("I can verify the Residence Information screen is displayed")
+    public void iCanVerifyTheResidenceInformationScreenIsDisplayed() throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        Assert.assertTrue(WebElementHelper.existsAndDisplayed(SeleniumBaseClass.eventFiringWebDriver,amazonAdminUI.orderResidenceScreen), "Residence Information Screen was not found as expected.");
+    }
+
+    @And("I can verify the City is present for the order within the Admin UI")
+    public void iCanVerifyTheCityIsPresentForTheOrderWithinTheAdminUI() throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        Assert.assertTrue(WebElementHelper.existsAndDisplayed(SeleniumBaseClass.eventFiringWebDriver,amazonAdminUI.orderCity), "City was not found on the Admin UI Screen.");
+    }
+
+    @And("I verify the address second line is present on the Residence Screen")
+    public void iVerifyTheAddressSecondLineIsPresentOnTheResidenceScreen() throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        Assert.assertTrue(WebElementHelper.existsAndDisplayed(SeleniumBaseClass.eventFiringWebDriver,amazonAdminUI.orderAddressLine2), "Address Line 2 was not found on the Admin UI Screen.");
+    }
+
+    @And("I verify the address first line is present on the Residence Screen")
+    public void iVerifyTheAddressFirstLineIsPresentOnTheResidenceScreen() throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        Assert.assertTrue(WebElementHelper.existsAndDisplayed(SeleniumBaseClass.eventFiringWebDriver,amazonAdminUI.orderAddressLine1), "Address Line 1 was not found on the Admin UI Screen.");
+    }
+
+    @And("I can verify Zip Code is present for the order in the Admin UI")
+    public void iCanVerifyZipCodeIsPresentForTheOrderInTheAdminUI() throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        Assert.assertTrue(amazonAdminUI.exists(amazonAdminUI.orderPostalCode), "Zip Code was not found on the Admin UI Screen.");
+    }
+
+    @And("I enter the zip code {string} for the order")
+    public void iEnterTheZipCodeForTheOrder(String orderZipCode) throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        amazonAdminUI.enterOrderZipCode(orderZipCode);
+    }
+
+    @And("I enter {string} in the second line of the address for the order")
+    public void iEnterInTheSecondLineOfTheAddressForTheOrder(String address) throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        amazonAdminUI.enterOrderAddress1(address);
+    }
+
+    @And("I enter {string} in the first line of the address for the order")
+    public void iEnterInTheFirstLineOfTheAddressForTheOrder(String address) throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        amazonAdminUI.enterOrderAddress1(address);
+    }
+
+    @And("I click on the submit button for the order in the Admin UI")
+    public void iClickOnTheSubmitButtonForTheOrderInTheAdminUI() throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        amazonAdminUI.clickOrderNextButton();
+    }
+
+    @Then("I can verify the Identification Information screen is displayed")
+    public void iCanVerifyTheIdentificationInformationScreenIsDisplayed() throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        Assert.assertTrue(WebElementHelper.existsAndDisplayed(SeleniumBaseClass.eventFiringWebDriver,amazonAdminUI.orderIdentificationScreen), "Identification Information Screen was not found as expected.");
+    }
+
 //    @And("I verify the first name {string} is retained on the identification screen")
 //    public void iVerifyTheFirstNameIsRetainedOnTheIdentificationScreen(String firstName) throws Exception {
 //        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
@@ -891,34 +890,34 @@ public class RoomAdminUIDef extends BaseClass {
 //        Assert.assertEquals(dateOfBirth, dob, "Expected Date of Birth was not retained in the order.");
 //
 //    }
-//
-//    @And("I enter the phone number {string} for the order in the Admin UI")
-//    public void iEnterThePhoneNumberForTheOrderInTheAdminUI(String phone) throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        amazonAdminUI.enterOrderPhoneNumber(phone, false);
-//        amazonAdminUI.waitForSeconds(1);
-//    }
-//
-//    @And("I enter the email address {string} for the order in the Admin UI")
-//    public void iEnterTheEmailAddressForTheOrderInTheAdminUI(String email) throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        amazonAdminUI.enterOrderEmailAddress(email, false);
-//        amazonAdminUI.waitForSeconds(2);
-//    }
-//
-//    @And("I verify the Candidate Id Number {string} is retained on the identification screen")
-//    public void iVerifyTheCandidateIdNumberIsRetainedOnTheIdentificationScreen(String idNumber) throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        String candidateId = amazonAdminUI.orderCandidateIdWebElement.getAttribute("value");
-//        Assert.assertEquals(candidateId, idNumber, "Expected Candidate Id was not retained in the order.");
-//    }
-//
-//    @And("I click the browser back button")
-//    public void iClickTheBrowserBackButton() throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        amazonAdminUI.clickBrowserBackButton();
-//    }
-//
+
+    @And("I enter the phone number {string} for the order in the Admin UI")
+    public void iEnterThePhoneNumberForTheOrderInTheAdminUI(String phone) throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        amazonAdminUI.enterOrderPhoneNumber(phone, false);
+        amazonAdminUI.waitForSeconds(1);
+    }
+
+    @And("I enter the email address {string} for the order in the Admin UI")
+    public void iEnterTheEmailAddressForTheOrderInTheAdminUI(String email) throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        amazonAdminUI.enterOrderEmailAddress(email, false);
+        amazonAdminUI.waitForSeconds(2);
+    }
+
+    @And("I verify the Candidate Id Number {string} is retained on the identification screen")
+    public void iVerifyTheCandidateIdNumberIsRetainedOnTheIdentificationScreen(String idNumber) throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        String candidateId = WebElementHelper.findAndReturnElement(SeleniumBaseClass.eventFiringWebDriver,amazonAdminUI.orderCandidateIdWebElement).getAttribute("value");
+        Assert.assertEquals(candidateId, idNumber, "Expected Candidate Id was not retained in the order.");
+    }
+
+    @And("I click the browser back button")
+    public void iClickTheBrowserBackButton() throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        amazonAdminUI.clickBrowserBackButton();
+    }
+
 //    @And("I verify the phone number {string} is retained on the Contact Info Screen for the order in the Admin UI")
 //    public void iVerifyThePhoneNumberIsRetainedOnTheContactInfoScreenForTheOrderInTheAdminUI(String phone) throws Exception {
 //        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
@@ -958,17 +957,17 @@ public class RoomAdminUIDef extends BaseClass {
 //        amazonAdminUI.waitForSeconds(1);
 //        amazonAdminUI.enterOrderPhoneNumber(phone, true);
 //    }
-//
-//    @And("I verify the Order completed message in the Admin UI")
-//    public void iVerifyTheOrderCompletedMessageInTheAdminUI() throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-////        element will need to change when backend is wired for new order submitted screen
-//        amazonAdminUI.waitForSeconds(1);
-//        Assert.assertTrue(amazonAdminUI.exists(amazonAdminUI.orderCompleted), "Order completed did not appear as expected.");
-////        uncomment this assertion when backend is wired up
-////        Assert.assertTrue(amazonAdminUI.exists(amazonAdminUI.orderCreateAnotherMsg), "Order Upload Successful message did not appear as expected.");
-//    }
-//
+
+    @And("I verify the Order completed message in the Admin UI")
+    public void iVerifyTheOrderCompletedMessageInTheAdminUI() throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+//        element will need to change when backend is wired for new order submitted screen
+        amazonAdminUI.waitForSeconds(1);
+        Assert.assertTrue(WebElementHelper.existsAndDisplayed(SeleniumBaseClass.eventFiringWebDriver,amazonAdminUI.orderCompleted), "Order completed did not appear as expected.");
+//        uncomment this assertion when backend is wired up
+//        Assert.assertTrue(amazonAdminUI.exists(amazonAdminUI.orderCreateAnotherMsg), "Order Upload Successful message did not appear as expected.");
+    }
+
 //    @And("I can verify the adjudicated result card contains the date last scanned location is {string}")
 //    public void iCanVerifyTheAdjudicatedResultCardContainsTheDateLastScannedLocationIs(String locationText) throws Exception {
 //        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
@@ -1116,39 +1115,39 @@ public class RoomAdminUIDef extends BaseClass {
 //        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
 //        Assert.assertTrue(amazonAdminUI.exists(amazonAdminUI.orderIdentificationDoB), "Date of Birth was not found on the Identification Information Screen");
 //    }
-//
-//    @And("I enter First Name {string} on the Identification Information Screen")
-//    public void iEnterFirstNameOnTheIdentificationInformationScreen(String fName) throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        amazonAdminUI.enterIdentificationFName(fName);
-//    }
-//
-//    @And("I enter Last Name {string} on the Identification Information Screen")
-//    public void iEnterLastNameOnTheIdentificationInformationScreen(String lName) throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        amazonAdminUI.enterIdentificationLName(lName);
-//    }
-//
-//    @And("I enter Social Security Number {string} on the Identification Information Screen")
-//    public void iEnterSocialSecurityNumberOnTheIdentificationInformationScreen(String ssn) throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        amazonAdminUI.enterIdentificationSSN(ssn);
-//    }
-//
-//    @And("I enter Date of Birth  {string} on the Identification Information Screen")
-//    public void iEnterDateOfBirthOnTheIdentificationInformationScreen(String DoB) throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        amazonAdminUI.enterIdentificationDoB(DoB);
-//
-//
-//    }
-//
+
+    @And("I enter First Name {string} on the Identification Information Screen")
+    public void iEnterFirstNameOnTheIdentificationInformationScreen(String fName) throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        amazonAdminUI.enterIdentificationFName(fName);
+    }
+
+    @And("I enter Last Name {string} on the Identification Information Screen")
+    public void iEnterLastNameOnTheIdentificationInformationScreen(String lName) throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        amazonAdminUI.enterIdentificationLName(lName);
+    }
+
+    @And("I enter Social Security Number {string} on the Identification Information Screen")
+    public void iEnterSocialSecurityNumberOnTheIdentificationInformationScreen(String ssn) throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        amazonAdminUI.enterIdentificationSSN(ssn);
+    }
+
+    @And("I enter Date of Birth  {string} on the Identification Information Screen")
+    public void iEnterDateOfBirthOnTheIdentificationInformationScreen(String DoB) throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        amazonAdminUI.enterIdentificationDoB(DoB);
+
+
+    }
+
 //    @And("I click the submit button for the sideAlley uploaded photo")
 //    public void iClickTheSubmitButtonForTheSideAlleyUploadedPhoto() throws Exception {
 //        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
 //        amazonAdminUI.clickSideAlleySubmitButton();
 //    }
-//
+
 //    @And("I verify that I'm on the COC photo rules page")
 //    public void iVerifyThatIMOnTheCOCPhotoRulesPage() throws Exception {
 //        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
@@ -1190,14 +1189,14 @@ public class RoomAdminUIDef extends BaseClass {
 //        Assert.assertEquals(amazonAdminUI.getText(amazonAdminUI.orderDobWebElement), mm + "/" + dd + "/" + yyyy, "Date of Birth is not formatted");
 //
 //    }
-//
-//    @And("I wait for {int} seconds in AdminUI")
-//    public void iWaitForSecondsInAdminUI(int seconds) throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        amazonAdminUI.waitForSeconds(seconds);
-//
-//    }
-//
+
+    @And("I wait for {int} seconds in AdminUI")
+    public void iWaitForSecondsInAdminUI(int seconds) throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        amazonAdminUI.waitForSeconds(seconds);
+
+    }
+
 //    @And("I verify the COC Photo Rules Screen is displayed in the Admin UI")
 //    public void iVerifyTheCOCPhotoRulesScreenIsDisplayedInTheAdminUI() throws Exception {
 //        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
@@ -1291,13 +1290,13 @@ public class RoomAdminUIDef extends BaseClass {
 //        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
 //        Assert.assertTrue(amazonAdminUI.exists(amazonAdminUI.adminPlacedOrdersHeader), "Placed orders is not displayed as a default");
 //    }
-//
-//    @And("I click the Manage Orders Tab {string}")
-//    public void iClickTheManageOrdersTab(String tab) throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        amazonAdminUI.clickManageOrdersTab(tab);
-//    }
-//
+
+    @And("I click the Manage Orders Tab {string}")
+    public void iClickTheManageOrdersTab(String tab) throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        amazonAdminUI.clickManageOrdersTab(tab);
+    }
+
 //    @And("I verify the next button is enabled for the order in the Admin UI")
 //    public void iVerifyTheNextButtonIsEnabledForTheOrderInTheAdminUI() throws Exception {
 //        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
@@ -1949,13 +1948,13 @@ public class RoomAdminUIDef extends BaseClass {
 //        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
 //        amazonAdminUI.verifyOrdersLocationInSideAlleyResults(locationName);
 //    }
-//
-//    @When("I enter the Candidate ID Number {string} on the Identification Information Screen")
-//    public void iEnterTheCandidateIDNumberOnTheInformationScreen(String candidateID) throws Exception {
-//        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
-//        amazonAdminUI.enterCandidateID(candidateID);
-//    }
-//
+
+    @When("I enter the Candidate ID Number {string} on the Identification Information Screen")
+    public void iEnterTheCandidateIDNumberOnTheInformationScreen(String candidateID) throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
+        amazonAdminUI.enterCandidateID(candidateID);
+    }
+
 //    @And("I click invalid option on the Side alley Review Page")
 //    public void iClickInvalidOptionOnTheSideAlleyReviewPage() throws Exception {
 //        AmazonAdminUI amazonAdminUI = getAdminUIPageObject();

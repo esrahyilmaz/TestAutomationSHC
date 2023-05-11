@@ -18,14 +18,5 @@ public class TestRunnerClass extends AbstractTestNGCucumberTests {
 
     @AfterSuite
     public void afterSuite() {
-        try {
-            if (SeleniumBaseClass.driver != null) {
-                SeleniumBaseClass.driver.quit();
-                SeleniumBaseClass.eventFiringWebDriver.quit();
-            }
-        } catch (Exception e) {
-            System.err.println("Unable to close webdriver");
-        }
     }
-
 }
