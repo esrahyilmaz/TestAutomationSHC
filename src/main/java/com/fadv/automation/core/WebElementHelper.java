@@ -585,9 +585,9 @@ public class WebElementHelper extends BaseClass {
             System.out.println("    \"" + "name\": \"" + getName() + "\"");
             System.out.println("    \"" + "keyValue\": \"" + getRandomKey() + "\"");
             System.out.println("}\n");
-            //Need a method to read from stored map and retrieve key value properties
+
             logger.info("Key : " + getRandomKey());
-            // System.out.println("Location:"+helper.getLocation());
+
             FindClosestMatchingElement.findClosestMatch(eventFiringWebDriver, locator, getClassName(),
                     getTextContent(), getId(), getTagName(), getLocation(),
                     getSrc(), getAlt(), getHref(), getName(), getType());
