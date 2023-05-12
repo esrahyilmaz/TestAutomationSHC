@@ -41,9 +41,9 @@ public class FindClosestMatchingElement extends BaseClass {
      * @param storedName,
      * @parm storedType
      */
-    public static void findClosestMatch(EventFiringWebDriver eventFiringWebDriver, String _findByContext, String storedClassName,
-                                        String storedTextContent, String storedId, String storedTagName, String storedLocation,
-                                        String storedSrc, String storedAlt, String storedHref, String storedName, String storedType) {
+    public static WebElement getClosestElement(EventFiringWebDriver eventFiringWebDriver, String _findByContext, String storedClassName,
+                                               String storedTextContent, String storedId, String storedTagName, String storedLocation,
+                                               String storedSrc, String storedAlt, String storedHref, String storedName, String storedType) {
 
         int closestScore = 0; // initialize closestScore
         List<WebElement> closestElements = new ArrayList<>(); // Create closest elements list if score is equal
@@ -124,7 +124,7 @@ public class FindClosestMatchingElement extends BaseClass {
             logger.info("Target element not found.  Unable to provide suggestion to fix.");
         }
         // Print out possible locators to use ** this needs work only tested this thoroughly with Jsoup (but that format is way different)
-        printLocators(closestElement);
+        return findClosestElement(eventFiringWebDriver, closestElement);
     }
 
     /**
@@ -162,28 +162,43 @@ public class FindClosestMatchingElement extends BaseClass {
     }
 
     /**
-     * This method prints possible alternate locators to try.
+     * This method return possible alternate element.
      *
      * @param closestElement
      */
-    public static void printLocators(WebElement closestElement) {
+    private static WebElement findClosestElement(EventFiringWebDriver driver, WebElement closestElement) {
         logger.info("Some WebElement Locators to try 'By.xpath' :");
+        WebElement element = null;
         if (closestElement.getAttribute("id") != null) {
             altXpathId = "//*[@id='" + closestElement.getAttribute("id") + "']";
-            logger.info("altXpathId: " + altXpathId);
-        }
-        if (closestElement.getAttribute("name") != null) {
+            By by = By.xpath(altXpathId);
+            if (SeleniumBaseClass.isExists(driver, by, 1) && driver.findElement(by).isDisplayed()) {
+                element = driver.findElement(by);
+                logger.info("Found alternative element by xpath: " + altXpathId);
+            }
+        } else if (closestElement.getAttribute("name") != null) {
             altXpathName = "//*[@name='" + closestElement.getAttribute("name") + "']";
-            logger.info("altXpathName: " + altXpathName);
-        }
-        if (closestElement.getAttribute("className") != null) {
+            By by = By.name(altXpathName);
+            if (SeleniumBaseClass.isExists(driver, by, 1) && driver.findElement(by).isDisplayed()) {
+                element = driver.findElement(by);
+                logger.info("Found alternative element by xpath: " + altXpathName);
+            }
+        } else if (closestElement.getAttribute("className") != null) {
             altXpathClass = "//*[@class='" + closestElement.getAttribute("className") + "']";
-            logger.info("altXpathClass: " + altXpathClass);
-        }
-        if (closestElement.getAttribute("textContent") != null) {
+            By by = By.className(altXpathClass);
+            if (SeleniumBaseClass.isExists(driver, by, 1) && driver.findElement(by).isDisplayed()) {
+                element = driver.findElement(by);
+                logger.info("Found alternative element by xpath: " + altXpathClass);
+            }
+        } else if (closestElement.getAttribute("textContent") != null) {
             altXpathText = "//*[text()='" + closestElement.getAttribute("textContent") + "']";
-            logger.info("altXpathText: " + altXpathText);
+            By by = By.className(altXpathText);
+            if (SeleniumBaseClass.isExists(driver, by, 1) && driver.findElement(by).isDisplayed()) {
+                element = driver.findElement(by);
+                logger.info("Found alternative element by xpath: " + altXpathText);
+            }
         }
+        return element;
     }
 
     public static String getAltXpathId() {

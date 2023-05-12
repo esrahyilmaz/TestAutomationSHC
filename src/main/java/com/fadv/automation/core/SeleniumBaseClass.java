@@ -705,12 +705,11 @@ public class SeleniumBaseClass extends BaseClass {
                         logger.info("Element found by: " + by);
                         return true;
                     } else {
-
                         wait(1);
                         logger.info("Element not found by: " + by);
                     }
                 } catch (Exception e) {
-// do nothing
+                    logger.info("Element not exists by: " + by);
                 }
             }
             return exists;

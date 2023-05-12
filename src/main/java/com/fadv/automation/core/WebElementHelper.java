@@ -588,11 +588,9 @@ public class WebElementHelper extends BaseClass {
 
             logger.info("Key : " + getRandomKey());
 
-            FindClosestMatchingElement.findClosestMatch(eventFiringWebDriver, locator, getClassName(),
+            ele = FindClosestMatchingElement.getClosestElement(eventFiringWebDriver, locator, getClassName(),
                     getTextContent(), getId(), getTagName(), getLocation(),
                     getSrc(), getAlt(), getHref(), getName(), getType());
-            logger.info("Trying to find element with suggested xpath " + FindClosestMatchingElement.getAltXpathId());
-            ele = findAndReturnElement(eventFiringWebDriver, By.xpath(FindClosestMatchingElement.getAltXpathId()));
 
         }
         return ele;
