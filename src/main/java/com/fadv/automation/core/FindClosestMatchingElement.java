@@ -41,7 +41,7 @@ public class FindClosestMatchingElement extends BaseClass {
      * @param storedName,
      * @parm storedType
      */
-    public static WebElement getClosestElement(EventFiringWebDriver eventFiringWebDriver, String _findByContext, String storedClassName,
+    public static WebElement getClosestElement(EventFiringWebDriver eventFiringWebDriver, String locator, String storedClassName,
                                                String storedTextContent, String storedId, String storedTagName, String storedLocation,
                                                String storedSrc, String storedAlt, String storedHref, String storedName, String storedType) {
 
@@ -119,7 +119,7 @@ public class FindClosestMatchingElement extends BaseClass {
 
         // No matches found / or found
         if (closestElement != null) {
-            printElementDetails(closestElement, _findByContext, closestScore);
+            printElementDetails(closestElement, locator, closestScore);
         } else {
             logger.info("Target element not found.  Unable to provide suggestion to fix.");
         }
