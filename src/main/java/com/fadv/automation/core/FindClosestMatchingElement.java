@@ -44,61 +44,87 @@ public class FindClosestMatchingElement extends BaseClass {
     public static void findClosestMatch(EventFiringWebDriver eventFiringWebDriver, String _findByContext, String storedClassName,
                                         String storedTextContent, String storedId, String storedTagName, String storedLocation,
                                         String storedSrc, String storedAlt, String storedHref, String storedName, String storedType) {
-        double closestScore = 0; // initialize closestScore
-        List<WebElement> elements = eventFiringWebDriver.findElements(By.xpath("//*"));  // Search all page elements
-        WebElement closestElement = elements.get(0);        // Set the closest element to the first element in the list
 
+        int closestScore = 0; // initialize closestScore
+        List<WebElement> closestElements = new ArrayList<>(); // Create closest elements list if score is equal
+        WebElement closestElement = null;        // Set the closest element to null
+
+        // Search all page elements
+        List<WebElement> elements = eventFiringWebDriver.findElements(By.xpath("//*"));
         for (WebElement element : elements) {  // Start matching evaluation
-            double matchScore = 0;  // initialize matchScore
 
-            validPattern = "^" + storedClassName;  // className a bit tricky prepare the TagMatcher
-            pattern = Pattern.compile(validPattern);
-            tagMatcher = pattern.matcher(element.getAttribute("className"));
+            int matchScore = 0;  // initialize matchScore
 
-            List<String> attributes = new ArrayList<>(Arrays.asList("type", "alt", "name", "textContent", "id", "tagName", "href"));  // Step through each attribute determine match score
+//            validPattern = "^" + storedClassName;  // className a bit tricky prepare the TagMatcher
+//            pattern = Pattern.compile(validPattern);
+//            tagMatcher = pattern.matcher(element.getAttribute("className"));
+//
+//            if (tagMatcher.matches()) {
+//                matchScore += 1;
+//            }
+            // Step through each attribute determine match score
+            List<String> attributes = new ArrayList<>(Arrays.asList("type", "alt", "name", "textContent", "id", "tagName", "href"));
             for (String attribute : attributes) {
-                if (!(element.getAttribute(attribute) == null)) {  // skip over null values to prevent errors
-                    if (attribute.equals("name") && element.getAttribute(attribute).equalsIgnoreCase(storedName)) {
-                        matchScore += 0.25;
+                if (element.getAttribute(attribute) != null) {  // skip over null values to prevent errors
+                    if ((attribute.equals("name") && element.getAttribute(attribute).equalsIgnoreCase(storedName))
+                            || (attribute.equals("name") && element.getAttribute(attribute).toLowerCase().contains(storedName.toLowerCase()))
+                            || (attribute.equals("name") && storedName.toLowerCase().contains(element.getAttribute(attribute).toLowerCase()))) {
+                        matchScore += 1;
                     } else if (attribute.equals("alt") && element.getAttribute(attribute).equalsIgnoreCase(storedAlt)) {
-                        matchScore += 0.25;
+                        matchScore += 1;
                     } else if (attribute.equals("src") && element.getAttribute(attribute).contains(storedSrc)) {
-                        matchScore += 0.25;
+                        matchScore += 1;
                     } else if (attribute.equals("type") && element.getAttribute(attribute).equalsIgnoreCase(storedType)) {
-                        matchScore += 0.25;
-                    } else if (attribute.equals("textContent") && element.getAttribute(attribute).equalsIgnoreCase(storedTextContent)) {
-                        matchScore += 0.25;
-                    } else if (attribute.equals("id") && element.getAttribute(attribute).equals(storedId)) {
-                        matchScore += 0.25;
-                    } else if (tagMatcher.matches()) {
-                        matchScore += 0.25;
+                        matchScore += 1;
+                    } else if ((attribute.equals("textContent") && element.getAttribute(attribute).equalsIgnoreCase(storedTextContent))
+                            || (attribute.equals("textContent") && element.getAttribute(attribute).toLowerCase().contains(storedTextContent.toLowerCase()))
+                            || (attribute.equals("textContent") && storedTextContent.toLowerCase().contains(element.getAttribute(attribute).toLowerCase()))) {
+                        matchScore += 1;
+                    } else if ((attribute.equals("id") && element.getAttribute(attribute).equals(storedId))
+                            || (attribute.equals("id") && element.getAttribute(attribute).toLowerCase().contains(storedId.toLowerCase()))
+                            || (attribute.equals("id") && storedId.toLowerCase().contains(element.getAttribute(attribute).toLowerCase()))) {
+                        matchScore += 1;
                     } else if (attribute.equals("tagName") && element.getAttribute(attribute).equals(storedTagName)) {
-                        matchScore += 0.25;
+                        matchScore += 1;
                     } else if (attribute.equals("href") && element.getAttribute(attribute).equals(storedHref)) {
-                        matchScore += 0.25;
+                        matchScore += 1;
                     }
                 }
+
             }
 
-            if (matchScore > 0) {  // Calculate distance from known stored location.  This has been tricky.  Keep it low .10 (false positives)
-                double distance = calculateDistance(element, storedLocation);
-                if (distance < 50) {
-                    matchScore += 0.1;
-                }
+            // Add elements to list to count the closest element by distance if elements matchScore is equal
+            if (matchScore > closestScore) {
+                closestElements.clear();
+                closestElement = element;
+                closestScore = matchScore;
+                closestElements.add(closestElement);
+            } else if (matchScore == closestScore) {
+                closestElement = element;
+                closestElements.add(closestElement);
             }
-
-            closestElement = (matchScore > closestScore) ? element : closestElement;   //ChatGPT help here (This method rather long so trying to save some space.
-            closestScore = (matchScore > closestScore) ? matchScore : closestScore;
 
         }
-        if (closestScore != 0.0) {  // No matches found / or found
+
+        // Select element from list of elements by min distance
+        double closestDistance = Double.MAX_VALUE;
+
+        for (WebElement ele : closestElements) {
+            double distance = calculateDistance(ele, storedLocation);
+            if (distance < closestDistance) {
+                closestDistance = distance;
+                closestElement = ele;
+            }
+        }
+
+        // No matches found / or found
+        if (closestElement != null) {
             printElementDetails(closestElement, _findByContext, closestScore);
         } else {
-            System.out.println(">> Target Element NOT Found.  Unable to provide suggestion to fix.");
+            logger.info("Target element not found.  Unable to provide suggestion to fix.");
         }
-
-        printLocators(closestElement);  // Print out possible locators to use ** this needs work only tested this thoroughly with Jsoup (but that format is way different)
-
+        // Print out possible locators to use ** this needs work only tested this thoroughly with Jsoup (but that format is way different)
+        printLocators(closestElement);
     }
 
     /**
