@@ -130,7 +130,7 @@ public class FindClosestMatchingElement extends BaseClass {
         try {
             Double.parseDouble(str);
             return true;
-        } catch(NumberFormatException e){
+        } catch (NumberFormatException e) {
             return false;
         }
     }
@@ -144,19 +144,19 @@ public class FindClosestMatchingElement extends BaseClass {
         logger.info("Some WebElement Locators to try 'By.xpath' :");
         if (closestElement.getAttribute("id") != null) {
             altXpathId = "//*[@id='" + closestElement.getAttribute("id") + "']";
-            logger.info(altXpathId);
+            logger.info("altXpathId: " + altXpathId);
         }
         if (closestElement.getAttribute("name") != null) {
             altXpathName = "//*[@name='" + closestElement.getAttribute("name") + "']";
-            logger.info(altXpathName);
+            logger.info("altXpathName: " + altXpathName);
         }
         if (closestElement.getAttribute("className") != null) {
             altXpathClass = "//*[@class='" + closestElement.getAttribute("className") + "']";
-            logger.info(altXpathClass);
+            logger.info("altXpathClass: " + altXpathClass);
         }
         if (closestElement.getAttribute("textContent") != null) {
             altXpathText = "//*[text()='" + closestElement.getAttribute("textContent") + "']";
-            logger.info(altXpathText);
+            logger.info("altXpathText: " + altXpathText);
         }
     }
 
