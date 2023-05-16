@@ -570,6 +570,7 @@ public class WebElementHelper extends BaseClass {
 
             String locator = element.toString();
             log.error(e);
+            testObject.getScenario().log("Element by: " + element.toString() + " not found " + e);
 
             retrieveMapValuesByKey(locator);
             System.out.println("Element Not Found:");
@@ -585,14 +586,15 @@ public class WebElementHelper extends BaseClass {
             System.out.println("    \"" + "name\": \"" + getName() + "\"");
             System.out.println("    \"" + "keyValue\": \"" + getRandomKey() + "\"");
             System.out.println("}\n");
-
             logger.info("Key : " + getRandomKey());
+
 
             ele = FindClosestMatchingElement.getClosestElement(eventFiringWebDriver, locator, getClassName(),
                     getTextContent(), getId(), getTagName(), getLocation(),
                     getSrc(), getAlt(), getHref(), getName(), getType());
 
         }
+        testObject.getScenario().log("Trying to use element: " + ele.toString());
         return ele;
     }
 
