@@ -169,28 +169,28 @@ public class FindClosestMatchingElement extends BaseClass {
     private static WebElement findClosestElement(EventFiringWebDriver driver, WebElement closestElement) {
         logger.info("Some WebElement Locators to try 'By.xpath' :");
         WebElement element = null;
-        if (closestElement.getAttribute("id") != null) {
+        if (closestElement.getAttribute("id") != null && !closestElement.getAttribute("id").isEmpty()) {
             altXpathId = "//*[@id='" + closestElement.getAttribute("id") + "']";
             By by = By.xpath(altXpathId);
             if (SeleniumBaseClass.isExists(driver, by, 1) && driver.findElement(by).isDisplayed()) {
                 element = driver.findElement(by);
                 logger.info("Found alternative element by xpath: " + altXpathId);
             }
-        } else if (closestElement.getAttribute("name") != null) {
+        } else if (closestElement.getAttribute("name") != null && !closestElement.getAttribute("name").isEmpty()) {
             altXpathName = "//*[@name='" + closestElement.getAttribute("name") + "']";
             By by = By.xpath(altXpathName);
             if (SeleniumBaseClass.isExists(driver, by, 1) && driver.findElement(by).isDisplayed()) {
                 element = driver.findElement(by);
                 logger.info("Found alternative element by xpath: " + altXpathName);
             }
-        } else if (closestElement.getAttribute("className") != null) {
+        } else if (closestElement.getAttribute("className") != null && !closestElement.getAttribute("className").isEmpty()) {
             altXpathClass = "//*[@class='" + closestElement.getAttribute("className") + "']";
             By by = By.xpath(altXpathClass);
             if (SeleniumBaseClass.isExists(driver, by, 1) && driver.findElement(by).isDisplayed()) {
                 element = driver.findElement(by);
                 logger.info("Found alternative element by xpath: " + altXpathClass);
             }
-        } else if (closestElement.getAttribute("textContent") != null) {
+        } else if (closestElement.getAttribute("textContent") != null && !closestElement.getAttribute("textContent").isEmpty()) {
             altXpathText = "//*[text()='" + closestElement.getAttribute("textContent") + "']";
             By by = By.xpath(altXpathText);
             if (SeleniumBaseClass.isExists(driver, by, 1) && driver.findElement(by).isDisplayed()) {
