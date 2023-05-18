@@ -178,21 +178,21 @@ public class FindClosestMatchingElement extends BaseClass {
             }
         } else if (closestElement.getAttribute("name") != null) {
             altXpathName = "//*[@name='" + closestElement.getAttribute("name") + "']";
-            By by = By.name(altXpathName);
+            By by = By.xpath(altXpathName);
             if (SeleniumBaseClass.isExists(driver, by, 1) && driver.findElement(by).isDisplayed()) {
                 element = driver.findElement(by);
                 logger.info("Found alternative element by xpath: " + altXpathName);
             }
         } else if (closestElement.getAttribute("className") != null) {
             altXpathClass = "//*[@class='" + closestElement.getAttribute("className") + "']";
-            By by = By.className(altXpathClass);
+            By by = By.xpath(altXpathClass);
             if (SeleniumBaseClass.isExists(driver, by, 1) && driver.findElement(by).isDisplayed()) {
                 element = driver.findElement(by);
                 logger.info("Found alternative element by xpath: " + altXpathClass);
             }
         } else if (closestElement.getAttribute("textContent") != null) {
             altXpathText = "//*[text()='" + closestElement.getAttribute("textContent") + "']";
-            By by = By.className(altXpathText);
+            By by = By.xpath(altXpathText);
             if (SeleniumBaseClass.isExists(driver, by, 1) && driver.findElement(by).isDisplayed()) {
                 element = driver.findElement(by);
                 logger.info("Found alternative element by xpath: " + altXpathText);
