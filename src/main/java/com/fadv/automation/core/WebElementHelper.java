@@ -572,6 +572,8 @@ public class WebElementHelper extends BaseClass {
             log.error(e);
             testObject.getScenario().log("Element by: " + element.toString() + " not found " + e);
 
+            takeScreenshot(eventFiringWebDriver, testObject.getScenario());
+
             retrieveMapValuesByKey(locator);
             System.out.println("Element Not Found:");
             System.out.println(locator + ": {");
