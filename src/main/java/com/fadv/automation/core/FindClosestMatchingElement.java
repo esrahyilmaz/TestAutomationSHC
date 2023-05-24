@@ -55,53 +55,58 @@ public class FindClosestMatchingElement extends BaseClass {
 
             int matchScore = 0;  // initialize matchScore
 
-//            validPattern = "^" + storedClassName;  // className a bit tricky prepare the TagMatcher
-//            pattern = Pattern.compile(validPattern);
-//            tagMatcher = pattern.matcher(element.getAttribute("className"));
-//
-//            if (tagMatcher.matches()) {
-//                matchScore += 1;
-//            }
             // Step through each attribute determine match score
             List<String> attributes = new ArrayList<>(Arrays.asList("type", "alt", "name", "textContent", "id", "tagName", "href"));
+
+            // skip over null values to prevent errors
             for (String attribute : attributes) {
-                if (element.getAttribute(attribute) != null) {  // skip over null values to prevent errors
-                    if ((attribute.equals("name") && element.getAttribute(attribute).equalsIgnoreCase(storedName))
-                            || (attribute.equals("name") && element.getAttribute(attribute).toLowerCase().contains(storedName.toLowerCase()))
-                            || (attribute.equals("name") && storedName.toLowerCase().contains(element.getAttribute(attribute).toLowerCase()))) {
+                if (element.getAttribute(attribute) != null) {
+                    if (element.getAttribute("name") != null && !element.getAttribute("name").isEmpty() && !storedName.isEmpty()) {
+                        if (element.getAttribute("name").equalsIgnoreCase(storedName)
+                                || element.getAttribute("name").toLowerCase().contains(storedName.toLowerCase())
+                                || storedName.toLowerCase().contains(element.getAttribute("name").toLowerCase())) {
+                            matchScore += 1;
+                        }
+                    } else if (element.getAttribute("alt") != null && !element.getAttribute("alt").isEmpty() && !storedAlt.isEmpty() && element.getAttribute("alt").equalsIgnoreCase(storedAlt)) {
                         matchScore += 1;
-                    } else if (attribute.equals("alt") && element.getAttribute(attribute).equalsIgnoreCase(storedAlt)) {
+                    } else if (element.getAttribute("src") != null && !element.getAttribute("src").isEmpty() && !storedSrc.isEmpty() && element.getAttribute("src").contains(storedSrc)) {
                         matchScore += 1;
-                    } else if (attribute.equals("src") && element.getAttribute(attribute).contains(storedSrc)) {
+                    } else if (element.getAttribute("type") != null && !element.getAttribute("type").isEmpty() && !storedType.isEmpty() && element.getAttribute("type").equalsIgnoreCase(storedType)) {
                         matchScore += 1;
-                    } else if (attribute.equals("type") && element.getAttribute(attribute).equalsIgnoreCase(storedType)) {
-                        matchScore += 1;
-                    } else if ((attribute.equals("textContent") && element.getAttribute(attribute).equalsIgnoreCase(storedTextContent))
-                            || (attribute.equals("textContent") && element.getAttribute(attribute).toLowerCase().contains(storedTextContent.toLowerCase()))
-                            || (attribute.equals("textContent") && storedTextContent.toLowerCase().contains(element.getAttribute(attribute).toLowerCase()))) {
-                        matchScore += 1;
-                    } else if ((attribute.equals("id") && element.getAttribute(attribute).equals(storedId))
-                            || (attribute.equals("id") && element.getAttribute(attribute).toLowerCase().contains(storedId.toLowerCase()))
-                            || (attribute.equals("id") && storedId.toLowerCase().contains(element.getAttribute(attribute).toLowerCase()))) {
-                        matchScore += 1;
-                    } else if (attribute.equals("tagName") && element.getAttribute(attribute).equals(storedTagName)) {
-                        matchScore += 1;
-                    } else if (attribute.equals("href") && element.getAttribute(attribute).equals(storedHref)) {
+                    } else if (element.getAttribute("textContent") != null && !element.getAttribute("textContent").isEmpty() && !storedTextContent.isEmpty()) {
+                        if (element.getAttribute("textContent").equalsIgnoreCase(storedTextContent)
+                                || element.getAttribute("textContent").toLowerCase().contains(storedTextContent.toLowerCase())
+                                || storedTextContent.toLowerCase().contains(element.getAttribute("textContent").toLowerCase())) {
+                            matchScore += 1;
+                        }
+                    } else if (element.getAttribute("id") != null && !element.getAttribute("id").isEmpty() && !storedId.isEmpty()) {
+                        if (element.getAttribute("id").equalsIgnoreCase(storedId)
+                                || element.getAttribute("id").toLowerCase().contains(storedId.toLowerCase())
+                                || storedId.toLowerCase().contains(element.getAttribute("id").toLowerCase())) {
+                            matchScore += 1;
+                        }
+                    } else if (element.getAttribute("tagName") != null && !element.getAttribute("tagName").isEmpty() && !storedTagName.isEmpty()) {
+                        if (element.getAttribute("tagName").equalsIgnoreCase(storedTagName)
+                                || element.getAttribute("tagName").toLowerCase().contains(storedTagName.toLowerCase())
+                                || storedTagName.toLowerCase().contains(element.getAttribute("tagName").toLowerCase())) {
+                            matchScore += 1;
+                        }
+                    } else if (element.getAttribute("href") != null && !element.getAttribute("href").isEmpty() && !storedHref.isEmpty() && element.getAttribute("href").equals(storedHref)) {
                         matchScore += 1;
                     }
                 }
 
-            }
 
-            // Add elements to list to count the closest element by distance if elements matchScore is equal
-            if (matchScore > closestScore) {
-                closestElements.clear();
-                closestElement = element;
-                closestScore = matchScore;
-                closestElements.add(closestElement);
-            } else if (matchScore == closestScore) {
-                closestElement = element;
-                closestElements.add(closestElement);
+                // Add elements to list to count the closest element by distance if elements matchScore is equal
+                if (matchScore > closestScore) {
+                    closestElements.clear();
+                    closestElement = element;
+                    closestScore = matchScore;
+                    closestElements.add(closestElement);
+                } else if (matchScore == closestScore) {
+                    closestElement = element;
+                    closestElements.add(closestElement);
+                }
             }
 
         }
@@ -126,7 +131,6 @@ public class FindClosestMatchingElement extends BaseClass {
         // Print out possible locators to use ** this needs work only tested this thoroughly with Jsoup (but that format is way different)
         return findClosestElement(eventFiringWebDriver, closestElement);
     }
-
     /**
      * This method calculatesDistance from the known stored location
      *

@@ -563,16 +563,24 @@ public class WebElementHelper extends BaseClass {
     }
 
     public static WebElement findAndReturnElement(EventFiringWebDriver eventFiringWebDriver, By element) {
+        size = "";
+        className = "";
+        textContent = "";
+        id = "";
+        tagName = "";
+        location = "";
+        randomKey = "";
+        src = "";
+        alt = "";
+        href = "";
+        name = "";
+        type = "";
         WebElement ele = null;
+
         try {
             ele = eventFiringWebDriver.findElement(element);
         } catch (NoSuchElementException e) {
-
             String locator = element.toString();
-            log.error(e);
-            testObject.getScenario().log("Element by: " + element.toString() + " not found " + e);
-
-            takeScreenshot(eventFiringWebDriver, testObject.getScenario());
 
             retrieveMapValuesByKey(locator);
             System.out.println("Element Not Found:");
@@ -588,16 +596,50 @@ public class WebElementHelper extends BaseClass {
             System.out.println("    \"" + "name\": \"" + getName() + "\"");
             System.out.println("    \"" + "keyValue\": \"" + getRandomKey() + "\"");
             System.out.println("}\n");
-            logger.info("Key : " + getRandomKey());
+            //Need a method to read from stored map and retrieve key value properties
+            logger.info("Stored element key for " + locator + " -> " + getRandomKey());
+            // System.out.println("Location:"+helper.getLocation());
+            logger.info("Trying to find the closest possible match");
 
+            // This routine will setup attribute value if no json file
+            getAttributeFromLocator(locator);
 
-            ele = FindClosestMatchingElement.getClosestElement(eventFiringWebDriver, locator, getClassName(),
-                    getTextContent(), getId(), getTagName(), getLocation(),
-                    getSrc(), getAlt(), getHref(), getName(), getType());
-
+            ele = FindClosestMatchingElement.getClosestElement(eventFiringWebDriver, locator, className,
+                    textContent, id, tagName, location, src, alt, href, name, type);
         }
-        testObject.getScenario().log("Trying to use element: " + ele.toString());
         return ele;
+    }
+
+    private static void getAttributeFromLocator(String locator) {
+        if ((className == null || className.isEmpty()) && locator.contains("By.className")) {
+            className = locator.substring(locator.indexOf(":") + 2);
+        }
+        if ((name == null || name.isEmpty()) && locator.contains("By.name")) {
+            name = locator.substring(locator.indexOf(":") + 2);
+        }
+        if ((id == null || id.isEmpty()) && locator.contains("By.id")) {
+            id = locator.substring(locator.indexOf(":") + 2);
+        }
+        if ((tagName == null || tagName.isEmpty()) && locator.contains("By.tagName")) {
+            tagName = locator.substring(locator.indexOf(":") + 2);
+        }
+        if ((href == null || href.isEmpty()) && locator.contains("By.linkText")) {
+            href = locator.substring(locator.indexOf(":") + 2);
+        }
+        if (locator.contains("xpath")) {
+            if (locator.contains("@name"))
+                name = locator.substring(locator.indexOf("'") + 1, locator.indexOf("']"));
+            else if (locator.contains("@id"))
+                id = locator.substring(locator.indexOf("'") + 1, locator.indexOf("']"));
+            else if (locator.contains("@href"))
+                href = locator.substring(locator.indexOf("'") + 1, locator.indexOf("']"));
+            else if (locator.contains("(.,") || locator.contains("text()"))
+                textContent = locator.substring(locator.indexOf("'") + 1, locator.indexOf("']"));
+            else if (locator.contains("@type"))
+                type = locator.substring(locator.indexOf("'") + 1, locator.indexOf("']"));
+
+            tagName = locator.substring(locator.indexOf("//") + 2, locator.indexOf("["));
+        }
     }
 
     public static void takeScreenshot(EventFiringWebDriver eventFiringWebDriver, Scenario scenario) {
