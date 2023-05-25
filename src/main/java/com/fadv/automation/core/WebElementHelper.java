@@ -581,6 +581,10 @@ public class WebElementHelper extends BaseClass {
             ele = eventFiringWebDriver.findElement(element);
         } catch (NoSuchElementException e) {
             String locator = element.toString();
+            log.error(e);
+            testObject.getScenario().log("Element by: " + element.toString() + " not found " + e);
+
+            takeScreenshot(eventFiringWebDriver, testObject.getScenario());
 
             retrieveMapValuesByKey(locator);
             System.out.println("Element Not Found:");
@@ -607,6 +611,7 @@ public class WebElementHelper extends BaseClass {
             ele = FindClosestMatchingElement.getClosestElement(eventFiringWebDriver, locator, className,
                     textContent, id, tagName, location, src, alt, href, name, type);
         }
+        testObject.getScenario().log("Trying to use element: " + ele.toString());
         return ele;
     }
 
