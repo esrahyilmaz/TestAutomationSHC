@@ -21,10 +21,10 @@ public class FindClosestMatchingElement extends BaseClass {
     static Matcher tagMatcher;
 
 
-    static String altXpathId;
-    static String altXpathName;
-    static String altXpathClass;
-    static String altXpathText;
+    static String altXpathId = "";
+    static String altXpathName = "";
+    static String altXpathClass = "";
+    static String altXpathText = "";
 
     /**
      * This method finds the best alternate match for the target element not found.
@@ -231,5 +231,19 @@ public class FindClosestMatchingElement extends BaseClass {
         logger.info("Found Best Match: Match Score is " + closestScore);
         logger.info("Tag Name : " + closestElement.getAttribute("tagName"));
         logger.info("id : " + closestElement.getAttribute("id"));
+    }
+
+    public static String getAltXpath() {
+        if (!altXpathClass.isEmpty())
+            return altXpathClass;
+        else if (!altXpathId.isEmpty())
+            return altXpathId;
+        else if (!altXpathName.isEmpty())
+            return altXpathName;
+        else if (!altXpathText.isEmpty())
+            return altXpathText;
+        else if (!altXpathId.isEmpty())
+            return altXpathId;
+        else return null;
     }
 }

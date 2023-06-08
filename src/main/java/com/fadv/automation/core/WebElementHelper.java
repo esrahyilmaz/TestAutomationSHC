@@ -663,4 +663,9 @@ public class WebElementHelper extends BaseClass {
         eventFiringWebDriver.get(targetURL);
         waitForPageToLoad(eventFiringWebDriver);
     }
+
+    public static By getAlternativeLocators(EventFiringWebDriver eventDriver, By by) {
+        findAndReturnElement(eventDriver, by);
+        return By.xpath(FindClosestMatchingElement.getAltXpath());
+    }
 }
