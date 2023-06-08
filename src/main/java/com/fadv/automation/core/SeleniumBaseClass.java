@@ -393,7 +393,7 @@ public class SeleniumBaseClass extends BaseClass {
     }
 
     public void clickElement(WebElement element){
-        if(element.isDisplayed() || element.isEnabled()){
+        if (element.isEnabled()) {
             element.click();
             logger.info("Clicked On Element [" + element + "]");
         } else {
