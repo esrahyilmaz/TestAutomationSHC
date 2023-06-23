@@ -21,7 +21,7 @@ import static io.cucumber.testng.CucumberOptions.SnippetType.CAMELCASE;
         snippets = CAMELCASE,
         //dryRun = true,
         //strict = true,
-        tags = "@Sanity",
+        tags = "@amazonab",
         monochrome = true
 )
 
