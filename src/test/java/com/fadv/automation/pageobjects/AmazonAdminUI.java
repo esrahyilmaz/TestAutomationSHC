@@ -7,7 +7,6 @@ import com.fadv.automation.api.CreateOrderWrapper;
 import com.fadv.automation.core.Environment;
 import com.fadv.automation.core.SeleniumBaseClass;
 import com.fadv.automation.core.SharedBaseClass;
-import com.fadv.automation.core.WebElementHelper;
 import com.fadv.automation.utils.CommonMethods;
 import io.cucumber.datatable.DataTable;
 import org.openqa.selenium.*;
@@ -828,17 +827,17 @@ public class AmazonAdminUI extends SeleniumBaseClass {
         if (waitFor(fUser)) {
             waitFor(fUser);
             setAttribute(eventFiringWebDriver, fUser, "name", "sign in name");
-            if (isExistAndDisplayed(eventFiringWebDriver, fUser, 1))
-                setElementValue(fUser, username);
-            else
-                WebElementHelper.enterText(eventFiringWebDriver, fUser, username);
+//            if (isExistAndDisplayed(eventFiringWebDriver, fUser, 1))
+            setElementValue(fUser, username);
+//            else
+//                WebElementHelper.enterText(eventFiringWebDriver, fUser, username);
             waitFor(fPass);
             setElementValue(fPass, password);
-            if (isExistAndDisplayed(driver, btnSignIn, 1)) {
-                clickElement(btnSignIn);
-            } else {
-                WebElementHelper.clickElement(setEventDriver(), btnSignIn);
-            }
+//            if (isExistAndDisplayed(driver, btnSignIn, 1)) {
+            clickElement(btnSignIn);
+//            } else {
+//                WebElementHelper.clickElement(setEventDriver(), btnSignIn);
+//            }
 
             this.waitFor(btnMenu);
         } else {

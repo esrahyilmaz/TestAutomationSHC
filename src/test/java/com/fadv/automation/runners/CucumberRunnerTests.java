@@ -14,14 +14,14 @@ import static io.cucumber.testng.CucumberOptions.SnippetType.CAMELCASE;
 //@RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {"pretty", "json:target/cucumber-reports/cucumber.json"
-                 ,"junit:target/cucumber-reports/cucumber.xml"
-                 },
+                , "junit:target/cucumber-reports/cucumber.xml"
+        },
         features = {"src/test/resources/features"},
         glue = {"com.fadv.automation.stepdef"},
         snippets = CAMELCASE,
         //dryRun = true,
         //strict = true,
-        tags = "@amazonab",
+        tags = "@Sanity",
         monochrome = true
 )
 
