@@ -1,6 +1,7 @@
 package com.fadv.automation.core;
 
 import io.github.sridharbandi.HtmlCsRunner;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -602,9 +603,9 @@ public class SeleniumBaseClass extends BaseClass {
         return wait.until(ExpectedConditions.invisibilityOf(element));
     }
 
-    public void waitForElementClickable(By element) {
+    public void waitForElementClickable(By by) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.elementToBeClickable(element));
+        wait.until(ExpectedConditions.elementToBeClickable(by));
     }
 
     public void waitForSeconds(Integer int1) {
@@ -661,10 +662,19 @@ public class SeleniumBaseClass extends BaseClass {
      * @param webList           the element web list
      * @param visibleTextOption the option to select
      */
-    public void selectElement(By webList, String visibleTextOption) {
-        Select select = new Select(driver.findElement(webList));
-        select.selectByVisibleText(visibleTextOption);
-        logger.info("weblist [" + webList.toString() + "] selects [" + visibleTextOption + "]");
+    public void selectElement(By by, String visibleTextOption) {
+        try {
+            Select select = new Select(driver.findElement(by));
+            select.selectByVisibleText(visibleTextOption);
+            logger.info("weblist [" + by.toString() + "] selects [" + visibleTextOption + "]");
+        } catch (NoSuchElementException e) {
+            logger.info("Element by: " + by + " not found, trying to find alternative locator");
+            By altBy = WebElementHelper.getAlternativeLocators(eventFiringWebDriver, by);
+            selectElement(altBy, visibleTextOption);
+        } catch (Exception e) {
+            logger.info("Unable to select option: " + visibleTextOption + " in selection by: "
+                    + by + " not found cause of: " + e);
+        }
     }
 
     /**
@@ -674,21 +684,21 @@ public class SeleniumBaseClass extends BaseClass {
      * @param setChecked
      */
     public void checkbox(By checkbox, boolean setChecked) {
-        WebElement cb = driver.findElement(checkbox);
-        if (cb != null) {
-            if (setChecked) {
-                if (!cb.isSelected()) {
-                    cb.click();
-                    logger.info("Checkbox [" + checkbox + "] is checked");
-                }
-            } else {
-                if (cb.isSelected()) {
-                    cb.click();
-                    logger.info("Checkbox [" + checkbox + "] is NOT checked");
-                }
+        try {
+            WebElement cb = driver.findElement(checkbox);
+
+            if (setChecked && !cb.isSelected()) {
+                cb.click();
+                logger.info("Checkbox [" + checkbox + "] is checked");
+            } else if (cb.isSelected()) {
+                cb.click();
+                logger.info("Checkbox [" + checkbox + "] is NOT checked");
             }
-        } else {
-            throw new RuntimeException("Checkbox [" + checkbox + "] does not exist");
+        } catch (NoSuchElementException e) {
+            By altBy = WebElementHelper.getAlternativeLocators(eventFiringWebDriver, checkbox);
+            checkbox(altBy, setChecked);
+        } catch (Exception e) {
+            logger.info("Unable to set checkbox cause of: " + e);
         }
     }
 
