@@ -205,9 +205,6 @@ public class FindClosestMatchingElement extends BaseClass {
         return element;
     }
 
-    public static String getAltXpathId() {
-        return altXpathId;
-    }
 
     /**
      * This method prints the Element Details for the element; best matched.
