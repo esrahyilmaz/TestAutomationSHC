@@ -192,6 +192,32 @@ public class Environment {
         return TestObject.getProperty("data.ea." + env + ".login.user");
     }
 
+    public static String getEaUsfcSkpEnvironmentAccount() {
+        if (env == null)
+        {
+            return TestObject.getProperty("data.ea.uatusfskp.login.account");
+        }
+
+        return TestObject.getProperty("data.ea." + env + ".login.account");
+    }
+    public static String getEaUsfcSkpEnvironmentUser() {
+        if (env == null)
+        {
+            return TestObject.getProperty("data.ea.uatusfskp.login.user");
+        }
+
+        return TestObject.getProperty("data.ea." + env + ".login.user");
+    }
+
+    public static String getEaUsfcSkpEnvironmentPassword() {
+        if (env == null)
+        {
+            return TestObject.getProperty("data.ea.uatusfskp.login.password");
+        }
+
+        return TestObject.getProperty("data.ea." + env + ".login.password");
+    }
+
     public String getEnvName() {
         return envName;
     }

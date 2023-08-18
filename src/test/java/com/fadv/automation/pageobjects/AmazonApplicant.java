@@ -33,7 +33,7 @@ public class AmazonApplicant extends SeleniumBaseClass {
     public final By applicantLastName = By.xpath("//input[@id='lastName']");
     public final By applicantAlias=By.id("alias");
     public final By applicantBirthMonth = By.xpath("//*[@id='birthMonth']");
-    public final By applicantBirthDay = By.xpath("//*[@id='birthDate']");
+    public final By applicantBirthDay = By.xpath("//*[@id='birthDay']");
     public final By applicantBirthYear = By.xpath("//*[@id='birthYear']");
     public final By applicantBoothNumber = By.xpath("//input[@id='station']");
     public final By applicantBootNumberError=By.xpath ("//label[contains(text(),'Please provide booth number between 1 and 99')]");
@@ -87,7 +87,7 @@ public class AmazonApplicant extends SeleniumBaseClass {
     public final By expirationDayTextBox = By.xpath("//input[@id='expDate']");
     public By sampleIdImageOrScreen = By.xpath("//img[contains(@src, 'test-kit')]");
     public final By playButton = By.xpath("//img[contains(@src,'images/play')]");
-    public final By specimenIDButton = By.xpath("//button[contains(text(), 'specimen ID')]");
+    public final By specimenIDButton = By.xpath("//button[contains(text(), 'Enter the Device Information')]");
     public By waitWhileWeReviewTestScreen = By.xpath("//h1[contains(text(), 'Wait while we review your test')]");
     public By uploadPhotoScreen = By.xpath("//h1[contains(text(),'Upload a photo')]");
     public By uploadedPhoto = By.xpath("//canvas[@id='uploadSensor']");
@@ -165,6 +165,8 @@ public class AmazonApplicant extends SeleniumBaseClass {
     public By REFCodesList = By.xpath("//select[@id='reference-code']");
     public By applicantIncorrectTestKitErrorMsg=By.xpath("//p[@id='errorContent']");
     public final By applicantCloseButton = By.xpath("(//button[@class='btn button btnActive'])[4]");
+    public final By barcodeTextBox = By.xpath("//input[@id='barcode']");
+    public final By confirmBarcodeTextBox = By.xpath("//input[@id='confirmBarcode']");
 
     //*****WebElements******
 
@@ -214,7 +216,7 @@ public class AmazonApplicant extends SeleniumBaseClass {
     @FindBy(xpath = "//button[contains(text(),'Get Help')]")
     public WebElement helpIconWebElement;
 
-    @FindBy(xpath = "//button[contains(text(), 'specimen ID')]")
+    @FindBy(xpath = "//button[contains(text(), 'Enter the Device Information')]")
     public WebElement specimenIDButtonWebElement;
 
     @FindBy(xpath = "//input[@type='file']")
@@ -271,12 +273,22 @@ public class AmazonApplicant extends SeleniumBaseClass {
 
     public void clickNextButton() throws Exception
     {
-        waitForElementClickable(nextButton);
+        waitForElementClickable(nextButton,420);
         scrollTo(nextButtonWebElement);
         clickElement(nextButton);
         Thread.sleep(4000);
     }
-
+    public void enterBarcode(String barcode, Boolean clearField){
+        if(clearField.equals(true)){
+            setElementValue(barcodeTextBox, barcode);
+            setElementValue(confirmBarcodeTextBox, barcode);
+        }
+        else {
+            setElementValueNoClear(barcodeTextBox, barcode);
+            setElementValueNoClear(confirmBarcodeTextBox, barcode);
+        }
+        report(Status.PASS, "Entered Barcode Information");
+    }
 
     public void clickCapIsSealedButton() throws Exception
     {

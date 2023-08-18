@@ -1545,6 +1545,24 @@ public class ApplicantUIDef extends BaseClass {
         AmazonApplicant amazonApplicant = getApplicantUIPageObject();
         amazonApplicant.clickCloseButton();
     }
+    @And("I click the button: Enter Device Information")
+    public void iClickTheButtonEnterDeviceInformation() throws Exception{
+        AmazonApplicant amazonApplicant = getApplicantUIPageObject();
+        amazonApplicant.clickSpecimenIDButton();
+        report(Status.PASS, "Specimen ID button clicked.");
+    }
+    @And("I enter the sample ID {string} on the Enter Device Information screen")
+    public void iEnterTheSampleIDOnTheEnterDeviceInformationScreen(String sampleId) throws Exception {
+        AmazonApplicant amazonApplicant = getApplicantUIPageObject();
+        amazonApplicant.enterSampleInformation(sampleId, false);
+        report(Status.PASS, "Sample Information was entered.");
+    }
+    @And("I enter the Barcode {string} on the Enter Device Information screen in the Applicant UI")
+    public void iEnterTheBarcodeOnTheEnterDeviceInformationScreenInTheApplicantUI(String barcode) throws Exception {
+        AmazonApplicant amazonApplicant = getApplicantUIPageObject();
+        amazonApplicant.enterBarcode(barcode, false);
+        report(Status.PASS, "Barcode was entered.");
+    }
 
 }
 

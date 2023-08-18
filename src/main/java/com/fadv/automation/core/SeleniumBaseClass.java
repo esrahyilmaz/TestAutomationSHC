@@ -604,7 +604,12 @@ public class SeleniumBaseClass extends BaseClass {
     }
 
     public void waitForElementClickable(By by) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+//        wait.until(ExpectedConditions.elementToBeClickable(by));
+        waitForElementClickable(by, 420);
+    }
+    public void waitForElementClickable(By by, int second) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(second));
         wait.until(ExpectedConditions.elementToBeClickable(by));
     }
 

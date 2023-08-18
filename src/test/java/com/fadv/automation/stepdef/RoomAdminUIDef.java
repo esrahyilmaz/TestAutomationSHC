@@ -3289,6 +3289,25 @@ public class RoomAdminUIDef extends BaseClass {
             WebElementHelper.retrieveExistingMapFromFile();
         }
     }
+    @And("I verify the page title is showing as Total Number of Devices Used")
+    public void iVerifyThePageTitleIsShowingAsTotalNumberOfDevicesUsed()  throws Exception {
+        AmazonAdminUI amazonAdminUI =getAdminUIPageObject ( );
+        amazonAdminUI.waitForSeconds(2);
+        Assert.assertTrue(amazonAdminUI.exists(amazonAdminUI.numberOfTestUsedPage)," Page Title is not showing as Total Number of Devices Used");
+    }
+    @And("I select the Number of Tests Used for Drug {string} on the Total Number of Devices Used page")
+    public void iSelectTheNumberOfTestsUsedForDrugOnTheTotalNumberOfDevicesUsedPage(String numberOfDrugTestKits) throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject ( );
+        amazonAdminUI.waitForSeconds(2);
+        amazonAdminUI.selectNumberOfTestKitsForDrug(numberOfDrugTestKits);
+    }
+
+    @And("I click on the Certify button on the Total Number of Devices Used page of the Admin UI")
+    public void iClickOnTheCertifyButtonOnTheTotalNumberOfDevicesUsedPageOfTheAdminUI() throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject ( );
+        amazonAdminUI.clickCertifyBtn();
+    }
+
 }
 
 

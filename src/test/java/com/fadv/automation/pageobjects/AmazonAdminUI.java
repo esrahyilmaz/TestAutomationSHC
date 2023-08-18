@@ -286,6 +286,9 @@ public class AmazonAdminUI extends SeleniumBaseClass {
     public final By backToResultsButton = By.xpath("//div[@class='offset-1 col-sm-4']/div/p");
     public By adminSupportToolsSearchPageCurrentStep = By.xpath("//table[@class='table table-striped']/tbody/tr/td/span[contains(text(),'Retake Photo')]");
     public By businessLine = By.xpath("//select[@id='businessLine']");
+    public By numberOfTestUsedPage = By.xpath("//div[contains(text(),'Total Number of Devices Used')]");
+    public By numberOfDrugTestKitsUsed = By.xpath("//div/form/div/select");
+    public By adminUINxtBtn=By.id("next-button");
 
     //Web Elements
 
@@ -2659,6 +2662,11 @@ public class AmazonAdminUI extends SeleniumBaseClass {
         waitForElementClickable(businessLine);
         clickElement(businessLine);
     }
-
-
+    public void selectNumberOfTestKitsForDrug(String numberOfDevices) {
+        selectElement(numberOfDrugTestKitsUsed, numberOfDevices);
+    }
+    public void clickCertifyBtn() {
+        waitForElementClickable(adminUINxtBtn);
+        clickElement(adminUINxtBtn);
+    }
 }

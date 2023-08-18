@@ -431,5 +431,13 @@ public class EADef extends BaseClass {
         EA app = getEAPageObject();
         app.selectReason(reasonForTest);
     }
+
+    @Given("I navigate to the EA application and login to the environment for USFC Random SkipAdjudication Flow")
+    public void iNavigateToTheEAApplicationAndLoginToTheEnvironmentForUSFCRandomSkipAdjudicationFlow() throws Exception {
+        EA app = getEAPageObject();
+        app.launchEA();
+        app.login(Environment.getEaUsfcSkpEnvironmentAccount(), Environment.getEaUsfcSkpEnvironmentUser(), Environment.getEaUsfcSkpEnvironmentPassword());
+
+    }
 }
 

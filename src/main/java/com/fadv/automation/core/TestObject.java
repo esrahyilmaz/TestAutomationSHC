@@ -3,6 +3,7 @@ package com.fadv.automation.core;
 import com.fadv.automation.environment.EspEnv;
 import com.fadv.automation.utils.CommonMethods;
 import com.fadv.automation.utils.UtilTextProcessor;
+import com.fadv.automation.utils.Utility;
 import io.cucumber.java.Scenario;
 
 import java.io.IOException;
@@ -172,16 +173,11 @@ public class TestObject {
      * @throws IOException
      */
     private void loadFromConfig() throws IOException {
-        String file = System.getProperty("user.dir") + "\\src\\test\\resources\\configs\\config.properties";
-        String env = System.getProperty("env");
 
-        if ("qaa".equals(env) || "qab".equals(env)) {
-            file = System.getProperty("user.dir") + "\\src\\test\\resources\\configs\\config_qa.properties";
-        } else {
-            if ("uat".equals(env)) {
-                file = System.getProperty("user.dir") + "\\src\\test\\resources\\configs\\config_uat.properties";
-            }
-        }
+        String env = System.getProperty("env");
+        String fileName = Utility.getConfigPropsFileBasedOnEnvironment();
+        String file = System.getProperty("user.dir") + "\\src\\test\\resources\\configs\\" + fileName;
+
         defaultProperties = CommonMethods.readProperties(file);
         logger.info("loading default properties from " + file);
         String localConfig = defaultProperties.getProperty("test.local.config");
@@ -189,9 +185,7 @@ public class TestObject {
             localProperties = CommonMethods.readProperties(localConfig);
             logger.info("loading local properties from " + file);
         }
-        //String env = System.getProperty("env");
-//        String envProperty = this.getProperty("data." + env + ".env.url");
-//        String env = this.getProperty("test.env");
+
         if (env != null && !env.isEmpty()) {
             this.setTestEnv(new EspEnv(env));
             logger.info("Setting env: " + env);

@@ -31,3 +31,20 @@ To Run Regression Suite on local machine, execute the following from the command
 5. Run api regression:
     mvn verify -Dcucumber.options="--tags @backendApi" -Dbrowser="Chrome" -DdryRun=true
 
+To Run Sanity Test Cases in Prod Environment on local machine, execute the following from the command prompt (NOT POWERSHELL):
+1.USFC Pre-Employment Flow:
+    mvn verify -Dcucumber.filter.tags="@usfcPreEmp and @sanity" -Dbrowser="Chrome" -DdryRun=true -Denv=prd
+2.USFC Random Flow:
+    mvn verify -Dcucumber.filter.tags="@usfcRnd and @sanity" -Dbrowser="Chrome" -DdryRun=true -Denv=prdrnd
+3.USFC Random Validation Flow:
+    mvn verify -Dcucumber.filter.tags="@usfcSkpAdj and @sanity" -Dbrowser="Chrome" -DdryRun=true -Denv=prdrndval
+4.USFC Drug+Alcohol Flow:
+    mvn verify -Dcucumber.filter.tags="@usfcDrgAlc and @sanity" -Dbrowser="Chrome" -DdryRun=true -Denv=prdrnd
+5.AIR Random Flow:
+    mvn verify -Dcucumber.filter.tags="@air and @sanity" -Dbrowser="Chrome" -DdryRun=true -Denv=prdair
+6.AIR Random Validation Flow:
+    mvn verify -Dcucumber.filter.tags="@airSkipAdj and @sanity" -Dbrowser="Chrome" -DdryRun=true -Denv=prdairval
+7.USSC Random Flow:
+    mvn verify -Dcucumber.filter.tags="@ussc and @sanity" -Dbrowser="Chrome" -DdryRun=true -Denv=prduss
+8.USSC Random Validation Flow:
+    mvn verify -Dcucumber.filter.tags="@usscSkipAdj and @sanity" -Dbrowser="Chrome" -DdryRun=true -Denv=prdussval
