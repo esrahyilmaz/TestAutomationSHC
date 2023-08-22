@@ -330,8 +330,10 @@ public class SeleniumBaseClass extends BaseClass {
      */
     public void reportScreenshot(String name) {
         if (testObject.getScenario().isFailed()) {
-            final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-            testObject.getScenario().attach(screenshot, "image/png", name);
+            try {
+                final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+                testObject.getScenario().attach(screenshot, "image/png", name);
+            } catch(Exception e){}
         }
     }
 

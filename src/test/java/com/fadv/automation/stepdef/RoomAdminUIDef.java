@@ -34,15 +34,9 @@ public class RoomAdminUIDef extends BaseClass {
     //static EventFiringWebDriver driver = null;
     final static SeleniumBaseClass seleniumBaseClass = new SeleniumBaseClass(null);
 
-    @Before
-    public void before(Scenario scenario) throws Exception {
-        WebElementHelper.setRecordMode();
-        testObject = TestObject.createWith(scenario);
-    }
-
     @After
     public void after(Scenario scenario) throws Exception {
-        WebElementHelper.writeMap();
+
         if (this.driver != null) {
             if (scenario.isFailed() && ui != null) {
                 ui.reportScreenshot(scenario.getName());
@@ -52,21 +46,15 @@ public class RoomAdminUIDef extends BaseClass {
             }
             seleniumBaseClass.htmlCsRunner = new HtmlCsRunner(this.driver);
             seleniumBaseClass.htmlCsRunner.execute();
-            driver.close();
-            driver.quit();
-            driver = null;
+
+            if(driver!=null) {
+                driver.quit();
+            }
 
         }
     }
 
-    @AfterAll
-    public static void after_all() throws Exception {
 
-        if (seleniumBaseClass.htmlCsRunner != null) {
-            seleniumBaseClass.htmlCsRunner.generateHtmlReport();
-        }
-
-    }
 
     public AmazonAdminUI getAdminUIPageObject() throws Exception {
         driver = seleniumBaseClass.setBrowserFromProperty(driver);

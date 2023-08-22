@@ -1,10 +1,7 @@
 package com.fadv.automation.stepdef;
 
 import com.aventstack.extentreports.Status;
-import com.fadv.automation.core.BaseClass;
-import com.fadv.automation.core.Environment;
-import com.fadv.automation.core.SeleniumBaseClass;
-import com.fadv.automation.core.TestObject;
+import com.fadv.automation.core.*;
 import com.fadv.automation.pageobjects.AmazonApplicant;
 import com.fadv.automation.utils.Util;
 import io.cucumber.java.After;
@@ -33,11 +30,6 @@ public class ApplicantUIDef extends BaseClass {
     private WebDriver driver = null;
     final static SeleniumBaseClass seleniumBaseClass = new SeleniumBaseClass(null);
 
-    @Before
-    public void before(Scenario scenario) throws IOException {
-        testObject = TestObject.createWith(scenario);
-    }
-
     @After
     public void after(Scenario scenario) throws Exception {
         if (this.driver != null) {
@@ -49,20 +41,13 @@ public class ApplicantUIDef extends BaseClass {
             }
             seleniumBaseClass.htmlCsRunner = new HtmlCsRunner(this.driver);
             seleniumBaseClass.htmlCsRunner.execute();
-            driver.close();
-            driver.quit();
-            driver = null;
+
+            if(driver!=null) {
+                driver.quit();
+            }
         }
     }
 
-    @AfterAll
-    public static void after_all() throws Exception {
-
-        if(seleniumBaseClass.htmlCsRunner!=null){
-            seleniumBaseClass.htmlCsRunner.generateHtmlReport();
-        }
-
-    }
 
     public AmazonApplicant getApplicantUIPageObject() throws Exception {
         driver = seleniumBaseClass.setBrowserFromProperty (driver);

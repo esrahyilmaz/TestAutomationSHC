@@ -28,12 +28,6 @@ public class EADef extends BaseClass {
     private WebDriver driver = null;
     private EA ui = null;
 
-    @Before
-    public void before(Scenario scenario) throws Exception {
-        testObject = TestObject.createWith(scenario);
-        testObject.setTestEnv(EspEnv.loadEnvironment(testObject));
-    }
-
     @After
     public void after(Scenario scenario) throws Exception {
         if (this.driver != null) {
@@ -43,22 +37,18 @@ public class EADef extends BaseClass {
             if (testObject != null) {
                 testObject.testComplete();
             }
-            seleniumBaseClass.htmlCsRunner = new HtmlCsRunner(this.driver);
-            seleniumBaseClass.htmlCsRunner.execute();
-            driver.close();
-            driver.quit();
-            driver = null;
+            try {
+                seleniumBaseClass.htmlCsRunner = new HtmlCsRunner(this.driver);
+                seleniumBaseClass.htmlCsRunner.execute();
+                if (driver != null) {
+                    driver.quit();
+                }
+
+            } catch (Exception e) {
+            }
         }
     }
 
-    @AfterAll
-    public static void after_all() throws Exception {
-
-        if(seleniumBaseClass.htmlCsRunner!=null){
-            seleniumBaseClass.htmlCsRunner.generateHtmlReport();
-        }
-
-    }
 
     public EA getEAPageObject() throws Exception {
 
