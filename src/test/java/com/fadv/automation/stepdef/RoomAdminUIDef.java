@@ -6,8 +6,6 @@ import com.fadv.automation.pageobjects.AmazonAdminUI;
 import com.fadv.automation.utils.Util;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.After;
-import io.cucumber.java.AfterAll;
-import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -21,6 +19,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -3272,6 +3271,13 @@ public class RoomAdminUIDef extends BaseClass {
 
     @Given("Set Page")
     public void setPage(DataTable dataTable) {
+        if (!WebElementHelper.getMapping().isEmpty()) {
+            try {
+                WebElementHelper.writeMap();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         WebElementHelper.setPage(dataTable.values().get(0));
         if (!WebElementHelper.getRecordMode()) {
             WebElementHelper.retrieveExistingMapFromFile();
