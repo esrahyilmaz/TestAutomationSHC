@@ -10,6 +10,8 @@
     @amazonSelfCollect @AmazonEndToEnd @eaOrderEntry @usfcSkpAdj @sanity
     Scenario: EA Order Entry for USFC Random Skip Adjudication Flow
       Given I navigate to the EA application and login to the environment for USFC Random SkipAdjudication Flow
+      And Set Page
+        | EAPage |
       And I click on New Order link
       And I provide data on Order tab
         | field          | value           |
@@ -41,6 +43,8 @@
       And I verify the order created successfully
       And I logout of EA
       And I wait for 6 seconds
+      And Set Page
+        | ApplicantPage |
       And I navigate to Non-Preemployment applicant UI screen using the alias "RDM-FATTT" for orders created via Admin UI
       And I click the speech play button on the start screen
       And I enter the Candidate information retrieved from the EA UI
@@ -97,6 +101,8 @@
       And I wait for 2 seconds
       And I verify the screen appears: Please wait while we review your results
       And I wait for 2 seconds
+      And Set Page
+        | AdminPage |
       And the login page for Room Admin UI is showing in the browser
       And user login with "data.admin.login.user" and "data.admin.login.pass"
       And I wait for 5 seconds in AdminUI
