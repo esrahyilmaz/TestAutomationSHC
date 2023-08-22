@@ -29,7 +29,7 @@ import java.util.logging.Logger;
 public class RoomAdminUIDef extends BaseClass {
     static final Logger logger = Logger.getLogger(RoomAdminUIDef.class.getName());
     private AmazonAdminUI ui;
-    private WebDriver driver = null;
+    private WebDriver driver = Hooks.driver;
     //static EventFiringWebDriver driver = null;
     final static SeleniumBaseClass seleniumBaseClass = new SeleniumBaseClass(null);
 
@@ -56,8 +56,8 @@ public class RoomAdminUIDef extends BaseClass {
 
 
     public AmazonAdminUI getAdminUIPageObject() throws Exception {
-        driver = seleniumBaseClass.setBrowserFromProperty(driver);
-        driver = seleniumBaseClass.setEventDriver();
+//        driver = seleniumBaseClass.setBrowserFromProperty(driver);
+//        driver = seleniumBaseClass.setEventDriver();
         ui = PageFactory.initElements(driver, AmazonAdminUI.class);
         ui.setTestObject(testObject);
         return ui;

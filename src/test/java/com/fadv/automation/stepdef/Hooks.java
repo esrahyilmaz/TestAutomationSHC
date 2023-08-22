@@ -13,13 +13,16 @@ import org.openqa.selenium.WebDriver;
 
 public class Hooks extends BaseClass {
     final static SeleniumBaseClass seleniumBaseClass = new SeleniumBaseClass(null);
-    private WebDriver driver = null;
+    public static WebDriver driver = null;
 
     @Before
     public void before(Scenario scenario) throws Exception {
+        driver = seleniumBaseClass.setBrowserFromProperty(driver);
+        driver = seleniumBaseClass.setEventDriver();
         WebElementHelper.setRecordMode();
         testObject = TestObject.createWith(scenario);
         WebElementHelper.setRecordMode();
+
     }
 
     @After

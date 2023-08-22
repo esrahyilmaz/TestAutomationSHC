@@ -829,7 +829,7 @@ public class AmazonAdminUI extends SeleniumBaseClass {
 
         if (waitFor(fUser)) {
             waitFor(fUser);
-            setAttribute(eventFiringWebDriver, fUser, "name", "sign in name");
+           // setAttribute(eventFiringWebDriver, fUser, "name", "sign in name");
 //            if (isExistAndDisplayed(eventFiringWebDriver, fUser, 1))
             setElementValue(fUser, username);
 //            else

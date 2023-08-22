@@ -27,7 +27,7 @@ import java.util.logging.Logger;
 public class ApplicantUIDef extends BaseClass {
     static final Logger logger = Logger.getLogger (ApplicantUIDef.class.getName ( ));
     private AmazonApplicant ui = null;
-    private WebDriver driver = null;
+    private WebDriver driver = Hooks.driver;
     final static SeleniumBaseClass seleniumBaseClass = new SeleniumBaseClass(null);
 
     @After
