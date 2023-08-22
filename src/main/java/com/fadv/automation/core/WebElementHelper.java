@@ -134,6 +134,7 @@ public class WebElementHelper extends BaseClass {
             log.debug("File written: {}" + file.getAbsolutePath());
             logger.info(json);
             // logger.info(json);
+            mapping.clear();
         } catch (IOException e) {
             log.error("Error writing to file: {}" + file.getAbsolutePath(), e);
             throw e;
