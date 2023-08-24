@@ -3271,7 +3271,7 @@ public class RoomAdminUIDef extends BaseClass {
 
     @Given("Set Page")
     public void setPage(DataTable dataTable) {
-        if (!WebElementHelper.getMapping().isEmpty()) {
+        if (!WebElementHelper.getMapping().isEmpty() && !WebElementHelper.pages.isEmpty()) {
             try {
                 WebElementHelper.writeMap();
             } catch (IOException e) {
