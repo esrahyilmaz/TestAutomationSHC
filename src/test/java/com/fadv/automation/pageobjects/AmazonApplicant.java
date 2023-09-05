@@ -167,6 +167,7 @@ public class AmazonApplicant extends SeleniumBaseClass {
     public final By applicantCloseButton = By.xpath("(//button[@class='btn button btnActive'])[4]");
     public final By barcodeTextBox = By.xpath("//input[@id='barcode']");
     public final By confirmBarcodeTextBox = By.xpath("//input[@id='confirmBarcode']");
+    public final By applicantPhoneNum = By.xpath("//input[@id='phoneNumber']");
 
     //*****WebElements******
 
@@ -492,12 +493,14 @@ public class AmazonApplicant extends SeleniumBaseClass {
         String month = String.valueOf(convertMonthToNumberString(EA.birthMonthInUi));
         String day = EA.birthDayInUi;
         String year = EA.birthYearInUi;
+        String phone=EA.phoneNumberInUi;
+        String phoneLast4=phone.substring(6,10);
         setElementValue(applicantLastName, lName);
         setElementValueNoClear(applicantBirthMonth, month);
         setElementValueNoClear(applicantBirthDay, day);
         setElementValueNoClear(applicantBirthYear, year);
         String lastFour = sharedBaseClass.getLast4SsNumber(EA.ssnInUi);
-        setElementValueNoClear(applicantSsNumber, lastFour);
+        setElementValueNoClear(applicantPhoneNum,phoneLast4);
         clickMuteVolumeButton();
         clickGetStarted();
 

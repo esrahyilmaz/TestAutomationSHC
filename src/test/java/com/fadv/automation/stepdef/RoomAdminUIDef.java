@@ -2549,7 +2549,7 @@ public class RoomAdminUIDef extends BaseClass {
 
     @And("I click on the location link for {string} in the Admin UI")
     public void iClickOnTheLocationLinkForInTheAdminUI(String locationNameIn) throws Exception {
-        String locationName = Util.getNonAdjLocationAliasBasedOnEnvironment(locationNameIn);
+        String locationName = Util.getLocationAliasBasedOnEnvironment(locationNameIn);
         AmazonAdminUI amazonAdminUI = getAdminUIPageObject();
         amazonAdminUI.waitForSeconds(2);
         amazonAdminUI.clickLocationLink(locationName);

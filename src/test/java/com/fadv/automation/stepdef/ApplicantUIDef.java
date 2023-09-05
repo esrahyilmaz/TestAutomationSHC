@@ -39,15 +39,17 @@ public class ApplicantUIDef extends BaseClass {
             if (testObject != null) {
                 testObject.testComplete();
             }
-            seleniumBaseClass.htmlCsRunner = new HtmlCsRunner(this.driver);
-            seleniumBaseClass.htmlCsRunner.execute();
+            try {
+                seleniumBaseClass.htmlCsRunner = new HtmlCsRunner(this.driver);
+                seleniumBaseClass.htmlCsRunner.execute();
+                if (driver != null) {
+                    driver.quit();
+                }
 
-            if(driver!=null) {
-                driver.quit();
+            } catch (Exception e) {
+            }
             }
         }
-    }
-
 
     public AmazonApplicant getApplicantUIPageObject() throws Exception {
         driver = seleniumBaseClass.setBrowserFromProperty (driver);
@@ -999,7 +1001,7 @@ public class ApplicantUIDef extends BaseClass {
 
     @And("I navigate to Non-Preemployment applicant UI screen using the alias {string} for orders created via Admin UI")
     public void iNavigateToNonPreemploymentApplicantUIScreenUsingTheAliasForOrdersCreatedViaAdminUI(String aliasIn) throws Exception {
-        String alias = Util.getNonAdjLocationAliasBasedOnEnvironment(aliasIn);
+        String alias = Util.getLocationAliasBasedOnEnvironment(aliasIn);
         AmazonApplicant amazonApplicant = getApplicantUIPageObject();
         amazonApplicant.launcherURL(Environment.getEnvironmentBaseUrl() + "/?NONPRE&location=" + alias);
     }
@@ -1549,6 +1551,12 @@ public class ApplicantUIDef extends BaseClass {
         report(Status.PASS, "Barcode was entered.");
     }
 
+    @And("I navigate to the Applicant UI screen using the alias {string}")
+    public void iNavigateToTheApplicantUIScreenUsingTheAlias(String aliasIn) throws Exception {
+        String alias = Util.getLocationAliasBasedOnEnvironment(aliasIn);
+        AmazonApplicant amazonApplicant = getApplicantUIPageObject();
+        amazonApplicant.launcherURL(Environment.getEnvironmentBaseUrl() + "/?location=" + alias);
+    }
 }
 
 

@@ -429,5 +429,6 @@ public class EADef extends BaseClass {
         app.login(Environment.getEaUsfcSkpEnvironmentAccount(), Environment.getEaUsfcSkpEnvironmentUser(), Environment.getEaUsfcSkpEnvironmentPassword());
 
     }
+
 }
 

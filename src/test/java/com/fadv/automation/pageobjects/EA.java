@@ -72,6 +72,7 @@ public class EA extends SeleniumBaseClass {
     public final By reviewOrderTab=By.xpath("//div[@title='Review Order']");
     public final By  selectBoxForReason=By.id("Other..ReasonForTest");
 
+
     //*****WebElements******
     @FindBy(xpath = "//div/span[contains(text(), 'Case Management')]")
     public WebElement hpCaseManagementWidget_WebElement;
@@ -248,7 +249,7 @@ public class EA extends SeleniumBaseClass {
         By weField;
         switch (field.toLowerCase()) {
             case "cid" -> {
-                weField = By.id("Order.Info.RefID1");
+                weField = By.xpath("(//input[contains(@id,'Order.Info.RefID')])[1]");
                 waitForSeconds(1);
                 this.setElementValue(weField, value);
                 cid = value;
