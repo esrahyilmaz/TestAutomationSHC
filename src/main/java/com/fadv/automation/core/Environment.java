@@ -98,7 +98,7 @@ public class Environment {
             return TestObject.getProperty("data.ea.uatrnd.login.password");
         }
 
-        return TestObject.getProperty("data.ea." + env + ".login.user");
+        return TestObject.getProperty("data.ea." + env + ".login.password");
     }
 
     public static String getEnvironmentInviteUuid() {
@@ -173,7 +173,7 @@ public class Environment {
             return TestObject.getProperty("data.ea.uatair.login.password");
         }
 
-        return TestObject.getProperty("data.ea." + env + ".login.user");
+        return TestObject.getProperty("data.ea." + env + ".login.password");
     }
 
     public static String getEaAirSkpEnvironmentUser() {
@@ -189,7 +189,7 @@ public class Environment {
             return TestObject.getProperty("data.ea.uatairskp.login.password");
         }
 
-        return TestObject.getProperty("data.ea." + env + ".login.user");
+        return TestObject.getProperty("data.ea." + env + ".login.password");
     }
 
     public static String getEaUsfcSkpEnvironmentAccount() {
