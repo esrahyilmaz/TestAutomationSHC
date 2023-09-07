@@ -3302,6 +3302,12 @@ public class RoomAdminUIDef extends BaseClass {
         amazonAdminUI.clickCertifyBtn();
     }
 
+    @And("I select the Number of Strips for Alcohol {string} on the Total Number of Devices Used page")
+    public void iSelectTheNumberOfStripsForAlcoholOnTheTotalNumberOfDevicesUsedPage(String numberOfAlcoholStrips) throws Exception {
+        AmazonAdminUI amazonAdminUI = getAdminUIPageObject ( );
+        amazonAdminUI.waitForSeconds(2);
+        amazonAdminUI.selectNumberOfStripsForAlcohol(numberOfAlcoholStrips);
+    }
 }
 
 

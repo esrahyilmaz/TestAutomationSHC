@@ -430,5 +430,20 @@ public class EADef extends BaseClass {
 
     }
 
+    @Given("I navigate to the EA application and login to the environment for USSC Random test account")
+    public void iNavigateToTheEAApplicationAndLoginToTheEnvironmentForUSSCRandomTestAccount() throws Exception {
+        EA app = getEAPageObject();
+        app.launchEA();
+        app.login(Environment.getEaUsscEnvironmentAccount(), Environment.getEaUsscEnvironmentUser(), Environment.getEaUsscEnvironmentPassword());
+
+    }
+
+    @Given("I navigate to the EA application and login to the environment for USSC Random skipAdjudication")
+    public void iNavigateToTheEAApplicationAndLoginToTheEnvironmentForUSSCRandomSkipAdjudication() throws Exception {
+        EA app = getEAPageObject();
+        app.launchEA();
+        app.login(Environment.getEaUsscSkpEnvironmentAccount(), Environment.getEaUsscSkpEnvironmentUser(), Environment.getEaUsscSkpEnvironmentPassword());
+
+    }
 }
 

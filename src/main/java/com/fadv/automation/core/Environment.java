@@ -218,6 +218,56 @@ public class Environment {
         return TestObject.getProperty("data.ea." + env + ".login.password");
     }
 
+    public static String getEaUsscEnvironmentAccount() {
+        if (env == null)
+        {
+            return TestObject.getProperty("data.ea.uatuss.login.account");
+        }
+
+        return TestObject.getProperty("data.ea." + env + ".login.account");
+    }
+    public static String getEaUsscEnvironmentUser() {
+        if (env == null)
+        {
+            return TestObject.getProperty("data.ea.uatuss.login.user");
+        }
+
+        return TestObject.getProperty("data.ea." + env + ".login.user");
+    }
+
+    public static String getEaUsscEnvironmentPassword() {
+        if (env == null)
+        {
+            return TestObject.getProperty("data.ea.uatuss.login.password");
+        }
+
+        return TestObject.getProperty("data.ea." + env + ".login.password");
+    }
+    public static String getEaUsscSkpEnvironmentAccount() {
+        if (env == null)
+        {
+            return TestObject.getProperty("data.ea.uatussskp.login.account");
+        }
+
+        return TestObject.getProperty("data.ea." + env + ".login.account");
+    }
+    public static String getEaUsscSkpEnvironmentUser() {
+        if (env == null)
+        {
+            return TestObject.getProperty("data.ea.uatussskp.login.user");
+        }
+
+        return TestObject.getProperty("data.ea." + env + ".login.user");
+    }
+
+    public static String getEaUsscSkpEnvironmentPassword() {
+        if (env == null)
+        {
+            return TestObject.getProperty("data.ea.uatussskp.login.password");
+        }
+
+        return TestObject.getProperty("data.ea." + env + ".login.password");
+    }
     public String getEnvName() {
         return envName;
     }

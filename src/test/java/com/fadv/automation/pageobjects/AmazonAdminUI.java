@@ -289,6 +289,7 @@ public class AmazonAdminUI extends SeleniumBaseClass {
     public By numberOfTestUsedPage = By.xpath("//div[contains(text(),'Total Number of Devices Used')]");
     public By numberOfDrugTestKitsUsed = By.xpath("//div/form/div/select");
     public By adminUINxtBtn=By.id("next-button");
+    public By adminNumberOfAlcStripsUsed = By.xpath("(//div/form/div/select)[2]");
 
     //Web Elements
 
@@ -2668,5 +2669,8 @@ public class AmazonAdminUI extends SeleniumBaseClass {
     public void clickCertifyBtn() {
         waitForElementClickable(adminUINxtBtn);
         clickElement(adminUINxtBtn);
+    }
+    public void selectNumberOfStripsForAlcohol(String numberOfStrips) {
+        selectElement(adminNumberOfAlcStripsUsed, numberOfStrips);
     }
 }
