@@ -121,6 +121,7 @@ public class EA extends SeleniumBaseClass {
 
         if (waitFor(clientId)) {
             this.setElementValue(clientId, account);
+            setAttribute(eventFiringWebDriver,username,"name","Username");
             this.setElementValue(username, user);
             this.setElementValue(password, pass);
 
