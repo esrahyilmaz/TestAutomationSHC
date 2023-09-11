@@ -9,9 +9,9 @@
 
     @amazonSelfCollect @AmazonEndToEnd @eaOrderEntry @usfcPreEmp @sanity
     Scenario: EA Order Entry for USFC Pre-Employment Flow
-      Given I navigate to the EA application and login to the set environment
       And Set Page
         | EAPage |
+      Given I navigate to the EA application and login to the set environment
       And I click on New Order link
       And I provide data on Order tab
         | field          | value               |

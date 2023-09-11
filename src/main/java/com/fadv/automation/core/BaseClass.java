@@ -5,9 +5,10 @@ import com.aventstack.extentreports.Status;
 import java.util.logging.Logger;
 
 public class BaseClass {
-    static final Logger logger = Logger.getLogger(BaseClass.class.getName());
+    public static final Logger logger = Logger.getLogger(BaseClass.class.getName());
     protected static TestObject testObject;
     protected ExtentReporter reporter = null;
+    public static String env = "";
 
     public BaseClass() {
     }
