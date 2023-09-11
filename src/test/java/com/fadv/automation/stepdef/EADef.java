@@ -1,13 +1,9 @@
 package com.fadv.automation.stepdef;
 
 import com.fadv.automation.core.*;
-import com.fadv.automation.environment.EspEnv;
-import com.fadv.automation.pageobjects.AmazonApplicant;
 import com.fadv.automation.pageobjects.EA;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.After;
-import io.cucumber.java.AfterAll;
-import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -21,6 +17,8 @@ import org.testng.Assert;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
+
+import static org.testng.Assert.assertTrue;
 
 public class EADef extends BaseClass {
     static final Logger logger = Logger.getLogger(EADef.class.getName());
@@ -160,14 +158,14 @@ public class EADef extends BaseClass {
         String expectedString = "Submitted:1";
         boolean status = app.verifyBatchResult(0, expectedString);
         report("Batch Upload expected String " + expectedString + " | " + status);
-        Assert.assertTrue(status, "Batch Upload expected String " + expectedString);
+        assertTrue(status, "Batch Upload expected String " + expectedString);
     }
 
     @Given("I verify the Header {string} is present in the Excel Type xls spreadsheet")
     public void iVerifyTheHeaderIsPresentInTheExcelTypeXlsSpreadsheet(String headerName) throws Exception{
 //        EA app = getEAPageObject();
         SharedBaseClass sharedBaseClass = new SharedBaseClass(driver);
-        Assert.assertTrue(sharedBaseClass.verifyHeadersExistsInExcelSheet(headerName), "Header "  + headerName +  " was not found in the xls are expected.");
+        assertTrue(sharedBaseClass.verifyHeadersExistsInExcelSheet(headerName), "Header " + headerName + " was not found in the xls are expected.");
     }
 
     @When("I click the Download Template button in the batch upload section")
@@ -214,7 +212,7 @@ public class EADef extends BaseClass {
         EA app = getEAPageObject();
         boolean status = app.verifyBatchResult(0, recordsStatus);
         report("Batch Upload expected String " + recordsStatus + " | " + status);
-        Assert.assertTrue(status, "Batch Upload expected String " + recordsStatus);
+        assertTrue(status, "Batch Upload expected String " + recordsStatus);
     }
 
     @When("I click on Cases In Queue link")
@@ -239,7 +237,7 @@ public class EADef extends BaseClass {
     @Then("I can verify Case Status is {string}")
     public void iCanVerifyCaseStatusIs(String caseStatus) throws Exception{
         EA app = getEAPageObject();
-        Assert.assertTrue(app.caseStatusOnTabAssigned(caseStatus), "Case Status: " + caseStatus + " on the General Information Tab is not found.");
+        assertTrue(app.caseStatusOnTabAssigned(caseStatus), "Case Status: " + caseStatus + " on the General Information Tab is not found.");
     }
 
     @And("I click on the Case Details case action")
@@ -283,7 +281,7 @@ public class EADef extends BaseClass {
     @Then("I verify the zip required message appears when creating an EA order")
     public void iVerifyTheZipRequiredMessageAppearsWhenCreatingAnEAOrder() throws Exception {
         EA app = getEAPageObject();
-        Assert.assertTrue(app.exists(app.missingZipPostalCodeMessage), "Expected error message for Missing Zip Code was not found.");
+        assertTrue(app.exists(app.missingZipPostalCodeMessage), "Expected error message for Missing Zip Code was not found.");
     }
 
     @Given("I navigate to the EA application and login to the set environment")
@@ -325,7 +323,7 @@ public class EADef extends BaseClass {
     @Then("I verify the order existence and retrieve the order id for the candidate")
     public void iVerifyTheOrderExistenceAndRetrieveTheOrderIdForTheCandidate() throws Exception {
         EA app = getEAPageObject();
-        Assert.assertTrue(app.exists(app.overallProgressTab), "Order was not found.");
+        assertTrue(app.exists(app.overallProgressTab), "Order was not found.");
         app.setEAOrderId();
     }
 
@@ -360,7 +358,7 @@ public class EADef extends BaseClass {
     @Then("I verify that I am on Subject tab")
     public void iVerifyThatIAmOnSubjectTab() throws Exception {
         EA app = getEAPageObject();
-        Assert.assertTrue(app.exists(app.subjectTab),"Subject tab is not displayed");
+        assertTrue(app.isExistAndDisplayed(driver, app.subjectTab, 30), "Subject tab is not displayed");
     }
 
     @And("I wait for {int} seconds in EA")
@@ -387,7 +385,7 @@ public class EADef extends BaseClass {
     @And("I verify the order existence in EA")
     public void iVerifyTheOrderExistenceInEA() throws Exception {
         EA app = getEAPageObject();
-        Assert.assertTrue(app.exists(app.overallProgressTab), "Order was not found.");
+        assertTrue(app.exists(app.overallProgressTab), "Order was not found.");
     }
 
     @Given("I navigate to the EA application and login to the set environment for AIR RANDOM")

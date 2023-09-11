@@ -333,7 +333,8 @@ public class SeleniumBaseClass extends BaseClass {
             try {
                 final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
                 testObject.getScenario().attach(screenshot, "image/png", name);
-            } catch(Exception e){}
+            } catch (Exception e) {
+            }
         }
     }
 
@@ -610,6 +611,7 @@ public class SeleniumBaseClass extends BaseClass {
 //        wait.until(ExpectedConditions.elementToBeClickable(by));
         waitForElementClickable(by, 420);
     }
+
     public void waitForElementClickable(By by, int second) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(second));
         wait.until(ExpectedConditions.elementToBeClickable(by));
@@ -793,4 +795,24 @@ public class SeleniumBaseClass extends BaseClass {
 //        }
 //    }
 
+    public static void clickInLoop(WebDriver driver, By by, String object) {
+        if (isExists(driver, by, 3)) {
+            List<WebElement> elements = driver.findElements(by);
+            for (WebElement ele : elements) {
+                try {
+                    if (ele.isDisplayed()) {
+                        ele.click();
+                        logger.info("Click on " + object);
+                        break;
+                    } else {
+                        logger.info((object + " not displays"));
+                    }
+                } catch (Exception e) {
+                    // do nothing
+                }
+            }
+        } else {
+            fail(object + " is not exists");
+        }
+    }
 }

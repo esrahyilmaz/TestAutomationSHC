@@ -1,6 +1,5 @@
 package com.fadv.automation.pageobjects;
 
-import com.aventstack.extentreports.Status;
 import com.fadv.automation.core.Environment;
 import com.fadv.automation.core.SeleniumBaseClass;
 import com.fadv.automation.core.SharedBaseClass;
@@ -70,7 +69,8 @@ public class EA extends SeleniumBaseClass {
     public final By subjectTab =By.xpath("//p[contains(text(),'Subject')]");
     public final By additionalSearchesTab =By.xpath("//div[contains(text(),'Additional')]");
     public final By reviewOrderTab=By.xpath("//div[@title='Review Order']");
-    public final By  selectBoxForReason=By.id("Other..ReasonForTest");
+    public final By selectBoxForReason = By.id("Other..ReasonForTest");
+    public static By next = By.xpath("//td[contains(text(), 'Next')]");
 
 
     //*****WebElements******
@@ -184,8 +184,7 @@ public class EA extends SeleniumBaseClass {
     }
 
     public void clickNextButton() throws InterruptedException {
-        By next = By.xpath("//td[@class = 'html-face' and text()='Next']");
-        this.eaClickButton(next);
+        clickInLoop(eventFiringWebDriver, next, "Next button");
     }
 
     public void clickLogoutButton() throws Exception {
@@ -252,12 +251,13 @@ public class EA extends SeleniumBaseClass {
             case "cid" -> {
                 weField = By.xpath("(//input[contains(@id,'Order.Info.RefID')])[1]");
                 waitForSeconds(1);
-                this.setElementValue(weField, value);
+                setElementValue(weField, value);
                 cid = value;
             }
             case "custom package" -> {
                 weField = By.id("Order.Info.Custom");
-                this.selectElement(weField, value);
+                isExistAndDisplayed(eventFiringWebDriver, weField, 30);
+                selectElement(weField, value);
                 customPackage = value;
             }
             case "alias" -> {
@@ -267,6 +267,7 @@ public class EA extends SeleniumBaseClass {
             }
             default -> throw new RuntimeException("non support field: " + field);
         }
+        waitForSeconds(3);
     }
 
 
