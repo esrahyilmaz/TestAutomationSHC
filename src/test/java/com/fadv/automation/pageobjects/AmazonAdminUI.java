@@ -830,19 +830,12 @@ public class AmazonAdminUI extends SeleniumBaseClass {
 
         if (waitFor(fUser)) {
             waitFor(fUser);
-           // setAttribute(eventFiringWebDriver, fUser, "name", "sign in name");
-//            if (isExistAndDisplayed(eventFiringWebDriver, fUser, 1))
+            setAttribute(eventFiringWebDriver, fUser, "name", "sign in name");
+
             setElementValue(fUser, username);
-//            else
-//                WebElementHelper.enterText(eventFiringWebDriver, fUser, username);
             waitFor(fPass);
             setElementValue(fPass, password);
-//            if (isExistAndDisplayed(driver, btnSignIn, 1)) {
             clickElement(btnSignIn);
-//            } else {
-//                WebElementHelper.clickElement(setEventDriver(), btnSignIn);
-//            }
-
             this.waitFor(btnMenu);
         } else {
             throw new RuntimeException("Login pass is not showing");

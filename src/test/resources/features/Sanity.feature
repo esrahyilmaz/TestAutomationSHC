@@ -9,9 +9,9 @@
 
     @amazonSelfCollect @AmazonEndToEnd @eaOrderEntry @usfcPreEmp @sanity
     Scenario: EA Order Entry for USFC Pre-Employment Flow
+      Given I navigate to the EA application and login to the set environment
       And Set Page
         | EAPage |
-      Given I navigate to the EA application and login to the set environment
       And I click on New Order link
       And I provide data on Order tab
         | field          | value               |
@@ -33,9 +33,6 @@
         | zip                     | 30096                |
         | have ssn                | yes                  |
         | social security number  | 124-12-[gennum:4]    |
-      And I click on Additional Searches tab
-      And I wait for 17 seconds in EA
-      And I select the reason for test as "PRE_EMPLOYMENT" for EA Order
       And I click on Review Order tab
       And I click on Submit Order button
       And I wait for 20 seconds in EA
